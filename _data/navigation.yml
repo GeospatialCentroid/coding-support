@@ -1,12 +1,32 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+  - title: "Python"
+    url: /python/
+python_sidebar:
+  - title: "Python"
+    url: /python/
+    children:
+    - title: "Installing Python"
+      url: /python/installing/
+    - title: "Basics"
+      url: /python/basics/
+    - title: "Choosing an Editor"
+      url: /python/choosing-an-editor/
+    - title: "Virtual Environment"
+      url: /python/virtual-environment/
+    - title: "Working with Data"
+      url: /python/working-with-data/
+    - title: "Working with APIs"
+      url: /python/working-with-apis/
+    - title: "Data Cleaning"
+      url: /python/data-cleaning/
+    - title: "Databases"
+      url: /python/databases/
+    - title: "Geospatial Data Analysis"
+      url: /python/geospatial_data_analysis/
+    - title: "Geospatial Data Analysis Intermediate"
+      url: /python/geospatial_data_analysis_intermediate/
+    - title: "Geospatial Machine Learning"
+      url: /python/geospatial_machine_learning/
+    - title: "Satellite Remote Sensing"
+      url: /python/satellite_remote_sensing/

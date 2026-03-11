@@ -18,7 +18,7 @@ const loadSearch = function() {
     const search = instantsearch({
       appId: '{{ site.algolia.application_id }}',
       apiKey: '{{ site.algolia.search_only_api_key }}',
-      indexName: '{{ site.algolia.index_name }}',
+      indexName: 'coding-support',//{{ site.algolia.index_name }}
       searchParameters: {
         restrictSearchableAttributes: ['title', 'content']
       }
