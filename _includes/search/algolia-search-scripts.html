@@ -20,24 +20,44 @@ const loadSearch = function() {
       apiKey: '{{ site.algolia.search_only_api_key }}',
       indexName: 'coding-support',//{{ site.algolia.index_name }}
       searchParameters: {
-        restrictSearchableAttributes: ['title', 'content']
+        restrictSearchableAttributes: ['title', 'content'],
+        attributesToSnippet: ['content:20'],
+        snippetEllipsisText: '…',
+        highlightPreTag: '<mark>',
+        highlightPostTag: '</mark>'
       }
     });
 
 const hitTemplate = (hit) => {
   const anchor = hit.anchor ? `#${hit.anchor}` : "";
 
+  const breadcrumb = [
+    hit.hierarchy?.lvl0,
+    hit.hierarchy?.lvl1,
+    hit.hierarchy?.lvl2
+  ].filter(Boolean).join(" › ");
+
   return `
-    <div class="list__item">
-      <article class="archive__item">
-        <h2 class="archive__item-title">
-          <a href="${hit.url}${anchor}">${hit.title}</a>
-        </h2>
-        <div class="archive__item-excerpt">
-          ${hit._highlightResult.content.value}
-        </div>
-      </article>
-    </div>`;
+  <div class="doc-search-hit">
+
+    <a href="${hit.url}${anchor}" class="doc-search-link">
+
+      <div class="doc-search-breadcrumb">
+        ${breadcrumb}
+      </div>
+
+      <div class="doc-search-title">
+        ${hit._highlightResult?.title?.value || hit.title}
+      </div>
+
+      <div class="doc-search-snippet">
+        ${hit._snippetResult?.content?.value || ""}
+      </div>
+
+    </a>
+
+  </div>
+  `;
 };
 
     // Adding searchbar and results widgets

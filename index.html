@@ -9,22 +9,63 @@ coding_cards:
     alt: "Python"
     title: "Python"
     excerpt: "Python tutorials and data analysis."
-    url: "/coding-support/python/"
+    url: "/python/"
     btn_label: "Learn Python"
   - image_path: /assets/images/r-card.png
     alt: "R"
     title: "R Programming"
     excerpt: "Data science and statistics with R."
-    url: "/coding-support/r/"
+    url: "/r/"
     btn_label: "Learn R"
   - image_path: /assets/images/git-card.png
     alt: "Git"
     title: "Git & GitHub"
     excerpt: "Version control and collaboration."
-    url: "/coding-support/git/"
+    url: "/git/"
     btn_label: "Learn Version Control"
 
   
 ---
-
+<div id="coding_cards">
 {% include feature_row id="coding_cards" type="grid" %}
+</div>
+<script>
+window.addEventListener("load", function () {
+
+  setTimeout(function () {
+
+    const toggle = document.querySelector(".search__toggle");
+    if (toggle) toggle.click();
+
+    function waitForSearchInput() {
+
+      const input = document.querySelector(".ais-search-box--input");
+      const hits = document.querySelector(".search-hits");
+
+      if (!input || !hits) {
+        setTimeout(waitForSearchInput, 100);
+        return;
+      }
+
+      console.log("Search initialized");
+
+      // Hide hits initially
+      hits.style.display = "none";
+
+      input.addEventListener("input", function () {
+        if (input.value.trim().length > 0) {
+          hits.style.display = "block";
+        } else {
+          hits.style.display = "none";
+        }
+      });
+
+    }
+
+    waitForSearchInput();
+
+  }, 300);
+
+});
+</script>
+
