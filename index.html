@@ -1,4 +1,30 @@
 ---
 layout: splash
 author_profile: false
+layout: collection
+entries_layout: grid
+
+coding_cards:
+  - image_path: /assets/images/python-card.png
+    alt: "Python"
+    title: "Python"
+    excerpt: "Python tutorials and data analysis."
+    url: "/coding-support/python/"
+    btn_label: "Learn Python"
+  - image_path: /assets/images/r-card.png
+    alt: "R"
+    title: "R Programming"
+    excerpt: "Data science and statistics with R."
+    url: "/coding-support/r/"
+    btn_label: "Learn R"
+  - image_path: /assets/images/git-card.png
+    alt: "Git"
+    title: "Git & GitHub"
+    excerpt: "Version control and collaboration."
+    url: "/coding-support/git/"
+    btn_label: "Learn Version Control"
+
+  
 ---
+
+{% include feature_row id="coding_cards" type="grid" %}

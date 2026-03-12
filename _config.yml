@@ -75,10 +75,10 @@ lunr:
   search_within_pages    : # true, false (default)
 algolia:
   application_id         : DTC6BXXR43
-  index_name             : # YOUR_INDEX_NAME
+  index_name: coding_support
   search_only_api_key    : 4177df0cc4b2523ee42d6992389ecaf4
-  nodes_to_index: 'p, h1, h2, h3, h4' # Index paragraphs and headings
-  powered_by             : # true (default), false
+  powered_by             : false # true (default), false
+  nodes_to_index: 'p, h1, h2, h3, h4'
 google:
   search_engine_id       : # YOUR_SEARCH_ENGINE_ID
   instant_search         : # false (default), true
@@ -331,3 +331,4 @@ collections:
   resources:
     output: true
     ermalink: /resources/:path/
+  
