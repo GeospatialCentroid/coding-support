@@ -24,21 +24,17 @@ const loadSearch = function() {
       }
     });
 
-    const hitTemplate = function(hit) {
-      const url = hit.url;
-      const hightlight = hit._highlightResult;
-      const title = hightlight.title && hightlight.title.value  || "";
-      const content = hightlight.html && hightlight.html.value  || "";
-
-      return `
-        <div class="list__item">
-          <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-            <h2 class="archive__item-title" itemprop="headline"><a href="{{ site.baseurl }}${url}">${title}</a></h2>
-            <div class="archive__item-excerpt" itemprop="description">${content}</div>
-          </article>
-        </div>
-      `;
-    }
+const hitTemplate = (hit) => {
+  return `
+    <div class="list__item">
+      <article class="archive__item">
+        <h2 class="archive__item-title">
+          <a href="${hit.url}">${hit.title}</a>
+        </h2>
+        <div class="archive__item-excerpt">${hit._highlightResult.content.value}</div>
+      </article>
+    </div>`;
+};
 
     // Adding searchbar and results widgets
     search.addWidget(
