@@ -1,0 +1,138 @@
+/* Offsets the anchor scroll so the header doesn't cover the title */
+h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
+  scroll-margin-top: 80px; /* Adjust based on your header height */
+}
+
+
+
+/* Documentation style card grid */
+
+#coding_cards .feature__wrapper {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card container */
+
+#coding_cards  .feature__item {
+  display: flex;
+}
+
+#coding_cards  .archive__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover animation */
+
+#coding_cards   .archive__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Title */
+
+#coding_cards   .archive__item-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color:#555;
+}
+
+/* Description */
+
+#coding_cards  .archive__item-excerpt {
+  flex-grow: 1;
+  color: #555;
+}
+
+/* Icon styling */
+
+#coding_cards   .archive__item-teaser img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+}
+
+/* search styling */
+
+.search-hits {
+  margin-top: 2rem;
+}
+
+/* Individual result */
+
+.doc-search-hit {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem 0;
+}
+
+.doc-search-link {
+  text-decoration: none;
+  display: block;
+}
+
+/* Breadcrumb */
+
+.doc-search-breadcrumb {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+/* Result title */
+
+.doc-search-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #699ea0;
+}
+
+/* Result snippet */
+
+.doc-search-snippet {
+  font-size: 0.9rem;
+ 
+  margin-top: 0.25rem;
+}
+
+/* Highlight */
+
+mark {
+  background: #fde68a;
+  padding: 0 2px;
+}
+
+/* Ensure coding_cards stays visible when the search overlay is active */
+.search-content--active #coding_cards,
+body.search-active #coding_cards {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Optional: Ensure it doesn't overlap or look messy under the search results */
+.search-content--active #coding_cards {
+  filter: blur(2px); /* Slight blur to keep focus on search while still visible */
+  pointer-events: none; /* Prevents clicking cards while search is open */
+}
+/* Force the main container to stay visible even when search is active */
+body.search-active .initial-content, 
+body.search-active #main,
+body.search-active #coding_cards {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Ensure the search overlay doesn't completely cover the background */
+.search-content {
+  background-color: rgba(0, 0, 0, 0.6) !important; /* Makes overlay semi-transparent */
+}
