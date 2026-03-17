@@ -23,19 +23,35 @@ coding_cards:
     excerpt: "Version control and collaboration."
     url: "/git/"
     btn_label: "Learn Version Control"
-
+  - image_path: /assets/images/data-viz-card.png
+    alt: "Data Visualization"
+    title: "Data Visualization"
+    excerpt: "Choosing the most appropriate visualization for your data."
+    url: "/data-viz/"
+    btn_label: "Learn Data Viz"
   
 ---
+
+
+<p>{{ site.description }}</p>
 <div id="coding_cards">
 {% include feature_row id="coding_cards" type="grid" %}
 </div>
 <script>
+  // show the search box after the page has loaded and the search script has initialized
+  // only show this search box by default on the index page
 window.addEventListener("load", function () {
 
   setTimeout(function () {
 
-    const toggle = document.querySelector(".search__toggle");
-    if (toggle) toggle.click();
+
+    $(document).ready(function() {
+         loadSearch();
+         document.querySelector(".search__toggle").style.display = "none";
+
+         
+         document.querySelector(".search-content").classList.add('search-content-hidden'); 
+    });
 
     function waitForSearchInput() {
 
@@ -47,10 +63,9 @@ window.addEventListener("load", function () {
         return;
       }
 
-      console.log("Search initialized");
-
       // Hide hits initially
       hits.style.display = "none";
+     
 
       input.addEventListener("input", function () {
         if (input.value.trim().length > 0) {

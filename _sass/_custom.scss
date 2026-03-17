@@ -15,17 +15,20 @@ h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
 
 /* Card container */
 
-#coding_cards  .feature__item {
-  display: flex;
+.cards_row {
+  display: flex; /* Turns on Flexbox for the parent */
+}
+.archive__item-body, .archive__item-teaser {
+   flex: 1; /* Makes both divs grow to fill equal width */
+    padding: 10px;
 }
 
-#coding_cards  .archive__item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
+#coding_cards .feature__item--grid {
+  
   background: #ffffff;
   border-radius: 10px;
-  padding: 1.5rem;
+  padding: 0.8rem;
   border: 1px solid #e5e7eb;
   height: 100%;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -33,7 +36,7 @@ h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
 
 /* Hover animation */
 
-#coding_cards   .archive__item:hover {
+#coding_cards   .feature__item--grid:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
@@ -49,15 +52,17 @@ h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
 /* Description */
 
 #coding_cards  .archive__item-excerpt {
-  flex-grow: 1;
   color: #555;
+  margin-top: -30px;
+   margin-bottom: -20px;
 }
 
 /* Icon styling */
 
 #coding_cards   .archive__item-teaser img {
-  width: 48px;
-  height: 48px;
+  width: 60px !important;
+  max-width: 60px !important;
+  height: auto;
   margin-bottom: 1rem;
 }
 
@@ -110,29 +115,19 @@ mark {
   padding: 0 2px;
 }
 
-/* Ensure coding_cards stays visible when the search overlay is active */
-.search-content--active #coding_cards,
-body.search-active #coding_cards {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+/** Hide the default search box if it exists */
+.search-content-hidden {
+  position: relative !important;
+  transform: none !important;
+  height: auto !important;
+  background: transparent !important;
+  display: none !important;
+}
+.doc-search {
+  max-width: 700px;
+  margin: 2rem auto 1rem auto;
 }
 
-/* Optional: Ensure it doesn't overlap or look messy under the search results */
-.search-content--active #coding_cards {
-  filter: blur(2px); /* Slight blur to keep focus on search while still visible */
-  pointer-events: none; /* Prevents clicking cards while search is open */
-}
-/* Force the main container to stay visible even when search is active */
-body.search-active .initial-content, 
-body.search-active #main,
-body.search-active #coding_cards {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-/* Ensure the search overlay doesn't completely cover the background */
-.search-content {
-  background-color: rgba(0, 0, 0, 0.6) !important; /* Makes overlay semi-transparent */
+.search-hits {
+  margin-top: 1rem;
 }
