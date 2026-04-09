@@ -1,5 +1,12 @@
 # main links
 main:
+  - title: Coding Support Request
+    url: /support-request/
+  - title: Events
+    url: https://colostate.libcal.com/calendar?cid=12856&t=g&d=0000-00-00&cal=12856&ct=63302,63303&inc=0
+  - title: Mailing List
+    url: https://lists.colostate.edu/cgi-bin/mailman/listinfo/coding-support
+
 
 python_sidebar:
   - title: "Python"
@@ -38,3 +45,14 @@ git_sidebar:
     url: /git/getting-started/
   - title: "Merge Conflicts, Rebasing, and Workflows"
     url: /git/workflows/
+
+data-viz_sidebar:
+- title: "Data Visualization"
+  url: /data-viz/
+  children:
+  - title: "Data Visualization Design Principles"
+    url: /data-viz/design/
+  - title: "Choosing the Right Visualization"
+    url: /data-viz/options/
+  - title: "Using Excel for Data Visualization"
+    url: /data-viz/excel/

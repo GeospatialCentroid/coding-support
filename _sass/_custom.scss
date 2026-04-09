@@ -1,3 +1,94 @@
+
+/* Define the Poppins Font Family */
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/font/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/font/Poppins-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/font/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/font/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/font/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Set Poppins as the Global Font */
+$global-font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+$header-font-family: "Poppins", sans-serif;
+
+body, 
+p, 
+h1, h2, h3, h4, h5, h6,
+.site-title, 
+.nav__items,
+.btn {
+  font-family: "Poppins", sans-serif !important;
+}
+
+/* Increase Site Logo Size */
+.site-logo img {
+  max-height: 5rem; /* Adjust this value (e.g., 4rem, 100px) to your liking */
+  width: auto;      /* Keeps the aspect ratio intact */
+  transition: all 0.2s ease-in-out;
+}
+
+/* Adjust masthead padding if the logo feels too cramped */
+.masthead__inner-logo {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+/* Desktop Size */
+.site-logo img {
+  max-height: 5rem;
+}
+
+/* Mobile Size (Adjusts for screens smaller than 600px) */
+@media (max-width: 600px) {
+  .site-logo img {
+    max-height: 5rem; 
+    min-width: 240px;
+  }
+  .masthead__inner-logo {
+    display: flex;
+    flex-direction: column; /* Stacks items vertically */
+    align-items: center;    /* Centers them horizontally */
+    text-align: center;
+  }
+
+  .site-logo {
+    margin-right: 0;        /* Removes the side spacing used in desktop view */
+    margin-bottom: 0.5rem;  /* Adds space between logo and title */
+  }
+
+  .site-title {
+    margin-left: 0;
+    font-size: 1.2rem;      /* Optional: shrinks title slightly for mobile */
+  }
+}
+
 /* Offsets the anchor scroll so the header doesn't cover the title */
 h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
   scroll-margin-top: 80px; /* Adjust based on your header height */
@@ -130,4 +221,23 @@ mark {
 
 .search-hits {
   margin-top: 1rem;
+}
+.chart{
+
+  background-color: white;
+}
+.pagination-buttons{
+display: flex; 
+justify-content: space-between; 
+margin-top: 3rem; 
+border-top: 1px solid #eee; 
+padding-top: 1rem; 
+clear: both; width: 100%;
+}
+
+.right{
+text-align: right; 
+width: 100%; 
+display: block;
+
 }
