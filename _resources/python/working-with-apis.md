@@ -3,7 +3,7 @@ title: Working with APIs in Python
 layout: single
 toc: true
 toc_sticky: true
-permalink: /python/working-with-apis
+permalink: python/working-with-apis
 sidebar:
   nav: "python_sidebar"
 ---

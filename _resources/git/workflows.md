@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Merge Conflicts, Rebasing, and Workflows"
-permalink: /git/workflows/
+permalink: git/workflows/
 author_profile: false
 sidebar:
   nav: "git_sidebar"

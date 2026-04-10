@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Data Visualization Design Principles"
-permalink: /data-viz/design/
+permalink: data-viz/design/
 author_profile: false
 sidebar:
   nav: "data-viz_sidebar"

@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Getting Started"
-permalink: /git/getting-started/
+permalink: git/getting-started/
 sidebar:
   nav: "git_sidebar"
 toc: true

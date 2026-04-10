@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Git & GitHub"
-permalink: /git/
+permalink: git/
 sidebar:
   nav: "git_sidebar"
 toc: true

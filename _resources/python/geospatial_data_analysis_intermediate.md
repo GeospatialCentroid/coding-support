@@ -3,7 +3,7 @@ title: Intermediate Geospatial Analysis in Python
 layout: single
 toc: true
 toc_sticky: true
-permalink: /python/geospatial_data_analysis_intermediate
+permalink: python/geospatial_data_analysis_intermediate
 sidebar:
   nav: "python_sidebar"
 ---

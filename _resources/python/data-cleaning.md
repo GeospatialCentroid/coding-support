@@ -3,7 +3,7 @@ title: Data Cleaning in Python
 layout: single
 toc: true
 toc_sticky: true
-permalink: /python/data-cleaning
+permalink: python/data-cleaning
 sidebar:
   nav: "python_sidebar"
 ---

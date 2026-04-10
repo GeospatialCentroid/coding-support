@@ -1,7 +1,7 @@
 ---
 title: "Setting up a Virtual Environment"
 layout: single
-permalink: /python/virtual-environment
+permalink: python/virtual-environment
 sidebar:
   nav: "python_sidebar"
 toc: true

@@ -1,7 +1,7 @@
 ---
 title: Geospatial Machine Learning in Python
 layout: single
-permalink: /python/geospatial_machine_learning
+permalink: python/geospatial_machine_learning
 toc: true
 toc_sticky: true
 sidebar:

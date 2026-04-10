@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Why Data Visualization Matters"
-permalink: /data-viz/
+permalink: data-viz/
 author_profile: false
 sidebar:
   nav: "data-viz_sidebar"

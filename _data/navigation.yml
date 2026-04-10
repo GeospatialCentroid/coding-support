@@ -10,49 +10,49 @@ main:
 
 python_sidebar:
   - title: "Python"
-    url: /python/
+    url: python/
     children:
     - title: "Installing Python"
-      url: /python/installing/
+      url: python/installing/
     - title: "Basics"
-      url: /python/basics/
+      url: python/basics/
     - title: "Choosing an Editor"
-      url: /python/choosing-an-editor/
+      url: python/choosing-an-editor/
     - title: "Virtual Environment"
-      url: /python/virtual-environment/
+      url: python/virtual-environment/
     - title: "Working with Data"
-      url: /python/working-with-data/
+      url: python/working-with-data/
     - title: "Working with APIs"
-      url: /python/working-with-apis/
+      url: python/working-with-apis/
     - title: "Data Cleaning"
-      url: /python/data-cleaning/
+      url: python/data-cleaning/
     - title: "Databases"
-      url: /python/databases/
+      url: python/databases/
     - title: "Geospatial Data Analysis"
-      url: /python/geospatial_data_analysis/
+      url: python/geospatial_data_analysis/
     - title: "Geospatial Data Analysis Intermediate"
-      url: /python/geospatial_data_analysis_intermediate/
+      url: python/geospatial_data_analysis_intermediate/
     - title: "Geospatial Machine Learning"
-      url: /python/geospatial_machine_learning/
+      url: python/geospatial_machine_learning/
     - title: "Satellite Remote Sensing"
-      url: /python/satellite_remote_sensing/
+      url: python/satellite_remote_sensing/
 
 git_sidebar:
 - title: "Git & GitHub"
-  url: /git/
+  url: git/
   children:
   - title: "Getting Started with Git"
-    url: /git/getting-started/
+    url: git/getting-started/
   - title: "Merge Conflicts, Rebasing, and Workflows"
-    url: /git/workflows/
+    url: git/workflows/
 
 data-viz_sidebar:
 - title: "Data Visualization"
-  url: /data-viz/
+  url: data-viz/
   children:
   - title: "Data Visualization Design Principles"
-    url: /data-viz/design/
+    url: data-viz/design/
   - title: "Choosing the Right Visualization"
-    url: /data-viz/options/
+    url: data-viz/options/
   - title: "Using Excel for Data Visualization"
-    url: /data-viz/excel/
+    url: data-viz/excel/

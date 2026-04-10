@@ -4,7 +4,7 @@ title: Data Visualization in Python
 layout: single
 toc: true
 toc_sticky: true
-permalink: /python/data-visualization
+permalink: python/data-visualization
 sidebar:
   nav: "python_sidebar"
 ---

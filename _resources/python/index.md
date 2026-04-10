@@ -3,7 +3,7 @@ title: Python
 layout: single
 sidebar:
   nav: "python_sidebar"
-permalink: /python/
+permalink: python/
 toc: true
 toc_sticky: true
 ---
