@@ -48,6 +48,198 @@ h1, h2, h3, h4, h5, h6,
   font-family: "Poppins", sans-serif !important;
 }
 
+/* --- CSU BRAND VARIABLES --- */
+:root {
+  --csu-green: #1E4D2B;
+  --csu-gold: #C8C372;
+  --csu-white: #ffffff;
+  --csu-light-gray: #f8f9fa;
+  --csu-flower-trial-red:#c6503d; 
+  --csu-horsetooth-blue: #008FB3;
+  --csu-energy-green:#CFFC00;
+  --text-dark: #333333;
+}
+
+/* --- GLOBAL STYLES --- */
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--csu-white);
+  line-height: 1.6;
+}
+
+p, li, label {
+  font-size: 0.85rem !important;
+  line-height: 1.5; /* Slightly tighter line spacing */
+}
+
+ .fas {
+    color: var(--csu-white) !important;
+ }
+ .navicon,.navicon::before, .navicon::after{
+  background: var(--csu-white) !important;
+ }
+
+/* --- HEADER & MASTHEAD --- */
+.masthead {
+  background-color: var(--csu-green) !important;
+  border-bottom: 4px solid var(--csu-gold);
+  padding: 1rem 0;
+}
+
+.masthead__inner-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.site-title, .site-title:visited {
+  color: var(--csu-white) !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
+/* --- NAVIGATION --- */
+.greedy-nav {
+  background-color: transparent;
+}
+
+
+.greedy-nav a:hover {
+  color: var(--csu-gold) !important;
+}
+
+.greedy-nav a {
+
+    color: var(--csu-white);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.hidden-links {
+  background-color: #1E4D2B !important; /* Official CSU Green */
+  border-bottom: 2px solid #C8C372;      /* Official CSU Gold Accent */
+  padding: 8px 0;
+  font-family: "ProxNova", "Helvetica Neue", Arial, sans-serif;
+  text-align: right; 
+}
+
+.hidden-links ul {
+  margin: 0 auto;
+  max-width: 1280px; /* Aligns with the main content container */
+  padding: 0 20px;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hidden-links li {
+  margin-left: 20px;
+}
+
+.hidden-links a {
+  color: #ffffff !important;
+  text-transform: uppercase;
+  font-size: .7rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.hidden-links a:hover {
+  color: var(--csu-energy-green) !important; /* Changes to Gold on hover */
+}
+
+/* Ensure skip links are visible if they are currently hidden by the theme */
+.hidden-links.show-links {
+  display: block !important;
+  visibility: visible !important;
+}
+
+
+.hidden-links a:hover {
+  background-color: transparent !important;
+  background: none !important;
+}
+
+.feature__wrapper {
+    padding-bottom: 1em  !important;
+}
+
+ .page__content {
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+/* --- BUTTONS --- */
+.btn--primary, .btn, .pagination-buttons .btn {
+  background-color: var(--csu-flower-trial-red);
+  color: var(--csu-white) !important;
+  border: none !important;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 12px 24px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn--primary:hover, .btn:hover {
+  background-color: #14351d !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+a {
+    color: #008FB3
+}
+
+.page__title a {
+    color: var(--csu-green);
+    font-weight: 500;
+}
+.toc .nav__title {
+
+    background: var(--csu-horsetooth-blue);
+
+}
+
+/* --- CONTENT CARDS --- */
+
+.page__content, .archive__item {
+  background: var(--csu-white);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-bottom: 1.2rem;
+}
+
+/* --- PROMINENT FORMS (Themed Green) --- */
+input[type="text"], 
+input[type="email"], 
+textarea {
+    border: 2px solid #e1e1e1;
+    padding: 15px;
+    font-size: .8rem;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--csu-green) !important;
+    box-shadow: 0 0 0 3px rgba(30, 77, 43, 0.1);
+    outline: none;
+}
+
+/* --- FOOTER --- */
+.page__footer {
+  background-color: #2c2c2c;
+  color: #ccc !important;
+  padding: 3rem 0;
+}
+
+.page__footer a, .page__footer{
+  color: var(--csu-white) !important;
+  font-weight: 600  !important;
+}
+
 /* Increase Site Logo Size */
 .site-logo img {
   max-height: 5rem; /* Adjust this value (e.g., 4rem, 100px) to your liking */
@@ -73,8 +265,13 @@ h1, h2, h3, h4, h5, h6,
     flex-direction: column;
     align-items: center;
   }
+  
 }
-
+.masthead__inner-wrap {
+    clear: both;
+    margin-inline: auto;
+    padding: .1em;
+  }
 .site-title {
   float: none;      /* Removes the default left float */
   margin-right: 0;
@@ -83,7 +280,7 @@ h1, h2, h3, h4, h5, h6,
 }
   .site-logo img {
     max-height: 5rem; 
-    min-width: 240px;
+    min-width: 220px;
   }
   .masthead__inner-logo {
     display: flex;
@@ -123,14 +320,37 @@ h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
 }
 .archive__item-body, .archive__item-teaser {
    flex: 1; /* Makes both divs grow to fill equal width */
-    padding: 10px;
+   
+}
+/* 1. Target the image container and the image itself */
+.archive__item-teaser, 
+.archive__item-teaser img {
+  box-shadow: none !important;
+  filter: none !important;
+  -webkit-box-shadow: none !important;
 }
 
+/* 2. Target the 'card' container (common source of the shadow) */
+.archive__item {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* 3. Target the hover state (many themes add the shadow only on hover) */
+.archive__item:hover {
+  box-shadow: none !important;
+  transform: none !important; /* Removes the "lift" effect */
+}
+
+/* 4. Target the specific link wrapper */
+.archive__item a {
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
 
 #coding_cards .feature__item--grid {
   
   background: #ffffff;
-  border-radius: 10px;
   padding: 0.8rem;
   border: 1px solid #e5e7eb;
   height: 100%;
@@ -147,7 +367,7 @@ h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
 /* Title */
 
 #coding_cards   .archive__item-title {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   margin-bottom: 0.5rem;
   color:#555;
 }
@@ -157,7 +377,7 @@ h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
 #coding_cards  .archive__item-excerpt {
   color: #555;
   margin-top: -30px;
-   margin-bottom: -20px;
+   margin-bottom: -10px;
 }
 
 /* Icon styling */
@@ -200,7 +420,7 @@ h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
 .doc-search-title {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #699ea0;
+  color:  var(--csu-green);
 }
 
 /* Result snippet */
@@ -251,5 +471,70 @@ clear: both; width: 100%;
 text-align: right; 
 width: 100%; 
 display: block;
+}
 
+input:not(.ais-search-box--input),
+textarea, 
+select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0 20px 0;
+    display: inline-block;
+    border: 2px solid #ccc; /* Subtle but clear border */
+    box-sizing: border-box;
+    font-size: 1rem; /* Prevents auto-zoom on mobile */
+    font-family: inherit;
+    background-color: #ffffff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+#topic{
+  margin: 8px 0 20px 0;
+}
+#topic:focus {
+    color: var(--csu-white) !important;
+    background-color: var(--csu-flower-trial-red) !important;
+}
+
+
+.ais-search-box--input{
+  padding-left: 40px !important;
+
+}
+
+/* Enhancing the Textarea specifically */
+textarea {
+    min-height: 150px;
+    resize: vertical; /* Allows user to expand height but not width */
+}
+
+/* The Focus State: High-contrast highlight when clicked */
+input:focus, 
+textarea:focus, 
+select:focus {
+    border-color: #004b87; /* Uses your CSU Blue */
+    box-shadow: 0 0 8px rgba(0, 75, 135, 0.2);
+    outline: none; /* Removes default browser glow */
+    background-color: #f9f9f9;
+}
+
+/* Style for Labels to match the prominence */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.page__footer {
+    clear: both;
+    float: inline-start;
+    margin-inline: 0;
+    width: 100%;
+    margin-top: 3em;
+    color: #eee;
+    -webkit-animation: intro .3s both;
+    animation: intro .3s both;
+    -webkit-animation-delay: .45s;
+    animation-delay: .45s;
+    background-color: var(--csu-green);
 }

@@ -14,31 +14,38 @@
 {% endif %} -->
 
 {% comment %} 
-  1. Determine the sidebar to use. 
-  It looks for 'sidebar: nav: "name"' in Front Matter.
+  1. Determine the sidebar to use from Front Matter.
 {% endcomment %}
 
-<hr/>
 {% assign nav_key = page.sidebar.nav %}
 {% assign nav_group = site.data.navigation[nav_key] %}
 
 {% if nav_group %}
-  {% comment %} 2. Flatten Parent + Children into one list {% endcomment %}
+  {% comment %} 2. Flatten Parent + Children into one list, skipping entries without URLs {% endcomment %}
   {% assign flattened_nav = "" | split: "" %}
   {% for entry in nav_group %}
-    {% assign flattened_nav = flattened_nav | push: entry %}
+    {% if entry.url %}
+      {% assign flattened_nav = flattened_nav | push: entry %}
+    {% endif %}
     {% for child in entry.children %}
-      {% assign flattened_nav = flattened_nav | push: child %}
+      {% if child.url %}
+        {% assign flattened_nav = flattened_nav | push: child %}
+      {% endif %}
     {% endfor %}
   {% endfor %}
 
   {% comment %} 3. Match current page and find neighbors {% endcomment %}
   {% for item in flattened_nav %}
-    {% comment %} We strip slashes to ensure /python matches /python/ {% endcomment %}
-    {% assign item_url = item.url | append: "/" | replace: "//", "/" %}
-    {% assign current_url = page.url | append: "/" | replace: "//", "/" %}
+    {% comment %} 
+       Standardize both URLs: 
+       1. Prepend / if missing 
+       2. Append / if missing 
+       3. Replace // with / 
+    {% endcomment %}
+    {% assign item_url_fixed = item.url | prepend: "/" | append: "/" | replace: "//", "/" %}
+    {% assign current_url_fixed = page.url | append: "/" | replace: "//", "/" %}
 
-    {% if item_url == current_url %}
+    {% if item_url_fixed == current_url_fixed %}
       {% unless forloop.first %}
         {% assign prev_index = forloop.index0 | minus: 1 %}
         {% assign prev_page = flattened_nav[prev_index] %}
@@ -55,12 +62,13 @@
 
 {% comment %} 4. Render the UI {% endcomment %}
 <div class="pagination-buttons">
-    {% if prev_page %}
+  {% if prev_page %}
     <a href="{{ prev_page.url | relative_url }}" class="btn btn--primary">
       &laquo; Previous: {{ prev_page.title }}
     </a>
   {% else %}
-    <span></span> {% endif %}
+    <span></span>
+  {% endif %}
 
   {% if next_page %}
     <a href="{{ next_page.url | relative_url }}" class="btn btn--primary">

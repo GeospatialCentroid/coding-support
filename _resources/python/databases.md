@@ -1,8 +1,9 @@
+---
 title: Databases with Python
 layout: single
 toc: true
 toc_sticky: true
-permalink: python/data-visualization/
+permalink: python/databases/
 sidebar:
   nav: "python_sidebar"
 ---

@@ -1,14 +1,14 @@
 ---
 layout: single
 title: "Coding Support Request"
-permalink: /support-request/
-author_profile: false
-# sidebar:
-#   nav: "coding_sidebar"
-# toc: false
+permalink: support-request/
+toc: true
+toc_sticky: true
 ---
 
-We offer coding and data support across a range of tools and workflows. Use the form below to request help and schedule a virtual session.
+We offer coding and data support across a range of tools and workflows. Before submitting a request, please review our [Coding Support Policy]({{ '/support-policy/' | relative_url }}) to understand expectations and ensure we can best assist you.
+
+To get started, complete the form below with details about your request. Once submitted, a member of our team will follow up to schedule a 15-minute consultation via Microsoft Teams. Please ensure your calendar is up to date, or include your availability so we can coordinate a convenient time.
 
 ---
 
@@ -18,6 +18,7 @@ We offer coding and data support across a range of tools and workflows. Use the 
 - R (statistical analysis, visualization)
 - Git (version control, GitHub workflows)
 - Data Visualization (best practices, dashboards)
+- Web Development (HTML5, CSS3, and JavaScript)
 - Excel (formulas, charts, data cleaning)
 - Power BI (dashboards, reporting)
 - ArcGIS Pro & GIS (mapping, spatial analysis)
@@ -41,6 +42,7 @@ We offer coding and data support across a range of tools and workflows. Use the 
   <option>R</option>
   <option>Git</option>
   <option>Data Visualization</option>
+  <option>Web Development</option>
   <option>Excel</option>
   <option>Power BI</option>
   <option>ArcGIS Pro / GIS</option>
@@ -48,6 +50,10 @@ We offer coding and data support across a range of tools and workflows. Use the 
 
 <label for="details">Brief description of your issue:</label><br>
 <textarea id="details" rows="4" required></textarea><br><br>
+
+<label for="availability">Your availability (optional):</label><br>
+<input type="text" id="availability"><br><br>
+
 <div class="right">
     <button class="btn btn--primary" type="submit">Request Support</button>
 </div>
