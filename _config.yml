@@ -76,6 +76,7 @@ lunr:
 algolia:
   application_id         : DTC6BXXR43
   index_name: coding_support
+  url                    : https://geospatialcentroid.github.io/coding-support
   search_only_api_key    : 4177df0cc4b2523ee42d6992389ecaf4
   powered_by             : false # true (default), false
   nodes_to_index: 'p, h1, h2, h3, h4'
@@ -331,5 +332,5 @@ defaults:
 collections:
   resources:
     output: true
-    ermalink: /resources/:path/
+    permalink: /:path/
   

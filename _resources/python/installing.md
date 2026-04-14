@@ -3,7 +3,6 @@ title: Installing Python
 layout: single
 sidebar:
   nav: "python_sidebar"
-permalink: python/installing/
 toc: true
 toc_sticky: true
 ---

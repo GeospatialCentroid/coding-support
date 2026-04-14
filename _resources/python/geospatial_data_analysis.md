@@ -3,7 +3,6 @@ title: Geospatial Data Analysis in Python
 layout: single
 toc: true
 toc_sticky: true
-permalink: python/geospatial_data_analysis/
 sidebar:
   nav: "python_sidebar"
 ---

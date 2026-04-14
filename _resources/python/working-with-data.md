@@ -1,7 +1,6 @@
 ---
 title: "Working with Data"
 layout: single
-permalink: python/working-with-data
 sidebar:
   nav: "python_sidebar"
 toc: true

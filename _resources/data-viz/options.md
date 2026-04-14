@@ -1,7 +1,6 @@
 ---
 layout: single
 title: "Choosing the Right Visualization"
-permalink: data-viz/options/
 author_profile: false
 sidebar:
   nav: "data-viz_sidebar"

@@ -10,7 +10,7 @@ main:
 
 python_sidebar:
   - title: "Python"
-    url: python/
+    url: python
     children:
     - title: "Installing Python"
       url: python/installing/
@@ -39,7 +39,7 @@ python_sidebar:
 
 git_sidebar:
 - title: "Git & GitHub"
-  url: git/
+  url: git
   children:
   - title: "Getting Started with Git"
     url: git/getting-started/

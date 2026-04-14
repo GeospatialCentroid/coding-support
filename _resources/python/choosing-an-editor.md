@@ -3,7 +3,6 @@ title: Choosing an Editor
 layout: single
 sidebar:
   nav: "python_sidebar"
-permalink: python/choosing-an-editor/
 toc: true
 toc_sticky: true
 ---

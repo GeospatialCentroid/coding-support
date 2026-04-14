@@ -1,7 +1,6 @@
 ---
 title: Satellite and Remote Sensing Analysis in Python
 layout: single
-permalink: python/satellite_remote_sensing
 toc: true
 toc_sticky: true
 sidebar:

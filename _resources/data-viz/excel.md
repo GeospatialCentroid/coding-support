@@ -1,7 +1,6 @@
 ---
 layout: single
 title: "Using Excel for Data Visualization"
-permalink: data-viz/excel/
 author_profile: false
 sidebar:
   nav: "data-viz_sidebar"

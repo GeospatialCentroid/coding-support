@@ -538,3 +538,86 @@ label {
     animation-delay: .45s;
     background-color: var(--csu-green);
 }
+
+@media (min-width: 64em) {
+  /* 1. Ensure the parent container doesn't restrict the height */
+  #main {
+    display: flex !important;
+    align-items: stretch !important; /* Forces sidebar-container to match article height */
+  }
+
+  /* 2. Make the sidebar column the "track" for stickiness */
+  .sidebar-container {
+    width: 260px !important;
+    flex-shrink: 0;
+    position: relative; 
+  }
+
+  /* 3. The Sticky Logic for the TOC */
+  .sidebar__right {
+    position: -webkit-sticky !important; /* Safari support */
+    position: sticky !important;
+    top: 2rem; /* Distance from the top of the viewport when it locks */
+    
+    /* Ensure it doesn't hide behind other elements */
+    z-index: 10;
+    
+    /* Reset theme defaults that might break stickiness */
+    float: none !important;
+    width: 100% !important;
+  }
+  /* 1. Reset the width of the inner sidebar elements */
+  .sidebar, 
+  .sidebar-container .sidebar__right {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* 2. Style the TOC menu to match the bio's container look */
+  .sidebar__right .toc {
+    border: none; /* Remove theme borders if they exist */
+  }
+
+  /* 1. Force the main article container to grow */
+  .page {
+    flex-grow: 1 !important; /* Tells it to take up all available space */
+    width: auto !important;   /* Overrides fixed width percentages */
+    max-width: none !important; 
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* 2. Expand the inner wrapper */
+  .page__inner-wrap {
+    width: 100% !important;
+    max-width: 100% !important; /* Theme often limits this to ~800px */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* 3. Optional: Ensure the content inside isn't still constrained */
+  .page__content {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  
+/* align breadcrumbs left */
+.page__inner-wrap .breadcrumbs ol {
+  
+
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  list-style: none !important;
+  width: 100% !important;
+}
+
+
+}
+.breadcrumbs {
+     padding-inline: 0;
+}

@@ -3,7 +3,6 @@ title: Databases with Python
 layout: single
 toc: true
 toc_sticky: true
-permalink: python/databases/
 sidebar:
   nav: "python_sidebar"
 ---

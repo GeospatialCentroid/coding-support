@@ -3,7 +3,6 @@ title: Python Syntax Basics
 layout: single
 sidebar:
   nav: "python_sidebar"
-permalink: python/basics/
 toc: true
 toc_sticky: true
 ---
