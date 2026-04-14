@@ -14,8 +14,8 @@ python_sidebar:
     children:
     - title: "Installing Python"
       url: python/installing/
-    - title: "Basics"
-      url: python/basics/
+    - title: "Fundamentals"
+      url: python/fundamentals/
     - title: "Choosing an Editor"
       url: python/choosing-an-editor/
     - title: "Virtual Environment"

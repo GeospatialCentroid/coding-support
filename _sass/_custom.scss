@@ -628,3 +628,7 @@ label {
 .breadcrumbs {
      padding-inline: 0;
 }
+
+table tr:nth-child(even) {
+  background-color: #fbfafa; /* A very light grey */
+}
