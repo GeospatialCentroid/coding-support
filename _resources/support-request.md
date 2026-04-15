@@ -8,7 +8,7 @@ toc_sticky: true
 
 We offer coding and data support across a range of tools and workflows. Before submitting a request, please review our [Coding Support Policy]({{ site.baseurl }}/support-policy/) to understand expectations and ensure we can best assist you.
 
-To get started, complete the form below with details about your request. Once submitted, a member of our team will follow up to schedule a 15-minute consultation via Microsoft Teams. Please ensure your calendar is up to date, or include your availability so we can coordinate a convenient time.
+To get started, complete the form below with details about your request. Once submitted, a member of our team will follow up to schedule a 15-minute consultation via Microsoft Teams. Please ensure your calendar is up to date, or include your availability so we can coordinate a convenient meeting time.
 
 ---
 

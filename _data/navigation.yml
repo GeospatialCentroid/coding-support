@@ -7,6 +7,14 @@ main:
   - title: Mailing List
     url: https://lists.colostate.edu/cgi-bin/mailman/listinfo/coding-support
 
+r_sidebar:
+  - title: "R"
+    url: r
+  - children:
+    - title: "Installing R"
+      url: r/installing/
+    - title: "Fundamentals"
+      url: r/fundamentals/
 
 python_sidebar:
   - title: "Python"
