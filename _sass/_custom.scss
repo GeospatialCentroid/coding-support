@@ -84,7 +84,7 @@ p, li, label {
 .masthead {
   background-color: var(--csu-green) !important;
   border-bottom: 4px solid var(--csu-gold);
-  padding: 1rem 0;
+
 }
 
 .masthead__inner-logo {
@@ -95,7 +95,7 @@ p, li, label {
 
 .site-title, .site-title:visited {
   color: var(--csu-white) !important;
-  font-weight: 700;
+  font-weight: 200;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: 10px;
@@ -105,7 +105,9 @@ p, li, label {
 .greedy-nav {
   background-color: transparent;
 }
-
+.greedy-nav a.site-logo{
+  margin-inline-end: 1.2rem !important;
+}
 
 .greedy-nav a:hover {
   color: var(--csu-gold) !important;
@@ -115,7 +117,7 @@ p, li, label {
 
     color: var(--csu-white);
     text-decoration: none;
-    font-weight: bold;
+    
 }
 
 
@@ -257,6 +259,36 @@ input:focus, textarea:focus {
   max-height: 5rem;
 }
 
+.masthead__inner-wrap {
+    clear: both;
+    margin-inline: auto;
+    padding: .1em !important;
+  }
+
+.site-logo {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  /* Reduce this value to bring the line closer */
+  padding-right: 8px;  /* Was 20px */
+  /* This controls the gap between the line and the "CODING SUPPORT HUB" text */
+  margin-right: 12px; 
+}
+
+.site-logo::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 25%;
+  height: 50%;
+  width: 2px;
+  background-color: #fff;
+}
+
+.site-title {
+  display: inline-block;
+  vertical-align: middle;
+}
 /* Mobile Size (Adjusts for screens smaller than 600px) */
 @media (max-width: 600px) {
  .site-header {
@@ -270,7 +302,7 @@ input:focus, textarea:focus {
 .masthead__inner-wrap {
     clear: both;
     margin-inline: auto;
-    padding: .1em;
+    padding: .1em !important;
   }
 .site-title {
   float: none;      /* Removes the default left float */
