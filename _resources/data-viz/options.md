@@ -23,8 +23,9 @@ Choosing the correct visualization depends on the number of variables and catego
 - Box Plot
 
 ### Example Bar Chart
-
-<canvas id="barChart" width="400" height="250" class="chart"></canvas>
+<div style="position: relative; width: 100%; max-width: 600px; margin-left: 0; margin-right: auto; aspect-ratio: 16 / 9;">
+  <canvas id="barChart"></canvas>
+</div>
 
 <script>
 (function() {
@@ -40,26 +41,17 @@ Choosing the correct visualization depends on the number of variables and catego
       }]
     },
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
       plugins: {
+        legend: { display: false }, // Saves horizontal space
         title: {
           display: true,
           text: 'Distribution of Values'
         }
       },
-      scales: {
-        x: {
-          title: {
-            display: true,
-            text: 'Value'
-          }
-        },
-        y: {
-          beginAtZero: true,
-          title: {
-            display: true,
-            text: 'Frequency'
-          }
-        }
+      layout: {
+        padding: 0 // Prevents internal Chart.js offsets
       }
     }
   });
@@ -74,7 +66,9 @@ Choosing the correct visualization depends on the number of variables and catego
 
 ### Example Scatter Plot
 
-<canvas id="scatterChart" width="400" height="250" class="chart"></canvas>
+<div style="position: relative; width: 100%; max-width: 600px; height: 350px; margin-left: 0; margin-right: auto; display: block; clear: both;">
+  <canvas id="scatterChart"></canvas>
+</div>
 
 <script>
 (function() {
@@ -90,14 +84,24 @@ Choosing the correct visualization depends on the number of variables and catego
           {x:20, y:30},
           {x:30, y:25},
           {x:40, y:35}
-        ]
+        ],
+        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
       }]
     },
     options: {
+      responsive: true,
+      maintainAspectRatio: false, // Prevents infinite expansion
+      resizeDelay: 50,             // Stabilizes the chart during page load
       plugins: {
         title: {
           display: true,
           text: 'Relationship Between X and Y'
+        },
+        legend: {
+          display: true,
+          position: 'top'
         }
       },
       scales: {
@@ -110,6 +114,7 @@ Choosing the correct visualization depends on the number of variables and catego
           }
         },
         y: {
+          beginAtZero: true,
           title: {
             display: true,
             text: 'Y Value'
@@ -129,8 +134,9 @@ Choosing the correct visualization depends on the number of variables and catego
 - Small multiples
 
 ### Example Bubble Chart
-
-<canvas id="bubbleChart" width="400" height="300" class="chart"></canvas>
+<div style="position: relative; width: 100%; max-width: 600px; height: 350px; margin-left: 0; margin-right: auto; display: block; clear: both;">
+  <canvas id="bubbleChart"></canvas>
+</div>
 
 <script>
 (function() {
@@ -146,10 +152,16 @@ Choosing the correct visualization depends on the number of variables and catego
           {x:20, y:30, r:15},
           {x:30, y:25, r:8},
           {x:40, y:35, r:12}
-        ]
+        ],
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        clip: false // Prevents bubbles near the axes from being cropped
       }]
     },
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      resizeDelay: 50,
       plugins: {
         title: {
           display: true,
@@ -161,13 +173,15 @@ Choosing the correct visualization depends on the number of variables and catego
           title: {
             display: true,
             text: 'X Variable'
-          }
+          },
+          beginAtZero: true
         },
         y: {
           title: {
             display: true,
             text: 'Y Variable'
-          }
+          },
+          beginAtZero: true
         }
       }
     }
