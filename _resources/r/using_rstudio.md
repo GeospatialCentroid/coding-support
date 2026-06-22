@@ -8,7 +8,7 @@ toc_sticky: true
 ---
 
 While base r provides the tools necessary to analyze complex datasets and perform
-most necessary functions. Utiliizing R can be far easier through the use of RStudio.
+most necessary functions. Utilizing R can be far easier through the use of RStudio.
 
 This guide goes through the basics of the RStudio software. 
 
@@ -31,7 +31,7 @@ making it especialy suitable for beginner and intermediate coders.
 
 ## Downloading RStudio
 
-You can Download RStudio for Windows,MacOS, and other soft wares using the installer
+You can Download RStudio for Windows,MacOS, and other softwares using the installer
 
 [Visit The Downloading Site](https://docs.posit.co/ide/user/#rstudio-ide-oss-downloads)
 
@@ -39,15 +39,20 @@ You can Download RStudio for Windows,MacOS, and other soft wares using the insta
 
 ## Navigating the RStudio Environment 
 
-There are 4 sections of the environment that we will cover in this guide 
+There are 4 sections of the RStudio IDE that we will cover in this guide 
+
 1. Console
+
 2. Source 
+
 3. Environment 
+
 4. Output
+
 
 ### The Console 
 
-![Console Image](Images/Console.png)
+![The RStudio Console ](Images/Console.png)
 
 -------------------------------------------------------------------------------
 
@@ -68,8 +73,10 @@ The + symbol tells you your command is incomplete
 
 The up arrow and down arrow will allow you to move through previously ran commands 
 
+The console is also home to our terminal. The terminal operates as a **shell** that allows
+us to interact with our computer file system. 
 
-The console is especially useful when executing commands to make new folders, change working directories and 
+The terminal is especially useful when executing commands to make new folders, change working directories and 
 connecting with github services. 
 
 ```r
@@ -77,6 +84,9 @@ mkdir ("New_Folder")
 
 cd ("path/to/your/desired/folder.rmd")
 ```
+
+--------------------------------------------------------------------------------
+
 
 ### The Environment 
 ![RStudio Environment](Images/Environment.png)
@@ -86,22 +96,28 @@ cd ("path/to/your/desired/folder.rmd")
 
 The Environment column located at the top right is where all of our objects
 memory will be stored 
-Reading in files, variables, databases, and more will also be stored here for us to access
+
+This is where any files we read, any variables we assign, and any databases we work with will be stored
+
 
 ```r
-Stored <- "This variable will be stored in our environment"
+Stored_String <- "This variable will be stored in our environment"
 
-read_csv(../This/will/store/in/our/environment)
+read_csv("/This/will/store/in/our/environment.csv"")
 ```
 
 When we store lists, vectors, matrices, and dataframes in our environment, it will 
-provide us information on the amount of rows, columns, and objects in the dataframe 
+provide us information on the amount of rows, columns, and objects in the dataframe.
+The environment also allows us to interact with our stored data and view it in a tab.
 
-The history tab next to our environment tab will be where all of our previously ran 
+The history tab next to our environment tab is where all of our previously ran 
 code will be stored 
 
+--------------------------------------------------------------------------------
+
 ### The Code Editor 
-![Code Editor](Images/Code_Editor.png)
+
+![The Code Editor](Images/Code_Editor.png)
 
 --------------------------------------------------------------------------------
 
@@ -110,7 +126,7 @@ The top left window of our IDE is where our code editing platform is located. Fo
 systems such as Windows and Linux. you may need to press CTRL + Shift + N to open this 
 window. 
 
-The Code Editor window is where you will be writing the majority of your code due to the services it provdes 
+The Code Editor window is where you will be writing the majority of your code due to the services it provides 
 
 - **Syntax Highlighting** 
   
@@ -119,12 +135,13 @@ The Code Editor window is where you will be writing the majority of your code du
   
 - **Multiple Files**
   
-  In the Code editor, you can have multiple files open at a time, allowing you to move between them and interact with
-  the global environment in all files.
+  In the Code editor, you can have multiple files open at a time, allowing you to move between them and interact your
+  global environment.
   
 - **Line Numbers**
 
   The Code Editor has a count of line numbers on the left side, helping you to keep track of where you are.
+  you can also view how many characters are in a line for any memory management limitations that are in place
   
 - **Code Folding** 
 
@@ -135,7 +152,7 @@ The Code Editor window is where you will be writing the majority of your code du
   
 ### Outputs 
 
-![Output Window](Images/Output.png)
+![The Output Window](Images/Output.png)
 
 --------------------------------------------------------------------------------
 
@@ -146,7 +163,7 @@ it contains tools to navigate your system directory and manage your coding outpu
 - **Files**
 
   The Files folder is where your computer system directory is. You can create new files, and open new files. 
-  You can also navigate to different subdirectories in this area and create new subdirectories.
+  You can also navigate to different sub-directories in this area and create new sub-directories.
   
 - **Plots**
 

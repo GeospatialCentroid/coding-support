@@ -10,9 +10,9 @@ toc_sticky: true
 ## Working With Data using R 
 
 One of R's most powerful attributes is it's ability to work with data. From 
-cleaning all the way through analysis, R has a diversity of libraries and tools
-to work with any datasets and to meet any goals. This guide will focus on 
-how to move data into R and the basics on accessing data in a dataset 
+cleaning through analysis, R has a diversity of libraries and tools
+to work with any data sets and to meet any goals. This guide will focus on 
+how to move data into R and the basics on accessing data in a data set 
 
 -------------------------------------------------------------------------------
 
@@ -22,8 +22,8 @@ how to move data into R and the basics on accessing data in a dataset
 
 |File Abbreviation| File Name| 
 |-----------------------|-----------------|
-|CSV|Comma-Seperated Values|
-|TSV| Tab-Seperated Values|
+|CSV|Comma-Separated Values|
+|TSV| Tab-Separated Values|
 |XLS|Excel Spreadsheet (old)|
 |XLSX|Excel Spreadsheet (New)|
 |gsheet|Google Sheet File|
@@ -33,7 +33,7 @@ how to move data into R and the basics on accessing data in a dataset
 ### Base R Data Reading
 
 R provides commands to read in data files without the use of packages. However,
-for broader goals, base R can be limiting.
+for more complex projects, base R can be limiting.
 
 ```r
 
@@ -45,8 +45,11 @@ R can also read in files from a URL
 ```r
 
 read.csv(url(enter your url link here.csv))
-### Installing Packages
+
 ```
+
+### Installing Packages
+
 Installing packages can widen the scope of your data reading capabilities. There
 are a broad array of packages that exist online that can meet certain goals 
 
@@ -58,20 +61,23 @@ are a broad array of packages that exist online that can meet certain goals
 
 Installing the Tidyverse package will be suitable for most file reading needs.
 
+--------------------------------------------------------------------------------
+
 ## File Reading Procedures 
 
 ### Setting up your file directory
 
-Make sure that your current working directory is set to your home director 
+Make sure that your current working directory is set to your home directory 
 
 ```r
+
 > cd ~
 
 #This will take you to the home directory in the console
 ```
 
-Download your data files to your computer, make sure that you know where in
-your computer you are saving them to so that you can pull their path later
+**Download your data files to your computer**. Make sure that you know where
+your storing them in your computer so you can pull them later with ease. 
 
 ### Installing your package of choice 
 
@@ -84,6 +90,10 @@ install.packages("tidyverse")
 We know tidyverse has been installed when we run it and are given a long series 
 of code; this is our computer downloading all the packages and programs that
 tidyverse offers.
+
+
+![tidyverse exmaple code](Images/tidyverse.png)
+
 
 Next, we will pull our package from our library 
 
@@ -98,7 +108,7 @@ This will allow us to use the commands offered by tidyverse
 For Tidyverse, we can read in a multitude of files like so 
 
 ```r
-read_csv(This/is/the/path/to/your/file/file_name.tsv)
+read_csv(This/is/the/path/to/your/file/file_name.csv)
 ```
 
 you will know the file has been successfully downloaded when it appears in your 
@@ -106,14 +116,14 @@ environment in the top right panel
 
 -------------------------------------------------------------------------------
 
-## Navigating your Dataset
+## Navigating your Data set
 
 This guide will provide you the baseline tools for accessing rows, columns, and
-elements in your dataset
+elements in your data set
 
 ### Accessing Columns 
 
-We can access columns in a dataset by using the $ command as well as our [] syntax
+We can access columns in a data set by using the $ command as well as our [] syntax
 
 This code will allow us to return a column as a vector 
 
@@ -123,7 +133,7 @@ desired_column <- dataframe$column
 
 ```
 
-This code will allow us to return a column as a dataframe
+This code will allow us to return a column as a dataframe variable
 
 ```r
 
@@ -163,7 +173,7 @@ Filtered <- Dataframe(Dataframe$column = "Certain Value")
 Another important aspect of data management is accessing the elements within 
 specific rows and columns
 
-We can access specific elements in matrices, vectors, lists, and dataframes 
+We can access specific elements in matrices, vectors, lists, and data frames 
 
 **Vectors**
 
@@ -182,7 +192,7 @@ pulled_value <- vector[1]
 
 multilpe_values <- vector[c(1,5)]
 
-10,1000
+10 , 1000
 
 ```
 
@@ -196,59 +206,78 @@ example_matrix <- matrix(1:25, nrow = 5, ncol = 5) # this is a 5 by 5 matrix
 
 # This is how we want to pull a specific row from the matrix 
 
-row_matrix <- example_matrix(2, ) #This will print all the values of row 2
+row_matrix <- example_matrix(2, ) 
 
-# We can also pull specific row and column values
+``` 
+This will print all the values of row 2
 
-Specific_matric <- example_matrix(2,4) # 2nd row, 4th column
 
-# We can access values in specific rows and columns in entirety 
+`[6,7,8,9,10]`
+
+We can also pull specific row and column values
+
+```
+Specific_matrix <- example_matrix(2,4) # 2nd row, 4th column
+
+[9]
+
+```
+
+We can access values in specific rows and columns in entirety 
+
+```
 
 Specific_Rows_and_Columns <- example_matrix[c(1,2),C(4,5)]
 
-#We can also modify values 
+```
+We can also modify values 
 
+```
 example_matrix[1,1] <- 100
 
 ```
 
+
 **Lists**
 
-```r
-#Example List Creation 
 
+Let's look at how we can modify the elements within a list 
+
+```
 example_list <- list(
 age <- c(1,5,13,18)
 name <- c("Julie","Richard","Will","Grant")
 Status <- c("Baby","Toddler","Teenager"."Adult")
 )
+``` 
+If we want to only know the age column we can do an operation such as this 
 
-#If we want to only know the age column we can do an operation such as this 
 
-example_list[[1]] 
+`example_list[[1]]`
 
-#If we want to know the age and their status we can expand on our operation 
+If we want to know the age and their status we can expand on our operation 
 
-example_list[[1]][3]
+`example_list[[1]][3]`
 
-#Finally, we can access specific elements within our list
+Finally, we can access specific elements within our list
 
-example_list$name[2] #This would return Richard 
+`example_list$name[2] #This would return Richard `
 
-```
+
 
 **Datasets** 
 
 ```r
 #Datasets are similar to lists.
 
-dataset_example <- df(
+data set_example <- df(
 age <- c(1,5,13,18)
 name <- c("Julie","Richard","Will","Grant")
 Status <- c("Baby","Toddler","Teenager"."Adult")
 ))
 
 dataset_element <- dataset_example(2,1) #This code will pull the name from column 1: Julie 
+
 ```
 
 
@@ -266,10 +295,10 @@ We will briefly touch on Dplyr and it's use in R. Dplyr is a package that provid
 a multitude of functions that will make tedious cleaning procedures in base R 
 much quicker and far more effective
 
-### Accesing Dplyr
+### Accessing Dplyr
 
-Accessing Dplyr will require following the same proceudre that was followed earlier 
-for accesing Tidyverse
+Accessing Dplyr will require following the same procedure that was followed earlier 
+for accessing Tidyverse
 
 ```r
 
@@ -285,16 +314,19 @@ library(dplyr)
 Filter allows you to select for only certain values in a column that match a desired 
 value 
 
+ R syntax allows you to use **%>%** (preferred) or **|>** to select a 
+data frame you will be working from. This will go at the end of each line 
+
 ```r
-#More streamlined R syntax allows you to use %>% (preferred) or |> to select a 
-dataframe you will be working from. This will go at the end of each line 
 
 Example_dataframe %>%
 filter(column name == "certain value")
 
+```
+
 #This filter will provide only certain values from one column
 #other comparative operators can be used with this command such as >, <, >=, and <= 
-```
+
 
 **Select**
 
@@ -302,7 +334,7 @@ Select is a streamlined command that allows you to select certain columns from y
 
 ```r
 
-Dataframe |>
+Selected_DF <- Dataframe |>
 select("This Column", "This other column", "Ooh maybe this one!")
 
 ```
@@ -315,11 +347,10 @@ those changes applied
 
 ```r
 
-Dataframe %>%
+Mutated_DF <- Dataframe %>%
 mutate(
-new_column <- existing_column * 2 
+new_column <- existing_column * 2 %>%
 # we can also mutate a singular column
-
 existing_column <- existing_column * 2 
 )
 ```
@@ -368,6 +399,17 @@ Dataset_1 <- raw_data(1:2, 1:2) |> #This line of code alone completes our first 
 Dataset_2 <- raw_data(raw_data$age_column > 20)
              
 ```
+### Best Practices 
+
+
+- **Use Clear Naming Conventions** when you are naming datatypes
+
+- **Never Change the raw Data**, it's best to create a clean data copy of your raw
+data that you have manipulated 
+
+- **Document your work** so that you can come back to it later and understand 
+what you have changed
+
 
 ### Summary 
 
