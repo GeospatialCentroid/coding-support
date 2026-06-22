@@ -47,7 +47,10 @@ There are 4 sections of the environment that we will cover in this guide
 
 ### The Console 
 
-![Console Image](r/Images/Console.png)
+![Console Image](Images/Console.png)
+
+-------------------------------------------------------------------------------
+
 
 The console is where 1 line code is written to run single commands
 
@@ -76,7 +79,10 @@ cd ("path/to/your/desired/folder.rmd")
 ```
 
 ### The Environment 
-![RStudio Environment](......./r/Images/Environment.png)
+![RStudio Environment](Images/Environment.png)
+
+-------------------------------------------------------------------------------
+
 
 The Environment column located at the top right is where all of our objects
 memory will be stored 
@@ -95,7 +101,10 @@ The history tab next to our environment tab will be where all of our previously 
 code will be stored 
 
 ### The Code Editor 
-![Code Editor](......./r/Images/Code_Editor.png)
+![Code Editor](Images/Code_Editor.png)
+
+--------------------------------------------------------------------------------
+
 
 The top left window of our IDE is where our code editing platform is located. For some operating 
 systems such as Windows and Linux. you may need to press CTRL + Shift + N to open this 
@@ -126,10 +135,13 @@ The Code Editor window is where you will be writing the majority of your code du
   
 ### Outputs 
 
-![Output Window](......./r/Images/Output.png)
+![Output Window](Images/Output.png)
 
-This window located at the bottom right of our IDE 
-contains tools to navigate your system directory and manage your coding outputs.
+--------------------------------------------------------------------------------
+
+
+This window located at the bottom right of our IDE.
+it contains tools to navigate your system directory and manage your coding outputs.
 
 - **Files**
 
