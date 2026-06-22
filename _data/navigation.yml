@@ -15,6 +15,10 @@ r_sidebar:
       url: r/installing/
     - title: "Fundamentals"
       url: r/fundamentals/
+    - title: "Using RStudio"
+      url: r/using_rstudio/
+    - title: "Working With Data"
+      url: r/working_with_data/
 
 python_sidebar:
   - title: "Python"
