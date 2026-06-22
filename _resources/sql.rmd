@@ -1,0 +1,27 @@
+---
+layout: single
+sidebar:
+  nav: sqlr_sidebar
+title: "SQL"
+toc: true
+toc_sticky: true
+---
+
+## What is SQL?
+
+SQL is a coding language that actively interacts with databases. This coding 
+langauge gives you options to create and modify databses to meet you or
+your organizations needs. 
+
+### Why Learn SQL?
+
+Learning SQL can give you the opportunity to familiarize yourself with broad 
+logical data skills, creating data cleaning and analysis workflows, and 
+experience working with databses that will prove to be valauble in a wide array of 
+careers. 
+
+SQL is also a concise and efficient language that makes it easy to work with 
+a wide array of data sets all in one database. 
+
+### Resources
+

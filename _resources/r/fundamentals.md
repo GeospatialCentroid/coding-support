@@ -2,7 +2,7 @@
 layout: single
 sidebar:
   nav: r_sidebar
-title: R Fundamentals
+title: "R Fundamentals"
 toc: true
 toc_sticky: true
 ---
@@ -41,7 +41,7 @@ R
 ```
 
 You can also use **RStudio**, a popular integrated development
-environment (IDE) for working with R.
+environment (IDE) for working with R. We will talk more about this later. 
 
 ------------------------------------------------------------------------
 
@@ -67,17 +67,30 @@ Starts with `#`
 print("This code will execute!")
 ```
 
-------------------------------------------------------------------------
-
-## Variables
-
-Variables store values and are assigned using `<-` (recommended) or `=`.
+### Variables 
+Variables store value and are assigned using <- (recommended) or =. 
 
 ``` r
 name <- "Alice"
 age <- 30
 height <- 5.6
 ```
+### Variable Naming Rules 
+
+Don't include special characters in your variable assignments 
+ 
+``` r
+don't_do_this! <- "please"
+```
+
+Don't start variable assignments with numbers.  
+ 
+
+``` r
+3_favorite_things <- ('movies, candy, family')
+```
+
+We want our variable names to start with characters. 
 
 ------------------------------------------------------------------------
 
@@ -94,6 +107,7 @@ message <- "Hello"
 ``` r
 count <- 10
 temperature <- 98.6
+print(temperature)
 ```
 
 ### Logical (Boolean)
@@ -113,6 +127,18 @@ print("Hello World")
 
 name <- "Alice"
 print(paste("Hello", name))
+
+#This will return: Hello, Alice
+
+number <- 22
+print(number)
+
+#This will return: 22
+
+test <- TRUE
+print(test == TRUE)
+
+#This will return: TRUE
 ```
 
 ------------------------------------------------------------------------
@@ -184,13 +210,42 @@ x != y
 
 Conditional statements control program flow.
 
+### if statements
+
 ``` r
 age <- 18
 if (age >= 18) {
   print("You are an adult")
 }
-```
 
+```
+### if else statements
+
+These statements will provide an if statement line as well as an alternative 
+line if our conditional statement is false. 
+
+```r
+age <- 18
+ if (age >= 18) {
+   print("You are an adult")
+} else {
+   print("you are not an adult")
+ }
+```
+### else if statments 
+
+These statements will allow for multiple different conditional statements 
+```r
+age <- 18
+ if (age >= 18) {
+   print("You are an adult")
+} else if (13 < age < 18) {
+print("You are a teenager")
+}
+else {
+   print("you are a child")
+ }
+```
 ------------------------------------------------------------------------
 
 ## Loops
@@ -259,9 +314,25 @@ greet("Alice")
 
 ## Installing and Loading Packages
 
+Packages are a series of commands and programs that are made outside of basic R,
+commonly be developers and others that allow us to perform functions beyond
+the capabilities of basic r
+
 ``` r
 install.packages("ggplot2")
 library(ggplot2)
+```
+### Package and function information
+
+The help command is one of the most powerful tools in R. Running this command 
+will allow you to view all information about base R commands as well as commands
+that are stored within libraries
+
+```r
+help(print)
+
+#This command will return a full resoruce page of how to use the print command 
+#As well as examples 
 ```
 
 ------------------------------------------------------------------------
@@ -278,7 +349,7 @@ if (nchar(name) > 0) {
 }
 ```
 
-Run from command line:
+Run from command line, or press CTRL + Enter to run your script:
 
 ``` bash
 Rscript hello.R
