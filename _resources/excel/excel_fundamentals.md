@@ -125,30 +125,43 @@ The small green box in the bottom of the cell your working in allows you to also
 a value from one cell to a undetermined amount of cells within the same row or column. 
 This tool also is also able to automate tedious processes with functions. 
 
-![Image of Green Box Before]("......../excel/Images/Before_Green_Box_copy.png")
+--------------------------------------------------------------------------------
 
+![Image of Green Box Before](images/Before_Green_Box_copy.png)
+
+--------------------------------------------------------------------------------
 
 Before we used our copy feature
 
+--------------------------------------------------------------------------------
 
-![Image of Green Box After]("./excel/Images/After_Green_Box_Copy.png")
+![Image of Green Box After](images/After_Green_Box_Copy.png)
 
+--------------------------------------------------------------------------------
 
 This is our result! See how it effectively transferred our cell value
 
 
 ### Pattern Recognition Between Cells 
 
-Excel has the unique ability to **Recognize Patterns** between cells and begin to automte processes 
+Excel has the unique ability to **Recognize Patterns** between cells and begin to automate processes 
 
 This is done when you provide at least 2 data points in adjacent cells as a reference
 
-![Image of green box]("......../excel/Images/Before_Green_Box_Translate.png")
+--------------------------------------------------------------------------------
+
+![Image of green box](images/Before_Green_Box_Translate.png)
+
+--------------------------------------------------------------------------------
 
 When we highlight these two cells and drag down with the green box, we see that it will begin to fill in the pattern
 it has recognized. 
 
-![Image of green box outcome]("......../excel/Images/After_Green_Box_Translate.png")
+-------------------------------------------------------------------------------
+
+![Image of green box outcome](images/After_Green_Box_Translate.png)
+
+--------------------------------------------------------------------------------
 
 ### Add and Remove content
 
@@ -201,8 +214,13 @@ data.
   Custom sort is a powerful tool when working with spreadsheeets that allows you 
   to organize it by the value within multipe different columns. 
   
-  ![Custom Sort Example](......./excel/Images/Custom_Sort_Example.png)
-  
+--------------------------------------------------------------------------------
+
+  ![Custom Sort Example](images/Custom_Sort_Example.png)
+
+--------------------------------------------------------------------------------
+
+
 -**Pivot Tables**
 
   Pivot tables are an effective way to organize large spreadsheets to select for 
@@ -235,7 +253,9 @@ While there are many ways to visualize data, these are some common ones.
 |Histogram| Showing the distribution of values in a spreadsheet|
 |Conditional Formatting| Highlighting cell values across large gradients|
 
+
 ### Analyzing Data 
+
 
 For analyzing data, there are various tools and functions that can make tedious 
 or repetitive tasks automated. 
