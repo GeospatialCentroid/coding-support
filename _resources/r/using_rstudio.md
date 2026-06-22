@@ -47,7 +47,7 @@ There are 4 sections of the environment that we will cover in this guide
 
 ### The Console 
 
-![Console Image]("......../r/Images/Console.png")
+![Console Image]("/Images/Console.png")
 
 The console is where 1 line code is written to run single commands
 
