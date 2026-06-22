@@ -52,9 +52,7 @@ There are 4 sections of the RStudio IDE that we will cover in this guide
 
 ### The Console 
 
-![The RStudio Console ](Images/Console.png)
 
--------------------------------------------------------------------------------
 
 
 The console is where 1 line code is written to run single commands
@@ -82,16 +80,15 @@ connecting with github services.
 ```r
 mkdir ("New_Folder")
 
-cd ("path/to/your/desired/folder.rmd")
+cd ("path/to/your/desired/folder")
 ```
 
 --------------------------------------------------------------------------------
 
 
 ### The Environment 
-![RStudio Environment](Images/Environment.png)
 
--------------------------------------------------------------------------------
+
 
 
 The Environment column located at the top right is where all of our objects
@@ -117,9 +114,6 @@ code will be stored
 
 ### The Code Editor 
 
-![The Code Editor](Images/Code_Editor.png)
-
---------------------------------------------------------------------------------
 
 
 The top left window of our IDE is where our code editing platform is located. For some operating 
@@ -152,9 +146,6 @@ The Code Editor window is where you will be writing the majority of your code du
   
 ### Outputs 
 
-![The Output Window](Images/Output.png)
-
---------------------------------------------------------------------------------
 
 
 This window located at the bottom right of our IDE.

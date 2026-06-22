@@ -91,10 +91,6 @@ We know tidyverse has been installed when we run it and are given a long series
 of code; this is our computer downloading all the packages and programs that
 tidyverse offers.
 
-
-![tidyverse exmaple code](Images/tidyverse.png)
-
-
 Next, we will pull our package from our library 
 
 ```r
