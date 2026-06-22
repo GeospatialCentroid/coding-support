@@ -127,7 +127,7 @@ This tool also is also able to automate tedious processes with functions.
 
 --------------------------------------------------------------------------------
 
-![Image of Green Box Before](images/Before_Green_Box_copy.png)
+![Image of Green Box Before](images/Before_Green_Box_Copy.png)
 
 --------------------------------------------------------------------------------
 
