@@ -8,8 +8,8 @@ toc_sticky: true
 ---
 
 VBA code is a powerful tool in excel that allows you to automate full formula and function
-based processes, as well as maniuplate your spreadsheets to collaborate with online 
-services and other softwares. 
+based processes, as well as manipulate your spreadsheets to collaborate with online 
+services and other software. 
 
 --------------------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ Before we use VBA Coding in Excel, lets go over some of the fundamentals.
 ### Syntax
 
 Generally, VBA code is *Case Insensitive*. This means that commands with capitals or 
-no capitals generall won't cause problems. 
+no capitals won/'/t cause any problems  
 
 *Printing* commands in VBA code require calling the console 
 

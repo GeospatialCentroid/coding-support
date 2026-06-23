@@ -391,25 +391,30 @@ grade <- c(4,N/A,11,8,N/A,N/A)
 )
 
 #First we will declare our first dataset
-Dataset_1 <- raw_data(1:2, 1:2) |> #This line of code alone completes our first goal! 
+Dataset_1 <- raw_data(1:2, 1:2) |> 
 Dataset_2 <- raw_data(raw_data$age_column > 20)
              
 ```
+
+With only 2 lines of code, we organize our data in substantail ways 
+
 ### Best Practices 
 
 
 - **Use Clear Naming Conventions** when you are naming datatypes
 
-- **Never Change the raw Data**, it's best to create a clean data copy of your raw
+- **Never Change the Raw Data**, it's best to create a clean data copy of your raw
 data that you have manipulated 
 
-- **Document your work** so that you can come back to it later and understand 
+- **Document Your work** so that you can come back to it later and understand 
 what you have changed
 
 
 ### Summary 
 
 This guide goes over the basics of accessing data files and beginning to learn 
-to navigate them. We recommend accessing the resources in the resource hub to 
+to navigate them.
+
+We recommend accessing the resources in the resource hub to 
 learn more about using R to prepare you for future classwork and jobs that will 
 require it! 
