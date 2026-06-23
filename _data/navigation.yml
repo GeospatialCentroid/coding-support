@@ -68,3 +68,12 @@ data-viz_sidebar:
     url: data-viz/options/
   - title: "Using Excel for Data Visualization"
     url: data-viz/excel/
+    
+excel_sidebar:
+- title: "Excel"
+  url: excel
+  children:
+  - title: "Getting started in Excel"
+  - url: excel/excel_fundamentals/
+  - title: "Using VBA Code"
+  - url: excel/using_vba_code/
