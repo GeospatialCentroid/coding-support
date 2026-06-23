@@ -1,8 +1,8 @@
 ---
-title: 'Using VBA Code'
 layout: single
 sidebar:
   nav: "excel_sidebar"
+title: 'Using VBA Code'
 toc: true
 toc_sticky: true
 ---
