@@ -67,7 +67,7 @@ data-viz_sidebar:
   - title: "Choosing the Right Visualization"
     url: data-viz/options/
   - title: "Using Excel for Data Visualization"
-    url: data-viz/excel/
+    url: data-viz/excel_viz/
     
 excel_sidebar:
 - title: "Excel"

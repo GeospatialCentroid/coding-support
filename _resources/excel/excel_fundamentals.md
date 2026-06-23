@@ -133,19 +133,9 @@ The small green box in the bottom of the cell your working in allows you to also
 a value from one cell to an undetermined amount of cells within the same row or column. 
 This tool also is also able to automate tedious processes with functions. 
 
---------------------------------------------------------------------------------
-
-![Image of Green Box Before](images/Before_Green_Box_Copy.png)
-
---------------------------------------------------------------------------------
 
 Before we used our copy feature.
 
---------------------------------------------------------------------------------
-
-![Image of Green Box After](images/After_Green_Box_Copy.png)
-
---------------------------------------------------------------------------------
 
 This is our result! See how it effectively transferred our cell value.
 
@@ -156,32 +146,15 @@ Excel has the unique ability to **Recognize Patterns** between cells and  automa
 
 This is done when you provide at least 2 data points in adjacent cells as a reference.
 
---------------------------------------------------------------------------------
-
-![Image of green box](images/Before_Green_Box_Translate.png)
-
---------------------------------------------------------------------------------
-
 
 When we highlight these two cells and drag down with the green box, we see that it will begin to fill in the pattern
 it has recognized. 
 
 
--------------------------------------------------------------------------------
-
-![Image of green box outcome](images/After_Green_Box_Translate.png)
-
---------------------------------------------------------------------------------
-
 ### Add and Remove content
 
 You can add or remove columns with the + - symbols when you near the edge of a cell. 
 
---------------------------------------------------------------------------------
-
-![Plus Image](images/plus_image.png)
-
---------------------------------------------------------------------------------
 
 You can also do so by **right clicking on a column or row**, which will give you the option to remove or add
 a row/column.
@@ -233,12 +206,6 @@ data.
   Custom sort is a powerful tool when working with spreadsheets that allows you 
   to **organize** it by the values within **multiple different columns**. 
   
---------------------------------------------------------------------------------
-
-  ![Custom Sort Example](images/Custom_Sort_Example.png)
-
---------------------------------------------------------------------------------
-
 
 - **Pivot Tables**
 
