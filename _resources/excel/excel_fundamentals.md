@@ -2,7 +2,7 @@
 layout: single
 sidebar:
   nav: excel_sidebar
-title: 'Excel Fundamentals'
+title: Excel Fundamentals
 toc: true
 toc_sticky: true
 ---
