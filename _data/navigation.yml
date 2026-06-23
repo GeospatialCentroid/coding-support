@@ -95,3 +95,10 @@ unix_sidebar:
     url: unix/fundamentals/
   - title: "Working With Files"
     url: unix/working_with_files/
+    
+hpc_sidebar:
+- title: "HPC"
+  url: hpc
+  children:
+  - title: "HPC Fundamentals"
+    url: hpc/fundamentals/

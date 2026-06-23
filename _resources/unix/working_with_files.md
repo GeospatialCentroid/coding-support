@@ -13,7 +13,7 @@ Accessing file contents is one of the most beneficial features of unix. On top
 of moving and manipulating files and directories, accessing their contents allows 
 us to deepend the work we do in UNIX 
 
-###Opening & Working With Files
+### Opening & Working With Files
 
 To display and work with files in the terminal, the common commands we will 
 be used are the **cat** and **tac** comamands
@@ -188,13 +188,13 @@ Grep -v "keyword"
 
 --------------------------------------------------------------------------------
 
-##Summary
+## Summary
 
 The terminal shell can be used for a variety of applications related to file management and working with 
 text based data. Understanding the file directory is  extremely importannt in having strong data organization skills
 and clean workflows for large scale projects. 
 
-##Next Steps
+## Next Steps
 
 Learning to apply UNIX to script writing and import code is key when using terminals. Our BASH fundamentals
 guide will go over basic script writing in the terminal. This guide can be accessed [Here]('enter link here')

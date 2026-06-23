@@ -2,14 +2,14 @@
 layout: single
 sidebar:
   nav: hpc_sidebar
-title: "Fundamentals" 
+title: "HPC Fundamentals" 
 toc: true
 toc_sticky: true
 ---
 
 This guide will focus on the basics of accessing an HPC and how they work. 
 
-##Accessing an HPC
+## Accessing an HPC
 
 HPCs can be accessed online such as **CSU's Riviera HPC**. However, in order
 to actually use an institutions HPC you must receive access. For some institutions, this will 
