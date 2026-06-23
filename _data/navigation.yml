@@ -102,3 +102,14 @@ hpc_sidebar:
   children:
   - title: "HPC Fundamentals"
     url: hpc/fundamentals/
+
+ai_sidebar:
+- title: "AI"
+  url: ai
+  children: 
+  - title: "AI Fundamentals"
+    url: ai/fundamentals/
+  - title: "Building an AI"
+    url: ai/building_an_ai/
+  - title: "Using a Machine Learning Model"
+    url: ai/using_a_machine_learning_model

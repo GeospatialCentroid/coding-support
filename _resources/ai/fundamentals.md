@@ -2,7 +2,7 @@
 layout: single
 sidebar:
   nav: ai_sidebar
-title: "Fundamentals" 
+title: "AI Fundamentals" 
 toc: true
 toc_sticky: true
 ---
