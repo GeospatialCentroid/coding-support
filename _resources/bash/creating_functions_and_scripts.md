@@ -2,7 +2,7 @@
 layout: single
 sidebar:
   nav: bash_sidebar
-title: 'Creating Functions and Scripts'
+title: Writing Functions and Scripts
 toc: true
 toc_sticky: true
 ---

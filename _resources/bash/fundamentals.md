@@ -2,7 +2,7 @@
 layout: single
 sidebar:
   nav: bash_sidebar
-title: 'Bash'
+title: Bash Fundamentals
 toc: true
 toc_sticky: true
 ---

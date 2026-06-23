@@ -77,3 +77,12 @@ excel_sidebar:
   - url: excel/excel_fundamentals/
   - title: "Using VBA Code"
   - url: excel/using_vba_code/
+  
+bash_sidebar: 
+- title: "Bash"
+  url: bash
+  children:
+  - title: "Bash Fundamentals"
+  - url: bash/fundamentals/
+  - title: "Writing Functions and Scripts"
+  - url: bash/creating_functions_and_scripts/
