@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Fundamentals"
+title: "JavaScript Fundamentals"
 sidebar:
   nav: "javascript_sidebar"
 toc: true

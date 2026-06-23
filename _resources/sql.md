@@ -1,7 +1,7 @@
 ---
 layout: single
 sidebar:
-  nav: sqlr_sidebar
+  nav: sql_sidebar
 title: "SQL"
 toc: true
 toc_sticky: true

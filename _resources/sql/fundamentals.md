@@ -2,7 +2,7 @@
 layout: single
 sidebar:
   nav: sql_sidebar
-title: "Fundamentals"
+title: "SQL Fundamentals"
 toc: true
 toc_sticky: true
 ---

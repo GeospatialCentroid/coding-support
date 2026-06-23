@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Fundamentals"
+title: "HTML Fundamentals"
 sidebar:
   nav: "html_sidebar"
 toc: true

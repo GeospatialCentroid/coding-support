@@ -2,7 +2,7 @@
 layout: single
 sidebar:
   nav: sql_sidebar
-title: "Working with Tables"
+title: "Working With Tables"
 toc: true
 toc_sticky: true
 ---

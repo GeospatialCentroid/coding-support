@@ -2,7 +2,7 @@
 layout: single
 sidebar:
   nav: c++_sidebar
-title: "Fundamentals" 
+title: "C++ Fundamentals" 
 toc: true
 toc_sticky: true
 ---

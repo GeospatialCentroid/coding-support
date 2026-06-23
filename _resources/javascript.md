@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "HTML"
+title: "JavaScript"
 sidebar:
   nav: "javascript_sidebar"
 toc: true

@@ -2,7 +2,7 @@
 layout: single
 sidebar:
   nav: matlab_sidebar
-title: "Working with Data" 
+title: "Working With Data" 
 toc: true
 toc_sticky: true
 ---

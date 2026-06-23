@@ -113,3 +113,53 @@ ai_sidebar:
     url: ai/building_an_ai/
   - title: "Using a Machine Learning Model"
     url: ai/using_a_machine_learning_model
+    
+html_sidebar:
+- title: "HTML"
+  url: html
+  children:
+  - title: "HTML Fundamentals"
+    url: html/fundamentals/
+  - title: "CSS Fundamentals"
+    url: html/css_fundamentals/
+
+javascript_sidebar:
+- title: "JavaScript"
+  url: javascript
+  children:
+  - title: "JavaScript Fundamentals"
+    url: javascript/fundamentals/
+  - title: "Web Development"
+    url: javascript/web_development
+
+c++_sidebar:
+- title: "C++"
+  url: c++
+  children:
+  - title: "C++ Fundamentals"
+    url: c++/fundamentals/
+  - title: "Managing Data and Files"
+    url: c++/managing_data_and_files/
+    
+matlab_sidebar:
+- title: "Matlab"
+  url: matlab
+  children:
+  - title: "Matlab Fundamentals"
+    url: matlab/fundamentals/
+  - title: "Working With Data"
+    url: matlab/working_with_data/
+    
+sql_sidebar:
+- title: "SQL"
+  url: sql
+  children:
+  - title: "SQL Fundamentals"
+    url: sql/fundamentals/
+  - title: "Working With Tables"
+    url: sql/working_with_tables/
+    
+
+    
+
+  

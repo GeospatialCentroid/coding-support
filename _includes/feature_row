@@ -10,8 +10,8 @@
     <div class="feature__item{% if include.type %}--{{ include.type }}{% endif %}">
         <div class="cards_row"> 
           <div class="archive__item-body">
-            {% if f.title %}
-              <h2 class="archive__item-title">{{ f.title }}</h2>
+            {% if f.url %}
+              <h2><a href="{{ f.url | relative_url }}" class="btn {{ f.btn_class }}">{{ f.btn_label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a></h2>
             {% endif %}
 
             
@@ -38,9 +38,9 @@
               </div>
             {% endif %}
 
-        {% if f.url %}
+    <!---    {% if f.url %}
            <a href="{{ f.url | relative_url }}" class="btn {{ f.btn_class }}">{{ f.btn_label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a>
-          {% endif %}
+          {% endif %} -->
       </div>
     
   {% endfor %}

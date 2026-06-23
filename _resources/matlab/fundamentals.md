@@ -2,7 +2,7 @@
 layout: single
 sidebar:
   nav: matlab_sidebar
-title: "Fundamentals" 
+title: "Matlab Fundamentals" 
 toc: true
 toc_sticky: true
 ---

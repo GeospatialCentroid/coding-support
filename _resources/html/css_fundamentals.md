@@ -2,7 +2,7 @@
 layout: single
 sidebar:
   nav: html_sidebar
-title: "CSS Fundamentasl"
+title: "CSS Fundamentals"
 toc: true
 toc_sticky: true
 ---
