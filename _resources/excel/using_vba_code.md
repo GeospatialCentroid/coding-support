@@ -1,8 +1,8 @@
 ---
+title: 'Using VBA Code'
 layout: single
 sidebar:
   nav: excel_sidebar
-title: 'Using VBA Code'
 toc: true
 toc_sticky: true
 ---
@@ -20,11 +20,11 @@ Before we use VBA Coding in Excel, lets go over some of the fundamentals.
 ### Syntax
 
 Generally, VBA code is *Case Insensitive*. This means that commands with capitals or 
-no capitals won/'/t cause any problems  
+no capitals won't cause any problems  
 
 *Printing* commands in VBA code require calling the console 
 
-```VB
+```r
 Console.WriteLine("Enter your text here")
 ```
 
