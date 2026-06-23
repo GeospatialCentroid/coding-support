@@ -86,3 +86,12 @@ bash_sidebar:
     url: bash/fundamentals/
   - title: "Writing Functions and Scripts"
     url: bash/creating_functions_and_scripts/
+    
+unix_sidebar:
+- title: "Unix"
+  url: unix
+  children:
+  - title: "Unix Fundamentals"
+    url: unix/fundamentals/
+  - title: "Working With Files"
+    url: unix/accesing_file_contents/
