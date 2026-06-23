@@ -54,7 +54,7 @@ There are 4 sections of the RStudio IDE that we will cover in this guide
 
 -------------------------------------------------------------------------------
 
-![Console Image](Console.png)
+![Console Image](coding-support/assets/images/Console.png)
 
 
 The console is where 1 line code is written to run single commands
