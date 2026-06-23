@@ -71,7 +71,7 @@ data-viz_sidebar:
     
 excel_sidebar:
 - title: "Excel"
-  url: excel
+  url: excel/
   children:
   - title: "Excel Fundamentals"
   - url: excel/excel_fundamentals/
@@ -80,7 +80,7 @@ excel_sidebar:
   
 bash_sidebar: 
 - title: "Bash"
-  url: bash
+  url: bash/
   children:
   - title: "Bash Fundamentals"
   - url: bash/fundamentals/
