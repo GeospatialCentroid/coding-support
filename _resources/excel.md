@@ -1,8 +1,8 @@
 ---
 layout: single
 sidebar:
-  nav: excel_sidebar
-title: 'Excel'
+  nav: "excel_sidebar""
+title: Excel
 toc: true
 toc_sticky: true
 ---
