@@ -368,7 +368,7 @@ done
 
 --------------------------------------------------------------------------------
 
-## summary
+## Summary
 
 There are a wide array of functions and tools at your disposal to work with data in bash.
 From printing lines, to controlling the flow of programs, these introductory tools can provide you 
