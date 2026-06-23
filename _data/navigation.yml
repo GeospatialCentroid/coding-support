@@ -71,9 +71,9 @@ data-viz_sidebar:
     
 excel_sidebar:
 - title: "Excel"
-  url: excel/
+  url: excel
   children:
-  - title: "Getting started in Excel"
+  - title: "Excel Fundamentals"
   - url: excel/excel_fundamentals/
   - title: "Using VBA Code"
   - url: excel/using_vba_code/
