@@ -2,7 +2,7 @@
 title: 'Using VBA Code'
 layout: single
 sidebar:
-  nav: excel_sidebar
+  nav: "excel_sidebar"
 toc: true
 toc_sticky: true
 ---

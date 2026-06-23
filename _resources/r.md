@@ -1,8 +1,8 @@
 ---
-title: R
 layout: single
 sidebar:
   nav: "r_sidebar"
+title: R
 toc: true
 toc_sticky: true
 ---
