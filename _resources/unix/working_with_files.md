@@ -2,7 +2,7 @@
 layout: single
 sidebar:
   nav: unix_sidebar
-title: "Working with Files"
+title: "Working With Files"
 toc: true
 toc_sticky: true
 ---

@@ -94,4 +94,4 @@ unix_sidebar:
   - title: "Unix Fundamentals"
     url: unix/fundamentals/
   - title: "Working With Files"
-    url: unix/accesing_file_contents/
+    url: unix/working_with_files/
