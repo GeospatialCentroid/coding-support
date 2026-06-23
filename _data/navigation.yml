@@ -74,15 +74,15 @@ excel_sidebar:
   url: excel/
   children:
   - title: "Excel Fundamentals"
-  - url: excel/excel_fundamentals/
+    url: excel/excel_fundamentals/
   - title: "Using VBA Code"
-  - url: excel/using_vba_code/
+    url: excel/using_vba_code/
   
 bash_sidebar: 
 - title: "Bash"
-  url: bash/
+  url: bash
   children:
   - title: "Bash Fundamentals"
-  - url: bash/fundamentals/
+    url: bash/fundamentals/
   - title: "Writing Functions and Scripts"
-  - url: bash/creating_functions_and_scripts/
+    url: bash/creating_functions_and_scripts/
