@@ -8,7 +8,9 @@ toc_sticky: true
 ---
 
 
-VBA code is a powerful tool in excel that allows you to **Automate Complex Multi-Step taks**. You can also use VBA code to manipulate your spreadsheets to collaborate with online services and other software. 
+VBA code is a powerful tool in excel that allows you to **Automate Complex Multi-Step taks**. 
+
+You can use it to manipulate your spreadsheets to collaborate with online services and other software. 
 
 --------------------------------------------------------------------------------
 
@@ -203,7 +205,9 @@ Debug.print y
 
 Conditional Statements allow us to control the flow of our program and remove errors before they can get in the way. We will look at **If Statments** and **Cases**
 
-When we use **If Statements**, we will commonly have a **variable**, and a **condition**. If our variable meets this condition, one command will execute. If not, 
+When we use **If Statements**, we will commonly have a **variable**, and a **condition**. If our variable meets this condition, one command will execute. 
+
+If not, 
 another command will execute. Here is an example.  
 
 
@@ -305,7 +309,9 @@ End Sub
 
 ' for the first 8 iterations, the program will print our first command, then. Because we add 1 year of age after every loop. At the 9th our age will equal 23 and our else command will execute'
 ```
-When using While loops, be careful to set an incrementing condition for your variable which can be done with the += or the ++ symbols. If we don't, then our loop will never end. Taking up a large sum of memory and possibly damaging our system. 
+When using While loops, be careful to set an incrementing condition for your variable which can be done with the += or the ++ symbols. 
+
+If we don't, then our loop will never end. Taking up a large sum of memory and possibly damaging our system. 
 
 If we want to set a range of values we want our variable to go through, we can use a **for loop**
 

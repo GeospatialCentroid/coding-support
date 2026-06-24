@@ -9,14 +9,21 @@ toc_sticky: true
 
 ## Working With Data using R 
 
-One of R's most powerful attributes is it's ability to work with data. From 
-cleaning through analysis, R has a diversity of libraries and tools
-to work with any data sets and to meet any goals. This guide will focus on 
+One of R's most powerful attributes is it's ability to work with data, ranging from cleaning
+all the way through analysis. This is possible through R's has a diversity of libraries and tools
+to efficiently work with datasets. 
+
+ This guide will focus on 
 how to move data into R and the basics on accessing data in a data set 
 
 -------------------------------------------------------------------------------
 
 ## Reading Data into R 
+
+In order to work with data in R, we need to first **Read** our data into R. 
+
+This is the process of taking a file that we have in our **File System** or from an **Online URL**, and entering 
+a command that allows R to read the file contents and store them in our workspace. 
 
 ### Commonly Installed Files 
 
@@ -32,15 +39,18 @@ how to move data into R and the basics on accessing data in a data set
 
 ### Base R Data Reading
 
-R provides commands to read in data files without the use of packages. However,
-for more complex projects, base R can be limiting.
+R provides simeple commands that revolve around ```read.``` These are useful for simple file types such as **CSV's**. However, we can access commands
+that are much more robust through our **Library** 
+
+
+Reading a CSV file from the file tree
 
 ```r
 
 read.csv("enter/your/file/path/here.csv")
 
 ```
-R can also read in files from a URL 
+Reading a CSV from a URL 
 
 ```r
 
@@ -50,8 +60,7 @@ read.csv(url(enter your url link here.csv))
 
 ### Installing Packages
 
-Installing packages can widen the scope of your data reading capabilities. There
-are a broad array of packages that exist online that can meet certain goals 
+**Installing packages can Widen the Scope of Your Data Reading Capabilities**. 
 
 |Package|Readable File Types|
 |--------------------|-------|
@@ -59,7 +68,7 @@ are a broad array of packages that exist online that can meet certain goals
 |readr         |CSV'S, TSV'S, Text, XLSX, Google Sheets, FWF|
 |readxl        |XLX,XLSX| 
 
-Installing the Tidyverse package will be suitable for most file reading needs.
+Installing the **Tidyverse Package** will be suitable for most file reading needs.
 
 --------------------------------------------------------------------------------
 
@@ -67,61 +76,66 @@ Installing the Tidyverse package will be suitable for most file reading needs.
 
 ### Setting up your file directory
 
-Make sure that your current working directory is set to your home directory 
+Make sure that your current working directory is set to your home directory, or the directory you want to work in. 
 
 ```r
 
 > cd ~
 
-#This will take you to the home directory in the console
+#This will take you to the home directory in the console.
+
+> cd "/Enter/Directory/Path/Here"
+
+#This will take you to a specific working directory. 
 ```
 
-**Download your data files to your computer**. Make sure that you know where
+**Download the Desired Files to Your Computer**. 
+
+Make sure that you know where
 your storing them in your computer so you can pull them later with ease. 
 
 ### Installing your package of choice 
 
-for using tidyverse as an example. We first need to install Tidyverse 
+Let's use **Tidyverse** as an example. We first need to install Tidyverse. 
 
 ```r
 install.packages("tidyverse")
 ```
 
-We know tidyverse has been installed when we run it and are given a long series 
-of code; this is our computer downloading all the packages and programs that
-tidyverse offers.
+We know tidyverse has been installed when we run this command and are given a **long series of code**; 
+this is our computer downloading all the packages and programs that tidyverse uses.
 
-Next, we will pull our package from our library 
+Next, we will pull this package from our **Library**.  
 
 ```r
 library(tidyverse)
 ```
 
-This will allow us to use the commands offered by tidyverse
+This will allow us to use **Commands** in the tidyverse package
 
 ### Reading in a file
 
 For Tidyverse, we can read in a multitude of files like so 
 
 ```r
-read_csv(This/is/the/path/to/your/file/file_name.csv)
+read_filetpe(This/is/the/path/to/your/file/file_name.filtype)
 ```
 
-you will know the file has been successfully downloaded when it appears in your 
-environment in the top right panel 
+you will know the file has been successfully downloaded when it **Appears in Your 
+Environment** in the top right panel, or no error signs are given. 
 
 -------------------------------------------------------------------------------
 
 ## Navigating your Data set
 
-This guide will provide you the baseline tools for accessing rows, columns, and
-elements in your data set
+This guide will provide you the baseline tools for **Accessing Rows, Columns, and
+Elements** in your data set.
 
 ### Accessing Columns 
 
-We can access columns in a data set by using the $ command as well as our [] syntax
+We can **Access Columns** in a data set by using the ```$``` command as well as our ```[]``` syntax.
 
-This code will allow us to return a column as a vector 
+This code will allow us to create a **Vector** of a **Dataframes Specific Column**.  
 
 ```r
 
@@ -129,7 +143,7 @@ desired_column <- dataframe$column
 
 ```
 
-This code will allow us to return a column as a dataframe variable
+This code will allow us to return a dataframes column as a **Variable**
 
 ```r
 
@@ -137,14 +151,14 @@ desired_column_dS <- dataframe["column"]
 
 ```
 
-we can also mutate columns in RStudio through a simple command
+To **Manipulate Column Names**, we can use a simple command. 
 
 ```r
 
 names(dataframe)[names(dataframe) == "column"] <- "new column name"
 
 ```
-Selecting certain columns from a data set
+We can also select **Multiple Columns**
 
 ```r
 
@@ -154,22 +168,19 @@ Selected_Columns <- dataframe[c("colname1","colname2")]
 
 ### Accessing Rows 
 
-We can commonly access rows through filtering them.
+We can access rows through **Filtering** for certain **Values** rows have in a column
 
 Filtering rows
 
 ```r
 
-Filtered <- Dataframe(Dataframe$column = "Certain Value")
+Filtered <- Dataframe(Dataframe$column = "Certain Value Within Columns Rows")
 
 ```
 
 ### Accessing elements in rows 
 
-Another important aspect of data management is accessing the elements within 
-specific rows and columns
-
-We can access specific elements in matrices, vectors, lists, and data frames 
+We can take this one step further, and access **Specific Elements** in  **matrices, vectors, lists, and datasets** 
 
 **Vectors**
 
@@ -192,11 +203,16 @@ multilpe_values <- vector[c(1,5)]
 
 ```
 
+Note: If working with other coding languages. When pulling elements, the order may start with 0 instead of 1. An example is Javascript. To pull the first 
+element from a JavaScript Vector, you would enter ```vector[0]```.
+
 **Matrices**
+
+Because Matrices operate similar to a **Two Dimensional Vector**, we can access components through simple commands
 
 ```r
 
-# we will create an example matric
+# we will create an example matrix
  
 example_matrix <- matrix(1:25, nrow = 5, ncol = 5) # this is a 5 by 5 matrix 
 
@@ -205,36 +221,60 @@ example_matrix <- matrix(1:25, nrow = 5, ncol = 5) # this is a 5 by 5 matrix
 row_matrix <- example_matrix(2, ) 
 
 ``` 
+
 This will print all the values of row 2
 
+``` r
+[6,7,8,9,10]
 
-`[6,7,8,9,10]`
+```
 
 We can also pull specific row and column values
 
-```
+```r 
+
 Specific_matrix <- example_matrix(2,4) # 2nd row, 4th column
+
+```
+
+```r
 
 [9]
 
 ```
 
-We can access values in specific rows and columns in entirety 
+We can access **Multiple Values** as well. 
 
-```
+```r
 
 Specific_Rows_and_Columns <- example_matrix[c(1,2),C(4,5)]
 
 ```
+
+```r
+[2][20]
+```
+
 We can also modify values 
 
-```
+```r
 example_matrix[1,1] <- 100
 
+# Let's pull the top row now
+
+New_Row <- example_matrix[1][1]
+
+print(New_Row)
+
 ```
 
+```r
 
-**Lists**
+[100,2,3,4,5]
+
+```
+
+### Lists
 
 
 Let's look at how we can modify the elements within a list 
@@ -249,38 +289,54 @@ Status <- c("Baby","Toddler","Teenager"."Adult")
 If we want to only know the age column we can do an operation such as this 
 
 
-`example_list[[1]]`
+```r
+example_list[[1]]
+````
 
 If we want to know the age and their status we can expand on our operation 
 
-`example_list[[1]][3]`
+```r
+example_list[[1]][3]
+```
 
 Finally, we can access specific elements within our list
 
-`example_list$name[2] #This would return Richard `
-
-
+```r
+example_list$name[2] 
+```
 
 **Datasets** 
 
-```r
-#Datasets are similar to lists.
+Datasets are similar to lists, only they commonly will contain far more information and can be organized in several different file formats.
 
-data set_example <- df(
+Let's create a dataset example
+
+```r
+
+
+data_set_example <- df(
 age <- c(1,5,13,18)
 name <- c("Julie","Richard","Will","Grant")
 Status <- c("Baby","Toddler","Teenager"."Adult")
 ))
 
-dataset_element <- dataset_example(2,1) #This code will pull the name from column 1: Julie 
+# let's pull the name Julie from our dataset
+
+dataset_element <- dataset_example[2,1]
 
 ```
+We can run similar commands to access rows and columns 
 
+``` Row Access
+
+dataset_row <- dataset_example[2,]
+
+```
 
 ### Applications of Navigating Datasets
 
 Being able to navigate through your dataframe,vector,list,or matrix quickly
-will allow you to clean your data more efficiently and provide a strong foundation
+will allow you to **clean your data** efficiently and provide a strong foundation
 for future work. 
 
 --------------------------------------------------------------------------------
@@ -289,7 +345,7 @@ for future work.
 
 We will briefly touch on Dplyr and it's use in R. Dplyr is a package that provides
 a multitude of functions that will make tedious cleaning procedures in base R 
-much quicker and far more effective
+**Simpler and Quicker** 
 
 ### Accessing Dplyr
 
@@ -310,18 +366,17 @@ library(dplyr)
 Filter allows you to select for only certain values in a column that match a desired 
 value 
 
- R syntax allows you to use **%>%** (preferred) or **|>** to select a 
-data frame you will be working from. This will go at the end of each line 
-
 ```r
 
-Example_dataframe %>%
+Example_dataframe %>% 
 filter(column name == "certain value")
 
 ```
 
-#This filter will provide only certain values from one column
-#other comparative operators can be used with this command such as >, <, >=, and <= 
+This filter will provide only certain values from one column
+
+other comparative operators can be used with this command such as **>, <, ==, >=, and <=** to 
+select for values that are exceeding, equal, or are less then a certain  value.  
 
 
 **Select**

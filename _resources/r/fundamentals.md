@@ -47,18 +47,14 @@ environment (IDE) for working with R. We will talk more about this later.
 
 ## R Syntax
 
-Practice writing and executing the following using the R console.\
+Practice writing and executing the following using the R console. **\**
 To execute a line of code, press the *Enter* key. 
 
 Note: to exit the R console write and execute ```quit()```
 
 ------------------------------------------------------------------------
 
-## Comments
-
-Comments are ignored by R and help explain your code.
-
-### Single Line Comment
+### Comments
 
 Starts with `#`
 
@@ -68,8 +64,32 @@ Starts with `#`
 print("This code will execute!")
 ```
 
+### Multi-line Programs
+
+to write **Multi-line Programs** we can use the ```%>%``` symbol between commands. 
+
+``` r 
+
+Example <- Print("Here is line 1") %>%
+           var <- ("Here is line 2") %>%
+           Print(var)
+
+print(Example)
+
+```
+
+This would return: 
+
+```r
+
+here is line 1
+Here is line 2
+
+``` 
+
 ### Variables 
-Variables store value and are assigned using <- (recommended) or =. 
+
+**Variables store values of different data types** and are assigned using <- (recommended) or =. 
 
 ``` r
 name <- "Alice"
@@ -184,7 +204,7 @@ number <- as.character(42)
 
 ## Arithmetic Operators
 
-R supports standard mathematical operations.
+R supports standard **Mathematical Operations**.
 
 ``` r
 a <- 10
@@ -218,12 +238,12 @@ x != y
 
 ## Conditional Statements
 
-Conditional statements control program flow.
+**Conditional Statements** control program flow.
 
 ### if statements
 
-If statements evaluate a condition and provide an appropriate output based on
-if that condition is **true** or **false** 
+**If Statements Evaluate a Condition**, and then provide an appropriate output based on
+if that condition is **True** or **False** 
 
 ``` r
 age <- 18
@@ -234,7 +254,7 @@ if (age >= 18) {
 ```
 ### if else statements
 
-These statements will evaluate if a conditoin is **true** or **false** and will 
+These statements will evaluate if a condition is **True** or **False** and will 
 provide statement for both options. 
 
 ```r
@@ -247,7 +267,7 @@ age <- 18
 ```
 ### else if statments 
 
-These statements will allow for **multiple different** conditional statements to be 
+These statements will allow for **Multiple Different** conditional statements to be 
 evaluated. 
 
 ```r
@@ -265,11 +285,10 @@ else {
 
 ## Loops
 
-Loops will cycle through a set range of values and run a program for every
+**Loops Will Cycle Through a set Range of Values** and run a program for every
 iteration
 
 ### For Loop
-
 
 ``` r
 for (i in 1:5) {
@@ -293,7 +312,7 @@ while (count < 5) {
 
 ## Vectors
 
-Vectors are series of data such as **numbers**,**strings**, and characters 
+**Vectors** are series of data such as **Numbers**,**Strings**, and **Characters** 
 ``` r
 numbers <- c(1, 2, 3, 4, 5)
 
@@ -310,7 +329,7 @@ print(numbers[1])
 
 ## Matrices
 
-Matrices can be thought of as a two dimensional vector. 
+**Matrices* can be thought of as a **Two Dimensional Vector**. 
 
 ```
 
@@ -320,9 +339,6 @@ dimensions
 numbers <- matrix (c(1,2,3,4,5,6,7,8,9), nrow = 3, ncol = 3)
 
 ```
-
-Using this command will give us a matrix that looks like this. 
-
 
 -------------------------------------------------------------------------------
 
@@ -341,12 +357,12 @@ Data Frames allow us to make a set of data similar to a matrix.
 
 
 ``` r
+
 df <- data.frame(
   name = c("Alice", "Bob"),
   age = c(25, 30)
 )
 
-print(df)
 ```
 
 ------------------------------------------------------------------------------
@@ -354,7 +370,7 @@ print(df)
 
 ## Functions
 
-Functions allow us to take in **user input** and provide an outcome based on that 
+**Functions Allow us to Take in User Input** and provide an outcome based on that 
 input. These are largely applicable among all coding languages and are benfical 
 to familiarize yourself with 
 
@@ -371,14 +387,13 @@ greet("Alice")
 
 ## Installing and Loading Packages
 
-Packages are a series of commands and programs that are made outside of basic R,
-commonly by developers and others. They allow us to perform functions beyond
-the capabilities of basic r as well as simplifying actions hat would otherwise
-be complex in r.
+**Packages** are a **Series of Commands and Programs** that are made outside of basic R,
+commonly by developers and others.
 
-ggplot2 is one library that is important for creating data visualizations in r 
-that would otherwise take a much longer time and require an extensive amount of 
-code in base r. 
+**They Allow us to Perform Functions Beyond the Capabilities of Basic R** 
+as well as simplifying actions that would otherwise be complex and tedious. 
+
+**ggplot2** is one library that is important for **Creating Data Visualizations**.
 
 
 ``` r
@@ -388,8 +403,8 @@ library(ggplot2)
 ```
 ### Package and Function Information
 
-The help command is one of the most powerful tools in R. Running this command 
-will allow you to view all information about base R commands as well as commands
+**The Help Command** is one of the most useful tools in R. Running this command 
+will allow you to **view all information about a select base R command** as well as commands
 that are stored within libraries
 
 ```r
