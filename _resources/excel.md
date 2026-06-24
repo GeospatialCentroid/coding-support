@@ -11,20 +11,25 @@ toc_sticky: true
 
 Excel is an online spreadsheet service provided through office 365. It allows you to: 
 
-- **Work with large scale datasets**, ranging from cleaning through visualization and analysis
+- **Work with Large Scale Datasets**, ranging from cleaning through visualization and analysis
 
-- **Automate complex and tedious processes**, performing complex calculations and working compatibly with code. 
+- **Automate Complex and Tedious Processes**. Excel allows you to perform complex calculations and work with automative coding languages. 
+
+- **Excel is a Paywalled Software**. You can use **Google Sheets** as a open access replacement if needed. This guides material will be useful for  
+either software.
 
 
 ## Why learn Excel? 
 
 Excel is a multi-disciplinary software. 
 
-- **It's connections through office 365** make it effective to use across organizations. 
+- **It's Connections Through Office 365** make it effective to use across organizations. 
 
-- **It is accessible and easily usable** with other software's & coding languages
+- **It is Accessible and Easily Usable** with other software's & coding languages
 
-- **Excel offers learning experiences through** script writing, data management, code writing, and SQL experience. 
+- **Excel Offers Learning Experiences Through** script writing, data management, code writing, and SQL experience.
+
+- **Excel is Widely Used Among the Workforce**, making learning it a great for career development. 
 
 
 ## Resources

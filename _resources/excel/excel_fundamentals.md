@@ -9,28 +9,13 @@ toc_sticky: true
 
 ## Installing Excel 
 
-### Is Excel open access?
+To either **Access Excel** on your browser or **Download** it. click [here](https://www.microsoft.com/en-us/microsoft-365/excel?ocid=ORSEARCH_Bing&msockid=2a68803dd7c7641b346696e4d6066551)
 
-One thing to note about using Excel is that if you are not with an institution
-or organization that pays for it, then you will have to pay for a monthly or 
-yearly access plan.
+The first step to **Accessing excel** on your browser is to sign into your microsoft account. This 
+can be provided by an **Institution or Organization**, where you can sign in with a work or school email.
 
-A paywall free software that can provide similar benefits is google sheets.
-This course however primarily focuses on Excel operations which may be similar 
-to google sheets but may have some differences. 
-
-### Accessing Excel 
-
-The first step to accessing excel is to sign into your microsoft account. This 
-can be provided by an institution or organization as your school or work email. 
-
-### Downloading Excel 
-
-Following [This](https://www.microsoft.com/en-us/microsoft-365/excel?ocid=ORSEARCH_Bing&msockid=2a68803dd7c7641b346696e4d6066551)
-link to access microsoft 365's page. Here you can sign in, access excel online,
-view payment plans for excel, and download it! 
-
-If you only need to reach the download page, click [this link](https://www.microsoft.com/en-us/microsoft-365/excel?ocid=ORSEARCH_Bing&msockid=2a68803dd7c7641b346696e4d6066551#Download-the-app)
+If you are interested in **Downloading Excel**, you can click the link provided, and scroll down to the **Download the app** section, where it will prompt you with instructions
+to download the proper installation files. 
 
 --------------------------------------------------------------------------------
 
@@ -41,12 +26,16 @@ If you only need to reach the download page, click [this link](https://www.micro
 A quick distinction should be made about **Sheets** and **Workbooks**
 
 In excel, we work in a **Workbook**. This is what we assign a name to. When we are working within a 
-workbook we are working in a **Sheet**. There can be multiple differnt sheets in one workbook. 
+workbook we are manipulating a **Sheet**. There can be multiple different sheets in one workbook. 
 
 ### Data Types 
-Excel offers a wide array of data types that can be used in your spreadsheet.
-Understanding when to use what datatypes is important for ensuring you have clean data
-that can be effectively analyzed. 
+
+There are many different data types in excel.
+
+Understanding when to use what datatypes is important for ensuring you have **Clean Data**
+that is compatible with scripts and can be **Transferred Among Softwares**. 
+
+Having the right data can also keep your spreadsheet **Organized**
 
 |Data Type|Appearance|Best Purpose| 
 |----|---------|------------------|
@@ -55,68 +44,65 @@ that can be effectively analyzed.
 |Currency|$ 6.00 | Running functions requiring currency remainders|
 |Date|1/1/2026|Working with Time Series Data|
 |Accounting|$ 6.00|Running accounting related math|
-|Time|1/1/2026: 12:00Pm|Logging specific events or values at certain times| 
-|Percentage|600%|Performing Statistical or Scientific Data work|
-|Fraction|6 1/2| Larger scale math| 
-|Scientific|6.00 E+00| Data with extremely large values| 
-|Text|Basic Text|Logical Operators and adding annotations to a spreadsheet|
+|Time|1/1/2026: 12:00 PM|Logging specific events or values at certain times| 
+|Percentage|83%|Performing Statistical or Scientific Work|
+|Fraction|6 1/2| Working with data that needs to be semi-precise| 
+|Scientific|6.00 E+00| Data with extremely large values, can help save memory| 
+|Text|Basic Text|Logical Operators, classifying data by groups, and organizing columns and rows.|
 
-It's important to use the correct data types as your work gets more complex. 
-Having the wrong data data type can limit what you can do with your spreadsheet
-and may delay project tasks. 
 
 ### Headers 
 
-Spreadsheet headers can help you **navigate excel's different tools.**
+Spreadsheet headers allow you to **Navigate Excel's Different Tools.**
 
 - **Home**
 
-  The Home section of the spreadsheet houses most of the **cell stylistic and formatting information.** 
-Some examples are the text size, font, conditional formatting, borders, and highlighting within cells. 
+  The Home section of the spreadsheet houses most of the **Stylistic and Formatting Features for Your Spreadsheet.** 
+Some examples are the **Text Size, Font, Conditional Formatting, Borders, and Highlighting Within Cells**. 
 
 - **Insert**
 
   The Insert section is one of the most widely used sections as it allows you to 
-**add external information** to your spreadsheet such as **CSV's, and images.** This section 
-also allows you to **visualize data**. 
+add **External Information** to your spreadsheet such as **Data, and Images.** This section 
+also allows you to **Visualize Data**. 
 
 - **Share**
 
-  The share section provides the resources to **publish your data** and create a link from it.
+  The share section allows you to **Publish Your Data** and create shareable links. 
 
 - **Page Layout** 
 
-  The layout section allows you to use more **large scale and specific aesthetic** features. 
+  The layout section allows you to modify**Large Scale and Specific Aesthetic** features in a spreadsheet or in your whole workbook. 
 
 - **Formulas**
 
-  One of the most important excel sections, this allows you to 
-**insert functions, formulas,and run calculations** in your workbook. 
+  One of the most important excel sections. This section allows you to 
+**Insert Functions, Formulas,and run Calculations** in your workbook. 
 
 - **Data**
 
-  This section allows you to **manipulate your data** in significant ways that an help clean up the organization
-of it. Base level analysis is also possible with the data section. 
+  This section allows you to **Manipulate Your Data** in significant ways that can help clean up the organization
+of it. **Base Level Analysis** is also possible with the data section. 
 
 - **Review**
 
-  You can review the **history and back end performance** in this section. 
+  You can review the **History and Back end Performance** in this section. 
 
 - **View**
 
-  This section allows you to **change how you view** the sheet. 
+  This section allows you to **Change how you View** the sheet. 
 
 - **Automate**
 
-  You are able to **import scripts and automation functions** into your spreadsheet to improve efficiency. 
+  You are able to **Import Scripts** into your spreadsheet to improve efficiency. 
 
 - **Help**
 
-  Access **tutorials**, and other **resources** to improve your excel skills. 
+  Access **Tutorials**, and other **Resources** to improve your excel skills. 
 
 - **Draw**
 
-  Create **informal annotations** in your spreadsheet. 
+  Create **Informal Annotations** in your spreadsheet. 
 
 
 --------------------------------------------------------------------------------
@@ -125,48 +111,36 @@ of it. Base level analysis is also possible with the data section.
 
 ### Transferring Data Between Cells 
 
-**Copying information** is possible through pressing CTRL+C in one cell, and 
-CTRL+V in your target cell; you copy and paste information from your current workbook, 
-other workbooks, spreadsheets, and even URLS. 
+**Copying information** is possible through pressing **CTRL+C / CMD+C** in one cell, and 
+**CTRL+V/CMD+V** in your target cell. You copy and paste information from your current workbook, 
+other workbooks, spreadsheets, and URLS.
 
-The small green box in the bottom of the cell your working in allows you to also copy 
-a value from one cell to an undetermined amount of cells within the same row or column. 
-This tool also is also able to automate tedious processes with functions. 
+The **Small Green box** in the bottom right corner of the cell your working in allows you to also copy 
+a value from one cell and paste it to an undetermined amount of cells within the same row or column. 
 
-
-Before we used our copy feature.
-
-
-This is our result! See how it effectively transferred our cell value.
-
-
-### Pattern Recognition Between Cells 
-
-Excel has the unique ability to **Recognize Patterns** between cells and  automate processes 
-
+This tool also is used able to **Automate Tedious Processes** with functions. 
 This is done when you provide at least 2 data points in adjacent cells as a reference.
 
+When we **Highlight Two Cells** that show a certain pattern such as two cells with the numbers **1 and 2** in them, when we drag down with the green box it will begin to fill in the **Pattern Within the Empty Cells**. 
 
-When we highlight these two cells and drag down with the green box, we see that it will begin to fill in the pattern
-it has recognized. 
-
+We would be left will cells that count from 1 through **Any Number** depending on where stopped.
 
 ### Add and Remove content
 
-You can add or remove columns with the + - symbols when you near the edge of a cell. 
+with Excel you can **Add or Remove** columns with the **+ -** symbols when you near the edge of a cell. 
 
 
-You can also do so by **right clicking on a column or row**, which will give you the option to remove or add
+You can also do so by **Right Clicking on a Column or row**, which will give you the option to remove or add
 a row/column.
  
 
-### Wrap
+### Cell Modification
 
-The **wrap button** is located in our home header and looks like a blue snake.
+The **Wrap Button** is located in our home header and looks like a blue snake.
 
 Pressing this button will take any text in your cell and make it fit the cell width. 
 
-```excel
+```
 
 --------------------------------------------------------
 its the differ|ence| betwe|en a cell tha|t is long like this 
@@ -175,11 +149,14 @@ and a shorter |    |      |             |
               |    |      |             |
 cell like this|    |      |             |
 ---------------------------------------------------------
+
 ```
+
+We can also **Change the Width** of cells. This can be done by moving our cursor to the **Edge of a Cell** until we access the arrow tool. Then, we can click and drag to any width we want.
 
 ### Merge
 
-Right clicking over a series of cells will allow you to **merge** the contents 
+Right clicking over a series of cells will allow you to **Merge** the contents 
 of those cells into one much larger cell.
 
 
@@ -190,67 +167,68 @@ of those cells into one much larger cell.
 
 ### Data Organization
 
-Excel offers a variety of different tools that allow you to organize, and clean 
+Excel offers a variety of simple tools that allow you to **Organize**, and **Clean** 
 data.
 
 
 - **Ascending and Descending Functions**
   
   Excel's ascending and descending feature allow you to display your 
-  data by a **columns values.** It will sort this column either by 
-  **maximum to minimum values**, or **minimum to maximum values**. 
+  data by a **Columns Values.** It will sort select columns either from 
+  **Maximum to Minimum values**, or from **Minimum to Maximum values**. 
   
 
 - **Custom Sort**
 
   Custom sort is a powerful tool when working with spreadsheets that allows you 
-  to **organize** it by the values within **multiple different columns**. 
+  to **Organize** your spreadsheet by **Ascending** or **Descending** values in **Multiple Different Columns**. 
   
 
 - **Pivot Tables**
 
-  Pivot tables are an effective way to organize large spreadsheets to select for 
-  data of interest, allowing for you to remove noise and unneeded columns to fit 
-  one goal. 
+  Pivot tables are an effective way to **Filter Large Spreadsheets** to select for 
+  data of interest.
+
+  **Filter**
+
+  Within the **Data** header. The **Filter Command** allows you to create a **Dropdown** for selected columns. 
+
+  This Dropdown allows you to **Select Certain Row Values** that you want displayed in your spreadsheet.
   
 - **Data Validation**
 
-  Excels data validation tools allows you to **predetermine** what
-  **data types  and what values are allowed in certain columns**. This is especially beneficial when you have columns
-  that need to be grouped into 1 data type consistently or need values that have to be exactly uniform
-  in a large data set.
+  Excels data validation tools allows you to **Predetermine** what
+  **Data Types Values** are allowed in certain columns. You can use this to organize columns by  1 data type consistently or need values that have to have uniform syntax.
   
-  the **List** validation tool is especially beneficial. Using this allows you to create a list
-  of **words and values** that are allowed in a column, helping to remove any inconsistencies
-  between rows. 
+  the **List** validation tool  allows you to **Create a List**
+  of **Words and Values** that are allowed in a column, helping to make tedious data entry faster.
   
 ### Visualizing Data 
 
 There are many tools that serve different purposes in excel for analyzing data.
 While there are many ways to visualize data, these are some common ones. 
 
-|Visualization Tool Name|Best for|
+|Visualization Tool Name|Common Purpose|
 |------------------------------|--
-|Table|Describing diverse data sets|
+|Table|Visualizing grouped data|
 |Line Graph Graph| Depicting relationships between 2 variables|
 |Column Graph|Comparing two different variables|
-|Pie Chart|Showing groupings in a data set| 
-|Box Plot| Showing the statistical relationships of variables| 
+|Pie Chart|Showing variance in a groups responses| 
+|Box Plot| Comparing statistical factors between variables| 
 |Histogram| Showing the distribution of values in a spreadsheet|
-|Conditional Formatting| Highlighting cell values across large gradients|
+|Conditional Formatting | Highlighting Changes in Cell Values|
 
 
 ### Analyzing Data 
 
 
-For analyzing data, there are various tools and functions that can make tedious 
-or repetitive tasks automated. These are grouped into different types of **Formulas**.
+We have various functions that help us **Automate** tedious tasks. These are grouped into different types of **Formulas**.
 
 
 |Formula Type|Purpose|
 |---|----------------|
 |Financial|Computes values to provide financial information|
-|Logical|Computes boolean values for a column of data|
+|Logical|Computes boolean values for a column of data to group and filter|
 |Text|Allows you to maniuplate characters and strings| 
 |Date & Time| Lets you pull values from date and time data types| 
 |Look up & Reference|Provides functions to pull certain cell values and types| 
@@ -262,31 +240,32 @@ when we use functions in a cell, we will use the **=** sign and then our functio
 
 Lets make a function that would sum a series of values within a spreadsheet.
 
-```vba
+```c++
 
-`First, we will assign our function`
+'First, we will assign our function'
 
 =SUM()
 
-' Now that our function is assigned we can add the cells we would like to sum. 
+' Now that our function is assigned we can add the cells we would like to apply our function to.' 
 
-=Sum(A1:C10)
+=SUM(A1:C10)
 
 ' Our colon symbol represents the values between A11 and C10, this means we want to 
-calculate the sume of all values from 1 through C10. 
+calculate the sume of all values from A1 through C10.' 
 
 ```
 
-----------------------------------------------------------------------------------------
+These functions can be used to **Compute Statistical Values** such as **Means, Medians, and Modes**, filter data into groups such as
+a **Yes** and **No**, and compute conversions between **Kilometers and Miles**, or **Kilograms and Pounds**. 
+
+There are many more functions and operations that you can perform with our **=** command, we recommend that you check out our **CSU** and **Non CSU** resources to learn more!
+
+--------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Next Steps
 
-There are a wide assortment of functions and commands that you can use in excel. 
-We recommend that you check out our **resource table and CSU course offerings** to 
-learn more about Excel basics! 
-
 Now that we have introduced some basic components of excel. We will briefly 
-outline vba coding and how we can use this to write scripts. 
+outline **VBA Coding** and how we can use this to **Write Scripts**. 
 
 
 
