@@ -138,7 +138,7 @@ echo "Hello $(name)!"
 
 ```
 
-## Step 4
+### Step 4
 
 Now that we have created our script, we can use it in the bash terminal.
 
