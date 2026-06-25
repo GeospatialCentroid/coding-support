@@ -39,9 +39,4 @@ Learning how to use AI can be beneficial in any field
 
 ### Resources
 
-<script>
-
-  console.log("testing here")
-
-</script>
-
+{% include resource-table.html topic="AI" %}

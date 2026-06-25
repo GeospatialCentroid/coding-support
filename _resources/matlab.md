@@ -39,3 +39,4 @@ that other coding softwares may not offer.
 
 ## Resources 
 
+{% include resource-table.html topic="Matlab" %}

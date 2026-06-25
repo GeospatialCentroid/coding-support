@@ -23,8 +23,4 @@ on a linux system or a UNIX system, the differences are not extremely substantia
 
 ## Resources 
 
-<script>
-
-console.log("Will this work?")
-
-</script>
+{% include resource-table.html topic="Unix" %}

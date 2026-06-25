@@ -9,34 +9,24 @@ toc_sticky: true
 
 ## Installing Bash 
 
-Bash can be installed on various differnet computer systems such as Windows, MacOS, Linux, and Ubuntu.
+Bash can be installed on various different computer systems such as **Windows** and **MacOS**.
 
-Something to note is that each processing system will have it's own unique terminal. If you do not own a linux system
-this ok! You can use unix or your version of a shell to run nearly identifcal commands with some specific differences.
+Something to note is that each processing system will have it's own unique Shell with terminal commands. This makes bash scripting concepts easiy applicable
+to other shells with minor differences. 
 
 **Git Bash Installation**
 
-For collaborative purposes, it can be more beneficial to install git bash. You can do so by pressing
+to install **Bash**. You can do so by pressing
 the [Link](https://git-scm.com/install/windows) here.
 
-**Linux Bash Installation**
+Bash is a shell that is compatible with **Git**, which allows you to push and pull file work you have done to an online repository. More information about git can be found [Here](http://127.0.0.1:4000/coding-support/git/) 
 
-Installing bash for linux systems is fairly simple as well. T
 
-for **Windows** software users. open up the terminal by pressing alt+S. From here, search up 
-"terminal"; right click on the terminal tab and click "run as administrator"
-
-Once you have opened up the terminal, type in "WSL" into the terminal command prompt. This will install
-Ubuntu onto your computer and set it as your terminal. Upon entering WSL, be sure to restart your computer. 
-
-After you restart your computer, open the terminal and enter a username or password. This will allow you to start
-coding with Bash! 
-
-**Virtual Machine Usage**
+### Virtual Machine Usage**
 
 You can also access bash through a **virtual machine**. This is best if you do not use a linux system.
 
-Because this is a complex and specific process. You can click [Here](https://linuxbash.sh/post/installation-differences-on-virtual-machines-vms)
+To use a **Virtual Machine**, click [Here](https://linuxbash.sh/post/installation-differences-on-virtual-machines-vms)
 
 --------------------------------------------------------------------------------
 
@@ -46,12 +36,12 @@ There are a few data types that we want to be familiar with before we begin prog
 
 - **Characters**
 
-  Characters are letters. They are wrapped with a ""
+  Characters are single letters. They are wrapped with a **" "**
 
 - **Strings**
 
-  Strings are commands that are a set of characters that create words. They are
-  wrapped with a "" quotation in commands as they usually contain spaces and special 
+  Strings are **Series of Characters** that formulate words. Similar to characters, they are
+  wrapped with a " " quotation in commands as they usually contain spaces and special 
   characters that would make our code unsuable. 
   
 - **Integer**
@@ -59,12 +49,13 @@ There are a few data types that we want to be familiar with before we begin prog
   Integers are non decimal point numbers such as 1 and 10. They are one of the smaller
   byte size data types. When printing and using with variables they do not require quotation marks 
   
-- ""Boolean**
+- **Boolean**
 
    Boolean varaibles are those that are determined only by a TRUE or FALSE value.
    We can create boolean variables by assigning variables a TRUE or FALSE VAlUE.
   
   0 = TRUE 
+
   non-zero = FALSE 
   
   We can also use logical operators in Bash
@@ -109,8 +100,6 @@ lines I
 
 
 
-
-
 Use'
 
 ```
@@ -122,9 +111,9 @@ There are 3 types of variables we will focus on in this guide:
 
 **Local Variables**
 
-` Local variables are those that only avaliable inside a function or our current shell
+ Local variables are those that only avaliable inside a function or our current shell
 
-``` Bash
+```bash
 
 #These variables are easy to assign
 
@@ -135,72 +124,78 @@ name = "Jason"
 **Global Variables** 
 
 - Global Variables are avaliable for use no matte which function you are in 
+They will require us to **Specify the Path** and use the Export function.
 
-```Bash
-
-#These variables will require us to specify the path and use the Export function
-
-Export Path = /Usr/directory/subdirectory$Path
-
+```bash
+Export Path = /Usr/directory/subdirectory:$PATH
 ```
 
 **Array Variables**
 
-- We can assign these variables multiple values, almost like a list. 
+- We can assign these variables multiple values, almost like a **List**.
 
-```Bash
+```bash
 
 Array_Variable = (1 5 10 20 30 50)
 
 ```
 
-Following **Variable Naming Conventions** are important for ensuring you have clear and concise variables that work
-
-Ensure that your variables are starting with a letter and not a function, number, or special character 
-make your variable names short but descriptive. Keep it concise 
+### Variable Naming Conventions
 
 
-**Print** commands are one of the most foundational commands in code
+- **Ensure That Your Variables are Starting With a Letter** and not a function, number, or special character 
 
-```Bash
+- **Make your Variable Names Short**, but descriptive. Keep it concise.
 
-# The Echo command allows us to print out text and variables 
 
+### Print commands
+
+We can output text and other data types to our console using the **Echo** command. We can print various data types with this command. 
+
+ If we want to print  a string we can use 
+
+```bash
+echo "Hello World"
+```
+
+We can also print out assigned **Variables** 
+
+```bash
 Variable = "Hello World"
 
-# If we want to print with a string we can use 
+echo "$Variable"
 
-echo "Hello World"
-
-#We can do the same with our variable we assigned 
-
-echo $Variable
-
-These will provide the same output. 
 ```
+
+The Echo command isn't the only command we can use. We can also use **printf**, which is more suitable for longer strings and easily incorporate variables 
+such as the day! 
 
 There are multiple other commands we can do to **Print** in Bash, 
 
-```r 
+```bash
 
 #Printf is one way that we can print a line with formatting in bash. 
 
-printf "Todays date is "$(%Y,%M,%D)
+'Lets Imagine its the Fourth of July in 2026.' 
 
-'on June 17th, 2026, this would print 
+printf "Todays date is $(%D,%M,%Y), happy Fourth of July!"
 
-Todays date is 2026, June, 17)'
+
+'this would print 
+
+Todays date is 4, July, 2026, happy Fourth of July!
+
 ```
 
-When we use printf we ca call variables into a string or function using the $ Sign. Here is another example 
+Let's look at another example where we are only calling one variable.
 
-```r
+```bash
 
 name = "Elena"
 
-printf "Hello $name!"
+printf "Hello $(name)!"
 
-#This would print: Hello Elena!
+'This would print: Hello Elena!
 ```
 
 ### Operators 
@@ -217,10 +212,11 @@ we can use our logical operators from above in collaboration with arithmetic ope
 | / | Division |
 | % | Modulo | 
 
-The most foreign operator is the modulo operator. This operator will determine the remainder for any number 
+The most foreign operator is the **Modulo** operator. This operator will determine the remainder for any number 
 when it is divided by another number.
 
-```Bash
+```bash
+
 #if we were to compute 17%3. We would be left with the number 2. This is because 
 the largest factor that the closest value you can achieve with 3 is 15, leaving a remainder of 2. 
 
@@ -228,32 +224,38 @@ the largest factor that the closest value you can achieve with 3 is 15, leaving 
 
 we can use Operators with **Variables**
 
-```r
+```bash
 
 age = 18
 
-age next year = age + 1
+age next_year = age + 1
 
-age last year = age - 1 
+age last_year = age - 1 
+
 
 ```
 
 if we want to use a shorthand for this, we can use **incremental code**
 
-```r
+```bash
 
 age = 18 
 
 age ++ 
 
-#This will give us our value for age next year 
+#This will give us our value for age next year by adding 1
 
 age -- 
 
-#This will give ous an age value for the year before 
+#This will give ous an age value for the year before by subtracting 1
 
-# if we want to know our age value in three years we can use +=
+```
 
+
+
+ if we want to know our age value in three years we can use +=
+
+``` bash
 age =+ 3
 
 # We can do the opposite for 3 years ago
@@ -262,7 +264,7 @@ age -= 3
 
 ```
 
-Our other set of essential operators to know how to use are **Comparison** operators 
+Our other set of essential operators to know how to use are **Comparison Operators**
 
 |Name|Function|
 |---|---------|
@@ -280,14 +282,14 @@ These operators are more commonly used when we run **Conditional Statements**
 
 ### Conditional Statements 
 
-Conditional Statements rely on using boolean logical to control program flow. 
+Conditional Statements rely on using **Boolean Logic** to control program flow. 
 
 They will become incredibly useful when cleaning data you are working with as well as ensuring
 that programs run properly
 
-our conditional statements run off of an **if** prompt 
+our conditional statements run off of if a variable meets a certain condition.
 
-```Bash
+```bash
 
 Age=18 
 
@@ -296,16 +298,20 @@ Age=18
 if [$Age -gt 17]; then
   echo "You are an adult."
 fi
+```
+We can also add a condition if our variable does not meet a certain condition using the **Else** statement.
 
-#Let's incorporate an else statement, the alternative if our statement is false
-
+```bash
 if[$Age -gt 17]; then 
   echo "You are an adult.""
 else
   echo"You are not an adult."
 fi
 
-#Let's get more specific by using elif 
+```
+If we have multiple conditions we wan't to evalaute, we can use an **Elif** command. 
+
+```bash
 
 if[$Age -lt 2];then 
   echo "you are a baby!"
@@ -316,25 +322,25 @@ elif($Age -lt 13); then
 elif($Age -lt 18); then 
   echo "you are a teenager"
 else
-  echo"you are an adult!"
+  echo "you are an adult!"
 fi
 ```
 
 ### Loops
 
-Another effective way at controlling our program flow is by using **Loops**
+Another effective way at controlling our program flow is by using **Loops**.
 
-There are two loops we will be focusing on 
+There are two loops we will be focusing on.
 
 **While loops** 
 
-while loops will run a series of code until a condition has been met. When the condition has 
+While loops will run a series of code until a condition has been met. When the condition has 
 been met the code will end. 
 
 
-```r
+```bash
 
-#lets make a code that prints every number from 1-100
+'lets make a code that prints every number from 1-100'
 
 var = 1
 
@@ -343,19 +349,19 @@ while [$var -lt 100]; do
   ((var++))
 done
 
-#By adding the increment at the end, we avoid what we call an infinite loop. 
-
 ```
-if we do not add a condition that will be met or fail to incorporate the proper method 
-of ending our loop. We will encounter an infinite loop that can cause our computer to run our program 
-indefinitely. This can burn our CPU, take up all our memory, and even destory powerful processing units. 
-Be careful to always check for infinite loops in your code.
+Note: Be sure your condition can be met AND that youa re **Incrementing** your variable.
 
-**Until Loops** are similar to While loops. Except while a while loop runs until a conditoin becomes false. A 
+Failing to do so can result in an **Infinite Loop**, which can fry your computer! 
+
+**Until Loops** 
+
+Until loops are similar to While loops. Except while a while loop runs until a condition becomes false. An
 Until loop will run until a condition becomes true
 
 ```bash
-lets run the same command 
+
+'lets run the same command' 
 
 var = 1
 
@@ -372,7 +378,7 @@ done
 
 There are a wide array of functions and tools at your disposal to work with data in bash.
 From printing lines, to controlling the flow of programs, these introductory tools can provide you 
-with the foundation to automate complex processes and work will files efficiently
+with the foundation to automate complex processes and efficiently work with files. 
 
 ### Next Steps
 

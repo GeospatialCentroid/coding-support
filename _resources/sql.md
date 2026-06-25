@@ -25,3 +25,4 @@ a wide array of data sets all in one database.
 
 ### Resources
 
+{% include resource-table.html topic="SQL" %}

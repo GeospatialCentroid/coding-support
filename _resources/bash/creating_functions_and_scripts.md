@@ -9,9 +9,11 @@ toc_sticky: true
 
 Knowing how to use bash functions are the first step in creating effective and efficient scripts. 
 
-### Creating Functions
+## Creating Functions
 
-Functions rely on using a () amd {} keys. 
+**Functions** allow you to input your own values and run them through a series of code. 
+
+Using functions relies on using a () amd {} keys. 
 
 ```bash
 
@@ -24,7 +26,8 @@ about: if statements, echo commands, etc.
 
 function_name(){
 
-echo this is our first function;
+echo "this is our first function";
+return 0
 } output.txt 
 
 ```
@@ -40,6 +43,7 @@ Lets create a multiplication function
 multiply(){
 values=$(($1 * $2))
 echo "The product is $values "
+return 0 
 } output.txt 
 
 multiply "50" "4"
@@ -47,8 +51,7 @@ multiply "50" "4"
 #The output will not show in the terminal, however it would show up in an output.txt file 
 
 ```
-In the function above. We set our values variable to be equal to an equation of 2 
-unassigned variables ; $1 and $2. This will allow us to assigne these variables when we call our function later.
+In the function above. We set our values variable to be equal to an equation **$1 and $2**. This will allow us to assign these variables when we call our function later.
 
 We called our function by using the function name and then providing 2 values for our functions varaibles to equal 
 
@@ -57,15 +60,23 @@ In this situation
 - $1 = 50 
 - $2 = 4
 
-### Writing a Bash Script
+Functions may seem trivial now. However, when working with datasets where processes need to be automated, functions can allow you to automatically enter hundreds of values into a variable to run through a function, and then provide a file of outputs!
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Writing a Bash Script
+
 
 This guide will focus on introducing you to the basics in 
 creating and writing scripts in Bash. These can be very beneficial in combining the power
-of functions to automate long processes, making your file management and analysis skills stronger. 
+of functions to automate long processes. 
+
+Scripts are also benefical as they can be ran across different computers, allowing you to take scripts from others and share scripts. 
 
 Some content in this guide is also mentioned in our unix fundamentals guide. If you would like to learn more, check it out!
 
-There are a few pieces of **Terminology** that you should know before we get started. 
+
+**Terminology**
 
 **touch**
 
@@ -79,9 +90,10 @@ There are a few pieces of **Terminology** that you should know before we get sta
 
 - This is the path to our bash interpreter which we will allow us to run our script.
 
-For our example, we will create a script that will print hello and a name the user enters 
 
-**Step 1**
+Lets create a **Script** that allows us to print **Hello** and a name a user can enter!
+
+### **Step 1**
 
 Our first step is to create a file to store our script in. 
 
@@ -89,13 +101,13 @@ Our first step is to create a file to store our script in.
 
 touch hello_script.sh 
 
-#This is the file that we will be writing our script in 
+'This is the file that we will be writing our script in.' 
 
 ``` 
 
-**Step 2**
+### **Step 2**
 
-Next we will want to write out our shebang and file path within our script to enable script properties
+Next we will want to write out our **Shebang** and **File Path** within our script to enable script properties.
 
 ```bash
 
@@ -105,7 +117,7 @@ Next we will want to write out our shebang and file path within our script to en
 
 ```
 
-**Step 3**
+### **Step 3**
 
 Now that we have set up our file properly, we can begin writing our commands. 
 
@@ -115,33 +127,37 @@ Let's work on creating our script that will take in names and greet them!
 
 !/bin/bash
 
-#First, we want to create a read command, this will allow us to create a variable that prompts the user
+'First, we want to assign our function name.'
+'We then want to enter our commands' 
+
 
 greet(){
 read -p "What is your name?" name 
-echo "Hello $name!"
+echo "Hello $(name)!"
 }
 
 ```
 
-**Step 4**
+## Step 4
 
 Now that we have created our script, we can use it in the bash terminal.
 
 ```bash
 
-#to run our script we can use a ./ command 
+'to run our script we can use a ./ command'
 
 ./hello_script.sh
 
 'this essentially is moving us to our script directory. Calling this script should 
 result in us being prompted by our read command' 
 
-"what is your name?"Andrew
+"what is your name?" Andrew
 
-# Where we can enter our response. 
+
 
 Hello Andrew
+
+'Here is our response' 
 
 ```
 

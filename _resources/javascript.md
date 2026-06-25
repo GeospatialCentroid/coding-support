@@ -23,8 +23,8 @@ any subject
 - You can create high quality websites
 - Learning how to apply programming basicsin a multitude of diverse ways 
 
-## Resources for Learning R
+## Resources
 
-
+{% include resource-table.html topic="Javascript" %}
 
 

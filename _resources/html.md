@@ -23,3 +23,4 @@ HTML can also help bolster your web development skills.
 
 ## Resources 
 
+{% include resource-table.html topic="HTML" %}

@@ -23,7 +23,7 @@ This guide will go into the fundamentals of using c++ code.
 
 - **You can develop** games, apps, webpages, and websites. 
 
-= **You can manage** your computers memory capacity. 
+- **You can manage** your computers memory capacity. 
 
 - **You can create** code for sensors, and other embedded systems 
 
@@ -34,4 +34,4 @@ This guide will go into the fundamentals of using c++ code.
 
 ## Resources 
 
-
+{% include resource-table.html topic="C/C++" %}

@@ -34,5 +34,5 @@ Excel is a multi-disciplinary software.
 
 ## Resources
 
-
+{% include resource-table.html topic="Excel" %}
 

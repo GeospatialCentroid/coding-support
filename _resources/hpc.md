@@ -47,4 +47,4 @@ Essentially, the scope of HPC's are only limited by what the users can do.
 
 ## Resources
 
-
+{% include resource-table.html topic="HPC" %}
