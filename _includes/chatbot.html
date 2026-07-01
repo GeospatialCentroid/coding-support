@@ -1,0 +1,135 @@
+<!-- _includes/chatbot.html -->
+<style>
+  /* Fixed positioning at the bottom right */
+  #support-chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    font-family: inherit;
+  }
+
+  /* The floating icon when minimized */
+  #chat-toggle-btn {
+    background-color: #1E4D2B; /* Matches standard CSU Green */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #chat-toggle-btn:hover {
+    transform: scale(1.05);
+  }
+
+  /* The main chat window container */
+  #chat-window {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    width: 350px; /* Default small width */
+    height: 500px; /* Default small height */
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    overflow: hidden;
+    transition: width 0.3s ease, height 0.3s ease;
+  }
+
+  /* Expanded 'large' state */
+  #chat-window.large-mode {
+    width: 600px;
+    height: 700px;
+  }
+
+  /* Header controls */
+  .chat-header {
+    background-color: #1E4D2B;
+    color: white;
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  .chat-controls button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 12px;
+    transition: opacity 0.2s;
+  }
+  
+  .chat-controls button:hover {
+    opacity: 0.7;
+  }
+
+  /* Visibility toggling via CSS classes */
+  #support-chat-widget.is-open #chat-toggle-btn {
+    display: none;
+  }
+  #support-chat-widget.is-open #chat-window {
+    display: flex;
+  }
+</style>
+
+<div id="support-chat-widget">
+  <!-- Minimized Toggle Button -->
+  <button id="chat-toggle-btn" title="Open Coding Support Chat">💬</button>
+
+  <!-- Expanded Chat Dialog Box -->
+  <div id="chat-window">
+    <div class="chat-header">
+      <span>Coding Support Chat</span>
+      <div class="chat-controls">
+        <!-- Expand/Shrink Button -->
+        <button id="chat-resize-btn" title="Toggle Size">⛶</button>
+        <!-- Minimize Button -->
+        <button id="chat-close-btn" title="Minimize">✖</button>
+      </div>
+    </div>
+    
+    <!-- User's Iframe Code -->
+    <iframe
+      src="https://chat.csusystem.edu/chat/3c0ead61-4e46-4c91-b035-47ea53991343"
+      width="100%"
+      height="100%"
+      style="border:0; flex-grow: 1;">
+    </iframe>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const widget = document.getElementById('support-chat-widget');
+    const windowEl = document.getElementById('chat-window');
+    const toggleBtn = document.getElementById('chat-toggle-btn');
+    const closeBtn = document.getElementById('chat-close-btn');
+    const resizeBtn = document.getElementById('chat-resize-btn');
+
+    // Open chat window
+    toggleBtn.addEventListener('click', () => {
+      widget.classList.add('is-open');
+    });
+
+    // Minimize chat window
+    closeBtn.addEventListener('click', () => {
+      widget.classList.remove('is-open');
+    });
+
+    // Toggle between large and small modes
+    resizeBtn.addEventListener('click', () => {
+      windowEl.classList.toggle('large-mode');
+    });
+  });
+</script>
