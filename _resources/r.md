@@ -1,8 +1,8 @@
 ---
-title: R
 layout: single
 sidebar:
   nav: "r_sidebar"
+title: R
 toc: true
 toc_sticky: true
 ---
@@ -35,12 +35,13 @@ R is especially popular in academia, research, and data-focused fields due to it
 
 ---
 
-## Resources for Learning R
-
+### Resources for Learning R
 In addition to this guide, there are many free resources available for learning R.  
 Below is a curated list of popular resources, organized by experience level and learning style.
 
-### Video Courses / Structured Learning Paths
+{% include resource-table.html topic="R" %}
+
+<!-- ### Video Courses / Structured Learning Paths
 
 | Resource | Author / Provider | Best for (goal) | Level |
 |----------|------------------|------------------|-------|
@@ -71,4 +72,4 @@ Below is a curated list of popular resources, organized by experience level and 
 |----------|------------------|------------------|-------|
 | [R for Spatial Analysis (GitHub)](https://github.com/dcarver1/R_SC_Spatial) | dcarver1 | Geospatial analysis (intro to intermediate) | Beginner–Intermediate |
 | [R as GIS for Economists](https://tmieno2.github.io/R-as-GIS-for-Economists-Quarto/chapters/00-preface.html) | T. Mieno | GIS and spatial economics | Intermediate–Advanced |
-| [CUAHSI Hydroinformatics Portal](https://water-content-portal.cuahsi.io/hydroinformatics/) | CUAHSI | Water data science, hydroinformatics | Advanced |
+| [CUAHSI Hydroinformatics Portal](https://water-content-portal.cuahsi.io/hydroinformatics/) | CUAHSI | Water data science, hydroinformatics | Advanced | -->

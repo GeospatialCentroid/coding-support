@@ -184,8 +184,10 @@ p, li, label {
   border: none !important;
   text-transform: uppercase;
   font-weight: bold;
-  padding: 12px 24px;
+  padding: 12px 18px;
   transition: all 0.2s ease-in-out;
+  text-align: center;
+
 }
 
 .btn--primary:hover, .btn:hover {
@@ -322,7 +324,8 @@ input:focus, textarea:focus {
   }
   .masthead__inner-logo {
     display: flex;
-    flex-direction: column; /* Stacks items vertically */
+  
+    flex-direction: column; /* Stacks items vertically */ 
     align-items: center;    /* Centers them horizontally */
     text-align: center;
 
@@ -330,7 +333,7 @@ input:focus, textarea:focus {
 
   .site-logo {
   display: block;
-  margin: 0 auto 10px auto; /* Centers the logo and adds space below */
+  margin: 0 auto 30px auto; /* Centers the logo and adds space below */
   }
 
 
@@ -347,14 +350,15 @@ h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
 
 #coding_cards .feature__wrapper {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 0.5rem;
+  text-align: center;
 }
 
 /* Card container */
 
 .cards_row {
-  display: flex; /* Turns on Flexbox for the parent */
+  display: inside; /* Turns on Flexbox for the parent */
 }
 .archive__item-body, .archive__item-teaser {
    flex: 1; /* Makes both divs grow to fill equal width */
@@ -391,7 +395,7 @@ h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
   background: #ffffff;
   padding: 0.8rem;
   border: 1px solid #e5e7eb;
-  height: 100%;
+  height: 90%;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -405,7 +409,7 @@ h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
 /* Title */
 
 #coding_cards   .archive__item-title {
-  font-size: 1.1rem;
+  font-size: 0.75rem;
   margin-bottom: 0.5rem;
   color:#555;
 }
@@ -422,7 +426,7 @@ h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
 
 #coding_cards   .archive__item-teaser img {
   width: 60px !important;
-  max-width: 60px !important;
+  max-width: 50px !important;
   height: auto;
   margin-bottom: 1rem;
 }

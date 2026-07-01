@@ -1,0 +1,27 @@
+{% assign resources = site.data.coding_resources | where: "Topic", include.topic | where: "Use in Website Y/M", "Y" %}
+{% assign categories = resources | map: "Category" | uniq %}
+
+{% for category in categories %}
+<h3>{{ category }}</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th>Author / Provider</th>
+      <th>Best for (goal)</th>
+      <th>Level</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% assign cat_resources = resources | where: "Category", category %}
+    {% for resource in cat_resources %}
+    <tr>
+      <td>{% if resource["URL Link"] and resource["URL Link"] != "" %}<a href="{{ resource["URL Link"] }}" target="_blank">{{ resource.Resource }}</a>{% else %}{{ resource.Resource }}{% endif %}</td>
+      <td>{{ resource["Author / Provider"] }}</td>
+      <td>{{ resource["Best for (goal)"] }}</td>
+      <td>{{ resource.Level }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endfor %}

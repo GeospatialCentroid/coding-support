@@ -15,6 +15,10 @@ r_sidebar:
       url: r/installing/
     - title: "Fundamentals"
       url: r/fundamentals/
+    - title: "Using RStudio"
+      url: r/using_rstudio/
+    - title: "Working With Data"
+      url: r/working_with_data/
 
 python_sidebar:
   - title: "Python"
@@ -63,4 +67,99 @@ data-viz_sidebar:
   - title: "Choosing the Right Visualization"
     url: data-viz/options/
   - title: "Using Excel for Data Visualization"
-    url: data-viz/excel/
+    url: data-viz/excel_viz/
+    
+excel_sidebar:
+- title: "Excel"
+  url: excel/
+  children:
+  - title: "Excel Fundamentals"
+    url: excel/excel_fundamentals/
+  - title: "Using VBA Code"
+    url: excel/using_vba_code/
+  
+bash_sidebar: 
+- title: "Bash"
+  url: bash
+  children:
+  - title: "Bash Fundamentals"
+    url: bash/fundamentals/
+  - title: "Writing Functions and Scripts"
+    url: bash/creating_functions_and_scripts/
+    
+unix_sidebar:
+- title: "Unix"
+  url: unix
+  children:
+  - title: "Unix Fundamentals"
+    url: unix/fundamentals/
+  - title: "Working With Files"
+    url: unix/working_with_files/
+    
+hpc_sidebar:
+- title: "HPC"
+  url: hpc
+  children:
+  - title: "HPC Fundamentals"
+    url: hpc/fundamentals/
+
+ai_sidebar:
+- title: "AI"
+  url: ai
+  children: 
+  - title: "AI Fundamentals"
+    url: ai/fundamentals/
+  - title: "Building an AI"
+    url: ai/building_an_ai/
+  - title: "Using a Machine Learning Model"
+    url: ai/using_a_machine_learning_model
+    
+html_sidebar:
+- title: "HTML"
+  url: html
+  children:
+  - title: "HTML Fundamentals"
+    url: html/fundamentals/
+  - title: "CSS Fundamentals"
+    url: html/css_fundamentals/
+
+javascript_sidebar:
+- title: "JavaScript"
+  url: javascript
+  children:
+  - title: "JavaScript Fundamentals"
+    url: javascript/fundamentals/
+  - title: "Web Development"
+    url: javascript/web_development
+
+c++_sidebar:
+- title: "C++"
+  url: c++
+  children:
+  - title: "C++ Fundamentals"
+    url: c++/fundamentals/
+  - title: "Managing Data and Files"
+    url: c++/managing_data_and_files/
+    
+matlab_sidebar:
+- title: "Matlab"
+  url: matlab
+  children:
+  - title: "Matlab Fundamentals"
+    url: matlab/fundamentals/
+  - title: "Working With Data"
+    url: matlab/working_with_data/
+    
+sql_sidebar:
+- title: "SQL"
+  url: sql
+  children:
+  - title: "SQL Fundamentals"
+    url: sql/fundamentals/
+  - title: "Working With Tables"
+    url: sql/working_with_tables/
+    
+
+    
+
+  
