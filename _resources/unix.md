@@ -9,17 +9,22 @@ toc_sticky: true
 
 ## What is Unix?
 
-Unix is a popular operating system that is ran through the command line. It allows
-for efficient navigation and working with files without the need for a file explorer. 
-It also has the capabilities to work with the Borne Shell.
+Unix is a popular operating system that is accessed via the command line. 
 
-## Unix versus Linux
+- **It Allows for Efficient Navigation** without the need for a file explorer. 
 
-Unix and Linux are very similar. The key difference is that linux is an open source
-software, while Unix is commonly payed for and used in institutions and organizations.
+- **You can and Access, Maniuplate, and Share** files with simple lines of code 
 
-Something to note is that your computer will always have a terminal you can run commands on. Whether you are operating
-on a linux system or a UNIX system, the differences are not extremely substantial and this guide will provide you valuable information no matter what terminal you are using. 
+- **You can Work** with multiple operating systems, unlocking the potential to run any script. 
+
+## Unix versus Other Operating Systems 
+
+- Unix and Linux are very similar. The key difference is that linux is an **Open Source
+Software**, while Unix is commonly payed for and used in **Institutions and Organizations**.
+
+- No matter what computer you use, they will always have a **Terminal** that you can run these commands on.
+
+- File Navigation concepts discussed in this guide are largely applicable to most common **Operating Systems** and **Shells**
 
 ## Resources 
 

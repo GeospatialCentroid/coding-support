@@ -9,16 +9,16 @@ toc_sticky: true
 
 ## Accessing File Contents in UNIX
 
-Accessing file contents is one of the most beneficial features of unix. On top 
-of moving and manipulating files and directories, accessing their contents allows 
-us to deepend the work we do in UNIX 
+Accessing file contents is one of the most beneficial features of unix. 
+
+Accessing file contents allows us to do significant work.
 
 ### Opening & Working With Files
 
 To display and work with files in the terminal, the common commands we will 
-be used are the **cat** and **tac** comamands
+be used are the **Cat** and **Tac** comamands
 
-The **cat** command is a standard command you can use on files such as text 
+The **Cat** command is a standard command you can use on files such as text 
 files and CSV's that will allow you to display the contents of the file. 
 
 ```bash
@@ -33,15 +33,14 @@ cat file_name1 file_name2
 
 ```
 
-the cat command goes beyond reading files, we can also create new files, modify existing
+The cat command goes beyond reading files, we can also create new files, modify existing
 files, and combine files 
 
-```bash
 
-'if we want to make a new file, we can use the cat command to do so. Lets pick
-up where we left off in our file system' 
+Let's pick up where we left off in a file system, and make a new file using the **cat** command.
 
-cd /Subdirectory 2/ dir_1
+```
+cd C:/Subdirectory_2/dir_1
 
 
                                  |--> file_2.csv
@@ -61,11 +60,17 @@ cat > file_3.txt
   root ----|    
            |                     
            -----> Subdirectory_2 ---> dir_1 ---> file_3.txt
-           
-'doing this allows us to add contents to a new text file which we can place in 
-our subdirector dir_1'
-           
-'we can also merge files'
+
+```
+
+Doing this allows us to add contents to a new text file which we can place in 
+our subdirectory dir_1.
+
+
+We can also **Merge Files** 
+
+
+```bash
 
 cd /Subdirectory_1
 
@@ -96,10 +101,11 @@ There are a series of extra **options** we can use with the cat command
 |> script.sh <<'EOF| write a script|
 
 the **tac** command is another useful tool that builds off of the cat command
-there are similar functions between the two, however the tac command will read from 
-the tail to the head (bottom to top) of a file instead of the head to tail (top to bottom).
 
-```unix
+While these commands are similar, some functions of the tac command work in **Reverse**, such as reading files from bottom to top instead of 
+from top to bottom. 
+
+```bash
 
 we can use the tac command to create files that have reversed contents
 
@@ -129,18 +135,18 @@ tac combined_file > reversed_file
 **Head** and **Tail** commands are other tools in Unix that allow you to view 
 sections of a file with east
 
-**Head**
 
-- the head command allows you to view the first 10 rows of a file, however this 
-can be modified with options 
 
-```unix
+the **Head** command allows you to view the first **10 Rows** of a file. However this 
+can be modified by adding options to our command using the **n** feature. 
+
+```bash
 
 head file_3.txt 
 
 'this would automatically read the first 10 lines
 
-head -n 15 file_3.txt 
+head -n 15 file_3.txt'
 
 'this would read the first 15 lines instead'
 
@@ -155,13 +161,17 @@ head -n 5 reversed_file combined_file
 Similar to the tac command, the tail command provides a similar function as the 
 head command except starting at the bottom of the file instead 
 
-```unix
+```bash
 
 tail file_3.txt
 
-'this would readthe bottom 10 lines of a file. 
+'this would read the bottom 10 lines of a file.'
 
-'we can use the head and tail commands together to read certain middle parts of a file 
+```
+
+With knowledge of both the head and tail commands. We can read sections of a files in the **Middle** 
+
+```bash
 
 head -n 10 file_3.txt | tail -n 20 file_3.txt
 
@@ -172,17 +182,27 @@ such as PDF's.
 
 Finally, we can use commands such as **Grep** to search for keywwords and values in files 
 
-```Bash
+```bash
 
 Grep -in "keyword" 
 
-'we can also tell grep to ignore certain words in files'
+```
+
+We can also tell grep to ignore certain words in files.
+
+```bash
 
 Grep -i "keyword"
 
-'and we can tell grep to find files that do not match to a word'
+```
+
+If we want any words except for some, we can tell grep to find files that do not match to a word.
+
+```bash
 
 Grep -v "keyword"
+
+```
 
 ```
 
@@ -190,14 +210,15 @@ Grep -v "keyword"
 
 ## Summary
 
-The terminal shell can be used for a variety of applications related to file management and working with 
-text based data. Understanding the file directory is  extremely importannt in having strong data organization skills
-and clean workflows for large scale projects. 
+The  shell can be used for a variety of applications related to file management and working with 
+data. Understanding the file directory is  extremely importannt in having strong data organization skills
+and clean workflows and efficiency when working on large scale projects. 
 
 ## Next Steps
 
-Learning to apply UNIX to script writing and import code is key when using terminals. Our BASH fundamentals
-guide will go over basic script writing in the terminal. This guide can be accessed [Here]('enter link here')
+Learning to apply UNIX to script writing import code, and work on other computers are all key when using terminals. Our BASH fundamentals
+guide will go over basic script writing in the terminal. This guide can be accessed [Here](https://geospatialcentroid.github.io/coding-support/bash/), and you can access more resources for using UNIX and other terminals in our **Resource Page** 
+
 
 
 

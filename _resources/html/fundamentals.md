@@ -15,7 +15,7 @@ entire website.
 
 --------------------------------------------------------------------------------
 
-###Accessing HTML Services 
+## Accessing HTML Services 
 
 HTML can be accessed through a **Diversity** of different locations and softwares. 
 This is because HTML is written into .html files such as 
@@ -23,6 +23,8 @@ This is because HTML is written into .html files such as
 - **Notepads**
 
 - **TextEdit**
+
+- **Online Softwares**
 
 This allows for you to write HTML code without needing to download external 
 softwares or **Integrated Development Environment**
@@ -60,12 +62,12 @@ provided by [**CodePen**](https://codepen.io/)
 ## Webpages vs Websites
 
 When we are navigating a **Website**. We are accessing an entire display of information and 
-services that is in the form of **Webpages**.  Websites operate similarily to a file system.Where our webpages are
-differnet files in our directory. Lets look at an exampl.e 
+services that are essentially a compilation of **Webpages**.  Websites operate similarily to a file system. Where are website is the **Path**, and our webpages
+are the **Directories** and **Files**. Let's look at an example. 
 
 
 When you click [This](https://geospatialcentroid.github.io/coding-support/) link, 
-you will be taken to the homepage for the Coding Support Hub. the two components we want to focus on are 
+you will be taken to the homepage for the Coding Support Hub (Which you are looking at right now). the two components we want to focus on are 
 our **geospatialcentroid.github.io** directory, and our **coding-support directory**
 
 
@@ -74,10 +76,10 @@ store our repository code that tells our website how to behave.
 
 
 The **/coding_support directory/** is the first webpage on our website and the first step
-down our file path
+down our file path. This is the first page that you saw when you clicked on our website link.
 
 
-If we were to click on a link in our support hub such as the Python link. Our https link would change
+If we were to click on a button in our support hub such as the **Python Button**. Our https link would change
 to include a **/python/** component. This is because we are navigating down our file path from our root 
 into where our python information is stored.
 
@@ -86,30 +88,31 @@ If we go into our python folder and click the Installing Python side tab. We wil
 to include **/installing/**. This means that in our github folder, there is a link in our Python folder that takes us 
 to our fundamentals webpage.
 
+Now that we have established how a webpage works. let's expore some of the fundamental syntax for building a webpage. 
+
 --------------------------------------------------------------------------------
 
 ## Syntax
 
 Before we start talking about coding structure and commands. It's important to establish how commands are structured 
 
-When we write commands, we will begin and end our command with <command name> and </command name>. 
+When we write commands, we will begin and end our command with a ```<>``` and we will end it with a ```</>``` 
 
 Here is an example if we wanted to write a paragraph style text
 
-```HTML
+```html
 
 <p> we are writing our paragraph here and we will end it now </p>
 
 ```
 
-We start off any HTML file with our Header. It will contain our **tags**, which 
+### Creating our Header
+
+We start off any HTML file with our Header. It will contain our **Tags**, which 
 determine how our webpage and our content is represented. This will not be shown 
 when we run our code. 
 
 There are 3 tags that commonly go into our Introductory code block.
-
-something to note is that commonly any commands that we will use in HTML are surrounded
-with the <> symbols
 
 
 **!DOCTYPE**
@@ -129,7 +132,7 @@ The head will be where we enter our metadata which is provided below.
 
   - **Element**
   
-  The element and the Charset are similar, as they both will establish the languae of 
+  The element and the charset are similar, as they both will establish the language of 
   the webpage 
 
   - **Title**
@@ -139,7 +142,7 @@ The head will be where we enter our metadata which is provided below.
    
   - **Charset**
 
-  The Charset is short for our character set. It determines what language our website will be in 
+  The Charset as mentioned earlier is short for our character set. It determines what language our website will be in 
   
   - **Link**
 
@@ -166,7 +169,7 @@ If we were to make an example of a webpage code block. It would look something l
 </html>
 
 ```
-### Element Basics
+### Element Types
 
   **Paragraphs**
   
@@ -183,7 +186,7 @@ If we were to make an example of a webpage code block. It would look something l
 ```
 
   we can modify the contents of our paragraphs by using commands such as the **Strong**
-  command which can bold words and phrases, as well as the **abbr** command, which caan we used to create abbreviations.
+  command which can bold words and phrases, as well as the **abbr** command, which can be used to create abbreviations.
   Another important element is the **br** command, which allows us to add breaks in our paragraph. 
   
   Lets look at an example that utilizes all of these. 
@@ -195,7 +198,6 @@ If we were to make an example of a webpage code block. It would look something l
   <br>
   
   </br>
-  
   So I am going to do that right now in this section. 
   <strong> <abbr> title = "this" >TI< </abbr> </strong>
   </p>
@@ -206,7 +208,6 @@ we can also bold words with the em command.
 
 
 There are other ways that we can modify are text. some examples are creating **superscripts**, **subscripts**, and 
-
 **coding** blocks. 
 
 Lets make some superscripts and subscripts 
@@ -235,11 +236,11 @@ if we wanted to make a code block in html it would look like this
 
 <code> "Lets use an example of a print command"
         
-        print("Hello World")
+        print("This is so Meta")
         
         "When we add quotations we make comments the output would look like"
         
-        Hello World
+        This is so Meta
 </code>
 
 ```
@@ -280,11 +281,14 @@ webpage
   </p>
   
   </section>
+
+  <h2> Example Two </h2>
   
 ```
 
+
 One piece of content that should go outside of sections and headings is **article**.
-This infromation is primarily used for pieces of information that are useful on their own. 
+This information is primarily used for pieces of information that are useful on their own. 
 
 ` **Main**
 
@@ -315,7 +319,7 @@ will use **letters and numbers**, while unordered lists will use **bullet points
   
 ```html
   
-  <p> here is a list of example words </p>
+  <p> here is a list of Colege Abbreviations </p>
      
      <ul>
         <li> CSU
@@ -344,20 +348,20 @@ will use **letters and numbers**, while unordered lists will use **bullet points
 - **Nav**
 
   A navigation window allows you to add multiple different webpage links within your
-  websiteto a list on your webpage. This can be done through using the **href** command 
+  website to a list on your webpage. This can be done through using the **href** command 
   
   lets go through our **href** command first. Our href command relies on using **hyperlinks**. These 
-  let you link a webpage or website through a single word or phrase. We will use the *a* as an anchor element to 
-  create our hyperlink using href. 
+  let you link a webpage or website through a single word or phrase. We will use the ```a``` as an anchor element to 
+  create our hyperlink using ```href```. 
   
-``` HTML
+```html
   
   <a href = "link provided here">name for your embeded link here</a>
   
 ```
-if we want to use this in conjunction with the **nav** command, we can do so like this. 
+If we want to use this in conjunction with the **nav** command, we can do so like this. 
 
-``` HTML 
+```html
 
 <nav>
   <ul>
@@ -377,18 +381,18 @@ the **img** command and the **video** command
 for our **img** command. we will use this in conjunction with the **src** and **alt** 
 commands. 
 
-```HTMl
+```html
 <img> 
   src = "file path / url to our image"
   width = "value"
   height = "value"
-  alt = "an alternate image name in case our image doesn't show up"
+  alt = "an alternate image name in case our image doesn't show up or if our link breaks"
 </img>
 ```
 
-we can follow a similar process with the **img** command. 
+we can follow a similar process with the **video** command. 
 
-```HTML
+```html
 <video controls width="value"" height ="value" autoplay> <!-- These commands will 
                                                               will set a size and autoplay the video 
                                                               when it ends -->
@@ -406,7 +410,7 @@ we can follow a similar process with the **img** command.
 
 - always start and end your commands with <> </> 
 
-- Create an outline before you begin building your webpage
+- Create an outline before you begin building your webpage; having a built structure will help you add content and change aesthetics.
 
 - Test run your code frequently to insure you haven't missed anything and it looks
   how you want it to look. 
@@ -416,6 +420,8 @@ we can follow a similar process with the **img** command.
 Explore our coding resources for HTML to learn more about what you can do with it. 
 You can also begin exploring new coding languages that have website building capabilities such 
 as javascript to build upon your HTML coding experience. 
+
+Learning how to use **Cascading Style Sheets** (CSS) will bolster your ability to build effective, aesthetic webpages. 
 
 
 

@@ -12,12 +12,14 @@ toc_sticky: true
 HTML is a coding language that enables you to create and customize webpages with highly
 personalized choices for visualization and aesthetics. 
 
-HTML also allows you to insert links, images, text, videos, and other external
+- **Insert Links, Images, Text, Videos**, and other external
 resources into your choice webpage to meet your goals. 
 
-Using HTML coding can give you a strong understanding of website building syntax
-that can be broadly applied to another file types and softwares such as R Studio.
-HTML can also help bolster your web development skills. 
+- **Effectively Structure Your Website** to meet your strutural and aesthetic goals. 
+
+- **Automate Proccesses With Javaascript** to build informative webpages easiy and efficiently. 
+
+- **Develop Website Building** Knowledge that can be applied to other coding languages and aplications
 
 --------------------------------------------------------------------------------
 
