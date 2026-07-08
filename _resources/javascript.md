@@ -14,9 +14,9 @@ CSS for web development as well as app development.
 
 **Build Webpages** and back end web launching code.
 
-**Automate Data Injection** into code 
+**Automate Data Injection** into code.
 
-**Create Meaningful** visualizations in a wide array of styles 
+**Create Meaningful** visualizations in a wide array of styles.
 
 **Code in Multiple Languages** in a meaningful way. 
 
