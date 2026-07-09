@@ -145,7 +145,7 @@ matlab_sidebar:
 - title: "Matlab"
   url: matlab
   children:
-  - title: "Matlab Fundamentals"
+  - title: "Fundamentals"
     url: matlab/fundamentals/
   - title: "Working With Data"
     url: matlab/working_with_data/
