@@ -31,11 +31,17 @@
   }
 
   /* The main chat window container */
+/* The main chat window container */
   #chat-window {
     display: none; /* Hidden by default */
     flex-direction: column;
     width: 350px; /* Default small width */
     height: 500px; /* Default small height */
+    
+    /* MOBILE FIX: Ensures the default size never overflows smaller screens */
+    max-width: calc(100vw - 40px); 
+    max-height: calc(100vh - 40px);
+    
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
@@ -45,8 +51,9 @@
 
   /* Expanded 'large' state */
   #chat-window.large-mode {
-    width: 600px;
-    height: 700px;
+    /* Fills the entire screen width/height minus a 20px margin on all sides */
+    width: calc(100vw - 40px); 
+    height: calc(100vh - 40px);
   }
 
   /* Header controls */
