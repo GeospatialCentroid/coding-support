@@ -4,6 +4,10 @@ main:
     url: /support-request/
   - title: Events
     url: https://colostate.libcal.com/calendar?cid=12856&t=g&d=0000-00-00&cal=12856&ct=63302,63303&inc=0
+  - title: Community
+    url: /community/
+  - title: Campus Resources
+    url: /campus-resources/
   - title: Mailing List
     url: https://lists.colostate.edu/cgi-bin/mailman/listinfo/coding-support
 
