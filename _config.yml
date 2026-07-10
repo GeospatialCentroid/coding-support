@@ -21,7 +21,7 @@ title                    : "Coding Support Hub"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Your Name"
-description              : "Empowering Rams to build better software. Explore curated tutorials, debugging tools, and community-driven support for every skill level."
+description              : "Empowering Rams to write code that advances research. Explore curated tutorials, debugging tools, and community-driven support for every skill level."
 url                      : https://geospatialcentroid.github.io
 baseurl                  : "/coding-support"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
