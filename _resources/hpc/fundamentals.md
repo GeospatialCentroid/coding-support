@@ -11,25 +11,46 @@ This guide will focus on the basics of accessing an HPC and how they work.
 
 ## Accessing an HPC
 
+HPC's are different then a **Graphical User Interface** (GUI) that we are accustomed to. Because we are working with nodes
+remotely. Using the command line is the best way to remove into an HPC. 
+
 HPCs can be accessed online such as **CSU's Riviera HPC**. However, in order
 to actually use an institutions HPC you must receive access. For some institutions, this will 
-consist of logging into the universities VPN system. For others, you may need to apply online 
+consist of logging into the universities VPN system. For others, you may need to apply online.
 
-Upon recieving access to an HPC, you will be given a **public key** which will commonly consist of 
+Upon recieving access to an HPC, you will be given a **Public Key** which will commonly consist of 
 a username and a server id. With this and commonly your email, you can create a **Secure Shell**
 
-To do so, you will want to open your current linux, unix, operating system shell and enter a command
-that creates the secure shell. It will look something like this.
 
-```linux
+### Creating a Secure Shell and key. 
+
+Creating a **SSH** (Secure Shell) is important for maintaining the security of the HPC and your computer from external threats. You will also need
+to create a Secure Shell to access a remote system. 
+
+
+
+Some operating systems come pre installed with a SSH client such as Linux and MacOS operating systems. If your's does not. You can 
+enter a command in your operating system such as this one. 
+
+```bash
+
+sudo apt update
+sudo apt install openssh-clent openssh-server
+
+```
+
+Upon having our SSH client properly installed. We will now **Generate a Key**. Our key is how we will make our SSH secure and access our HPC. 
+
+```bash
 
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
 ```
-Some things to note about our key creation. There are some select commands that have gone into creating our key to make
-it secure. 
 
-1.**-t rsa** is our keytype and the algorithim that it uses 
+Let's take a look at the commands that have gone into generating our key. 
+
+
+1. **-t rsa** is our keytype and the algorithim that it uses 
 
 
 2. **b 4096** is the bit size of our key. This one is 4096 bits
@@ -37,10 +58,28 @@ it secure.
 
 3. **-C** the comment we can add to identify our key
 
+Once we have made our key, we will save our key to our **.ssh** directory. 
+
+```bash 
+
+/Users/YOU/.ssh/enter_custom_id_here
+
+'Our custom ID is used for if we have multiple SSH keys.'
+
+```
+
+To find our key, we can use file navigation commands such ash the **ls** command 
+
+```bash 
+
+ls ~/.ssh/
+
+```
+
 
 Once we have made this, we can copy it with our username and other information provided by our HPC server
 
-```linux
+```bash
 
 ssh-copy-id username@server_ip
 
@@ -48,7 +87,7 @@ ssh-copy-id username@server_ip
 
 Finally, to **Access the HPC Server**. We can use the ssh command and our newly authorized username
 
-```linux
+```bash
 
 ssh username@server_ip
 
@@ -61,17 +100,17 @@ https://www.bing.com/ck/a?!&&p=0b0c1b47f6aee6b4220f3890f10b7a9a29d3d509f2cc360a9
 
 ## Running Your Program in an HPC 
 
-Typically, because HPC's are public systems for the use of hundreds to thousands of people, there are commonly queues that 
-can exist before your code is run. This guide will focus on how to upload your code to an HPC and how to make the queue time shorter. 
+Typically, because HPC's are public systems for the use of hundreds to thousands of people, there will be queues that 
+ exist before your program is executed. This guide will focus on how to upload your code to an HPC and how to make the queue time shorter. 
 
 
 ### Node Types 
 
-We want to establis the common types of nodes that exist within an HPC that will be important for you running a job. 
+We want to establish the common types of nodes that exist within an HPC that will be important for you running a job. 
 
 |Node Type|Function|
 |-----|------------|
-|Head Node| Serves as an entry point, responsibel for managing resources|
+|Head Node| Serves as an entry point, responsible for managing resources|
 |Compute Node | Runs computational tasks| 
 |Storage Node | Stores large datasets and data 
 |Login Node | Point of interaction with the cluster where you will manage files and submit job requests | 
@@ -81,23 +120,24 @@ We want to establis the common types of nodes that exist within an HPC that will
 In order to submit a script we will first want to run a Hash-bang terminal command. This will allow us 
 to view all the scripts that are in our file that we can run in our HPC system. 
 
-```linux
+```bash
 
 Hash-bang/bin/bash
 
 ```
 
-This allows us to know the file names for all teh files we want to run as they will appear in a list
+This allows us to know the file names for all files we want to run as they will appear in a list
 
 
 **HPC Syntax** differs among the different types of systems. The best practice is to look into your HPC system 
-to know what syntax should be used to submit commands, view the queue, and cancel them. We will be using sbash syntax for 
-this example. 
+to know what syntax should be used to submit commands, view the queue, and cancel them. 
 
 In order to submit a script as a job. We will use the **Sbatch** Command. This will move our script from the login node
-to the copmuting node where it will begin running our program once the queue is over 
+to the computing node where it will begin running our program once the queue is over.
 
-```linux 
+Having knowledge of where scripts are located in your file system makes this step much easier. You are essentially moving your script from your file system to an HPC and telling it, "I would like you to run this when you get time!" 
+
+```bash
 
 sbatch example_script.sh
 
@@ -119,25 +159,23 @@ to maximize it's resources. There are a few categories of information that we ca
 This information does not need to be perfectly accurate. It simply needs to be our best estimation for our job. 
 
 
-- ** n<tasks>
+- ```n<tasks>```
 
   This will help inform the system of how many tasks our program will run
   
-```linux
-  
-- **time
+- ```time```
 
   We can tell the HPC system how many days,hours,minutes, and seconds it will take for our code to run. 
   
-- **mem<megabytes>
+- ```mem<megabytes>```
 
   This will inform the system of how much memory our job will take up 
   
-- ** N<nodes>
+- ```N<nodes>```
 
   This will inform our system of how many seperate processors we will require 
   
-```
+
 
 
 -------------------------------------------------------------------------------
