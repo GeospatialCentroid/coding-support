@@ -10,44 +10,44 @@ toc_sticky: true
 ## Accessing SQL 
 
 One of the more common ways to access a select database through SQL is through te 
-SQL Server Management Studio (SSMS).  A link for using SSMS is 
+**SQL Server Management Studio (SSMS)**.  A link for using SSMS is 
 provided [Here](https://learn.microsoft.com/en-us/ssms/install/install)
 
-SQLCMD is a command line alternative that will allow you to access databases. 
+**SQLCM** is a command line alternative that will allow you to access databases. 
 A link to installl and set up SQLCMD is provided [Here](https://www.techpluto.com/how-to-access-sql-server-database-without-management-studio/)
 
-One thing ot note is that both of these softwares are used with microsoft. 
-We will go over how to download softwares without access to microsoft 
+One thing to note is that both of these softwares are used with **Microsoft**. 
+We will go over how to download softwares without access to microsoft.
 
-for **non** microsoft softwares. We can use **Datagrip**. Datagrip is a 
-service that is supported for Windows, MacOS, and Linux. 
+for **Non-Microsoft Softwares**, we can use **Datagrip**. Datagrip is a 
+service that is supported for MacOS, and Linux. 
 
 You can access Datagrip [Here](https://www.jetbrains.com/datagrip/features/sqlserver/).
 
 ### Accessing servers within SQL 
 
-Once we have downloaded a virtual SQL accessing tool. We need to have the proper credentials
-by the database administrator or our institution. 
+Once we have downloaded a virtual SQL accessing tool. We need to have the **Proper Credentials** by the database administrator.
 
-upon opening the software or terminal we are using. We need to enter 4 things to log into the database
+upon opening the software or terminal we are using. We need to enter 2 things to log into the database
 
-` The Server Name 
+` **The Server Name**
 
-` SQL login credentials 
+` **SQL login credentials**
 
-This will consist of a username and password. To get the username and password you should communicate with the 
-database provider and attempt to get this information from them. 
+This will consist of a **Username** and **Password**. To get the username and password you should communicate with the 
+database provider get this information from them. 
 
 Upon logging into the server, we need to access the database we are interested in. 
 We can do this with the **Transact-SQL** or the **T-SQL** commands. 
 
-```SQL 
+```sql
 
-Transact-SQL [Database Name]   <--- #we put this in brackets because it will 
-                                     allow us to enter numbers, spaces, and special 
-                                     characters if needed. 
+Transact-SQL [Database Name]   <!--- we put this in brackets because it will 
+                                     <---allow us to enter numbers, spaces, and special 
+                                     <---characters if needed.
                                      
 ```
+NOTE: We put this information in brackets because when we are targetting something (what we want our command to execute on), we specifiy it with brackets in SQL. 
 
 If you have made it this far, you are officially able to access your database and the data within. 
 If you are not able to access a database, dont worry! This guide will provde substantial data management 
@@ -60,16 +60,17 @@ and analysis information that will prove to beneficial across coding softwares.
 SQL databases all have different syntax. Upon the basics of this guide, it is beneficial to 
 consult a help guide within your database to learn more about the functions that are possible. 
 
-For example, one differnce is that some databases will require a semicolon after every line in a command 
-while some wont.
+For example, one differnce is that some databases will require a semicolon after every line in a command while some wont.
 
-When writing functions in SQL. They commonly work on a line basis. This is, where every line has a
+When writing functions in SQL. They commonly work on a line basis. This is where every line has a
 single command. We will see examples of this later 
 
 In databases, there can be a series of different **tables** that exist. It is important to **Update** the 
-table you want to work in before you begin to do any computations or run any commands
+table you want to work in before you begin to do any computations or run any commands. 
 
-```SQL
+Doing so will allow you to be working in the **Proper Table** and not another on accident. 
+
+```sql
 
 UPDATE <Table Name> 
 
@@ -79,35 +80,31 @@ UPDATE <Table Name>
 
 There are 4 large data types in SQL 
 
-` **Numeric Types** 
+- **Numeric Types** 
   
-  Numeric types conssit of integers, decimals, precision numbers, and Floating Points 
+  Numeric types consist of integers, decimals, precision numbers, and Floating Points 
     
 - **Text Fields** 
 
-  in our Text Fields, there are fixed length character strings, variable length character strings, and Clobs; which 
-  are large bodies of text. 
+  In our Text Fields, there are fixed length character strings, variable length character strings, and Clobs; which are large bodies of text. 
   
 - **Date and Time Fields**
 
   These fields contain information days within the year and times. 
   
-  - **Boolean Types**
+- **Boolean Types**
   
   Boolean fields will have 1 of 2 field contents. Either TRUE or FALSE. 
-  These fields serve as an effective method of selecting values of interest outside
-  of using boolean or comparative operators. 
+  These fields serve as an effective method of dividing data into certain subcategories 
 
 ### Commands and Operators 
-SQL is a command and operator based system, meaning that programs and all data analysis relies on using a set of commands
-and operators
-in conjunction to achieve your goals. We will look at the more common commands in this guide 
+SQL is a command and operator based system, meaning that programs and all data analysis relies on using combined sets of operators and commands.  
 
 SQL **Command Structure** is based off a three part system. 
 
 The **Select** Command comes first. In this section, we will choose the columns from a table that we are working in 
 
-We then use the **From** command. This command will tell our system which table we want to select the column names from. 
+We then use the **From** command. This command will tell our system which table we want to select from.
 
 Finally, we use the **WHERE** command to establish which operators we want to use on our selected columns. This is where the 
 majority of our coding work is going to be. 
@@ -168,7 +165,7 @@ you to manipulate, while the other will find all values that are not NULL. They 
 
 --------------------------------------------------------------------------------
 
-## Summmary
+## Summary
 
 Overall, SQL is widely accessible to anybody who has the necessary information from the organization
 or institution that operates the database of interest. Even if you can't access a database.
@@ -180,5 +177,7 @@ all introductory coding languages.
 ## Next Steps 
 
 Upon understanding the basics of how SQL works with operators and it's commands, 
-the next step is to understand how we can work with data and tables in SQL 
+the next step is to understand how we can work with data and tables in SQL.
+
+Our next section will provide a broad overview of some of the basic commands in SQL With provided examples showing proper syntax
 

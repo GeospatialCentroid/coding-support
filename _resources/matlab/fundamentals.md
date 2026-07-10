@@ -83,7 +83,7 @@ There are several different types of data that we can assign to a **Variable** i
 |Arrays | Series of 1 dimensional numbers in a comma seperated series | 
 
 
-Numeric data types are able to support **Signed ** and **Unsigned** numbers
+Numeric data types are able to support **Signed** and **Unsigned** numbers
 
 - **Signed** numbers are those that are all positive or negative
 - **Unsigned** numbers are those that cannot be negative
@@ -94,9 +94,9 @@ When we run code, the code we run **Takes up Memory** in our computer space.
 
 Having options for our text and numbers that take up less memory help us lower the **Required  Bytes of Data** will help conserve memory on our computer when we run complex series of code.
 
-We can also **change the data type** of a variable through this process. 
+We can also **Change the Data Type** of a variable through this process. 
 
-```matlab
+```m
 
 % First, lets assign a variable a value 
 
@@ -110,12 +110,12 @@ strin = cast(charac, 'string'). We now have a string with 1 letter.
 
 One benefit of using matlab is that it automatically assigns variables a data type. Where with most other languages this must be specified.
 
-We can also leave variables unassigned. This is because of the  **ans** variable, which acts as a placeholder for unassigned values. 
+We can also leave variables unassigned. This is because of the  **ans** variable, which acts as a **Placeholder** for unassigned values. 
 
 Here is an example of using the ans command. 
 
 
-```matlab
+```m
 
 5 + 8 
 
@@ -130,12 +130,12 @@ ans + 9
 Because ans is the sum of 5 and 8, this will return 22. 
 
 
----------------------------------------
+--------------------------------------------------------------------------------
 
 ## Operators and Statements
 
 
-In matlab and other coding languages, we can use a combination of **Arithmetic** and **comparative**
+In matlab and other coding languages, we can use a combination of **Arithmetic** and **Comparative**
 operators to control program flow and program quality with the help of **Logical** and **Conditional** Statements. 
 
 
@@ -197,7 +197,7 @@ this will return 64
 
 Lets look at how we can use comparative operators in accordance with our arithmetic operators
 
-```
+```m
 
 % Lets assign a variable the sum of 2 other variables
 
@@ -205,6 +205,7 @@ A = 8
 B = 7
 
 combined = A + B 
+
 ```
 
 Now lets us our comparative operators to make a yes or no condition. 
@@ -212,9 +213,10 @@ Now lets us our comparative operators to make a yes or no condition.
 ```m
 
 bool = combined > 20 
+
 ```
 
-if we were to display bool our function would return false, as our summed value is less then 20. The opposite is true if we had a value greater than 20. 
+If we were to display bool our function would return **false**, as our summed value is less then 20. It would return **true** if we had a value greater than 20. 
 
 
 
@@ -222,9 +224,10 @@ if we were to display bool our function would return false, as our summed value 
 
 ## Conditional Statments
 
-We will be looking at **if statements** and **switch statments** here. 
+We will be looking at **If statements** and **Switch statments** here. 
 
-these statements utilize our comparitive operators to deem if conditions are met or not. 
+If Statements and Switch statements allow us to control our programs flow depending on if certain predefined conditions are met. 
+
 
 Here is a simple example of a if statement in action 
 
@@ -240,9 +243,9 @@ end
 
 ```
 
-This alone is not specific enough. We can use the elseif statement to add conditionals 
+If this alone is not specific enough. We can use the **elseif** statement to add conditionals to narrow our responses scope. 
 
-```matlab
+```m
 if condition < 0 
   fprintf("this is a negative number");
 elseif condition < 10 
@@ -251,8 +254,10 @@ else
   fprintf("This is a positive number greater then 10")
 ```
 
-This gives us more specific responses. HOwever, it can be tedious to write. We 
+This gives us more specific responses. However, it can be tedious to write. We 
 can simplify this code using our **Swtich command** 
+
+Switch commands offer us a **Quicker Syntax** for writing conditionals wilth  multiple statements. 
 
 ```matlab
 
@@ -275,7 +280,7 @@ end
 
 ## Next Steps 
 
-Now that we have established some basic fundamentals of matlab. We will now go over 
+Now that we have established some basic fundamentals of matlab. We will now briefly  go over 
 how to read in data, and how to visualize data in matlab. 
 
 
