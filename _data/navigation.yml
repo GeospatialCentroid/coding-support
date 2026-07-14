@@ -19,7 +19,6 @@ r_sidebar:
       url: r/using_rstudio/
     - title: "Working With Data"
       url: r/working_with_data/
-    - excerpt: 'Analyze Data and Create Visualizations'
 
 python_sidebar:
   - title: "Python"
