@@ -15,13 +15,11 @@ your organizations needs.
 
 ### Why Learn SQL?
 
-Learning SQL can give you the opportunity to familiarize yourself with broad 
-logical data skills, creating data cleaning and analysis workflows, and 
-experience working with databses that will prove to be valauble in a wide array of 
-careers. 
+**Familarize Yourself** with boolean logic. 
 
-SQL is also a concise and efficient language that makes it easy to work with 
-a wide array of data sets all in one database. 
+**Develop Data Analysis** skills that are broadly applicable 
+
+**Learn to Work** with databases, something that will be useful in many careers. 
 
 ### Resources
 

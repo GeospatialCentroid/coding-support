@@ -22,109 +22,162 @@ Javascript
 
 Javascript is built into most **Computer Systems**
 
-For **Windows & Linux** you can press CTRL + Shift + J 
+For **Windows & Linux** you can press CTRL + Shift + J.
 
-For **Mac** you can  pres Cmd + Option + J
+For **Mac** you can  pres Cmd + Option + J.
 
-From here, you can enter JavaScript code
+From here, you can enter JavaScript code.
 
-You can also use and **Integrated Development Environment**
-
-- [**VS Code**](https://code.visualstudio.com/download?_exp_download=fb315fc982)
-
-- [**Eclipse**](https://www.eclipse.org/downloads/])
+You can also use an **Integrated Development Environment** such as 
+[**VS Code**](https://code.visualstudio.com/download?_exp_download=fb315fc982), or
+[**Eclipse**](https://www.eclipse.org/downloads/]).
 
 
-### Syntax
+------------------------------------------------------------------------------------------
 
+## Syntax 
+
+When we write code, we need to be very specific with what we write. We commonly have our 
+**Commands**, and our **Targets**. OUr commands are what we want our code to do, and our 
+targets are what we wan't our code to impact. 
+
+We usually will use the **()** to dictate what we want to target in our code. For some 
+longer code blocks such as functions and conditional statements we will alos use **{}**.
+
+You will notice that we always ensure our bracketing is closed. Meaning no matter how much code we write we have an equal amount of opening and closing brackets. We will see many examples of this throughout our guide. 
+
+## Data and Variables 
 
 There are various **Data Types** that are used within JavaScript 
 
 |Data Type|Supported Data|
 |----|-------------------|
-|Number| supports numbers of any time|
+|Number| supports numbers of any type|
+|Integer| Supports non decimal numbers| 
 |String| Supports Characters and combinations of words|
 |Boolen| true and false|
-|null|NuLL|
+|null|values that are invalid or have nothing|
 |notDefined|blank variables
 
-**Variables** that we create are automatically assigned these data types based
+Unlike other coding languages where you need to assign variables a **Data Type**, **Variables** that we create are automatically assigned these data types based
 on what you enter. 
 
 
 We can assign variables with the **let** command as well as the **const** command
 
 
-``` JavaScript
-let exampleVariable = "sample string"
-
-// This is a single line comment, when we assign the let command it can be reassigned. the 
-const command cannot
-
-const permanentVariable = "this can't change"
+``` javascript
+let exampleVariable = "Hello World"
 
 ```
-If we want to reassign our exampleVariable we can do so. However, we can't change
-permanentVariable. 
 
-We can also assign a variable multiple values. We do this by creating an array 
+When we use the **Let** command, it allows us to later reassign the variable. If we wan't 
+to create a variable that can't be asisgned later on, we will use the **Const** Command
 
-```JavaScript
+``` javascript
+const permanentVariable = "This Can't Change!"
+
+```
+
+### Output Commands 
+
+we can print variables, and strings using the **console.log** command. 
+
+We can print a sample string of our choosing
+
+``` javascript
+
+console.log("Hello World")
+
+```
+
+This would return Hello World to our console. 
+
+We can print the same text using our **exampleVariable**
+
+``` javascript
+
+console.log(exampleVariable)
+
+```
+
+If we want to create a string with **Our own Text** and **Variables**, we can do that like
+so. 
+
+``` javascript
+
+let name = "Ethan"
+
+console.log("Hello There " + name + " !" )
+
+```
+
+This would print: Hello There Ethan!
+
+
+### Arrays and Objects
+
+We can assign variables multiple values using **Arrays** and **Objects** 
+
+Array's allow us to create a single variable with multiple different values 
+
+``` javascript
 
 let array = (1,2,3,5) 
 
-//we can do the same for strings 
+// This is a comment! We can do the same for strings.
 
 let fruit = ("banana","apple","kiwi","cherry")
 
 ```
 
-Something similar to an array is an object, we can use objects in a similar capacity
+Similar to printing our single value variables, we can print values from our **fruit** variable as well. 
 
-```Javascript
+```javascript
 
-const obj = {
+console.log(fruit[0])
+
+```
+
+Arrays in javascript operate on a zero-basis. This means that when we want to call the first value in an array we start wiht [0]. As we move down our values, we will increase our number. 
+
+Let's print the word **kiwi**. 
+
+``` javascript
+
+console.log(fruit[2])
+
+```
+
+Something similar to an array is an **object**
+
+An object is essentially an array of variables. This means that we can assign multiple variables within our object, and then call individual variables within the object. Let's look at an example. 
+
+```javascript
+
+const person = {
 name: "Elena",
-role: "Student"
+role: "Student",
+instrument: "Trombone", 
 }
 
 ```
+We can print variables from our object with a similar **console.log** command as wth our array's 
 
-### Output commands 
+```javascript
 
-We can print **Variables** and **Commands** through the console.log() command
-
-``` JavaScript
-
-console.log("Hello Reader")
-
-// This would return Hello Reader 
-
-let print_variable = "This will print this string"
-
-console.log(print_variable)
-
-// This would return: This will print this string
+console.log(person.instrument)
 
 ```
 
-We can also add variables to strings through console.logs
+This would return: Trombone
 
-```JavaScript
+Let's go back to our **Output Commands**. 
 
-let insertVariable = "Elena"
-
-console.log("Hello + {insertVariable}")
-
-// This would return, Hello Elena. 
-
-```
-
-
-our console.log command is not limited to strings and numbers. We can also use 
+Our console.log command is not limited to strings and numbers. We can also use 
 this with boolean commands
 
-```Javascript 
+```javascript
 
 let booleanVariable = true
 
@@ -138,27 +191,8 @@ console.log(5 < 3)
 //because 5 is greater then 3, this will return false. 
 
 ```
-Remember our Arrays from earlier? We can use these in our console.log as well 
 
-```JavaScript
-
-console.log(fruit[0])
-
-// because the first value in our array was banana, this will return banana. 
-
-```
-We can do the same thing with our object from earlier 
-
-```Javascript
-
-console.log(obj['role])
-
-// we can also use 
-
-console.log(obj.role)
-
-```
-### Operators
+## Operators
 
 Javascript offers **Arithmetic** and **Comparison** operators that allow us to 
 perform computations 
@@ -182,22 +216,29 @@ of numeric variable assignments
 
 ```javascript
 
-let longFormat = 5 + 4 
-let Shorthand = LongFormat 
+let longFormat = 5 
+let Shorthand = longFormat 
 
 Shorthand += 3 
 
-// this would add 3 to the value of our shorthand variable 
-// if we want to increment shorthand we can do so as well 
-
-Shorthand ++
-Shorthand -- 
-
-Because we did a +1 increment and a -1 increment our value did not change
+// this would add 3 to the value of our shorthand variable, giving it a value of 8
 
 ```
 
-We also have **Comparison Operators**
+**Incrementing** allows us to add values of 1 to a variable, this will become useful when looking at **Conditional Statements** and **Loops** 
+
+``` javascript
+Shorthand ++
+
+// This would give us a value of 9
+
+Shorthand -- 
+
+/// This would bring us back to 8
+
+```
+
+**Comparison Operators**
 
 |Operator Symbol|Operator Meaning|
 |---|----------------------------|
@@ -208,12 +249,14 @@ We also have **Comparison Operators**
 | >= | Greater than or equal to |
 | <= | Less than or equal to | 
 
-### Conditional Statments
+We will use conditional operators commonly when we write **Conditional Statements** and **Loops** 
+
+## Conditional Statments
 
 We can apply our operators to an **If-Statement**. If statements allow us to control
 the flow of our program. Lets look at an example. 
 
-```Javascript 
+```javascript 
 
 let age = 18;
 
@@ -227,7 +270,7 @@ if (age >= 18) {
 
 If we want to add more conditions, we can use the else if command
 
-```Javascript 
+```javascript 
 
 let age = 18;
 
@@ -248,37 +291,40 @@ Loops are another way of effectively controlling program flow. We will look at
 
 There are 3 large components of a for loop
 
-- **Assigning our Variable**
+First we **Assign** our variable.
 
-```Javascript
+```javascript
 
-for (let i = 0;
-
-```
-- **Setting our Condition**
-
-```Javascript
-
-for (let i = 0; i < 10
+for (let i = 0);
 
 ```
+Then, we will set our **Condition**.
 
-- **Changing our i value per loop**
+```javascript
 
-```Javascript
+for (let i = 0; i <= 10)
 
-for (let i = 0; i < 10; i++)
+```
 
-- **Creating our command**
+Next, we want to **Increment** our variable. 
 
-for (let i = 0; i < 10; i++) {
+```javascript
+
+for (let i = 0; i <= 10; i++)
+```
+
+Finally, we will create our **Command** 
+
+```javascript
+
+for (let i = 0; i <= 10; i++) {
     console.log(i);
     }
 ```
-
+This example code would log every number from 0 to 10 
 **While Loops** follow a similar format 
 
-```JavaScript
+``` javascript
 
 let i = 0;
 
@@ -294,23 +340,25 @@ Note: It is important to set a condition in which the program ends, as well as
 which would harm our CPU and fry its memory.
 
 
-}
 
-### Functions
 
-We can re-use code in java through through **Functions**
+## Functions
 
-```Javascript
+We can re-use code in java through through **Functions**. This helps us save time as well as 
+writing **Scripts** that can be broadly used between coders. 
+
+```javascript
 
 function greetUser(name) {
-    return("Hello" ${name} );
+    return("Hello" ${name}"); 
+    //This is another way to print a string with a variable within it. 
 }
 
 ```
 
 When we want to call this function, we can enter the function
 
-```Javascript
+```javascript
 
 console.log(greetUser(Elena))
 

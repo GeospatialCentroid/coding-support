@@ -11,9 +11,7 @@ toc_sticky: true
 
 
 C++ is a standardized coding language that builds upon the C language. It offers 
-more flexibility with data and file management then coding languages like python and r.
-
-This guide will go into the fundamentals of using c++ code. 
+more flexibility with data and file management then coding languages like python and r. As well as offering object-oriented coding. 
 
 
 --------------------------------------------------------------------------------
@@ -21,13 +19,13 @@ This guide will go into the fundamentals of using c++ code.
 
 ## What can you do with C ++ 
 
-- **You can develop** games, apps, webpages, and websites. 
+- **Develop Games**, apps, webpages, and websites. 
 
-- **You can manage** your computers memory capacity. 
+- **You can Manage** your programs memory capacity on your processing system. 
 
-- **You can create** code for sensors, and other embedded systems 
+- **Create Code** for sensors and other embedded systems 
 
-- **You can control** graphical user interfaces
+- **Control Graphical** user interfaces (GUI's)
 
 
 -------------------------------------------------------------------------------
