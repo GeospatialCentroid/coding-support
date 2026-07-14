@@ -16,7 +16,7 @@ For **Windows** you can use a package installing command
 
 ```bash
 
-sudo apt-get install g++
+sudo apt-get install c++
 
 ```
 

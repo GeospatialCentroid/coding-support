@@ -40,7 +40,7 @@ $global-font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Roboto", "Se
 $header-font-family: "Poppins", sans-serif;
 
 body, 
-p, 
+p, p2,
 h1, h2, h3, h4, h5, h6,
 .site-title, 
 .nav__items,
@@ -69,9 +69,14 @@ body {
 }
 
 p, li, label {
-  font-size: 0.85rem !important;
+  font-size: 0.65rem;
   line-height: 1.5; /* Slightly tighter line spacing */
+  text-align: center;
+  font-weight: 500 !important;
+  padding-bottom: 0.4rem;
 }
+
+
 
  .fas {
     color: var(--csu-white) !important;
@@ -393,7 +398,10 @@ h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
 #coding_cards .feature__item--grid {
   
   background: #ffffff;
-  padding: 0.8rem;
+  padding-top: 0.01rem;
+  padding-bottom: 0.8rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   border: 1px solid #e5e7eb;
   height: 90%;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -409,25 +417,32 @@ h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
 /* Title */
 
 #coding_cards   .archive__item-title {
-  font-size: 0.75rem;
-  margin-bottom: 0.5rem;
+  font-size: 0.5rem;
+  margin-bottom: 0.5rem !important;
   color:#555;
 }
 
 /* Description */
 
 #coding_cards  .archive__item-excerpt {
+
   color: #555;
   margin-top: -30px;
+<<<<<<< HEAD
    margin-bottom: -10px;
+   
+=======
+   margin-bottom: -5px;
+  
+>>>>>>> a2d08f38577fc1b7421b538b0d294be7bfb2d7b7
 }
 
 /* Icon styling */
 
 #coding_cards   .archive__item-teaser img {
-  width: 60px !important;
-  max-width: 50px !important;
-  height: auto;
+  width: 45px !important;
+  max-width: 100px !important;
+  height: relative;
   margin-bottom: 1rem;
 }
 
