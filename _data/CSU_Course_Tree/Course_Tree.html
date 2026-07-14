@@ -6,7 +6,7 @@
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <style>
     body { font-family: Arial, sans-serif; background: #f7f9fc; }
-    svg { display: block; margin: 20px auto; }
+    svg { display: block; margin: 1px auto; }
     .link {
       fill: none;
       stroke: #7b8fa3;
@@ -28,9 +28,9 @@
   <div id="chart"></div>
 
   <script>
-    const width = 1400;
-    const height = 1400;
-    const radius = 360;
+    const width = 1200;
+    const height = 1000;
+  
 
     const svg = d3.select("#chart")
       .append("svg")
@@ -56,10 +56,10 @@ d3.csv("CSU_Courses.csv").then(data => {
     }
 
     const topicNode = topicMap.get(topic);
-    let levelNode = topicNode.children.find(c => c.name === level);
+    let levelNode = topicNode.children.find(c => c.name === courseCode);
 
     if (!levelNode) {
-      levelNode = { name: level, children: [] };
+      levelNode = { name: label, children: [] };
       topicNode.children.push(levelNode);
     }
 
@@ -75,8 +75,15 @@ d3.csv("CSU_Courses.csv").then(data => {
 
       const root = d3.hierarchy(rootNode);
       const treeLayout = d3.tree()
-        .size([2 * Math.PI, radius])
+        .size([height/3, width/2])
         .separation((a, b) => (a.parent === b.parent ? 1 : 2) / a.depth);
+          // Center the tree.
+        let x0 = Infinity;
+        let x1 = -x0;
+        root.each(d => {
+        if (d.x > x1) x1 = d.x;
+        if (d.x < x0) x0 = d.x;
+        });
 
       const descendants = treeLayout(root);
 
@@ -88,13 +95,13 @@ d3.csv("CSU_Courses.csv").then(data => {
         .data(descendants.links())
         .join("path")
         .attr("class", "link")
-        .attr("d", linkGenerator);
+  
 
       const nodes = g.selectAll("g.node")
         .data(descendants.descendants())
         .join("g")
         .attr("class", "node")
-        .attr("transform", d => `rotate(${d.x * 180 / Math.PI - 90}) translate(${d.y}, 0)`);
+        .attr("transform",d => `translate(${d.y},${d.x})`);
 
       nodes.append("circle")
         .attr("r", d => d.children ? 5 : 3)
@@ -102,8 +109,8 @@ d3.csv("CSU_Courses.csv").then(data => {
 
       nodes.append("text")
         .attr("dy", "0.31em")
-        .attr("x", d => d.children ? 8 : 10)
-        .attr("text-anchor", d => d.x < Math.PI ? "start" : "end")
+        .attr("x", d => d.children ? 13 : 15)
+        .attr("text-anchor", d => d.x < width ? "start" : "end")
         .text(d => d.data.name)
         .attr("font-size", d => d.depth === 0 ? 14 : d.depth === 1 ? 12 : 10);
     });
