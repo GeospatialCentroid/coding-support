@@ -41,79 +41,96 @@
     const g = svg.append("g")
       .attr("transform", `translate(${width/2}, ${height/2})`);
 
-d3.csv("CSU_Courses.csv").then(data => {
-  const rootNode = { name: "CSU Courses", children: [] };
-  const topicMap = new Map();
+  function courseTree(Subject) {
+    d3.csv("CSU_Courses.csv").then(data => {
+    const rootNode = { name: Subject, children: [] };
+    const topicMap = new Map();
 
-  data.forEach(row => {
-    const topic = (row.Topic || "Other").trim();
-    const level = (row.Level || "Other").trim();
-    const courseCode = (row["Course Code"] || "").trim();
-    const label = courseCode;
+    data.forEach(row => {
+      if (row.Topic === Subject) {
 
-    if (!topicMap.has(topic)) {
-      topicMap.set(topic, { name: topic, children: [] });
+      const topic = (row.Topic || "Other").trim();
+      const level = (row.Level || "Other").trim();
+      const courseCode = (row["Course Code"] || "").trim();
+      const label = courseCode;
+      
+      
+      if (!topicMap.has(topic)) {
+        topicMap.set(topic, { name: topic, children: [] });
+     }
+
+      const topicNode = topicMap.get(topic);
+      let levelNode = topicNode.children.find(c => c.name === courseCode);
+
+      if (!levelNode) {
+        levelNode = { name: label, children: [] };
+        topicNode.children.push(levelNode);
+      }
+
+      levelNode.children.push({ name: label });
     }
 
-    const topicNode = topicMap.get(topic);
-    let levelNode = topicNode.children.find(c => c.name === courseCode);
-
-    if (!levelNode) {
-      levelNode = { name: label, children: [] };
-      topicNode.children.push(levelNode);
-    }
-
-    levelNode.children.push({ name: label });
-  });
+      else{
+        return;
+      }
+    });
+  
 
 
   
 
   
 
-      rootNode.children = Array.from(topicMap.values());
+        rootNode.children = Array.from(topicMap.values());
 
-      const root = d3.hierarchy(rootNode);
-      const treeLayout = d3.tree()
-        .size([height/3, width/2])
-        .separation((a, b) => (a.parent === b.parent ? 1 : 2) / a.depth);
+        const root = d3.hierarchy(rootNode);
+        const treeLayout = d3.tree()
+          .size([height/3, width/2])
+          .separation((a, b) => (a.parent === b.parent ? 1 : 2) / a.depth);
           // Center the tree.
-        let x0 = Infinity;
-        let x1 = -x0;
-        root.each(d => {
-        if (d.x > x1) x1 = d.x;
-        if (d.x < x0) x0 = d.x;
-        });
+          let x0 = Infinity;
+          let x1 = -x0;
+          root.each(d => {
+          if (d.x > x1) x1 = d.x;
+          if (d.x < x0) x0 = d.x;
+          });
 
-      const descendants = treeLayout(root);
+        const descendants = treeLayout(root);
 
-      const linkGenerator = d3.linkRadial()
-        .angle(d => d.x)
-        .radius(d => d.y);
+        const linkGenerator = d3.linkRadial()
+          .angle(d => d.x)
+          .radius(d => d.y);
 
-      g.selectAll("path.link")
-        .data(descendants.links())
-        .join("path")
-        .attr("class", "link")
+        g.selectAll("path.link")
+          .data(descendants.links())
+          .join("path")
+          .attr("class", "link")
   
 
-      const nodes = g.selectAll("g.node")
-        .data(descendants.descendants())
-        .join("g")
-        .attr("class", "node")
-        .attr("transform",d => `translate(${d.y},${d.x})`);
+        const nodes = g.selectAll("g.node")
+          .data(descendants.descendants())
+          .join("g")
+          .attr("class", "node")
+          .attr("transform",d => `translate(${d.y},${d.x})`);
 
       nodes.append("circle")
         .attr("r", d => d.children ? 5 : 3)
         .attr("fill", d => d.depth === 0 ? "#1f77b4" : d.children ? "#ff7f0e" : "#fff");
 
-      nodes.append("text")
-        .attr("dy", "0.31em")
-        .attr("x", d => d.children ? 13 : 15)
-        .attr("text-anchor", d => d.x < width ? "start" : "end")
-        .text(d => d.data.name)
-        .attr("font-size", d => d.depth === 0 ? 14 : d.depth === 1 ? 12 : 10);
-    });
+        nodes.append("text")
+          .attr("dy", "0.31em")
+          .attr("x", d => d.children ? 13 : 15)
+          .attr("text-anchor", d => d.x < width ? "start" : "end")
+          .text(d => d.data.name)
+          .attr("font-size", d => d.depth === 0 ? 14 : d.depth === 1 ? 12 : 10);
+    })
+
+    }
+
+    document.getElementById("chart").innerHTML = courseTree(Python);
+
+
   </script>
 </body>
 </html>
+
