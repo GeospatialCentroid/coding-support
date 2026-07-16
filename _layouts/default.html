@@ -25,11 +25,30 @@
     {% endif %}
 
     <div id="footer" class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
+  <footer>
+    {% include footer/custom.html %}
+    
+    <!-- Flex container to align items on the same line and vertically center them -->
+    <div class="footer-bottom-wrapper" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+      
+      <!-- Your existing footer content -->
+      <div class="footer-copyright-section">
         {% include_cached footer.html %}
-      </footer>
+      </div>
+      
+      <!-- The dynamic GitHub edit link -->
+      {% if site.github_repo %}
+      <div class="github-edit-link">
+        <a href="{{ site.github_repo }}/edit/{{ site.github_branch | default: 'master' }}/{{ page.path }}" target="_blank" rel="noopener noreferrer" >
+          <i class="fas fa-pencil-alt"></i> Edit this page on GitHub
+        </a>
+      </div>
+      {% endif %}
+      
     </div>
+  </footer>
+</div>
+    
 
     {% include scripts.html %}
     {% include chatbot.html %}

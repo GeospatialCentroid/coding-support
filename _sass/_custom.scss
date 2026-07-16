@@ -706,3 +706,8 @@ table tr:nth-child(even) {
 .form-wrapper iframe::-webkit-scrollbar {
   display: none;
 }
+.github-edit-link{
+  color: var(--csu-white) !important;
+    font-weight: 600 !important;
+    font-size: .6875em;
+}
