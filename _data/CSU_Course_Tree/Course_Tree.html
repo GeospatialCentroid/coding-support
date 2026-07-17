@@ -2,18 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>CSU Course Radial Tree</title>
+  <title>CSU Course Code Tree</title>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <style>
-    body { font-family: Arial, sans-serif; background: #f7f9fc; }
-    svg { display: block; margin: 1px auto; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      margin: 0;
+      padding: 20px;
+    }
+    #chart {
+      overflow-x: auto;
+    }
+    svg {
+      display: block;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
     .link {
       fill: none;
       stroke: #7b8fa3;
-      stroke-opacity: 0.7;
+      stroke-opacity: 0.8;
       stroke-width: 1.2;
     }
-    .node circle { stroke: #333; stroke-width: 1.2; }
+    .node circle {
+      stroke: #333;
+      stroke-width: 1.2;
+    }
     .node text {
       font-size: 11px;
       fill: #223;
@@ -25,112 +42,12 @@
   </style>
 </head>
 <body>
+  <div style="margin-bottom: 12px;">
+    <label for="topicSelect" style="font-weight: bold; margin-right: 8px;">Select topic:</label>
+    <select id="topicSelect"></select>
+  </div>
   <div id="chart"></div>
-
-  <script>
-    const width = 1200;
-    const height = 1000;
-  
-
-    const svg = d3.select("#chart")
-      .append("svg")
-      .attr("viewBox", [0, 0, width, height])
-      .attr("width", width)
-      .attr("height", height);
-
-    const g = svg.append("g")
-      .attr("transform", `translate(${width/2}, ${height/2})`);
-
-  function courseTree(Subject) {
-    d3.csv("CSU_Courses.csv").then(data => {
-    const rootNode = { name: Subject, children: [] };
-    const topicMap = new Map();
-
-    data.forEach(row => {
-      if (row.Topic === Subject) {
-
-      const topic = (row.Topic || "Other").trim();
-      const level = (row.Level || "Other").trim();
-      const courseCode = (row["Course Code"] || "").trim();
-      const label = courseCode;
-      
-      
-      if (!topicMap.has(topic)) {
-        topicMap.set(topic, { name: topic, children: [] });
-     }
-
-      const topicNode = topicMap.get(topic);
-      let levelNode = topicNode.children.find(c => c.name === courseCode);
-
-      if (!levelNode) {
-        levelNode = { name: label, children: [] };
-        topicNode.children.push(levelNode);
-      }
-
-      levelNode.children.push({ name: label });
-    }
-
-      else{
-        return;
-      }
-    });
-  
-
-
-  
-
-  
-
-        rootNode.children = Array.from(topicMap.values());
-
-        const root = d3.hierarchy(rootNode);
-        const treeLayout = d3.tree()
-          .size([height/3, width/2])
-          .separation((a, b) => (a.parent === b.parent ? 1 : 2) / a.depth);
-          // Center the tree.
-          let x0 = Infinity;
-          let x1 = -x0;
-          root.each(d => {
-          if (d.x > x1) x1 = d.x;
-          if (d.x < x0) x0 = d.x;
-          });
-
-        const descendants = treeLayout(root);
-
-        const linkGenerator = d3.linkRadial()
-          .angle(d => d.x)
-          .radius(d => d.y);
-
-        g.selectAll("path.link")
-          .data(descendants.links())
-          .join("path")
-          .attr("class", "link")
-  
-
-        const nodes = g.selectAll("g.node")
-          .data(descendants.descendants())
-          .join("g")
-          .attr("class", "node")
-          .attr("transform",d => `translate(${d.y},${d.x})`);
-
-      nodes.append("circle")
-        .attr("r", d => d.children ? 5 : 3)
-        .attr("fill", d => d.depth === 0 ? "#1f77b4" : d.children ? "#ff7f0e" : "#fff");
-
-        nodes.append("text")
-          .attr("dy", "0.31em")
-          .attr("x", d => d.children ? 13 : 15)
-          .attr("text-anchor", d => d.x < width ? "start" : "end")
-          .text(d => d.data.name)
-          .attr("font-size", d => d.depth === 0 ? 14 : d.depth === 1 ? 12 : 10);
-    })
-
-    }
-
-    document.getElementById("chart").innerHTML = courseTree(Python);
-
-
-  </script>
+  <script src="Course_Tree.js"></script>
 </body>
 </html>
 

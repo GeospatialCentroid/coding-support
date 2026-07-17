@@ -40,7 +40,7 @@ $global-font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Roboto", "Se
 $header-font-family: "Poppins", sans-serif;
 
 body, 
-p, p2,
+p,
 h1, h2, h3, h4, h5, h6,
 .site-title, 
 .nav__items,
@@ -69,12 +69,13 @@ body {
 }
 
 p, li, label {
-  font-size: 0.65rem;
+  font-size: 0.8rem!important;
   line-height: 1.5; /* Slightly tighter line spacing */
-  text-align: center;
+  text-align: left;
   font-weight: 500 !important;
   padding-bottom: 0.4rem;
 }
+
 
 
 
@@ -182,6 +183,18 @@ p, li, label {
     padding-right: .5em;
 }
 
+
+/* --- Button Introduction --- */ 
+
+.resources {
+  font-size: 1.0rem!important;
+  line-height: 1.5; /* Slightly tighter line spacing */
+  text-align: center;
+  font-weight: 500 !important;
+  padding-bottom: 0.4rem;
+}
+
+
 /* --- BUTTONS --- */
 .btn--primary, .btn, .pagination-buttons .btn {
   background-color: var(--csu-flower-trial-red);
@@ -195,6 +208,8 @@ p, li, label {
 
 }
 
+
+}
 .btn--primary:hover, .btn:hover {
   background-color: #14351d !important;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -405,7 +420,7 @@ h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
   border: 1px solid #e5e7eb;
   height: 90%;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+} 
 
 /* Hover animation */
 
