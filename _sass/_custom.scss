@@ -208,8 +208,6 @@ p, li, label {
 
 }
 
-
-}
 .btn--primary:hover, .btn:hover {
   background-color: #14351d !important;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -384,7 +382,7 @@ h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
    flex: 1; /* Makes both divs grow to fill equal width */
    
 }
-/* 1. Target the image container and the image itself */
+
 .archive__item-teaser, 
 .archive__item-teaser img {
   box-shadow: none !important;
@@ -392,19 +390,19 @@ h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
   -webkit-box-shadow: none !important;
 }
 
-/* 2. Target the 'card' container (common source of the shadow) */
+
 .archive__item {
   box-shadow: none !important;
   border: none !important;
+  display: flex;
+  flex-direction: column;
 }
 
-/* 3. Target the hover state (many themes add the shadow only on hover) */
 .archive__item:hover {
   box-shadow: none !important;
   transform: none !important; /* Removes the "lift" effect */
 }
 
-/* 4. Target the specific link wrapper */
 .archive__item a {
   text-decoration: none !important;
   box-shadow: none !important;
@@ -444,7 +442,9 @@ h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
   color: #555;
   margin-top: -30px;
    margin-bottom: -5px;
-  
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center; /* Keeps the text horizontally centered as well */
 }
 
 /* Icon styling */

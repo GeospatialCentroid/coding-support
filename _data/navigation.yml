@@ -9,7 +9,7 @@ main:
   - title: Campus Resources
     url: /campus-resources/
   - title: Mailing List
-    url: https://lists.colostate.edu/cgi-bin/mailman/listinfo/coding-support
+    url: mailto:coding-support@lists.colostate.edu
 
 r_sidebar:
   - title: "R"

@@ -12,7 +12,7 @@ We offer coding and data support across a range of tools and workflows to suppor
 - Python and R (scripting, automation, data and statistical analysis, visualization, geospatial)
 - Git (version control, GitHub workflows)
 - Web Development (HTML5, CSS3, and JavaScript)
-- Excel (formulas, charts, data cleaning, Visualization)
+- Excel (formulas, charts, data cleaning, visualization)
 - Power BI (dashboards, reporting)
 - ArcGIS Pro & GIS (mapping, spatial analysis)
 - HPC (custom environments, software requests, containerization, job script reviews)
@@ -28,7 +28,7 @@ We also encourage you to explore a few self-service options first:
 
 Taking these steps can often lead to quicker solutions and help you get more out of your support session if additional help is needed.
 
-To get started with sumbitting a support request, please complete the form below with details about your request. Once submitted, your inquiry will be routed to the appropriate campus group based on subject-matter expertise. A group member will then follow up to schedule a 15-minute consultation via Microsoft Teams. Please ensure your calendar is up to date, and include your availability so a convenient meeting time can be scheduled.
+To get started with submitting a support request, please complete the form below with details about your request. Once submitted, your inquiry will be routed to the appropriate campus group based on subject-matter expertise. A group member will then follow up to schedule a 15-minute consultation via Microsoft Teams. Please ensure your calendar is up to date, and include your availability so a convenient meeting time can be scheduled.
 
 ---
 
@@ -44,7 +44,7 @@ To provide the most effective support, we collaborate with campus partners who s
 | Power BI                         | Libraries                                |
 
 
-Requests that fall outside the areas listed above will be reviewed the a Geospatial Centroid Coding Support group member or referred to the appropriate campus resource through our general support mailbox.
+Requests that fall outside the areas listed above will be reviewed by a Geospatial Centroid Coding Support group member or referred to the appropriate campus resource through our general support mailbox.
 
 
 ---
