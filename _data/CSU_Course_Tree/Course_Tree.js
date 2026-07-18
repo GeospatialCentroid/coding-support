@@ -58,9 +58,9 @@ function buildTreeData(rows, selectedTopic) {
 }
 
 function renderTree(rootNode) {
-  const width = 1800;
-  const height = 2200;
-  const margin = { top: 40, right: 220, bottom: 40, left: 220 };
+  const width = 3000;
+  const height = 1800;
+  const margin = { top: 100, right: 40, bottom: 100, left: 40 };
   const treeWidth = width - margin.left - margin.right;
   const treeHeight = height - margin.top - margin.bottom;
 
@@ -96,7 +96,7 @@ function renderTree(rootNode) {
 
   nodes.append("circle")
     .attr("r", d => d.depth === 0 ? 6 : d.depth === 1 ? 5 : 3)
-    .attr("fill", d => d.depth === 0 ? "#1f77b4" : d.depth === 1 ? "#2ca02c" : "#ffffff");
+    .attr("fill", d => d.depth === 0 ? "#1f77b4" : d.depth === 1 ? "#2ca02c" : "#ffffff")
 
   nodes.append("text")
     .attr("dy", "0.35em")

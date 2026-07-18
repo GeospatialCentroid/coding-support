@@ -5,46 +5,74 @@
   <title>CSU Course Code Tree</title>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <style>
+
+   
+
     body {
       font-family: Arial, sans-serif;
-      background: #f7f9fc;
-      margin: 0;
+      color: white;
+      font-size: 40px;
+      background: #1E4D2B;
+      margin: 10px;
       padding: 20px;
+      text-align: center;
     }
     #chart {
       overflow-x: auto;
+      background: #1E4D2B;
+      margin-top: 40px;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 40px;
     }
     svg {
       display: block;
       margin: 0 auto;
       background: white;
-      border-radius: 8px;
+      border-radius: 75px;
+      border: #C8C372 20px solid;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
     .link {
       fill: none;
-      stroke: #7b8fa3;
+      stroke: #1E4D2B;
       stroke-opacity: 0.8;
-      stroke-width: 1.2;
+      stroke-width: 5px;
     }
     .node circle {
-      stroke: #333;
-      stroke-width: 1.2;
+      color: white;
+      stroke: #c6503d;
+      stroke-width: 100px;
+  
     }
     .node text {
-      font-size: 11px;
-      fill: #223;
+      font-size: 14px;
+      font-style: poppins;
+      font-weight: 400;
+      fill: white;
       paint-order: stroke;
-      stroke: white;
-      stroke-width: 3px;
-      stroke-linejoin: round;
+      stroke: #c6503d;
+      stroke-width: 1px;
+      stroke-linejoin: arcs;
+
     }
   </style>
 </head>
 <body>
   <div style="margin-bottom: 12px;">
-    <label for="topicSelect" style="font-weight: bold; margin-right: 8px;">Select topic:</label>
-    <select id="topicSelect"></select>
+    <label for="topicSelect" style="font-weight: bold; margin-right: 8px;">Select a Topic!</label>
+  </div>
+  <div style="size: 40px;">
+    <select id="topicSelect" style=
+    "
+    font-size: 40px; 
+    font-weight: bold;
+    text-align: center;
+    background-color:#C8C372;
+    border: white 4px solid;
+    border-radius: 10px;
+    color:#1E4D2B;
+     "></select>
   </div>
   <div id="chart"></div>
   <script src="Course_Tree.js"></script>
