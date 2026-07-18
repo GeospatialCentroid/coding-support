@@ -1,18 +1,23 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CSU Course Code Tree</title>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <style>
 
    
 
+*{
+  box-sizing: content-box;
+
+}
     body {
       font-family: Arial, sans-serif;
       color: white;
       font-size: 40px;
       background: #1E4D2B;
+      border-radius: 50%;
       margin: 10px;
       padding: 20px;
       text-align: center;
@@ -20,58 +25,69 @@
     #chart {
       overflow-x: auto;
       background: #1E4D2B;
-      margin-top: 40px;
-      margin-left: 10px;
-      margin-right: 10px;
-      margin-bottom: 40px;
+
+      margin-top: 50px;
+  
     }
     svg {
       display: block;
-      margin: 0 auto;
+      margin: auto;
       background: white;
+      border: #C8C372 10px solid;
       border-radius: 75px;
-      border: #C8C372 20px solid;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      width: dvw;
+      height: 70dvh;
+    
     }
+
     .link {
       fill: none;
       stroke: #1E4D2B;
       stroke-opacity: 0.8;
       stroke-width: 5px;
     }
-    .node circle {
+    /*.node circle {
       color: white;
       stroke: #c6503d;
-      stroke-width: 100px;
-  
-    }
+      stroke-width: 40px; 
+
+      
+  } */
     .node text {
-      font-size: 14px;
-      font-style: poppins;
+
+      font-size: 0.65em;
+      font-style: Arial;
       font-weight: 400;
       fill: white;
       paint-order: stroke;
       stroke: #c6503d;
-      stroke-width: 1px;
-      stroke-linejoin: arcs;
+      stroke-width: 40px;
+      stroke-linejoin: round;
+  
+      
+
 
     }
   </style>
 </head>
 <body>
-  <div style="margin-bottom: 12px;">
+  <div style="margin-bottom: 12px;
+       font-size: 60%">
     <label for="topicSelect" style="font-weight: bold; margin-right: 8px;">Select a Topic!</label>
   </div>
-  <div style="size: 40px;">
+  <div>
     <select id="topicSelect" style=
     "
-    font-size: 40px; 
+    font-size: 40%; 
     font-weight: bold;
     text-align: center;
     background-color:#C8C372;
     border: white 4px solid;
     border-radius: 10px;
     color:#1E4D2B;
+    width: 10dw;
+    height: 10dh;
      "></select>
   </div>
   <div id="chart"></div>

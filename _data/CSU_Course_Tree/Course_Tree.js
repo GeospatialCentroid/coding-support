@@ -58,9 +58,9 @@ function buildTreeData(rows, selectedTopic) {
 }
 
 function renderTree(rootNode) {
-  const width = 3000;
-  const height = 1800;
-  const margin = { top: 100, right: 40, bottom: 100, left: 40 };
+  let width = 1200;
+  let height = 1500;
+  const margin = { top: 100, right: 40, bottom: 100, left: 40};
   const treeWidth = width - margin.left - margin.right;
   const treeHeight = height - margin.top - margin.bottom;
 
@@ -92,16 +92,16 @@ function renderTree(rootNode) {
     .data(descendants.descendants())
     .join("g")
     .attr("class", "node")
-    .attr("transform", d => `translate(${d.y}, ${d.x})`);
+    .attr("transform", d => `translate(${d.y}, ${d.x})`)
 
-  nodes.append("circle")
-    .attr("r", d => d.depth === 0 ? 6 : d.depth === 1 ? 5 : 3)
+ nodes.append("circle")
+    .attr("r", d => d.depth === 0 ? 6 : d.depth === 1 ? 2 : 3)
     .attr("fill", d => d.depth === 0 ? "#1f77b4" : d.depth === 1 ? "#2ca02c" : "#ffffff")
 
   nodes.append("text")
     .attr("dy", "0.35em")
     .attr("x", d => d.children ? -10 : 10)
-    .attr("text-anchor", d => d.children ? "end" : "start")
+    /*.attr("text-anchor", d => d.children ? "end" : "start") */
     .text(d => d.data.name)
     .attr("font-size", d => d.depth === 0 ? 14 : d.depth === 1 ? 12 : 10);
 }
