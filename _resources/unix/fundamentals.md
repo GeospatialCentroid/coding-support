@@ -9,7 +9,7 @@ toc_sticky: true
 
 ## What is a Shell?
 
-A Shell is a computer program that allows you to **Connect** with your computers operating system. This is where you can write code that will directly interact with you computers **Operating System** and **File System**. 
+A Shell is a computer program that allows you to **Connect** with your computers operating system. This is where you can write code that will directly interact with you computers **File System**. 
 
 ### Accessing a Shell
 
@@ -19,7 +19,7 @@ We will look at some shells you can utilize to code in a similar fashion to codi
 
 - Accessing Through **Your Computer**
 
-Some operating systems offer a terminal or console that contains a pre-installed 
+Most operating systems offer a  terminal or console that contains a pre-installed 
 shell. You can search up keywords such as **Terminal** or **Shell** to access this.
 
 - Accessing through **File Explorer**
@@ -45,7 +45,7 @@ It's important to understand all the terminology used when referring to our file
 system to understand where you are and where commands will take you. 
 
 
-### Types of Unix Files 
+### Types of Files 
 
 Unix has a wide assortment of files that we will use in our file system. 
 
@@ -173,7 +173,9 @@ effectively
   
 - **cd**
 
-  Takes you back to your home directory. However there are modifications to this command 
+  This command has a wide range of uses to help navigate through your file tree. 
+
+  Here are some examples. 
   
   ```bash
 
@@ -280,7 +282,7 @@ Be careful not to remove a subdirectory that has files or other subdirectories t
 
 ### File Manipulation 
 
-The **mv** command allows you to move commands from place to place. 
+The **mv** command allows you to move files from place to place. 
 
 
 ```bash
@@ -365,7 +367,7 @@ want to copy it to.'
 ```
 
 
-Similar to our directory removing command, we can remove files uising a **rm** commannd.
+Similar to our directory removing command, we can remove files uising a **rm** command.
 
 Once again, be careful not to remove the wrong files and you **Cannot** undo this. 
 

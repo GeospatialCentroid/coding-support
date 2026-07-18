@@ -7,6 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
+-----------------------------------------------------------------------------------------------------------------------------------
 
 ## What is CSS? 
 
@@ -16,19 +17,20 @@ CSS is a programming language that allows us to modify the appearance of our web
 CSS, HTML, and Javascript all work together to help us meet our vision for our web page. 
 
 
-- **HTML is the Structure** of our webpage, it allows us to set up our contents how we want 
+**HTML is the Structure** of our webpage, it allows us to set up our contents how we want 
 
 
-- **JavaScript is the Interactive** component. It determines how users are able to interact with our webpage and can help incorporate data. 
+ **JavaScript is the Interactive** component. It determines how users are able to interact with 
+our webpage and can help incorporate data. 
 
 
-- **CSS is the Aesthetic** component. It dictates how our website appears to the user. 
+ **CSS is the Aesthetic** component. It dictates how our website appears to the user. 
 
 
 Having a strong understanding how of how CSS works allows us to make our website appear however 
 we please. This guide will go through the fundamentals of CSS coding. 
 
-----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
 
 
 ## Fundamentals
@@ -134,8 +136,8 @@ There are a series of common commands that we can use to determine the style of 
 
 ### Example
 
-Lets create a line of code that **bold** our header, makes a **blue background**
-color, and sets our **font size to 20** 
+Lets create a line of code thats **bold** our header, makes a **blue background**
+color, and sets our paragracph **font size to 20** 
 
 ```css
 
@@ -143,22 +145,25 @@ color, and sets our **font size to 20**
 
 h1 {
 
-font font-weight: bold 
+font-weight: bold; 
 
 
 /* we can also provide a value like 500 that would determine the weight */
+
+font-weight: 500;
 }
 
 p {
 
-font-size : 20px
+font-size : 20px;
 
 
 
 }
 
 body {
-background-color: blue
+  
+background-color: blue;
 
 }
 
@@ -166,7 +171,7 @@ background-color: blue
 
 ### Classes
 
-The biggest benefit that CSS offers is the ability to se **Classes**. These allow us to essentially create aesthetic scripts that can apply to various types of elements. This Process involves connecting our HTML element to a specific section of our CSS file like so. 
+The biggest benefit that CSS offers is the ability to see **Classes**. These allow us to essentially create aesthetic scripts that can apply to various types of elements. This Process involves connecting our HTML element to a specific section of our CSS file like so. 
 
 ```css
 

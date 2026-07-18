@@ -9,9 +9,9 @@ toc_sticky: true
 
 ## Installing Excel 
 
-To either **Access Excel** on your browser or **Download** it. click [here](https://www.microsoft.com/en-us/microsoft-365/excel?ocid=ORSEARCH_Bing&msockid=2a68803dd7c7641b346696e4d6066551)
+To either **Access Excel** on your browser or **Download** it. Click [here](https://www.microsoft.com/en-us/microsoft-365/excel?ocid=ORSEARCH_Bing&msockid=2a68803dd7c7641b346696e4d6066551)
 
-The first step to **Accessing excel** on your browser is to sign into your microsoft account. This 
+The first step to **Accessing Excel** on your browser is to sign into your microsoft account. This 
 can be provided by an **Institution or Organization**, where you can sign in with a work or school email.
 
 If you are interested in **Downloading Excel**, you can click the link provided, and scroll down to the **Download the app** section, where it will prompt you with instructions
@@ -23,9 +23,9 @@ to download the proper installation files.
 
 ### Sheets VS Workbooks
 
-A quick distinction should be made about **Sheets** and **Workbooks**
+Before we start, a quick distinction should be made between **Sheets** and **Workbooks**.
 
-In excel, we work in a **Workbook**. This is what we assign a name to. When we are working within a 
+In excel, we work in a **Workbook**. This is what we assign a name to when creating the file. When we are working within a 
 workbook we are manipulating a **Sheet**. There can be multiple different sheets in one workbook. 
 
 ### Data Types 
@@ -57,8 +57,8 @@ Spreadsheet headers allow you to **Navigate Excel's Different Tools.**
 
 - **Home**
 
-  The Home section of the spreadsheet houses most of the **Stylistic and Formatting Features for Your Spreadsheet.** 
-Some examples are the **Text Size, Font, Conditional Formatting, Borders, and Highlighting Within Cells**. 
+  The Home section of the spreadsheet houses most of the **Stylistic and Formatting Features** for Your Spreadsheet. 
+Some examples are the Text Size, Font, Conditional Formatting, Borders, and Highlighting Within Cells. 
 
 - **Insert**
 
@@ -77,16 +77,16 @@ also allows you to **Visualize Data**.
 - **Formulas**
 
   One of the most important excel sections. This section allows you to 
-**Insert Functions, Formulas,and run Calculations** in your workbook. 
+**Insert Functions, Formulas, and run Calculations** in your workbook. 
 
 - **Data**
 
   This section allows you to **Manipulate Your Data** in significant ways that can help clean up the organization
-of it. **Base Level Analysis** is also possible with the data section. 
+of it. **Base Level Analysis** can also be done in the data section. 
 
 - **Review**
 
-  You can review the **History and Back end Performance** in this section. 
+  You can review the **History and Back end Performance** with this section. 
 
 - **View**
 
@@ -127,7 +127,7 @@ We would be left will cells that count from 1 through **Any Number** depending o
 
 ### Add and Remove content
 
-with Excel you can **Add or Remove** columns with the **+ -** symbols when you near the edge of a cell. 
+with Excel you can **Add or Remove** columns with the **+ / -** symbols when you near the edge of a cell. 
 
 
 You can also do so by **Right Clicking on a Column or row**, which will give you the option to remove or add
@@ -174,7 +174,7 @@ data.
 - **Ascending and Descending Functions**
   
   Excel's ascending and descending feature allow you to display your 
-  data by a **Columns Values.** It will sort select columns either from 
+  data by **Columns Values.** It will sort select columns either from 
   **Maximum to Minimum values**, or from **Minimum to Maximum values**. 
   
 
@@ -198,7 +198,7 @@ data.
 - **Data Validation**
 
   Excels data validation tools allows you to **Predetermine** what
-  **Data Types Values** are allowed in certain columns. You can use this to organize columns by  1 data type consistently or need values that have to have uniform syntax.
+  **Data Types Values** are allowed in certain columns. You can use this to organize columns by  1 data type consistently or if you have  values that need to have uniform syntax.
   
   the **List** validation tool  allows you to **Create a List**
   of **Words and Values** that are allowed in a column, helping to make tedious data entry faster.
@@ -236,24 +236,27 @@ We have various functions that help us **Automate** tedious tasks. These are gro
 
 ### Using Functions 
 
-when we use functions in a cell, we will use the **=** sign and then our function.
+when we use functions in a cell, we will use the ```=``` sign and then our function.
 
 Lets make a function that would sum a series of values within a spreadsheet.
 
-```c++
+First, we will assign our function 
 
-'First, we will assign our function'
+```c++
 
 =SUM()
 
-' Now that our function is assigned we can add the cells we would like to apply our function to.' 
+```
 
+Now that our function is assigned we can add the cells we would like to apply our function to.
+
+```
 =SUM(A1:C10)
 
+```
 ' Our colon symbol represents the values between A11 and C10, this means we want to 
 calculate the sume of all values from A1 through C10.' 
 
-```
 
 These functions can be used to **Compute Statistical Values** such as **Means, Medians, and Modes**, filter data into groups such as
 a **Yes** and **No**, and compute conversions between **Kilometers and Miles**, or **Kilograms and Pounds**. 

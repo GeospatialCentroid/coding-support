@@ -116,7 +116,7 @@ This makes information more accessible to a wider audience.
 
 To practice visualization:
 - Government open data portals  
-- [Census data](https://data.census.gov/)
+- Census data
 - Environmental and geospatial datasets  
 
 ---

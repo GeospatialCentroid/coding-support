@@ -10,15 +10,14 @@ toc_sticky: true
 ## Introduction
 
 This guide will cover how to access HTML coding services, and the fundamental syntax
-and applications for building a webpage. We will also cover how building a webpage differs from an 
-entire website. 
+and applications for building a webpage. We will also focus on how **Cascading Style Sheets (CSS)** code can be used with **HTML** code to modify your websites 
+appearance. 
 
 --------------------------------------------------------------------------------
 
 ## Accessing HTML Services 
 
-HTML can be accessed through a **Diversity** of different locations and softwares. 
-This is because HTML is written into .html files such as 
+HTML can be accessed through a **Diversity** of different locations and softwares such as. 
 
 - **Notepads**
 
@@ -27,7 +26,7 @@ This is because HTML is written into .html files such as
 - **Online Softwares**
 
 This allows for you to write HTML code without needing to download external 
-softwares or **Integrated Development Environment**
+softwares or **Integrated Development Environment (IDE)**.
 
 With this in mind, using an **IDE** will allow you a few benefits such as:
 
@@ -52,7 +51,7 @@ and [**Brackets**](https://brackets.io/).
 
 You can click on any of these to download them to your computer! 
 
-If you would like to us an online software, you can use HTML coding platforms 
+If you would like to use an online software, you can use HTML coding platforms 
 provided by [**CodePen**](https://codepen.io/)
 , [**W3 Schools**](https://www.w3schools.com/tryit/tryit.asp?filename=tryhtml_default)
 , and [**JSFiddle**](https://jsfiddle.net/)
@@ -62,30 +61,29 @@ provided by [**CodePen**](https://codepen.io/)
 ## Webpages vs Websites
 
 When we are navigating a **Website**. We are accessing an entire display of information and 
-services that are essentially a compilation of **Webpages**.  Websites operate similarily to a file system. Where are website is the **Path**, and our webpages
-are the **Directories** and **Files**. Let's look at an example. 
+services that are essentially a compilation of **Webpages**. 
 
 
 When you click [This](https://geospatialcentroid.github.io/coding-support/) link, 
-you will be taken to the homepage for the Coding Support Hub (Which you are looking at right now). the two components we want to focus on are 
+you will be taken to the homepage for the Coding Support Hub which is the title page you navigated from. the two components we want to focus on are 
 our **geospatialcentroid.github.io** directory, and our **coding-support directory**
 
 
-The **geospatialcentroid.github.io** is our first directory. This is the area where we 
+The **geospatialcentroid.github.io** is our root directory. This is the area where we 
 store our repository code that tells our website how to behave. 
 
 
-The **/coding_support directory/** is the first webpage on our website and the first step
+The ```/coding_support directory/``` is the first webpage on our website and the first step
 down our file path. This is the first page that you saw when you clicked on our website link.
 
 
 If we were to click on a button in our support hub such as the **Python Button**. Our https link would change
-to include a **/python/** component. This is because we are navigating down our file path from our root 
+to include a ```/python/``` component. This is because we are navigating down our file path from our root 
 into where our python information is stored.
 
 
 If we go into our python folder and click the Installing Python side tab. We will expand our HTTPS link
-to include **/installing/**. This means that in our github folder, there is a link in our Python folder that takes us 
+to include ```/installing/```. This means that in our github folder, there is a link in our Python folder that takes us 
 to our fundamentals webpage.
 
 Now that we have established how a webpage works. let's expore some of the fundamental syntax for building a webpage. 
@@ -96,7 +94,7 @@ Now that we have established how a webpage works. let's expore some of the funda
 
 Before we start talking about coding structure and commands. It's important to establish how commands are structured 
 
-When we write commands, we will begin and end our command with a ```<>``` and we will end it with a ```</>``` 
+When we write commands, we will begin our command with ```<>``` and we will end it with ```</>``` 
 
 Here is an example if we wanted to write a paragraph style text
 
@@ -199,7 +197,7 @@ If we were to make an example of a webpage code block. It would look something l
   
   </br>
   So I am going to do that right now in this section. 
-  <strong> <abbr> title = "this" >TI< </abbr> </strong>
+  <strong> <abbr title = "this" TI> </abbr> </strong>
   </p>
 ```
 we can also bold words with the em command. 
@@ -238,9 +236,8 @@ if we wanted to make a code block in html it would look like this
         
         print("This is so Meta")
         
-        "When we add quotations we make comments the output would look like"
-        
-        This is so Meta
+        "This Line of Code would Return "This is so Meta""
+
 </code>
 
 ```
@@ -256,7 +253,7 @@ webpage
 
   Headers are where we can break up long blocks of text within sections by information categories 
   
-  main headers are notated by **h1**. subheadings are created within headers
+  **Main Headers** are notated by h1. **Subheadings** are created within headers
   by using larger numeric values such as h2 and h3
   
   we can also add **Footers** to our content by adding a footer command 
@@ -266,8 +263,6 @@ webpage
 
   A Section is where we can break up or information into seperate code blocks. 
   It allows for further organization with headers. 
-  
-  the code for a section follows our <> </> rule
   
 ```html
   
@@ -313,7 +308,7 @@ If we want to  make lists within our page, we can do so by using the **li**, **o
 commands which stand for **list items**, **ordered lists**, and **unordered lists** respectively.
 
 Note: The different between an ordered list and an unordered list is that ordered lists commonly
-will use **letters and numbers**, while unordered lists will use **bullet points*. 
+will use **letters and numbers**, while unordered lists will use **bullet points**. 
 
   If we want to use our list items, we can do so as so by adding them into an **ordered list** 
   
@@ -327,7 +322,7 @@ will use **letters and numbers**, while unordered lists will use **bullet points
         <li> UNC
      </ul>
      
-     <!-- we can make a nest list as well --->
+     <!-- we can make a list within a list as well --->
      
      <ol>
         <li> CSU

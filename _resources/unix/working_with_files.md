@@ -16,7 +16,7 @@ Accessing file contents allows us to do significant work.
 ### Opening & Working With Files
 
 To display and work with files in the terminal, the common commands we will 
-be used are the **Cat** and **Tac** comamands
+be used are the **Cat** and **Tac** commands.
 
 The **Cat** command is a standard command you can use on files such as text 
 files and CSV's that will allow you to display the contents of the file. 
@@ -33,8 +33,8 @@ cat file_name1 file_name2
 
 ```
 
-The cat command goes beyond reading files, we can also create new files, modify existing
-files, and combine files 
+The cat command goes beyond reading files, we can also **Create** new files, **Modify** existing
+files, and **Combine** files.
 
 
 Let's pick up where we left off in a file system, and make a new file using the **cat** command.
@@ -64,7 +64,7 @@ cat > file_3.txt
 ```
 
 Doing this allows us to add contents to a new text file which we can place in 
-our subdirectory dir_1.
+our subdirectory ```dir_1```.
 
 
 We can also **Merge Files** 
@@ -85,7 +85,7 @@ cat file file_2 > combined_file
 
 ```
 
-There are a series of extra **options** we can use with the cat command 
+There are a series of specific modifications we can amke to the cat command to change its function. 
 
 |Option|Purpose|
 |-------|------|
@@ -133,7 +133,7 @@ tac combined_file > reversed_file
 ```
 
 **Head** and **Tail** commands are other tools in Unix that allow you to view 
-sections of a file with east
+sections of a file with ease
 
 
 
@@ -180,7 +180,7 @@ head -n 10 file_3.txt | tail -n 20 file_3.txt
 The **open** command is another useful tool that allows you to open non text files 
 such as PDF's. 
 
-Finally, we can use commands such as **Grep** to search for keywwords and values in files 
+Finally, we can use commands such as **Grep** to search for keywords and values in files 
 
 ```bash
 
@@ -204,8 +204,6 @@ Grep -v "keyword"
 
 ```
 
-```
-
 --------------------------------------------------------------------------------
 
 ## Summary
@@ -216,8 +214,8 @@ and clean workflows and efficiency when working on large scale projects.
 
 ## Next Steps
 
-Learning to apply UNIX to script writing import code, and work on other computers are all key when using terminals. Our BASH fundamentals
-guide will go over basic script writing in the terminal. This guide can be accessed [Here](https://geospatialcentroid.github.io/coding-support/bash/), and you can access more resources for using UNIX and other terminals in our **Resource Page** 
+Learning to apply UNIX to script writing import code, and work on other computers are all key when using terminals. Soon, we will be releasing Our BASH fundamentals
+guide which will go over basic script writing in the terminal!
 
 
 

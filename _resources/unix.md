@@ -22,9 +22,8 @@ Unix is a popular operating system that is accessed via the command line.
 - Unix and Linux are very similar. The key difference is that linux is an **Open Source
 Software**, while Unix is commonly payed for and used in **Institutions and Organizations**.
 
-- No matter what computer you use, they will always have a **Terminal** that you can run these commands on.
 
-- File Navigation concepts discussed in this guide are largely applicable to most common **Operating Systems** and **Shells**
+**Note**: The information provided in this guide is largely applicable when utilizing any terminal for file navigation. 
 
 ## Resources 
 
