@@ -1,0 +1,48 @@
+<details id="courseTreeDetails" style="margin: 20px 0; border: 1px solid #e1e4e8; border-radius: 6px; padding: 15px; background: #fff;">
+  <summary style="cursor: pointer; font-weight: bold; font-size: 16px; outline: none;">
+    View CSU Course Tree
+  </summary>
+  <div class="course-tree-wrapper" style="margin-top: 15px;">
+    <div id="chart" style="width: 100%; overflow-x: auto;"></div>
+  </div>
+
+  <!-- Visual Legend -->
+  <div style="display: flex; gap: 20px; font-size: 13px; margin: 15px 0 5px 5px; align-items: center; flex-wrap: wrap;">
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <span style="width: 12px; height: 12px; border: 2px solid #1f77b4; border-radius: 50%; background: #fff; display: inline-block;"></span>
+      <span>Topic</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <span style="width: 12px; height: 12px; border: 2px solid #ff7f0e; border-radius: 50%; background: #fff; display: inline-block;"></span>
+      <span>Prerequisite Group</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <span style="width: 12px; height: 12px; border: 2px solid #d62728; border-radius: 50%; background: #fff; display: inline-block;"></span>
+      <span>Course</span>
+    </div>
+  </div>
+
+  <div class="course-tree-wrapper" style="margin-top: 10px;">
+    <div id="chart" style="width: 100%; overflow-x: auto;"></div>
+  </div>
+</details>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="{{ '/assets/js/course_tree.js' | relative_url }}"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const courseData = {{ site.data.csu_courses | jsonify }};
+  const currentTopic = "{{ include.topic | default: page.topic | default: page.title }}";
+  
+  const detailsEl = document.getElementById("courseTreeDetails");
+  let hasRendered = false;
+
+  // Render the D3 tree only when the user opens the dropdown for the first time
+  detailsEl.addEventListener("toggle", function() {
+    if (detailsEl.open && !hasRendered) {
+      initCourseTree(courseData, currentTopic);
+      hasRendered = true;
+    }
+  });
+});
+</script>
