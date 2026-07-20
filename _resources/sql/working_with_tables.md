@@ -1,20 +1,21 @@
 ---
 layout: single
-sidebar:
-  nav: sql_sidebar
 title: "Working With Tables"
 toc: true
 toc_sticky: true
+sidebar:
+  nav: "sql_sidebar"
 ---
+
+
 
 ## Introduction
 
 Because SQL is made to work with tabular data, there is an extensive supply of table modifications and options to accomdate any data.
 
- This guide will go over some of the introductory material
-for SQL table manipulation. 
+This guide will go over some of the introductory material for SQL table manipulation. 
 
--------------------------------------------------------------------------------
+----------------------------
 
 ## Working With Tables
 
@@ -56,7 +57,7 @@ ORDER BY Column_name DESC
 
  We can go one step further, and organize our table by multiple **different** columns 
 
-```SQL
+```sql
 
 SELECT * 
 
@@ -296,7 +297,7 @@ WHERE Numeric_column = null
 
 ```
 
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 
 ## Summary
 

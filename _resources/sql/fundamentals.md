@@ -14,7 +14,7 @@ One of the more common ways to access a select database through SQL is through t
 provided [Here](https://learn.microsoft.com/en-us/ssms/install/install)
 
 **SQLCM** is a command line alternative that will allow you to access databases. 
-A link to installl and set up SQLCMD is provided [Here](https://www.techpluto.com/how-to-access-sql-server-database-without-management-studio/)
+A link to installl and set up SQLCM is provided [Here](https://www.techpluto.com/how-to-access-sql-server-database-without-management-studio/)
 
 One thing to note is that both of these softwares are used with **Microsoft**. 
 We will go over how to download softwares without access to microsoft.
@@ -60,12 +60,12 @@ and analysis information that will prove to beneficial across coding softwares.
 SQL databases all have different syntax. Upon the basics of this guide, it is beneficial to 
 consult a help guide within your database to learn more about the functions that are possible. 
 
-For example, one differnce is that some databases will require a semicolon after every line in a command while some wont.
+For example, one difference is that some databases will require a semicolon after every line in a command while some wont.
 
 When writing functions in SQL. They commonly work on a line basis. This is where every line has a
 single command. We will see examples of this later 
 
-In databases, there can be a series of different **tables** that exist. It is important to **Update** the 
+In databases, there can be a series of different **Tables** that exist. It is important to **Update** the 
 table you want to work in before you begin to do any computations or run any commands. 
 
 Doing so will allow you to be working in the **Proper Table** and not another on accident. 
@@ -86,7 +86,7 @@ There are 4 large data types in SQL
     
 - **Text Fields** 
 
-  In our Text Fields, there are fixed length character strings, variable length character strings, and Clobs; which are large bodies of text. 
+  In our Text Fields, there are fixed length character strings, variable length character strings, and clobs; which are large bodies of text. 
   
 - **Date and Time Fields**
 
@@ -138,7 +138,7 @@ of if your dataset has NULL values and where they are. THis can be done through 
 
 You can either use a **is null** command 
 
-```SQL
+```sql
 
 SELECT Column_Name 
 FROM Table_Name
@@ -150,7 +150,7 @@ Where Columm_Name IS NULL
 
 Or, you can use the **is not null** command 
 
-```SQL
+```sql
 
 Select column_Name
 FROM Table_Name

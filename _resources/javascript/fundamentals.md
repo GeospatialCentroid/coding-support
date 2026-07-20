@@ -38,13 +38,13 @@ You can also use an **Integrated Development Environment** such as
 ## Syntax 
 
 When we write code, we need to be very specific with what we write. We commonly have our 
-**Commands**, and our **Targets**. OUr commands are what we want our code to do, and our 
+**Commands**, and our **Targets**. Our commands are what we want our code to do, and our 
 targets are what we wan't our code to impact. 
 
-We usually will use the **()** to dictate what we want to target in our code. For some 
-longer code blocks such as functions and conditional statements we will alos use **{}**.
+We usually will use ```()``` to dictate what we want to target in our code. For some 
+longer code blocks such as **Functions** and **Conditional Statements** we will also use ```{}```.
 
-You will notice that we always ensure our bracketing is closed. Meaning no matter how much code we write we have an equal amount of opening and closing brackets. We will see many examples of this throughout our guide. 
+You will notice that we always ensure our bracketing is closed. Meaning no matter how much code we write we have an equal amount of opening and closing brackets. We will see many examples of this throughout our guide. This is important in ensuring our code will run!
 
 ## Data and Variables 
 
@@ -75,6 +75,7 @@ When we use the **Let** command, it allows us to later reassign the variable. If
 to create a variable that can't be asisgned later on, we will use the **Const** Command
 
 ``` javascript
+
 const permanentVariable = "This Can't Change!"
 
 ```
@@ -93,7 +94,7 @@ console.log("Hello World")
 
 This would return Hello World to our console. 
 
-We can print the same text using our **exampleVariable**
+We can print the same text using our **exampleVariable** from earlier.
 
 ``` javascript
 
@@ -101,7 +102,7 @@ console.log(exampleVariable)
 
 ```
 
-If we want to create a string with **Our own Text** and **Variables**, we can do that like
+If we want to create a string that combines **Text** and **Variables**, we can do that like
 so. 
 
 ``` javascript
@@ -139,9 +140,11 @@ console.log(fruit[0])
 
 ```
 
-Arrays in javascript operate on a zero-basis. This means that when we want to call the first value in an array we start wiht [0]. As we move down our values, we will increase our number. 
+When targetting variables in an array, it's important to know they start on 0. This means that when we want to call the first value in an array we start with [0]. As we move down our values, we will increase our number. 
 
-Let's print the word **kiwi**. 
+It's important to know this because some languages will start on 1. when coding in multiple languages, make sure you know which value you should start on!
+
+Let's print the word **Kiwi** from our array from earlier. 
 
 ``` javascript
 
@@ -149,7 +152,7 @@ console.log(fruit[2])
 
 ```
 
-Something similar to an array is an **object**
+Something similar to an array is an **Object**
 
 An object is essentially an array of variables. This means that we can assign multiple variables within our object, and then call individual variables within the object. Let's look at an example. 
 
@@ -234,7 +237,7 @@ Shorthand ++
 
 Shorthand -- 
 
-/// This would bring us back to 8
+// This would bring us back to 8
 
 ```
 

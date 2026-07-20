@@ -16,7 +16,7 @@ of functions and data pulling abilities.
 ## Prerequisites
 
 In order to utilize Javascript for web development. It is important to have a strong foundation in 
-**HTML** and **CSS**, if you would like to learn HTML basics, access our [guide here](https://geospatialcentroid.github.io/coding-support/html/)
+**HTML** and **CSS**, if you would like to learn HTML basics, access our guide [here](https://geospatialcentroid.github.io/coding-support/html/)
 
 
 ## Launching Your Website
@@ -43,10 +43,10 @@ You will need to make these files talk to eachother. This can be done by
 In the <head> of your HTML. Using the **link** command and the **href** command allow you 
 to connect your files. 
 
-```Javascript
+```html
 
 <link rel="stylesheet" href="style.css"
-<script defer src="script.js"></script>
+<script src="script.js"></script>
 
 ```
 
@@ -113,6 +113,6 @@ newElement.textContent = "This is a new paragraph";
 
 Web development using JavaScript Requires a strong foundation in java. We recommend
 that you check out our provided resources to learn more about how to use JavaScript
-and apply it to various applications. 
+and apply it's diverse applications.
 
 

@@ -663,16 +663,16 @@ a:hover {
   /* 1. Force the main article container to grow */
   .page {
     flex-grow: 1 !important; /* Tells it to take up all available space */
-    width: auto !important;   /* Overrides fixed width percentages */
-    max-width: none !important; 
+    width: 100% !important;   /* Overrides fixed width percentages */
+    max-width: 100% !important; 
     margin-right: 0 !important;
     padding-right: 0 !important;
   }
 
   /* 2. Expand the inner wrapper */
   .page__inner-wrap {
-    width: 100% !important;
-    max-width: 100% !important; /* Theme often limits this to ~800px */
+    width: 100%;
+    max-width: 100%; /* Theme often limits this to ~800px */
     margin-left: .5em !important;
     margin-right: 0 !important;
     padding-left: .5em !important;
@@ -680,7 +680,7 @@ a:hover {
 
   /* 3. Optional: Ensure the content inside isn't still constrained */
   .page__content {
-    width: 100% !important;
+    width: 100%;
     max-width: 100% !important;
   }
 
@@ -699,6 +699,7 @@ a:hover {
 }
 .breadcrumbs {
      padding-inline: 0;
+     margin-left: 0;
 }
 
 table tr:nth-child(even) {
