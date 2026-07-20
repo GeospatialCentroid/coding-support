@@ -28,8 +28,11 @@ Javascript allows you to code in multiple languages such as HTML and CSS When wo
 development. You can also develop strong data visualization skills in javascript and 
 learn how to work with data. 
 
-## Resources
+### Resources for Learning JavaScript
+In addition to these guides, there are many CSU courses and free resources available for learning JavaScript. 
 
+{% include course_tree.html topic="Javascript" %}
+
+Here are some of the free resources available organized by category.
 {% include resource-table.html topic="Javascript" %}
-
 

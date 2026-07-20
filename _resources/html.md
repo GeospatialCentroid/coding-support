@@ -24,6 +24,10 @@ resources into your choice webpage to meet your goals.
 
 --------------------------------------------------------------------------------
 
-## Resources 
+### Resources for Learning HTML
+In addition to these guides, there are many CSU courses and free resources available for learning HTML. 
 
+{% include course_tree.html topic="HTML" %}
+
+Here are some of the free resources available organized by category.
 {% include resource-table.html topic="HTML" %}

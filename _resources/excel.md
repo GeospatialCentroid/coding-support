@@ -34,7 +34,10 @@ Excel is a multi-disciplinary software.
 - **Excel is Widely Used Among the Workforce**, making learning it a great for career development. 
 
 
-## Resources
+### Resources for Learning Excel
+In addition to these guides, there are many CSU courses and free resources available for learning Excel. 
 
+{% include course_tree.html topic="Excel" %}
+
+Here are some of the free resources available organized by category.
 {% include resource-table.html topic="Excel" %}
-

@@ -50,6 +50,10 @@ Essentially, the scope of HPC's are only limited by what the users can do.
 -------------------------------------------------------------------------------
 
 
-## Resources
+### Resources for Learning about HPC
+In addition to these guides, there are many CSU courses and free resources available for learning about HPC. 
 
+{% include course_tree.html topic="HPC" %}
+
+Here are some of the free resources available organized by category.
 {% include resource-table.html topic="HPC" %}

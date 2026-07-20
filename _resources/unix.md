@@ -25,6 +25,10 @@ Software**, while Unix is commonly payed for and used in **Institutions and Orga
 
 **Note**: The information provided in this guide is largely applicable when utilizing any terminal for file navigation. 
 
-## Resources 
+### Resources for Learning Unix
+In addition to these guides, there are many CSU courses and free resources available for learning Unix. 
 
+{% include course_tree.html topic="Unix" %}
+
+Here are some of the free resources available organized by category.
 {% include resource-table.html topic="Unix" %}

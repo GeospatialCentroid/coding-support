@@ -21,6 +21,10 @@ your organizations needs.
 
 **Learn to Work** with databases, something that will be useful in many careers. 
 
-### Resources
+### Resources for Learning SQL
+In addition to these guides, there are many CSU courses and free resources available for learning SQL. 
 
+{% include course_tree.html topic="SQL" %}
+
+Here are some of the free resources available organized by category.
 {% include resource-table.html topic="SQL" %}
