@@ -31,7 +31,8 @@
 <script src="{{ '/assets/js/course_tree.js' | relative_url }}"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  const courseData = {{ site.data.csu_courses | jsonify }};
+  const courseData = {{ site.data.csu_coding_courses | jsonify }};
+
   const currentTopic = "{{ include.topic | default: page.topic | default: page.title }}";
   
   const detailsEl = document.getElementById("courseTreeDetails");
