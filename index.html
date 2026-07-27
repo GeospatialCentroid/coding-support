@@ -70,7 +70,9 @@ coding_cards:
     alt: "SQL"
     excerpt: "Work With Large Databases of Data and Learn to Query Data"
 ---
-
+{% if site.description %}
+  <p class="page__lead">{{ site.description | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+{% endif %}
 
 <p class="resources">{{ "Explore Resources for..."}}</p>
 
