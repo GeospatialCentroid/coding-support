@@ -21,7 +21,7 @@ title                    : "Coding Support Hub"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Your Name"
-description              : "Empowering Rams to write code that advances research. Explore curated tutorials, debugging tools, and community-driven support for every skill level."
+description              : "Empowering Rams to write code that advances research. <span style='font-size: 0.95rem; font-weight: 400; color: #555; display: block; margin-top: 0.5rem;'>Explore curated tutorials, debugging tools, and community-driven support for every skill level.</span>"
 url                      : https://geospatialcentroid.github.io
 baseurl                  : "/coding-support"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -31,8 +31,8 @@ masthead_title           : # overrides the website title displayed in the masthe
 breadcrumbs              : true #, false (default)
 words_per_minute         : 200
 enable_copy_code_button  : true
-copyright                : Colorado State University Coding Support Hub # "copyright" name, defaults to site.title
-copyright_url            : # "copyright" URL, defaults to site.url
+copyright                : Colorado State University # "copyright" name, defaults to site.title
+copyright_url            : "http://colostate.edu/" # copyright" URL, defaults to site.url
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:

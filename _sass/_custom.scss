@@ -736,3 +736,12 @@ table tr:nth-child(even) {
     font-weight: 600 !important;
     font-size: .6875em;
 }
+.skip-links{
+  display: none;
+}
+
+.page__lead {
+  font-size: 1.05rem; /* Default is roughly 1.25rem–1.35rem */
+  font-weight: 400;   /* Optional: makes the text regular weight instead of bold */
+  line-height: 1.5;
+}
