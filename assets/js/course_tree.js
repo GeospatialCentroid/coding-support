@@ -23,6 +23,7 @@ function buildTreeData(rows, selectedTopic) {
   filtered.forEach(row => {
     const courseCode = (row["Course Code"] || "").trim();
     const urlLink = (row["URL Link"] || "").trim();
+
     
     if (!courseCode) return;
     
@@ -30,9 +31,11 @@ function buildTreeData(rows, selectedTopic) {
     if (!parsed) return;
 
     const prereqString = (row["Prerequisite"] || "").trim();
-    
+    const courseName = (row["Course name"] || "").trim();
+    const instructor = (row["Instructor"] || "").trim();
+
     // Check if prerequisites exist and are not "None"
-    if (prereqString && prereqString.toLowerCase() !== "none") {
+    if (prereqString && prereqString.toLowerCase() !== "none" || prereqString === "") {
       
       // Use the entire prerequisite string as a single grouped parent node name
       let prereqNode = rootNode.children.find(c => c.name === prereqString);
@@ -147,6 +150,7 @@ function renderTree(rootNode) {
     const maxLength = 35;
     return name.length > maxLength ? name.substring(0, maxLength) + "..." : name;
   });
+
 }
 
 function initCourseTree(data, topic) {
@@ -158,7 +162,47 @@ function initCourseTree(data, topic) {
 
   // Build the tree data using the topic passed from Jekyll
   const rootNode = buildTreeData(data, topic);
-  
+
+
+
+
   // Render the SVG chart
   renderTree(rootNode);
+}
+
+
+// Creating Interactive Popup for Course codes
+
+function buildPopup(data){
+
+const popup = d3.select("#popup");
+
+svg.selectAll("circle")
+  .data(data)
+  .enter()
+  .append("circle")
+  .attr("cx", d => d.x)
+  .attr("cy", d => d.y)
+  .attr("r", 6)
+  .on("mouseover", function (event, d){
+    const tableHTML = `
+    <table>
+      <tr><th>Course Code</th><td>${d.data.name}</td></tr>
+      <tr><th>Course Name</th><td>${d.data.courseName || "N/A"}</td></tr>
+      <tr><th>Instructor</th><td>${d.data.instructor || "N/A"}</td></tr>
+      <tr><th>Prerequisite</th><td>${d.data.prerequisite || "N/A"}</td></tr>
+    </table>
+    `;
+    popup.html(tableHTML)
+      .style("opacity", 0)
+  })
+
+  .on("mousemove", function (event) {
+      popup.style("left", (event.pageX + 10) + "px")
+            .style("top", (event.pageY + 10) + "px")
+
+  })
+  .on("mouseout", function() {
+      popup.style("opacity", 0)
+  })
 }

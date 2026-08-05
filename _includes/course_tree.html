@@ -27,6 +27,27 @@
   </div>
 </details>
 
+
+<!-- Creating Popup Table -->
+ <div id="popup" style="
+ position: absolute;
+ pointer-events: none;
+ background: white;
+ border-color: #1E4D2B;
+ border-style: solid;
+ border-radius: 2px; 
+ padding: 10px; 
+ opacity: 0; 
+ font-size: 8px; 
+ color: #1E4D2B;
+ margin-top: 10px;
+ margin-left: 5px;
+ margin-bottom: 10px;
+ margin-right: 5px;
+ width: 100 - margin-left - margin-right;
+ height: 150 - margin-top - margin-bottom;
+ "
+ ></div>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="{{ '/assets/js/course_tree.js' | relative_url }}"></script>
 <script>
@@ -45,4 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+
+
+
 </script>
