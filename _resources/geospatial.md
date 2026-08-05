@@ -2,8 +2,8 @@
 
 layout: single
 sidebar:
-  nav: "excel_sidebar"
-title: Excel
+  nav: "geospatial_sidebar"
+title: Geospatial Science
 toc: true
 toc_sticky: true
 ---
@@ -26,7 +26,7 @@ These are only a few applications of Geospatial Science. There are many more tha
 
 ## CSU Geospatial Courses 
 
-{% include course_tree.html topic="HTML" %}
+{% include course_tree.html topic="Geospatial" %}
 
 ## Resources 
 

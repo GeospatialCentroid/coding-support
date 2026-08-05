@@ -162,7 +162,9 @@ sql_sidebar:
     url: sql/fundamentals/
   - title: "Working With Tables"
     url: sql/working_with_tables/
-    
+geospatial_sidebar: 
+- title: "Geospatial Science" 
+  url: geospatial
 
     
 
