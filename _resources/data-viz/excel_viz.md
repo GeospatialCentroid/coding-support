@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Using Excel for Data Visualization"
+title: "Using Excel & D3 for Data Visualization"
 author_profile: false
 sidebar:
   nav: "data-viz_sidebar"
