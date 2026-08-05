@@ -10,7 +10,7 @@ toc_sticky: true
 
 ## What is Git?
 
-Git is a **version control system** that tracks changes in your code.
+Git is a **Version Control System** that tracks changes in your code.
 
 ---
 
@@ -25,7 +25,7 @@ Version control helps you manage your code safely and efficiently.
 - **Collaboration** – Work with others without overwriting work  
 - **Backup** – Your code history is stored and recoverable  
 
-Here’s your content as a **single clean Markdown section** (no nested headers beyond the section title, consistent formatting, ready for Jekyll):
+Here’s your content as a **Single Clean Markdown Section** (no nested headers beyond the section title, consistent formatting, ready for Jekyll):
 
 
 ## Traditional vs Modern Approach to Version Control
@@ -114,7 +114,7 @@ Think of Git as a **time machine for your code**.
 
 ## What is GitHub?
 
-GitHub is a **cloud platform** where you store and share your Git repositories.
+GitHub is a **Cloud Platform** where you store and share your Git repositories.
 
 ### Visual: Local vs GitHub
 
@@ -122,7 +122,7 @@ GitHub is a **cloud platform** where you store and share your Git repositories.
 Your Computer (Local)        GitHub (Remote)
 ---------------------        ----------------
    Your Project   ───────▶    Online Repository
-       ▲                         │
+       ▲                          
        └───────────────◀─────────┘
            push              pull
 ```
@@ -140,7 +140,7 @@ While GitHub is great at keeping your code up-to-date,
 in research publication, you often want to create a snapshot
 of the code you used as part of your analyis. GitHub does offer 'releases', but in the academic world, **DOIs (Digital Object Identifier)** are the gold standard.
 
-You can turn your GitHub repository into a **citable research product** using Zenodo.
+You can turn your GitHub repository into a **Citable Research Product** using Zenodo.
 
 ### How it Works
 
@@ -148,8 +148,6 @@ You can turn your GitHub repository into a **citable research product** using Ze
 2. Connect it to Zenodo (https://zenodo.org)  
 3. Create a release in GitHub  
 4. Zenodo assigns a DOI
-
-### Visual: Citation Workflow
 
 ## Summary
 

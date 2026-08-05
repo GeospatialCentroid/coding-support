@@ -8,7 +8,7 @@ toc: true
 toc_sticky: true
 ---
 
-# Git Intermediate Guide
+## Git Intermediate Guide
 
 This guide builds on Git basics and introduces:
 - Merge conflicts
@@ -19,7 +19,7 @@ This guide builds on Git basics and introduces:
 
 ## Merge Conflicts
 
-A **merge conflict** happens when Git cannot automatically combine changes.
+A **Merge Conflict** happens when Git cannot automatically combine changes.
 
 ### Visual
 
@@ -34,6 +34,8 @@ Conflict occurs when merging B into A if both modified same lines.
 ---
 
 ## Example Conflict
+
+here is an example of an example conflict. 
 
 ```
 <<<<<<< HEAD
@@ -121,8 +123,8 @@ git push origin feature-name
 Branches:
 - main (production)
 - develop (integration)
-- feature/*
-- hotfix/*
+- feature
+- hotfix
 
 ---
 
