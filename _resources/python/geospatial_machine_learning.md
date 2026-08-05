@@ -7,7 +7,7 @@ sidebar:
   nav: "python_sidebar"
 ---
 
-Geospatial machine learning combines **spatial data analysis** with **predictive modeling**. By incorporating geographic features such as coordinates, distances, and environmental variables, machine learning models can uncover spatial patterns and make predictions about geographic phenomena.
+Geospatial machine learning combines **Spatial Data Analysis** with **Predictive Modeling**. By incorporating geographic features such as coordinates, distances, and environmental variables, machine learning models can uncover spatial patterns and make predictions about geographic phenomena.
 
 Applications include:
 
@@ -21,7 +21,7 @@ This guide introduces workflows for building spatial machine learning models usi
 
 ---
 
-# Key Libraries
+## Key Libraries
 
 Common Python libraries used for geospatial machine learning:
 
@@ -52,7 +52,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 ---
 
-# Spatial Features in Machine Learning
+## Spatial Features in Machine Learning
 
 Spatial models often use features such as:
 
@@ -70,7 +70,7 @@ Example dataset:
 
 ---
 
-# Preparing Spatial Data
+## Preparing Spatial Data
 
 Load spatial dataset:
 
@@ -93,7 +93,7 @@ df = pd.DataFrame(gdf.drop(columns="geometry"))
 
 ---
 
-# Feature Engineering
+## Feature Engineering
 
 Create spatial features to improve model performance.
 
@@ -115,7 +115,7 @@ df["region_cluster"] = kmeans.fit_predict(coords)
 
 ---
 
-# Splitting Data
+## Splitting Data
 
 Split dataset into training and testing sets:
 
@@ -130,7 +130,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 ---
 
-# Training a Model
+## Training a Model
 
 Train a Random Forest classifier:
 
@@ -148,7 +148,7 @@ predictions = model.predict(X_test)
 
 ---
 
-# Evaluating Model Performance
+## Evaluating Model Performance
 
 Measure accuracy:
 
@@ -168,7 +168,7 @@ Other useful metrics include:
 
 ---
 
-# Spatial Prediction
+## Spatial Prediction
 
 Use trained models to predict across geographic space.
 
@@ -188,7 +188,7 @@ These predictions can be visualized as maps.
 
 ---
 
-# Mapping Machine Learning Results
+## Mapping Machine Learning Results
 
 Convert predictions to a GeoDataFrame:
 
@@ -204,11 +204,11 @@ results.plot(column="predicted_presence", legend=True)
 
 ---
 
-# Spatial Cross Validation
+## Spatial Cross Validation
 
 Standard machine learning validation may produce biased results because nearby observations are similar.
 
-Spatial cross-validation splits data by **geographic region** instead of random sampling.
+Spatial cross-validation splits data by **Geographic Region** instead of random sampling.
 
 Example strategy:
 
@@ -220,7 +220,7 @@ This produces more realistic accuracy estimates.
 
 ---
 
-# Working with Raster Features
+## Working with Raster Features
 
 Machine learning models often use raster datasets such as:
 
@@ -244,7 +244,7 @@ with rasterio.open("elevation.tif") as src:
 
 ---
 
-# Example Workflow
+## Example Workflow
 
 A simplified spatial ML workflow:
 
@@ -267,7 +267,7 @@ model.fit(X,y)
 
 ---
 
-# Summary
+## Summary
 
 Geospatial machine learning combines:
 
@@ -285,7 +285,7 @@ Python provides a flexible ecosystem for building advanced geospatial models.
 
 ---
 
-# Next Steps
+## Next Steps
 
 Advanced topics to explore include:
 

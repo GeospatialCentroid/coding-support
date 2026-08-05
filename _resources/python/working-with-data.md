@@ -62,7 +62,7 @@ with open("people.csv") as file:
 
 # Using Pandas for Data Analysis
 
-The **pandas** library is the most popular tool for working with tabular data in Python.
+The **Pandas** library is the most popular tool for working with tabular data in Python.
 
 Install pandas:
 

@@ -7,7 +7,7 @@ sidebar:
   nav: "python_sidebar"
 ---
 
-Databases are used to **store, manage, and retrieve structured data efficiently**. Python provides libraries to work with both **relational (SQL)** and **non-relational (NoSQL)** databases.
+Databases are used to **Store, Manage, and Retrieve Structured Data Efficiently**. Python provides libraries to work with both **relational (SQL)** and **non-relational (NoSQL)** databases.
 
 This guide covers:
 
@@ -18,9 +18,9 @@ This guide covers:
 
 ---
 
-# Relational Databases (SQL)
+## Relational Databases (SQL)
 
-Relational databases store data in **tables** with rows and columns. Common databases include:
+Relational databases store data in **Tables** with rows and columns. Common databases include:
 
 * SQLite (lightweight, built-in)
 * PostgreSQL
@@ -46,7 +46,7 @@ cursor = conn.cursor()
 
 ---
 
-## Creating Tables
+### Creating Tables
 
 ```python
 cursor.execute("""
@@ -62,7 +62,7 @@ conn.commit()
 
 ---
 
-## Inserting Data
+### Inserting Data
 
 ```python
 cursor.execute("INSERT INTO users (name, age, city) VALUES (?, ?, ?)",
@@ -84,7 +84,7 @@ conn.commit()
 
 ---
 
-## Querying Data
+### Querying Data
 
 ```python
 cursor.execute("SELECT * FROM users")
@@ -104,7 +104,7 @@ for row in cursor.fetchall():
 
 ---
 
-## Updating Data
+### Updating Data
 
 ```python
 cursor.execute("UPDATE users SET city = ? WHERE name = ?", ("Broomfield", "Alice"))
@@ -113,7 +113,7 @@ conn.commit()
 
 ---
 
-## Deleting Data
+### Deleting Data
 
 ```python
 cursor.execute("DELETE FROM users WHERE age < ?", (30,))
@@ -122,19 +122,19 @@ conn.commit()
 
 ---
 
-## Closing the Connection
+### Closing the Connection
 
 ```python
 conn.close()
 ```
 
-Always close the database connection to **avoid locks or corruption**.
+Always close the database connection to **Avoid Locks or Corruption**.
 
 ---
 
-# Using SQLAlchemy
+## Using SQLAlchemy
 
-SQLAlchemy is a **higher-level ORM** that works with multiple SQL databases.
+SQLAlchemy is a **Ligher-Level ORM** that works with multiple SQL databases.
 
 Install:
 
@@ -184,9 +184,9 @@ for user in session.query(User).filter(User.age > 25):
 
 ---
 
-# Non-Relational Databases (NoSQL)
+## Non-Relational Databases (NoSQL)
 
-NoSQL databases store **unstructured or semi-structured data**. Common examples:
+NoSQL databases store **Unstructured or Semi-Structured Data**. Common examples:
 
 * MongoDB
 * Redis
@@ -214,7 +214,7 @@ collection = db["users"]
 
 ---
 
-## Inserting Documents
+### Inserting Documents
 
 ```python
 user = {"name": "Alice", "age": 30, "city": "Denver"}
@@ -229,7 +229,7 @@ collection.insert_many(users)
 
 ---
 
-## Querying Documents
+### Querying Documents
 
 ```python
 for user in collection.find({"age": {"$gt": 30}}):
@@ -238,7 +238,7 @@ for user in collection.find({"age": {"$gt": 30}}):
 
 ---
 
-## Updating Documents
+### Updating Documents
 
 ```python
 collection.update_one({"name": "Alice"}, {"$set": {"city": "Broomfield"}})
@@ -246,7 +246,7 @@ collection.update_one({"name": "Alice"}, {"$set": {"city": "Broomfield"}})
 
 ---
 
-## Deleting Documents
+### Deleting Documents
 
 ```python
 collection.delete_one({"age": {"$lt": 30}})
@@ -254,7 +254,7 @@ collection.delete_one({"age": {"$lt": 30}})
 
 ---
 
-# Summary
+## Summary
 
 Python provides tools for both **SQL and NoSQL databases**:
 
@@ -270,7 +270,7 @@ You can **store, query, and manipulate structured and unstructured data** effici
 
 ---
 
-# Next Steps
+## Next Steps
 
 After learning the basics, explore:
 

@@ -7,7 +7,7 @@ sidebar:
   nav: "python_sidebar"
 ---
 
-Geospatial data analysis involves working with **location-based data** such as coordinates, maps, and spatial features.
+Geospatial data analysis involves working with **Location-Based Data** such as coordinates, maps, and spatial features.
 
 Python provides powerful libraries for geospatial analysis, allowing you to:
 
@@ -26,11 +26,11 @@ Common applications include:
 
 ---
 
-# Key Geospatial Concepts
+## Key Geospatial Concepts
 
 Understanding a few basic concepts helps when working with geographic data.
 
-## Coordinates
+### Coordinates
 
 Locations on Earth are often represented using:
 
@@ -47,7 +47,7 @@ This represents a location in Fort Collins, Colorado.
 
 ---
 
-## Vector Data
+### Vector Data
 
 Vector data represents geographic features using geometry.
 
@@ -67,9 +67,9 @@ Examples:
 
 ---
 
-## Raster Data
+### Raster Data
 
-Raster data represents geographic information as **grids of cells (pixels)**.
+Raster data represents geographic information as **Grids of Cells (Pixels)**.
 
 Examples:
 
@@ -79,7 +79,7 @@ Examples:
 
 ---
 
-# Common Geospatial File Formats
+## Common Geospatial File Formats
 
 | Format               | Description                 |
 | -------------------- | --------------------------- |
@@ -91,7 +91,7 @@ Examples:
 GeoPandas can read most of these formats.
 ---
 
-# Installing Geospatial Libraries
+## Installing Geospatial Libraries
 
 Install common Python geospatial libraries:
 
@@ -103,7 +103,7 @@ These libraries provide tools for working with spatial data.
 
 ---
 
-# Importing Libraries
+## Importing Libraries
 
 ```python
 import geopandas as gpd
@@ -115,7 +115,7 @@ GeoPandas extends pandas to support **spatial data structures**.
 
 ---
 
-# Loading Geospatial Data
+## Loading Geospatial Data
 
 GeoPandas can read many geospatial formats including:
 
@@ -137,11 +137,11 @@ states.head()
 
 ---
 
-# Understanding GeoDataFrames
+## Understanding GeoDataFrames
 
 GeoPandas stores spatial data in a **GeoDataFrame**.
 
-A GeoDataFrame is similar to a pandas DataFrame but includes a **geometry column**.
+A GeoDataFrame is similar to a pandas DataFrame but includes a **Geometry Column**.
 
 Example structure:
 
@@ -151,7 +151,7 @@ Example structure:
 
 ---
 
-# Plotting Geographic Data
+## Plotting Geographic Data
 
 Basic map visualization:
 
@@ -164,7 +164,7 @@ This generates a simple map showing the shapes of each state.
 
 ---
 
-# Creating Maps with Color
+## Creating Maps with Color
 
 You can visualize variables using color scales.
 
@@ -175,11 +175,11 @@ states.plot(column="population", legend=True)
 plt.show()
 ```
 
-This creates a **choropleth map** where colors represent population values.
+This creates a **Choropleth Map** where colors represent population values.
 
 ---
 
-# Working with Point Data
+## Working with Point Data
 
 Example dataset containing coordinates:
 
@@ -209,9 +209,9 @@ plt.show()
 
 ---
 
-# Coordinate Reference Systems (CRS)
+## Coordinate Reference Systems (CRS)
 
-Spatial data must use a **coordinate reference system**.
+Spatial data must use a **Coordinate Reference System**.
 
 Common CRS examples:
 
@@ -240,7 +240,7 @@ gdf = gdf.to_crs(epsg=3857)
 
 ---
 
-# Spatial Joins
+## Spatial Joins
 
 Spatial joins combine datasets based on geographic relationships.
 
@@ -257,7 +257,7 @@ This links each city to the state polygon it falls within.
 
 ---
 
-# Spatial Filtering
+## Spatial Filtering
 
 Select features within a geographic area.
 
@@ -275,7 +275,7 @@ points_in_state = gpd.sjoin(points, states)
 
 ---
 
-# Distance Calculations
+## Distance Calculations
 
 Calculate distances between locations.
 
@@ -292,7 +292,7 @@ This can help answer questions such as:
 
 ---
 
-# Interactive Maps with Folium
+## Interactive Maps with Folium
 
 The **folium** library allows you to create interactive web maps.
 
@@ -315,7 +315,7 @@ This generates an interactive map you can zoom and pan.
 
 ---
 
-# Example Geospatial Workflow
+## Example Geospatial Workflow
 
 A typical geospatial analysis workflow:
 
@@ -340,7 +340,7 @@ plt.show()
 ---
 
 
-# Summary
+## Summary
 
 Python provides powerful tools for geospatial data analysis.
 
@@ -356,7 +356,7 @@ Libraries such as **GeoPandas**, **Shapely**, and **Folium** make spatial analys
 
 ---
 
-# Next Steps
+## Next Steps
 
 After learning the basics of geospatial analysis, explore:
 

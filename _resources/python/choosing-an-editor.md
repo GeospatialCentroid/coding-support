@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-Using an **IDE (Integrated Development Environment)** or a **good text editor** for Python isn’t required—you _can_ write Python in a plain text editor or terminal—but there are many strong reasons why using one is highly recommended, especially as your projects grow.
+Using an **IDE (Integrated Development Environment)** or a **Good Text Editor** for Python isn’t required — you *can* write Python in a plain text editor or terminal—but there are many strong reasons why using one is highly recommended, especially as your projects grow.
 
 Here’s a breakdown:
 

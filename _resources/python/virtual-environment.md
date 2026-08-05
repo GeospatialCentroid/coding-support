@@ -6,13 +6,13 @@ sidebar:
 toc: true
 toc_sticky: true
 ---
-# Working With and Sharing Virtual Environments (pip and Conda)
+## Working With and Sharing Virtual Environments (pip and Conda)
 
 This guide explains how to create, manage, and share Python virtual environments using both **pip/venv** and **conda**. Virtual environments allow you to isolate project dependencies so different projects can use different package versions without conflict.
 
 ---
 
-# Why Use Virtual Environments?
+## Why Use Virtual Environments?
 
 Virtual environments help you:
 
@@ -23,11 +23,11 @@ Virtual environments help you:
 
 ---
 
-# Option 1: Using pip and venv
+## Option 1: Using pip and venv
 
 The **venv** module is included with Python 3 and works with **pip**.
 
-## 1. Create a Virtual Environment
+### 1. Create a Virtual Environment
 
 Navigate to your project folder and run:
 
@@ -89,8 +89,8 @@ pip install -r requirements.txt
 deactivate
 ```
 
-Option 2: Using Conda
-=====================
+## Option 2: Using Conda
+------------------------
 
 Conda environments are commonly used for **data science**, **scientific computing**, and **cross-language dependencies**.
 
@@ -101,8 +101,8 @@ Conda can be installed via:
 *   **Miniforge** (conda-forge based)
     
 
-Creating a Conda Environment
-============================
+## Creating a Conda Environment
+--------------------------------
 
 ```bash
 conda create -n myenv python=3.11 
@@ -114,8 +114,7 @@ Activate it:
 conda activate myenv
 ```
 
-Installing Packages
-===================
+## Installing Packages
 
 Using default conda channels:
 
@@ -129,15 +128,13 @@ Using **conda-forge**:
 conda install -c conda-forge geopandas
 ```
 
-Listing Environments
-====================
+## Listing Environments
 
 ```bash  
 conda env list 
 ```
 
-Exporting an Environment
-========================
+## Exporting an Environment
 
 To share your environment with others:
 
@@ -145,8 +142,7 @@ To share your environment with others:
 conda env export > environment.yml
 ```
 
-Recreating the Environment
-==========================
+## Recreating the Environment
 
 ```bash
 conda env create -f environment.yml 
@@ -158,25 +154,22 @@ Activate it:
 conda activate myenv
 ```
 
-Updating the Environment
-========================
+## Updating the Environment
 
 ```bash
 conda env update -f environment.yml --prune
 ```
 
-Removing an Environment
-=======================
+## Removing an Environment
 
 ```bash
 conda remove --name myenv --all
 ```
 
-Best Practices
-==============
+## Best Practices
 
-1\. Keep environments project-specific
---------------------------------------
+### 1. Keep Environments project-specific
+
 
 Example project layout:
 
@@ -188,8 +181,8 @@ data/
 requirements.txt 
 ```
 
-2\. Always share dependency files
----------------------------------
+### 2. Always share dependency files
+
 
 For pip:
 
@@ -205,8 +198,7 @@ environment.yml
 
 Conda environments usually live outside the project folder.
 
-pip vs Conda
-============
+## Pip VS Conda
 
 | Feature                         | pip + venv              | Conda                   |
 | ------------------------------- | ----------------------- | ----------------------- |
@@ -217,11 +209,9 @@ pip vs Conda
 
 
 
-Example Workflows
-================
+## Example Workflows
 
-pip workflow
-------------
+### Pip Workflow
 
 ```bash
 python -m venv .venv
@@ -230,8 +220,7 @@ pip install pandas jupyter matplotlib
 pip freeze > requirements.txt   
  ```
 
-conda workflow
---------------
+### Conda Workflow
 
 ```bash
 conda create -n analysis python=3.11
@@ -240,8 +229,7 @@ conda install pandas jupyter matplotlib
 conda env export > environment.yml
 ```
 
-Additional Resources
-====================
+## Additional Resources
 
 *   [https://docs.python.org/3/library/venv.html](https://docs.python.org/3/library/venv.html)
 *   [https://pip.pypa.io](https://pip.pypa.io)

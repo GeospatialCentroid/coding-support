@@ -7,7 +7,7 @@ sidebar:
   nav: "python_sidebar"
 ---
 
-Data cleaning is the process of **identifying and fixing problems in a dataset** before analysis. Real-world data often contains issues such as:
+Data cleaning is the process of **Identifying** and **Fixing Problems in a Dataset** before analysis. Real-world data often contains issues such as:
 
 * Missing values
 * Inconsistent formats
@@ -21,7 +21,7 @@ This guide focuses on data cleaning using the **pandas** library.
 
 ---
 
-# Installing Required Libraries
+## Installing Required Libraries
 
 Install pandas if it is not already installed:
 
@@ -37,7 +37,7 @@ import pandas as pd
 
 ---
 
-# Example Dataset
+## Example Dataset
 
 Consider the following dataset stored in a CSV file:
 
@@ -58,7 +58,7 @@ Common problems include:
 
 ---
 
-# Loading the Dataset
+## Loading the Dataset
 
 Load the data into a pandas DataFrame.
 
@@ -80,7 +80,7 @@ data.info()
 
 ---
 
-# Identifying Missing Values
+## Identifying Missing Values
 
 Missing values often appear as `NaN`.
 
@@ -98,11 +98,11 @@ data.isnull().sum()
 
 ---
 
-# Handling Missing Values
+## Handling Missing Values
 
 There are several strategies for dealing with missing data.
 
-## Removing Rows With Missing Values
+### Removing Rows With Missing Values
 
 ```python
 data_clean = data.dropna()
@@ -112,7 +112,7 @@ This removes rows containing any missing values.
 
 ---
 
-## Filling Missing Values
+### Filling Missing Values
 
 You can replace missing values with a default value.
 
@@ -130,7 +130,7 @@ data["age"] = data["age"].fillna(data["age"].mean())
 
 ---
 
-# Removing Duplicate Records
+## Removing Duplicate Records
 
 Duplicate rows can distort analysis results.
 
@@ -148,7 +148,7 @@ data = data.drop_duplicates()
 
 ---
 
-# Fixing Data Types
+## Fixing Data Types
 
 Columns sometimes load with incorrect types.
 
@@ -172,7 +172,7 @@ data["date"] = pd.to_datetime(data["date"])
 
 ---
 
-# Cleaning Text Data
+## Cleaning Text Data
 
 Text fields often contain formatting issues such as extra spaces or inconsistent capitalization.
 
@@ -196,7 +196,7 @@ data["city"] = data["city"].str.title()
 
 ---
 
-# Renaming Columns
+## Renaming Columns
 
 Sometimes column names are inconsistent or unclear.
 
@@ -210,7 +210,7 @@ data = data.rename(columns={
 
 ---
 
-# Filtering Invalid Data
+## Filtering Invalid Data
 
 Remove rows with unrealistic values.
 
@@ -228,7 +228,7 @@ data = data[data["salary"] > 30000]
 
 ---
 
-# Detecting Outliers
+## Detecting Outliers
 
 Outliers can distort analysis.
 
@@ -246,7 +246,7 @@ data = data[data["salary"] < 200000]
 
 ---
 
-# Standardizing Values
+## Standardizing Values
 
 Categorical variables often contain inconsistent labels.
 
@@ -272,7 +272,7 @@ data["city"] = data["city"].str.title()
 
 ---
 
-# Creating Clean Columns
+## Creating Clean Columns
 
 Sometimes you may need derived variables.
 
@@ -284,7 +284,7 @@ data["salary_k"] = data["salary"] / 1000
 
 ---
 
-# Saving the Clean Dataset
+## Saving the Clean Dataset
 
 Once data is cleaned, save it for further analysis.
 
@@ -300,7 +300,7 @@ data.to_excel("clean_employees.xlsx")
 
 ---
 
-# Example Data Cleaning Workflow
+## Example Data Cleaning Workflow
 
 A typical workflow might look like this:
 
@@ -328,7 +328,7 @@ data.to_csv("employees_clean.csv", index=False)
 
 ---
 
-# Data Cleaning Checklist
+## Data Cleaning Checklist
 
 When preparing a dataset for analysis, consider checking:
 
@@ -343,7 +343,7 @@ Cleaning these issues ensures that later analysis and visualization are **trustw
 
 ---
 
-# Summary
+## Summary
 
 Data cleaning is a critical step in any data workflow. Using pandas, you can:
 

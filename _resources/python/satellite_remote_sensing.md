@@ -7,7 +7,7 @@ sidebar:
   nav: "python_sidebar"
 ---
 
-Remote sensing involves collecting information about the Earth's surface using **satellites or airborne sensors**.
+Remote sensing involves collecting information about the Earth's surface using **Satellites or Airborne Sensors**.
 
 These datasets are widely used in:
 
@@ -21,7 +21,7 @@ Python provides powerful tools for analyzing satellite imagery and raster datase
 
 ---
 
-# Key Python Libraries
+## Key Python Libraries
 
 | Library    | Purpose                             |
 | ---------- | ----------------------------------- |
@@ -48,7 +48,7 @@ import matplotlib.pyplot as plt
 
 ---
 
-# Understanding Raster Data
+## Understanding Raster Data
 
 Satellite images are stored as **rasters**.
 
@@ -68,7 +68,7 @@ Examples:
 
 ---
 
-# Opening Satellite Data
+## Opening Satellite Data
 
 Load a raster dataset:
 
@@ -92,7 +92,7 @@ band = dataset.read(1)
 
 ---
 
-# Visualizing Satellite Imagery
+## Visualizing Satellite Imagery
 
 Display image:
 
@@ -105,7 +105,7 @@ plt.show()
 
 ---
 
-# Working with Multi-band Imagery
+## Working with Multi-band Imagery
 
 Satellite images often contain multiple spectral bands.
 
@@ -126,7 +126,7 @@ nir = dataset.read(4)
 
 ---
 
-# Calculating Vegetation Indices
+## Calculating Vegetation Indices
 
 A common remote sensing index is **NDVI** (Normalized Difference Vegetation Index).
 
@@ -155,7 +155,7 @@ plt.show()
 
 ---
 
-# Working with xarray
+## Working with xarray
 
 Satellite datasets are often large and multidimensional.
 
@@ -177,9 +177,9 @@ print(data)
 
 ---
 
-# Time Series Satellite Data
+## Time Series Satellite Data
 
-Many Earth observation datasets contain **temporal data**.
+Many Earth observation datasets contain **Temporal Data**.
 
 Example:
 
@@ -197,7 +197,7 @@ dataset.mean(dim="time")
 
 ---
 
-# Cropping Satellite Images
+## Cropping Satellite Images
 
 Extract specific geographic regions.
 
@@ -209,7 +209,7 @@ cropped, transform = mask(dataset, shapes, crop=True)
 
 ---
 
-# Change Detection
+## Change Detection
 
 Remote sensing is often used to detect environmental change.
 
@@ -234,7 +234,7 @@ plt.colorbar()
 
 ---
 
-# Large Satellite Datasets
+## Large Satellite Datasets
 
 Earth observation datasets can be extremely large.
 
@@ -253,7 +253,7 @@ data = xr.open_dataset("large_satellite_dataset.nc")
 
 ---
 
-# Example Workflow
+## Example Workflow
 
 Typical remote sensing workflow:
 
@@ -271,7 +271,7 @@ ndvi = (nir - red) / (nir + red)
 
 ---
 
-# Applications of Remote Sensing
+## Applications of Remote Sensing
 
 Satellite analysis is used for:
 
@@ -285,7 +285,7 @@ Python tools make these analyses accessible for research and environmental monit
 
 ---
 
-# Summary
+## Summary
 
 Python provides powerful tools for analyzing satellite data.
 
@@ -301,7 +301,7 @@ These tools allow scientists and analysts to study the Earth at global scale.
 
 ---
 
-# Next Steps
+## Next Steps
 
 Advanced remote sensing topics include:
 

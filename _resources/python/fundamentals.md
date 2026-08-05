@@ -72,7 +72,7 @@ name = "Alice"age = 30
 height = 5.6
 ```
 
-Variables **do not require explicit type declarations**.
+Variables do not require **Explicit Type Declarations**.
 
 ## Basic Data Types
 
@@ -100,9 +100,25 @@ temperature = 98.6
 is_active = True
 ```
 
+## Indentation
+
+Python uses **indentation to define blocks of code**.
+
+```python
+if True:
+    print("This runs")
+```
+
+Incorrect indentation will cause an error:
+
+```python
+if True:
+print("Error")
+```
+
 ## Printing Output
 
-The print() function displays output.
+The ```print()``` function displays output.
 
 ```python
 print("Hello World")
@@ -206,21 +222,6 @@ else:
     print("C")
 ```
 
-## Indentation
-
-Python uses **indentation to define blocks of code**.
-
-```python
-if True:
-    print("This runs")
-```
-
-Incorrect indentation will cause an error:
-
-```python
-if True:
-    print("Error")
-```
 
 Standard practice is **4 spaces per indentation level**.
 

@@ -20,7 +20,7 @@ This guide introduces intermediate techniques using Python geospatial libraries.
 
 ---
 
-# Core Libraries for Advanced Geospatial Analysis
+## Core Libraries for Advanced Geospatial Analysis
 
 The following libraries are commonly used together:
 
@@ -50,7 +50,7 @@ import rasterio
 
 ---
 
-# Spatial Joins
+## Spatial Joins
 
 Spatial joins combine datasets based on geographic relationships.
 
@@ -73,7 +73,7 @@ This attaches the state information to each city based on location.
 
 ---
 
-# Spatial Overlay Operations
+## Spatial Overlay Operations
 
 Overlay operations combine polygon layers.
 
@@ -98,7 +98,7 @@ This finds areas where development overlaps protected land.
 
 ---
 
-# Buffer Analysis
+## Buffer Analysis
 
 Buffers create zones around geographic features.
 
@@ -126,7 +126,7 @@ roads_buffer.plot()
 
 ---
 
-# Distance Analysis
+## Distance Analysis
 
 Distance calculations help answer spatial questions such as:
 
@@ -147,7 +147,7 @@ nearest = gpd.sjoin_nearest(cities, hospitals)
 
 ---
 
-# Spatial Indexing
+## Spatial Indexing
 
 Large geospatial datasets can be slow to process. Spatial indexing improves performance.
 
@@ -156,7 +156,7 @@ GeoPandas can automatically build spatial indexes.
 Example:
 
 ```python
-cities.sindex
+cities.index
 ```
 
 Spatial indexes speed up operations like:
@@ -167,9 +167,9 @@ Spatial indexes speed up operations like:
 
 ---
 
-# Working with Raster Data
+## Working with Raster Data
 
-Raster data represents spatial information as a **grid of pixels**.
+Raster data represents spatial information as a **Grid of Pixels**.
 
 Common raster datasets include:
 
@@ -190,7 +190,7 @@ print(dataset.read(1))
 
 ---
 
-# Raster Visualization
+## Raster Visualization
 
 Display raster data using matplotlib:
 
@@ -208,7 +208,7 @@ plt.show()
 
 ---
 
-# Raster Masking
+## Raster Masking
 
 Mask raster data using vector boundaries.
 
@@ -226,7 +226,7 @@ This extracts raster data within a defined study area.
 
 ---
 
-# Reprojecting Raster Data
+## Reprojecting Raster Data
 
 Raster datasets must use compatible coordinate systems.
 
@@ -240,7 +240,7 @@ Raster reprojection ensures spatial alignment with vector layers.
 
 ---
 
-# Network Analysis
+## Network Analysis
 
 Network analysis studies connections between locations.
 
@@ -266,7 +266,7 @@ ox.plot_graph(graph)
 
 ---
 
-# Shortest Path Analysis
+## Shortest Path Analysis
 
 Find the shortest route between locations.
 
@@ -287,7 +287,7 @@ ox.plot_graph_route(graph, route)
 
 ---
 
-# Large Geospatial Datasets
+## Large Geospatial Datasets
 
 When working with very large datasets:
 
@@ -306,7 +306,7 @@ These formats improve performance compared to shapefiles.
 
 ---
 
-# Example Advanced Workflow
+## Example Advanced Workflow
 
 A typical advanced geospatial workflow might include:
 
@@ -332,7 +332,7 @@ urban_overlap.to_file("analysis_results.shp")
 
 ---
 
-# Performance Tips
+## Performance Tips
 
 To improve performance in geospatial workflows:
 
@@ -345,7 +345,7 @@ These practices significantly improve processing speed.
 
 ---
 
-# Summary
+## Summary
 
 Intermediate and advanced geospatial analysis in Python enables powerful spatial workflows.
 
@@ -361,7 +361,7 @@ These tools allow researchers and analysts to perform complex spatial analysis e
 
 ---
 
-# Next Steps
+## Next Steps
 
 To further expand your geospatial skills, explore:
 
