@@ -11,7 +11,7 @@ We offer coding and data support across a range of tools and workflows to suppor
 
 - Python and R (scripting, automation, data and statistical analysis, visualization, geospatial)
 - Git (version control, GitHub workflows)
-- Web Development (HTML5, CSS3, and JavaScript)
+- Web Development (HTML, CSS, and JavaScript)
 - Excel (formulas, charts, data cleaning, visualization)
 - Power BI (dashboards, reporting)
 - ArcGIS Pro & GIS (mapping, spatial analysis)
@@ -34,7 +34,7 @@ To get started with submitting a support request, please complete the form below
 
 ## 🧭 How Requests Are Routed
 
-To provide the most effective support, we collaborate with campus partners who specialize in specific tools and methods:
+To provide the most effective support, we collaborate with campus partners who specialize in specific tools and methods. The table below identifies the group with the most relevant expertise for each topic.
 
 | Topic                            | Supporting Group                         |
 | -------------------------------- | ---------------------------------------- |
@@ -48,7 +48,19 @@ Requests that fall outside the areas listed above will be reviewed by a Geospati
 
 
 ---
-<div class="form-wrapper">
+<!-- <div class="form-wrapper">
 <iframe  src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=Aoi1r3r_sUurITZ_8uz8i_DPynnqpahNoGJizV-T1lFURFpETEk2OUdJRUNSQk5ESTUwVUxCMERFMy4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
-<script>
-</div>
+<script> -->
+
+
+<p>
+  To get started with submitting a support request, please complete the linked form below. Once submitted, your inquiry will be routed to the appropriate campus group based on subject-matter expertise.
+</p>
+
+<a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=Aoi1r3r_sUurITZ_8uz8i_DPynnqpahNoGJizV-T1lFURFpETEk2OUdJRUNSQk5ESTUwVUxCMERFMy4u" target="form" rel="noopener noreferrer" class="btn">
+  Fill out the Coding Support Request Form
+</a>
+
+
+ <strong>Notice:</strong> This support request form is available exclusively to <strong>Colorado State University (CSU)</strong> researchers, faculty, staff, and students.
+

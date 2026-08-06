@@ -70,8 +70,7 @@ data-viz_sidebar:
     url: data-viz/design/
   - title: "Choosing the Right Visualization"
     url: data-viz/options/
-  - title: "Using Excel for Data Visualization"
-    url: data-viz/excel_viz/
+
     
 excel_sidebar:
 - title: "Excel"
@@ -79,8 +78,11 @@ excel_sidebar:
   children:
   - title: "Excel Fundamentals"
     url: excel/excel_fundamentals/
+  # - title: "Using Excel for Data Visualization"
+  #   url: excel/excel_viz/
   - title: "Using VBA Code"
     url: excel/using_vba_code/
+
   
 bash_sidebar: 
 - title: "Bash"

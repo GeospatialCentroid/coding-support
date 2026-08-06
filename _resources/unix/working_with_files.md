@@ -85,7 +85,7 @@ cat file file_2 > combined_file
 
 ```
 
-There are a series of specific modifications we can amke to the cat command to change its function. 
+There are a series of specific modifications we can make to the cat command to change its function. 
 
 |Option|Purpose|
 |-------|------|

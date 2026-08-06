@@ -53,6 +53,7 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const courseData = {{ site.data.csu_coding_courses | jsonify }};
+
   const currentTopic = "{{ include.topic | default: page.topic | default: page.title }}";
   
   const detailsEl = document.getElementById("courseTreeDetails");
