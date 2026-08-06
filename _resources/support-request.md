@@ -42,10 +42,10 @@ To provide the most effective support, we collaborate with campus partners who s
 | Excel (Data Visualization)       | IRISS                                    |
 | R (Statistics)                   | Stat Lab                                 |
 | Power BI                         | Libraries                                |
+| Geospatial                       | Geospatial Centroid                                |
 
 
-Requests that fall outside the areas listed above will be reviewed by a Geospatial Centroid Coding Support group member or referred to the appropriate campus resource through our general support mailbox.
-
+Requests that fall outside the areas listed above will be referred to the appropriate campus resource through our general support mailbox.
 
 ---
 <!-- <div class="form-wrapper">
