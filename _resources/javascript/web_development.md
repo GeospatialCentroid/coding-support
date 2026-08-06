@@ -10,12 +10,12 @@ toc_sticky: true
 This guide will go into the introductory concepts of working with websites and 
 webpages in Java Script.
 
-Javascript is good at making websites more interactive through it's series 
+JavaScript is good at making websites more interactive through it's series 
 of functions and data pulling abilities. 
 
 ## Prerequisites
 
-In order to utilize Javascript for web development. It is important to have a strong foundation in 
+In order to utilize JavaScript for web development. It is important to have a strong foundation in 
 **HTML** and **CSS**, if you would like to learn HTML basics, access our guide [here](https://geospatialcentroid.github.io/coding-support/html/)
 
 
@@ -34,7 +34,7 @@ In order to begin your project you will want to create 3 files
   
 - **script.js**
 
-  This file allows you to write **Javascript** code that you can add to your webpage, automating functions and creating more interactive options. 
+  This file allows you to write **JavaScript** code that you can add to your webpage, automating functions and creating more interactive options. 
 
 You will need to make these files talk to eachother. This can be done by 
 **Linking** your css and your javascript files to your html.  

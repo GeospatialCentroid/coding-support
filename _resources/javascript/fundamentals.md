@@ -7,20 +7,20 @@ toc: true
 toc_sticky: true
 ---
 
-Javascript is designed to aid in web development and work with other coding languages
+JavaScript is designed to aid in web development and work with other coding languages
 
-This guide will inroduce the fundamentals of accessing Javascript and coding in 
-Javascript 
+This guide will inroduce the fundamentals of accessing JavaScript and coding in 
+JavaScript 
 
 -------------------------------------------------------------------------------
 
 ## JavaScript Fundamentals
 
 
-### Accessing Javascript
+### Accessing JavaScript
 
 
-Javascript is built into most **Computer Systems**
+JavaScript is built into most **Computer Systems**
 
 For **Windows & Linux** you can press CTRL + Shift + J.
 
@@ -197,7 +197,7 @@ console.log(5 < 3)
 
 ## Operators
 
-Javascript offers **Arithmetic** and **Comparison** operators that allow us to 
+JavaScript offers **Arithmetic** and **Comparison** operators that allow us to 
 perform computations 
 
 These are our **Arithmetic Operators** 
@@ -373,7 +373,7 @@ console.log(greetUser(Elena))
 ## Next Steps 
 
 Now that we have gone over some of the introductory fundamentals of JavaScript, lets look
-at how we can use Javascript in a website. 
+at how we can use JavaScript in a website. 
 
 
 

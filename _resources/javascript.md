@@ -9,7 +9,7 @@ toc_sticky: true
 
 ## What is JavaScript?
 
-Javascript is a programming language that is used in conjunction with HTML and 
+JavaScript is a programming language that is used in conjunction with HTML and 
 CSS for web development as well as app development. 
 
 **Build Webpages** and back end web launching code.
@@ -22,9 +22,9 @@ CSS for web development as well as app development.
 
 --------------------------------------------------------------------------------------------
 
-## Why Learn Javascript? 
+## Why Learn JavaScript? 
 
-Javascript allows you to code in multiple languages such as HTML and CSS When working in web 
+JavaScript allows you to code in multiple languages such as HTML and CSS When working in web 
 development. You can also develop strong data visualization skills in javascript and 
 learn how to work with data. 
 
@@ -32,5 +32,5 @@ learn how to work with data.
 In addition to this guide, there are many open source resources for learning JavaScript.  
 
 Here are some of the free resources available organized by category.
-{% include resource-table.html topic="Javascript" %}
+{% include resource-table.html topic="JavaScript" %}
 
