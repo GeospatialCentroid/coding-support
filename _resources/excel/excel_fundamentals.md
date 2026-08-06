@@ -25,12 +25,12 @@ to download the proper installation files.
 
 Before we start, a quick distinction should be made between **Sheets** and **Workbooks**.
 
-In excel, we work in a **Workbook**. This is what we assign a name to when creating the file. When we are working within a 
+In Excel, we work in a **Workbook**. This is what we assign a name to when creating the file. When we are working within a 
 workbook we are manipulating a **Sheet**. There can be multiple different sheets in one workbook. 
 
 ### Data Types 
 
-There are many different data types in excel.
+There are many different data types in Excel.
 
 Understanding when to use what datatypes is important for ensuring you have **Clean Data**
 that is compatible with scripts and can be **Transferred Among Softwares**. 
@@ -43,7 +43,7 @@ Having the right data can also keep your spreadsheet **Organized**
 |Number|6|Running computations and doing math| 
 |Currency|$ 6.00 | Running functions requiring currency remainders|
 |Date|1/1/2026|Working with Time Series Data|
-|Accounting|$ 6.00|Running accounting related math|
+|Accounting|$ 6.00|Running accounting-related math|
 |Time|1/1/2026: 12:00 PM|Logging specific events or values at certain times| 
 |Percentage|83%|Performing Statistical or Scientific Work|
 |Fraction|6 1/2| Working with data that needs to be semi-precise| 
@@ -76,7 +76,7 @@ also allows you to **Visualize Data**.
 
 - **Formulas**
 
-  One of the most important excel sections. This section allows you to 
+  One of the most important Excel sections. This section allows you to 
 **Insert Functions, Formulas, and run Calculations** in your workbook. 
 
 - **Data**
@@ -98,7 +98,7 @@ of it. **Base Level Analysis** can also be done in the data section.
 
 - **Help**
 
-  Access **Tutorials**, and other **Resources** to improve your excel skills. 
+  Access **Tutorials**, and other **Resources** to improve your Excel skills. 
 
 - **Draw**
 
@@ -115,7 +115,7 @@ of it. **Base Level Analysis** can also be done in the data section.
 **CTRL+V/CMD+V** in your target cell. You copy and paste information from your current workbook, 
 other workbooks, spreadsheets, and URLS.
 
-The **Small Green box** in the bottom right corner of the cell your working in allows you to also copy 
+The **Small Green box** in the bottom right corner of the cell you're working in allows you to also copy 
 a value from one cell and paste it to an undetermined amount of cells within the same row or column. 
 
 This tool also is used able to **Automate Tedious Processes** with functions. 
@@ -123,11 +123,11 @@ This is done when you provide at least 2 data points in adjacent cells as a refe
 
 When we **Highlight Two Cells** that show a certain pattern such as two cells with the numbers **1 and 2** in them, when we drag down with the green box it will begin to fill in the **Pattern Within the Empty Cells**. 
 
-We would be left will cells that count from 1 through **Any Number** depending on where stopped.
+We would be left with cells that count from 1 through **Any Number** depending on where you stopped.
 
 ### Add and Remove content
 
-with Excel you can **Add or Remove** columns with the **+ / -** symbols when you near the edge of a cell. 
+With Excel you can **Add or Remove** columns with the **+ / -** symbols when you near the edge of a cell. 
 
 
 You can also do so by **Right Clicking on a Column or row**, which will give you the option to remove or add
@@ -197,7 +197,7 @@ data.
   
 - **Data Validation**
 
-  Excels data validation tools allows you to **Predetermine** what
+  Excel's data validation tools allow you to **Predetermine** what
   **Data Types Values** are allowed in certain columns. You can use this to organize columns by  1 data type consistently or if you have  values that need to have uniform syntax.
   
   the **List** validation tool  allows you to **Create a List**
@@ -205,7 +205,7 @@ data.
   
 ### Visualizing Data 
 
-There are many tools that serve different purposes in excel for analyzing data.
+There are many tools that serve different purposes in Excel for analyzing data.
 While there are many ways to visualize data, these are some common ones. 
 
 |Visualization Tool Name|Common Purpose|
@@ -230,15 +230,15 @@ We have various functions that help us **Automate** tedious tasks. These are gro
 |Financial|Computes values to provide financial information|
 |Logical|Computes boolean values for a column of data to group and filter|
 |Text|Allows you to maniuplate characters and strings| 
-|Date & Time| Lets you pull values from date and time data types| 
+|Date & Time| Let's you pull values from date and time data types| 
 |Look up & Reference|Provides functions to pull certain cell values and types| 
-|Math|Lets you run mathematics operations| 
+|Math|Let's you run mathematics operations| 
 
 ### Using Functions 
 
 when we use functions in a cell, we will use the ```=``` sign and then our function.
 
-Lets make a function that would sum a series of values within a spreadsheet.
+Let's make a function that would sum a series of values within a spreadsheet.
 
 First, we will assign our function 
 
@@ -255,7 +255,7 @@ Now that our function is assigned we can add the cells we would like to apply ou
 
 ```
 ' Our colon symbol represents the values between A11 and C10, this means we want to 
-calculate the sume of all values from A1 through C10.' 
+calculate the sum of all values from A1 through C10.' 
 
 
 These functions can be used to **Compute Statistical Values** such as **Means, Medians, and Modes**, filter data into groups such as
@@ -267,7 +267,7 @@ There are many more functions and operations that you can perform with our **=**
 
 ## Next Steps
 
-Now that we have introduced some basic components of excel. We will briefly 
+Now that we have introduced some basic components of Excel. We will briefly 
 outline **VBA Coding** and how we can use this to **Write Scripts**. 
 
 
