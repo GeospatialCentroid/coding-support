@@ -6,113 +6,143 @@ sidebar:
 toc: true
 toc_sticky: true
 ---
+---
 
-This guide will go into the introductory concepts of working with websites and 
-webpages in Java Script.
+This guide introduces the fundamentals of using JavaScript to work with websites and web pages.
 
-JavaScript is good at making websites more interactive through it's series 
-of functions and data pulling abilities. 
+JavaScript adds interactivity and functionality to websites by allowing developers to respond to user actions, modify page content, and work with data from different sources.
 
-## Prerequisites
+---
 
-In order to utilize JavaScript for web development. It is important to have a strong foundation in 
-**HTML** and **CSS**, if you would like to learn HTML basics, access our guide [here](https://geospatialcentroid.github.io/coding-support/html/)
+# Prerequisites
 
+To use JavaScript for web development, it is important to have a basic understanding of **HTML** and **CSS**.
 
-## Launching Your Website
+HTML provides the structure of a webpage, CSS controls the appearance and style, and JavaScript adds behavior and interactivity.
 
-In order to begin your project you will want to create 3 files 
+For an introduction to HTML basics, see the [HTML guide](/coding-support/html/).
 
-- **index.html** 
+---
 
- This will provide structure for your website. Think of this like a blank canvas for 
- your website, where you can build the **Skeleton** of how you want it to be organized.
- 
-- **style.css**
+# Launching a Website Project
 
-  This will allow you to adjust the style of your website. This provides you a broad range of options for how your website information appears. 
-  
-- **script.js**
+A basic website project typically contains three main files:
 
-  This file allows you to write **JavaScript** code that you can add to your webpage, automating functions and creating more interactive options. 
+## index.html
 
-You will need to make these files talk to eachother. This can be done by 
-**Linking** your css and your javascript files to your html.  
+The `index.html` file provides the structure of the webpage. It acts as the foundation of the website by defining elements such as headings, paragraphs, images, and other content.
 
+Think of HTML as the framework or skeleton of a webpage.
 
-In the <head> of your HTML. Using the **link** command and the **href** command allow you 
-to connect your files. 
+---
+
+## style.css
+
+The `style.css` file controls the appearance of the webpage. CSS can be used to adjust colors, fonts, spacing, layouts, and other visual elements.
+
+Think of CSS as the design layer that controls how the website looks.
+
+---
+
+## script.js
+
+The `script.js` file contains JavaScript code that adds functionality and interactivity to the webpage.
+
+JavaScript can be used to automate actions, respond to user input, update content, and create dynamic experiences.
+
+---
+
+## Connecting Files Together
+
+For these files to work together, the CSS and JavaScript files must be linked to the HTML document.
+
+The CSS file is connected using the `<link>` element, and the JavaScript file is connected using the `<script>` element.
+
+These references are typically added within the HTML document:
 
 ```html
+<link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="style.css"
 <script src="script.js"></script>
-
 ```
 
+After saving changes to each file, the website can be opened by selecting the `index.html` file and viewing it in a web browser.
 
+---
 
-to **open** your website you can save changes made to all your files, and then
-open your **index.html** in the browser. 
+# Adding JavaScript to a Website
 
+This guide focuses on using the **Document Object Model (DOM)** to interact with webpage content.
 
-## Adding Code to Your Website. 
+## What is the DOM?
 
-This guide will focus on using the **Document Object Model** (DOM).
+The **Document Object Model (DOM)** is a programming interface that represents an HTML document as a collection of objects that JavaScript can access and modify.
 
-What is **DOM**? 
+Using the DOM, JavaScript can:
 
-DOM allows you to interact with your HTML file through 
+* Modify webpage styles
+* Change text and content
+* Add or remove elements
+* Respond to user actions
 
-- **Style Modification** 
-- **Changing Text and Content**
-- **Responding to User Actions**
+DOM methods allow JavaScript to interact directly with elements displayed on a webpage.
 
-A series of **DOM** commands will allow you to manipulate your website. 
+---
 
-One of the first series of commands is the **Document** commands, these allow
-you to interact with the contents of a web page.
+# Selecting Elements
 
-Lets look at some examples.
+The `document` object provides methods for finding and interacting with webpage elements.
 
+For example:
 
 ```javascript
-
-// We can create a new document object 
-
-new Document()
-
+document.querySelector("p")
 ```
-This command alone would let us create a new web page!
 
-We can also get elements from a web page with this command
+This selects the first paragraph (`<p>`) element on the page.
 
 ```javascript
-document.querySelector("p") // this would select a paragraph. 
-
-document.querySelector("h1") // this would select our heading.
-
+document.querySelector("h1")
 ```
 
-The document command can return any part of a webpage that you are looking for.
+This selects the first heading (`<h1>`) element on the page.
 
-We can also create new elements within a document through the use of the **Element** 
-command series.
+The `querySelector()` method can be used to find elements using HTML tags, classes, or IDs.
 
-``` javascript
-// if we wanted to create a new paragraph we could use this code
+Example:
 
+```javascript
+document.querySelector(".button")
+```
+
+This selects an element with the class name `button`.
+
+---
+
+# Creating New Elements
+
+JavaScript can also create new elements and add them to a webpage.
+
+The `createElement()` method creates a new HTML element:
+
+```javascript
 let newElement = document.createElement("p");
-newElement.textContent = "This is a new paragraph";
 
+newElement.textContent = "This is a new paragraph";
 ```
 
--------------------------------------------------------------------------------
+This creates a new paragraph element and adds text content to it.
 
-## Next Steps 
+To display the new element on a webpage, it must be added to an existing element:
 
-Web development using JavaScript Requires a strong foundation in java. We recommend
-that you check out our provided resources to learn more about how to use JavaScript
-and apply it's diverse applications.
+```javascript
+document.body.appendChild(newElement);
+```
 
+This adds the new paragraph to the webpage body.
 
+---
+
+# Next Steps
+
+JavaScript provides powerful tools for creating interactive and dynamic websites. After learning these foundational concepts, the next steps include exploring events, user interactions, data handling, and JavaScript libraries that expand what can be built for the web.
