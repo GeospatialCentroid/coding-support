@@ -21,7 +21,7 @@ title                    : "Coding Support Hub"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Your Name"
-description              : "Empowering Rams to write code that advances research. <span style='font-size: 0.95rem; font-weight: 400; color: #555; display: block; margin-top: 0.5rem;'>A community-driven hub, coordinated by CSU Libraries, offering curated tutorials, debugging tools, and support for every skill level.</span>"
+description              : "Empowering Rams to harness technology and code to advance research and knowledge. <span style='font-size: 0.95rem; font-weight: 400; color: #555; display: block; margin-top: 0.5rem;'>A community-driven hub, coordinated by CSU Libraries, offering curated tutorials, debugging tools, and support for every skill level.</span>"
 url                      : https://geospatialcentroid.github.io
 baseurl                  : "/coding-support"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"

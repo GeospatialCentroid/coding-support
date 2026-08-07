@@ -745,3 +745,11 @@ table tr:nth-child(even) {
   font-weight: 400;   /* Optional: makes the text regular weight instead of bold */
   line-height: 1.5;
 }
+.nav__items {
+  font-weight: 700; /* or 'bold' */
+  font-size: 1.4rem !important; 
+}
+
+.toc__menu{
+ font-size: 1.3rem !important; 
+}
