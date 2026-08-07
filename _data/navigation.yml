@@ -124,10 +124,14 @@ web_development_sidebar:
 - title: "Web Development"
   url: web_development
   children:
+  - title: "HTML "
+    url: web_development/html/
   - title: "HTML Fundamentals"
     url: web_development/html_fundamentals/
   - title: "CSS Fundamentals"
     url: web_development/css_fundamentals/
+  - title: "JavaScript"
+    url: web_development/javascript/
   - title: "JavaScript Fundamentals"
     url: web_development/javascript_fundamentals/
 
