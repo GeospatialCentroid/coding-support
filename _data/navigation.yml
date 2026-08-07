@@ -120,23 +120,16 @@ ai_sidebar:
   - title: "Using a Machine Learning Model"
     url: ai/using_a_machine_learning_model
     
-html_sidebar:
-- title: "HTML"
-  url: html
+web_development_sidebar:
+- title: "Web Development"
+  url: web_development
   children:
   - title: "HTML Fundamentals"
-    url: html/fundamentals/
+    url: web_development/html_fundamentals/
   - title: "CSS Fundamentals"
-    url: html/css_fundamentals/
-
-javascript_sidebar:
-- title: "JavaScript"
-  url: javascript
-  children:
+    url: web_development/css_fundamentals/
   - title: "JavaScript Fundamentals"
-    url: javascript/fundamentals/
-  - title: "Web Development"
-    url: javascript/web_development
+    url: web_development/javascript_fundamentals/
 
 c++_sidebar:
 - title: "C++"
@@ -164,6 +157,7 @@ sql_sidebar:
     url: sql/fundamentals/
   - title: "Working With Tables"
     url: sql/working_with_tables/
+
 geospatial_sidebar: 
 - title: "Geospatial Science" 
   url: geospatial
