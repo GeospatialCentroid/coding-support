@@ -173,7 +173,7 @@ function initCourseTree(data, topic) {
 
 // Creating Interactive Popup for Course codes
 
-function buildPopup(data){
+function buildPopup(data, courseCode){
 
 const popup = d3.select("#popup");
 

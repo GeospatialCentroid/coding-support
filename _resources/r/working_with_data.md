@@ -9,7 +9,7 @@ toc_sticky: true
 
 ## Working With Data using R 
 
-One of R's most powerful attributes is it's ability to work with data, ranging from cleaning
+R is commonly used for it's ability to work with data, ranging from cleaning
 all the way through analysis. This is possible through R's has a diversity of libraries and tools
 to efficiently work with datasets. 
 
@@ -23,7 +23,7 @@ how to move data into R and the basics on accessing data in a data set
 In order to work with data in R, we need to first **Read** our data into R. 
 
 This is the process of taking a file that we have in our **File System** or from an **Online URL**, and entering 
-a command that allows R to read the file contents and store them in our workspace. 
+a command that allows R to read the file contents and store them in our **Environment**. 
 
 ### Commonly Installed Files 
 
@@ -39,7 +39,7 @@ a command that allows R to read the file contents and store them in our workspac
 
 ### Base R Data Reading
 
-R provides simeple commands that revolve around ```read.``` These are useful for simple file types such as **CSV's**. However, we can access commands
+R provides simeple commands that revolve around ```read.``` These are useful for simple file types such as **CSV's**.
 that are much more robust through our **Library** 
 
 
@@ -57,10 +57,13 @@ Reading a CSV from a URL
 read.csv(url(enter your url link here.csv))
 
 ```
+If we want to broaden our file reading scope, we can do so b **Installing Packages** 
+
+--------------------------------------
 
 ### Installing Packages
 
-**Installing packages can Widen the Scope of Your Data Reading Capabilities**. 
+Installing packages can Widen the Scope of Your Data Reading Capabilities. 
 
 |Package|Readable File Types|
 |--------------------|-------|
@@ -76,7 +79,9 @@ Installing the **Tidyverse Package** will be suitable for most file reading need
 
 ### Setting up your file directory
 
-Make sure that your current working directory is set to your home directory, or the directory you want to work in. 
+To succefully read files in, you will need to make sure that your current working directory is set to your home directory, or the directory you want to work in. 
+
+Doing so will make sure the file is added to this directory / folder. 
 
 ```r
 
@@ -89,7 +94,7 @@ Make sure that your current working directory is set to your home directory, or 
 #This will take you to a specific working directory. 
 ```
 
-**Download the Desired Files to Your Computer**. 
+Download the **Desired Files** to Your Computer. 
 
 Make sure that you know where
 your storing them in your computer so you can pull them later with ease. 
@@ -102,7 +107,7 @@ Let's use **Tidyverse** as an example. We first need to install Tidyverse.
 install.packages("tidyverse")
 ```
 
-We know tidyverse has been installed when we run this command and are given a **long series of code**; 
+We know tidyverse has been installed when we run this command and are given a **Long Series of Code**; 
 this is our computer downloading all the packages and programs that tidyverse uses.
 
 Next, we will pull this package from our **Library**.  
@@ -111,7 +116,7 @@ Next, we will pull this package from our **Library**.
 library(tidyverse)
 ```
 
-This will allow us to use **Commands** in the tidyverse package
+This will allow us to use **Commands** in the **Tidyverse Package**
 
 ### Reading in a file
 
@@ -128,14 +133,14 @@ Environment** in the top right panel, or no error signs are given.
 
 ## Navigating your Data set
 
-This guide will provide you the baseline tools for **Accessing Rows, Columns, and
+This guide will provide you the baseline tools for accessing **Columns, Rows, and
 Elements** in your data set.
 
 ### Accessing Columns 
 
-We can **Access Columns** in a data set by using the ```$``` command as well as our ```[]``` syntax.
+We can access columns in a data set by using the ```$``` command as well as our ```[]``` syntax.
 
-This code will allow us to create a **Vector** of a **Dataframes Specific Column**.  
+This code will allow us to create a **Vector** of a specific column within our **DataFrame**  
 
 ```r
 
@@ -143,7 +148,7 @@ desired_column <- dataframe$column
 
 ```
 
-This code will allow us to return a dataframes column as a **Variable**
+We can also assign a column of a dataframe to a variable. 
 
 ```r
 
@@ -151,7 +156,7 @@ desired_column_dS <- dataframe["column"]
 
 ```
 
-To **Manipulate Column Names**, we can use a simple command. 
+We can **Manipulate** Column's, such as changing their names.  
 
 ```r
 
@@ -174,13 +179,13 @@ Filtering rows
 
 ```r
 
-Filtered <- Dataframe(Dataframe$column = "Certain Value Within Columns Rows")
+Filtered <- Dataframe(Dataframe$column = "Certain word Within Columns Rows")
 
 ```
 
 ### Accessing elements in rows 
 
-We can take this one step further, and access **Specific Elements** in  **matrices, vectors, lists, and datasets** 
+let's take this one step further and access **Specific Elements**!
 
 **Vectors**
 
@@ -318,26 +323,27 @@ data_set_example <- df(
 age <- c(1,5,13,18)
 name <- c("Julie","Richard","Will","Grant")
 Status <- c("Baby","Toddler","Teenager"."Adult")
-))
-
-# let's pull the name Julie from our dataset
-
-dataset_element <- dataset_example[2,1]
+)
 
 ```
-We can run similar commands to access rows and columns 
 
-``` Row Access
+let's pull the name Julie from our dataset
 
+```r
+dataset_element <- dataset_example[2,1]
+```
+
+
+We can run similar commands to access entire rows and columns 
+
+```r
 dataset_row <- dataset_example[2,]
-
 ```
 
 ### Applications of Navigating Datasets
 
-Being able to navigate through your dataframe,vector,list,or matrix quickly
-will allow you to **clean your data** efficiently and provide a strong foundation
-for future work. 
+Being able to navigate through your data quickly
+will allow you to efficiently**Clean Your Data**, creating a strong foundation for your future work. 
 
 --------------------------------------------------------------------------------
 
@@ -350,7 +356,7 @@ a multitude of functions that will make tedious cleaning procedures in base R
 ### Accessing Dplyr
 
 Accessing Dplyr will require following the same procedure that was followed earlier 
-for accessing Tidyverse
+for accessing Tidyverse.
 
 ```r
 
@@ -360,6 +366,8 @@ library(dplyr)
 ```
 
 ### Common Dplyr commands 
+
+-------------------------------------
 
 **Filter**
 
@@ -375,13 +383,13 @@ filter(column name == "certain value")
 
 This filter will provide only certain values from one column
 
-other comparative operators can be used with this command such as **>, <, ==, >=, and <=** to 
+other comparative operators can be used with this command such as ```>```, ```<```, ```==```, ```>=```, and ```<=``` to 
 select for values that are exceeding, equal, or are less then a certain  value.  
 
 
 **Select**
 
-Select is a streamlined command that allows you to select certain columns from your dataset
+Select is a streamlined command that allows you to select columns from your dataset
 
 ```r
 
@@ -392,7 +400,7 @@ select("This Column", "This other column", "Ooh maybe this one!")
 
 **Mutate**
 
-This is a similar command to the one we did earlier, where we were able to change the value of a column
+This is a similar command to the one we did earlier, where we were able to change the value of a column.
 The difference is that we are able to apply a function or changes to a column, which will create a new column with
 those changes applied 
 
@@ -400,20 +408,25 @@ those changes applied
 
 Mutated_DF <- Dataframe %>%
 mutate(
-new_column <- existing_column * 2 %>%
-# we can also mutate a singular column
+new_column <- existing_column * 2 )
+```
+
+ we can also mutate a column without creating a new one 
+
+```r
+mutate(
 existing_column <- existing_column * 2 
 )
 ```
 
 **Rename**
 
-This command allows us to rename a column to something cleaner
+This command allows us to rename a column to something cleaner and maybe more concise
 
 ```r
 
 Dataframe |>
-new_name <- old_name
+clean_name <- old_namethattellsus_informationaboutthe_populationof...
 
 ```
 
@@ -451,7 +464,7 @@ Dataset_2 <- raw_data(raw_data$age_column > 20)
              
 ```
 
-With only 2 lines of code, we organize our data in substantail ways 
+With only 2 lines of code, we can make large changes to a dataset!
 
 ### Best Practices 
 
@@ -459,7 +472,7 @@ With only 2 lines of code, we organize our data in substantail ways
 - **Use Clear Naming Conventions** when you are naming datatypes
 
 - **Never Change the Raw Data**, it's best to create a clean data copy of your raw
-data that you have manipulated 
+data that you have manipulated. 
 
 - **Document Your work** so that you can come back to it later and understand 
 what you have changed

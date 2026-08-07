@@ -7,13 +7,13 @@ toc: true
 toc_sticky: true
 ---
 
+-----------------------------------------
 
+R is designed for **Data Analysis, Statistics, and Visualization**. It
+emphasizes working with vectors, data frames, and
+lists, and provides powerful tools for analysis and report writing.
 
-R is designed for **data analysis, statistics, and visualization**. It
-emphasizes working with data structures like vectors, data frames, and
-lists, and provides powerful tools for analysis and reporting.
-
-This guide introduces the fundamental syntax used in R programs.
+This guide introduces the fundamental syntax and usage of R.
 
 ------------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ environment (IDE) for working with R. We will talk more about this later.
 
 ## R Syntax
 
-Practice writing and executing the following using the R console. **\**
+Practice writing and executing the following using the R console. 
 To execute a line of code, press the *Enter* key. 
 
 Note: to exit the R console write and execute ```quit()```
@@ -89,7 +89,7 @@ Here is line 2
 
 ### Variables 
 
-**Variables store values of different data types** and are assigned using <- (recommended) or =. 
+**Variables store values of different data types** and are assigned using ```<-``` (recommended) or ```=```. 
 
 ``` r
 name <- "Alice"
@@ -97,6 +97,8 @@ age <- 30
 height <- 5.6
 ```
 ### Variable Naming Rules 
+
+There are certain rules to follow to not mess up your variable assignments
 
 Don't include special characters in your variable assignments 
  
@@ -118,25 +120,25 @@ We want our variable names to start with characters.
 
 three_favorite_things <- ('movies, candy, family')
 
-```r
+```
 
 ------------------------------------------------------------------------
 
 ## Basic Data Types
 
+There are a few general data types that will help you work with data in countless ways.  
+
 ### Character (Strings)
 
 ``` r
 message <- "Hello"
+
 ```
 
 ### Numeric
 
 ``` r
-count <- 10
-
 temperature <- 98.6
-
 ```
 
 ### Logical (Boolean)
@@ -149,15 +151,15 @@ is_active <- TRUE
 
 ## Printing Output
 
-Use `print()` or simply type the variable name.
+Use `print()` with a "string", or with the variable name. 
 
 ``` r
 print("Hello World")
 
-name <- "Alice"
-print(paste("Hello", name))
+greeting <- "Hello Alice"
+print(greeting)
 
-#This will return: Hello, Alice
+#This will return: Hello Alice
 
 number <- 22
 print(number)
@@ -193,24 +195,27 @@ Convert between data types using built-in functions.
   |`as.numeric()`|convert to numeric|
   |`as.character()`|convert to string|
 
+---------------------------------
 
 ``` r
 age <- as.integer("30")
 temperature <- as.numeric("98.6")
 number <- as.character(42)
 ```
+Using these commands will be important when **Cleaning** large datasets. 
 
 ------------------------------------------------------------------------
 
-## Arithmetic Operators
+## Operators
 
-R supports standard **Mathematical Operations**.
+R supports a wide range of operators. 
+
+### Arithmetic Operators
+
+R supports standard **Mathematical Operations**. These allow you to compute mathmatic operations on your data. 
 
 ``` r
-a <- 10
-b <- 3
-
-a + b
+a + b 
 a - b
 a * b
 a / b
@@ -220,9 +225,9 @@ a %% b
 
 ------------------------------------------------------------------------
 
-## Comparison Operators
+### Comparison Operators
 
-These are used to **Compare** Values and Variable
+These are used to **Compare** Values of different variables, they are commonly used when using **Conditional Statements**, which we will talk about later. 
 
 ``` r
 x <- 10
@@ -242,7 +247,7 @@ x != y
 
 ### if statements
 
-**If Statements Evaluate a Condition**, and then provide an appropriate output based on
+If statements **Evaluate a Condition**, and then provide an appropriate output based on
 if that condition is **True** or **False** 
 
 ``` r
@@ -275,7 +280,7 @@ age <- 18
  if (age >= 18) {
    print("You are an adult")
 } else if (13 < age < 18) {
-print("You are a teenager")
+  print("You are a teenager")
 }
 else {
    print("you are a child")
@@ -285,8 +290,8 @@ else {
 
 ## Loops
 
-**Loops Will Cycle Through a set Range of Values** and run a program for every
-iteration
+Loops will Cycle Through a set **Range of Values** and run a program for every
+iteration.
 
 ### For Loop
 
@@ -307,10 +312,17 @@ while (count < 5) {
   count <- count + 1
 }
 ```
+Both of these loops are effective for iterating through a set number. However, for loops are commonly better used with multiple datasets, as you don't need to know the number of iterations you want.
 
 ------------------------------------------------------------------------
 
-## Vectors
+## Data formats 
+
+There are multiple different data formats that you will come across. 
+
+--------------------------------------------------
+
+### Vectors
 
 **Vectors** are series of data such as **Numbers**,**Strings**, and **Characters** 
 ``` r
@@ -327,13 +339,13 @@ print(numbers[1])
 -------------------------------------------------------------------------------
 
 
-## Matrices
+### Matrices
 
-**Matrices* can be thought of as a **Two Dimensional Vector**. 
+Matrices can be thought of as a **Two Dimensional Vector**. 
 
 ```
 
-# to make a matrix, we can assign our numbers of rows and columns to set our 
+#to make a matrix, we can assign our numbers of rows and columns to set our 
 dimensions 
 
 numbers <- matrix (c(1,2,3,4,5,6,7,8,9), nrow = 3, ncol = 3)
@@ -342,7 +354,7 @@ numbers <- matrix (c(1,2,3,4,5,6,7,8,9), nrow = 3, ncol = 3)
 
 -------------------------------------------------------------------------------
 
-## Lists
+### Lists
 
 
 ``` r
@@ -351,7 +363,7 @@ my_list <- list(name = "Alice", age = 30, active = TRUE)
 
 ------------------------------------------------------------------------
 
-## Data Frames
+### Data Frames
 
 Data Frames allow us to make a set of data similar to a matrix.
 
@@ -370,9 +382,11 @@ df <- data.frame(
 
 ## Functions
 
-**Functions Allow us to Take in User Input** and provide an outcome based on that 
+Functions allow us to **Take in User Input** and provide an outcome based on that 
 input. These are largely applicable among all coding languages and are benfical 
-to familiarize yourself with 
+to familiarize yourself with.
+
+The main benefit of functions is that we are able to make what would be long and tedious scripts; into much shorter and concise lines of code. 
 
 
 ``` r
@@ -387,13 +401,13 @@ greet("Alice")
 
 ## Installing and Loading Packages
 
-**Packages** are a **Series of Commands and Programs** that are made outside of basic R,
+**Packages** are a **Series of Commands and Programs** that are made outside of base R,
 commonly by developers and others.
 
-**They Allow us to Perform Functions Beyond the Capabilities of Basic R** 
+They Allow us to **Perform Operations Beyond the Capabilities of Base R** 
 as well as simplifying actions that would otherwise be complex and tedious. 
 
-**ggplot2** is one library that is important for **Creating Data Visualizations**.
+One example is **ggplot2**, a library that is important for **Creating Data Visualizations**.
 
 
 ``` r
@@ -404,8 +418,7 @@ library(ggplot2)
 ### Package and Function Information
 
 **The Help Command** is one of the most useful tools in R. Running this command 
-will allow you to **view all information about a select base R command** as well as commands
-that are stored within libraries
+will allow you to view **all Information** about a specific R commmand. 
 
 ```r
 help(print)
@@ -426,6 +439,7 @@ if we have a file named hello.R, we can make the following script in it.
 ``` r
 greetings <- function(name) {
 
+name = readline("Enter your name here")
 if (nchar(name) > 0) {
   print(paste("Hello", name))
 } else {
