@@ -469,7 +469,7 @@ With only 2 lines of code, we can make large changes to a dataset!
 ### Best Practices 
 
 
-- **Use Clear Naming Conventions** when you are naming datatypes
+- **Use Clear Naming Conventions** when you are naming data types
 
 - **Never Change the Raw Data**, it's best to create a clean data copy of your raw
 data that you have manipulated. 
