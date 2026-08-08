@@ -33,6 +33,7 @@ function buildTreeData(rows, selectedTopic) {
     const prereqString = (row["Prerequisite"] || "").trim();
     const courseName = (row["Course name"] || "").trim();
     const instructor = (row["Instructor"] || "").trim();
+    const title = (courseCode + ": " + courseName);
 
     // Check if prerequisites exist and are not "None"
     if (prereqString && prereqString.toLowerCase() !== "none" || prereqString === "") {
@@ -46,13 +47,13 @@ function buildTreeData(rows, selectedTopic) {
       
       // Add the course as a child of this grouped prerequisite node only once
       if (!prereqNode.children.find(c => c.name === courseCode)) {
-        prereqNode.children.push({ name: courseCode, url: urlLink, children: [] });
+        prereqNode.children.push({ name: title, url: urlLink, children: [] });
       }
       
     } else {
       // If there are no prerequisites, attach the course directly to the Topic root
       if (!rootNode.children.find(c => c.name === courseCode)) {
-        rootNode.children.push({ name: courseCode, url: urlLink, children: [] });
+        rootNode.children.push({ name: title, url: urlLink, children: [] });
       }
     }
   });
