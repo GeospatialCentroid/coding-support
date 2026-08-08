@@ -7,12 +7,14 @@ toc: true
 toc_sticky: true
 ---
 
+## VBA Code 
+
 
 VBA code is a powerful tool in excel that allows you to **Automate Complex Multi-Step taks**. 
 
 You can use it to manipulate your spreadsheets to collaborate with online services and other software. 
 
---------------------------------------------------------------------------------
+--------------------------------------------
 
 ## VBA Fundamentals 
 
@@ -35,34 +37,7 @@ Sub ShowMessage()
 Debug.Print "Enter your text here"
 End Sub
 
-'We can write a comment like so, if we ran this command it would return: Enter your text here.' 
-
-```
-When we use print commands, we can easily **Incorporate Variables**, as well as combine strings. 
-
-In order to compare variables we will use the ```&``` operator.
-
-```python
-
-Debug.print "The value is" & num_variable
-
-```
-Let's take a look at using two different applications of **concatenation**, which is a way that we can combine multiple string statements into one. 
-
-```python
-sub concat()
-
-Dim var_one As String = "I love " 
-
-'Notice we added a space after the word love
-
-Dim var_two As String = "Coding!
-
-Debug.print var_one + var_two
-
-'This would return: I love Coding!'
-
-end Sub
+'this is a comment, if we ran this command it would return: Enter your text here, and nothing else' 
 
 ```
 
@@ -75,7 +50,7 @@ To Assign a **Variable** we need to follow two steps.
 
 First, we want to assign the **Data Type** 
 
-then, we want to assigne our **Value**
+then, we want to assign our **Value**
 
 
 ### Data types
@@ -102,15 +77,11 @@ Dim Variable_Name as String
 
 'This tells the computer that our variable is a string'
 
-'Lets assign a variable as type variant'
-
-Dim Variant_Variable as Variant
-
 ```
 
 ### Assigning a Variable a Value
 
-To assign our variable a value, we simply need to use the **=** operator. 
+To assign our variable a value, we simply need to use the ```=``` operator. 
 
 ```python
 
@@ -122,9 +93,11 @@ Variable_Name = "This is a string we can assign"
 
 Dim New_Variable as Integer = 100
 
+'With this, we have combined our variable type assignment as well as value assignment'
+
 ```
 
-Variables become especially beneficial when we implement **Operators** and **Conditional Statements** to create programs 
+Variables become especially beneficial when we implement **Operators** and **Conditional Statements** to create programs.
 
 ### Operators & Conditional Statements
 
@@ -174,8 +147,12 @@ Debug.print x
 end Sub
 
 ```
+this would return a value of **36**, as 12 * is equal to 36
 
 **Logical Operators**
+
+
+Logical operators focus on meeting **Conditions**. Conditions are set when we want to compare a variables value to a certain number or others variables values. 
 
 |Symbol|Function|
 |------|--------|
@@ -203,12 +180,12 @@ Debug.print y
 
 ### Conditional Statments
 
-Conditional Statements allow us to control the flow of our program and remove errors before they can get in the way. We will look at **If Statments** and **Cases**
+Conditional Statements allow us to control the flow of our program and remove errors before they can get in the way. In this guide we will look at **If Statments** and **Cases**
 
-When we use **If Statements**, we will commonly have a **variable**, and a **condition**. If our variable meets this condition, one command will execute. 
+When we use **If Statements**, we will commonly have a **variable**, and a **condition**. If our variable meets this condition, one command will
+execute. 
 
-If not, 
-another command will execute. Here is an example.  
+If not, another command will execute. Here is an example.  
 
 
 ```python
@@ -226,8 +203,14 @@ Else
   Debug.print "This value is not a large number
 End If
 
-' this would return: this value is a large number'
+```
 
+This would return: this value is a large number.
+
+Let's look at an example where our first condition is met. But we use the the **Elseif** command to meet antoher condition. 
+
+
+```python
 test = 65 
 
 If test >=- 80 Then
@@ -240,10 +223,11 @@ Else
 End If 
 
 End Sub
-
-'Because this value meets the second conditional, it would return: This value is a moderately sized number
-
 ```
+
+Because this value meets the second conditional, it would return: This value is a moderately sized number
+
+
 
 **Case** is similar to switch in other coding languages, it can be used to differentiate
 between differnet values in cells. 
@@ -284,12 +268,14 @@ End Sub
 
 ### Loops
 
-**While Loops** and **For Loops** are both effective ways of **Cycling** through a series of values to **implement** a command or script onto them.
+**While Loops** and **For Loops** are both effective ways of **Cycling** through a series of values to **Implement** a command or script onto your 
+data.
 
 
+
+let's use our age variable from earlier 
 
 ```python
-'lets use our age variable from earlier' 
 
 sub graduation()
 
@@ -304,16 +290,33 @@ While age <  24
   age ++ 'this will increment our age variable by 1' 
     Exit While 
   End If
-End While
 End Sub
 
-' for the first 8 iterations, the program will print our first command, then. Because we add 1 year of age after every loop. At the 9th our age will equal 23 and our else command will execute'
+' for the first 8 iterations, the program will print our first command, then. Because we add 1 year of age after every loop. At the 9th our age will equal 23 and our else condition will be fulfilled. 
 ```
-When using While loops, be careful to set an incrementing condition for your variable which can be done with the += or the ++ symbols. 
+When using While loops, be careful to set an incrementing condition for your variable which can be done with the ```+=``` or the ```++``` symbols.
+
+Also be sure that your value will eventaully meet your incrementing condition. 
 
 If we don't, then our loop will never end. Taking up a large sum of memory and possibly damaging our system. 
 
-If we want to set a range of values we want our variable to go through, we can use a **for loop**
+Here is an example where we would have an **Infinite Loop** 
+
+```python
+
+sub infinite()
+
+Dim age as integer = 20 
+  while age < 19
+    Debug.print age
+  age ++ 
+  exit while 
+end sub 
+
+```
+  
+
+If we want to set a range of values we want our variable to go through, we can use a **For Loop**
 
 ```python
 
@@ -336,7 +339,7 @@ End Sub
 
 ### Accessing VBA in Excel. 
 
-In order to access VBA, we need to follow a few quick steps 
+In order to access VBA, we need to follow a few quick steps .
 
 - Press **Alt + F11**
 
@@ -344,7 +347,7 @@ In order to access VBA, we need to follow a few quick steps
 
 - Run Sample code using **F5** 
 
-Next, before we run any code we will want to assin the worksheet we are using 
+Next, before we write any code, we will want to assign the sheet we want to work with.
 
 ```Set ws = Thisworkbok.Sheets("Desired Sheet")```
 
@@ -357,7 +360,7 @@ will make our coding experience more efficent.
 
 We can Select cells using the ```Range``` command. Either selecting single, or multiple cells 
 
-Lets use our **ws** as our example. 
+Lets use our variable **ws** as our example. 
 
 **Selecting an Invidual Cell**
 
@@ -390,13 +393,18 @@ For our **Row Selecting** commands, we can use ```.Rows``` or ```.Rows.Items```
 
 ws.Rows(1:3).Select
 
-'This method will select multiple rows.'
+```
 
+This method will select multiple rows.
+
+We can also select 1 row 
+
+```python
 ws.Rows.Item(1).Select
 
-'These will both effectively select one set row.'
-
 ```
+This will effectively select one set row.
+
 We can **Select Columns** with an identical process.
 
 **Selecting set columns**
@@ -411,9 +419,10 @@ ws.Columns(1).Select
 ws.Columns.Item("1").Select
 ws.Columns.item(1).Select
 
-'All of these options will select Column A' 
-
 ```
+All of these options will select Column A 
+
+
 
 ### Mutating cells 
 
@@ -424,13 +433,14 @@ the most basic command we will look at is cells. We can do that like so
 Sub NameChange()
 Application.ws.Range("A1").Select
     Application.Selection.Value = "Hello World"
-'This will make our A1 cell contain the string "Hellow World"
- 
 End Sub
 
 ```
+This command will make our A1 cell contain the string: Hello World
+ 
+End Sub
 
-**Assigning Variables to Cels**
+We can also use this command to assign **Variables** to cells. 
 
 ```python
 
@@ -443,38 +453,30 @@ Application.ActiveSheet.Range("A1").Select
     Application.Selection.Value = MyString
 ```
 
-**Selecting a Range of Cells**
-
-```python
-
-Application.ActiveSheet.Range("A1:C10").Select
-  Application.Selection.Value = "Hello Cells!"
-
-```
 
 ## Macros in Excel
 
 Macros are sets of VBA code that you can apply to your workbook in Excel.
 
-- **You can record tasks** that will turn into writable code
+These allow you to record actions in your sheet that will turn into writable code
 
 
 ### Recording a Macro
 
-- **Access the developer tab** in the code group and click **Record Macro**
+- **Access the Developer tab** in the code group and click **Record Macro**
 
-- **Provide a name for your macro** and where you would like it stored
+- **Provide a Name for Your Macro** and where you would like it stored
 
 - **Click Ok**, begin performing the actions that you want to record for the macro
 
-- **Use a Macro by pressing the macro button**, select your named macro and select run
+- **Use Your Macro** by ;ressing the macro button, selecting your named macro and selecting run
 
 **Best Practices**
 
 - Make sure that you have a **Simple yet Descriptive** name for your macros 
 
-- Before Running a macro, **Save** your workbook so if you need to back you
-  can exit out of excel 
+- Before Running a macro, **Save** your workbook so if you need to reverse changes you are 
+able to. 
   
 - **Test** your macro code before you apply it to your main workbook; you can't go back 
   once you run your Macro

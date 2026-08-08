@@ -31,7 +31,7 @@ Excel is a multi-disciplinary software.
 
 - **Excel Offers Learning Experiences** for script writing, data management,  and SQL logic.
 
-- **Excel is Widely Used Among the Workforce**, making learning it a great for career development. 
+- **Excel is Widely Used Within Diverse Workforce's**, making learning it a great for career development. 
 
 
 ### Resources for Learning Excel
