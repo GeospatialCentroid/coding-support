@@ -19,13 +19,13 @@ Accessing file contents is one of the most powerful features of UNIX-based syste
 
 The `cat` command is a standard tool used to display the contents of files such as `.txt` and `.csv`.
 
-```bash id="a9k2q1"
+```bash
 cat file_name.csv
 ```
 
 You can also display multiple files at once:
 
-```bash id="p3x8lm"
+```bash
 cat file1.txt file2.txt
 ```
 
@@ -37,7 +37,7 @@ The `cat` command can also be used to create and combine files.
 
 #### Create a New File
 
-```bash id="z7r2kf"
+```bash
 cat > file_3.txt
 ```
 
@@ -45,7 +45,7 @@ After running this command, you can type content directly into the terminal and 
 
 #### Combine Files
 
-```bash id="v1q9bc"
+```bash
 cat file1.txt file2.txt > combined_file.txt
 ```
 
@@ -68,7 +68,7 @@ This merges the contents of multiple files into a new file.
 
 The `tac` command works similarly to `cat`, but displays file contents in reverse order (bottom to top).
 
-```bash id="j2m8rt"
+```bash
 tac combined_file.txt > reversed_file.txt
 ```
 
@@ -80,13 +80,13 @@ tac combined_file.txt > reversed_file.txt
 
 Displays the first 10 lines by default:
 
-```bash id="e8l4hp"
+```bash
 head file.txt
 ```
 
 Specify a number of lines:
 
-```bash id="u3k9we"
+```bash
 head -n 15 file.txt
 ```
 
@@ -96,7 +96,7 @@ head -n 15 file.txt
 
 Displays the last 10 lines:
 
-```bash id="y7f2ds"
+```bash
 tail file.txt
 ```
 
@@ -106,7 +106,7 @@ tail file.txt
 
 You can combine commands to view specific sections of a file:
 
-```bash id="q4n8zc"
+```bash
 head -n 20 file.txt | tail -n 10
 ```
 
@@ -118,7 +118,7 @@ This displays lines 11–20 of the file.
 
 The `grep` command allows you to search for specific text within files.
 
-```bash id="m6w2xp"
+```bash
 grep "keyword" file.txt
 ```
 
@@ -132,7 +132,7 @@ grep "keyword" file.txt
 
 Examples:
 
-```bash id="c9v5kb"
+```bash
 grep -in "keyword" file.txt
 grep -v "keyword" file.txt
 ```

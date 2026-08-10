@@ -53,7 +53,7 @@ Before using shell commands, it’s important to understand how files and direct
 
 Example:
 
-```bash id="7c3d1x"
+```bash
 C:/Subdirectory/file.csv
 ```
 
@@ -65,7 +65,7 @@ This path shows how to navigate from the root to a specific file.
 
 Most shell commands follow this structure:
 
-```bash id="1o2w9m"
+```bash
 command [options] [arguments]
 ```
 
@@ -87,7 +87,7 @@ command [options] [arguments]
 
 ### Examples
 
-```bash id="0p4r8n"
+```bash
 pwd            # Show current directory
 ls             # List contents
 cd /           # Go to root directory
@@ -111,7 +111,7 @@ Shell commands allow you to create, move, copy, and delete files and folders.
 
 Example:
 
-```bash id="k9w3lz"
+```bash
 mkdir new_folder
 ```
 
@@ -128,7 +128,7 @@ mkdir new_folder
 
 Examples:
 
-```bash id="d7m2ql"
+```bash
 touch file.txt          # Create a file
 mv file.txt folder/     # Move file
 cp file.txt copy.txt    # Copy file

@@ -7,210 +7,183 @@ toc: true
 toc_sticky: true
 ---
 
------------------------------------------------------------------------------------------------------------------------------------
+## What is CSS?
 
-## What is CSS? 
+**CSS** (*Cascading Style Sheets*) is a stylesheet language used to control the **appearance and layout** of a webpage.
 
-CSS is a programming language that allows us to modify the appearance of our web page
+CSS works alongside HTML and JavaScript:
 
+* **HTML** → Structure (what content is on the page)
+* **CSS** → Style (how the page looks)
+* **JavaScript** → Behavior (how the page interacts with users)
 
-CSS, HTML, and Javascript all work together to help us meet our vision for our web page. 
+With CSS, you can control colors, fonts, spacing, layout, and overall design. A strong understanding of CSS allows you to create visually engaging and user-friendly websites.
 
-
-**HTML is the Structure** of our webpage, it allows us to set up our contents how we want 
-
-
- **JavaScript is the Interactive** component. It determines how users are able to interact with 
-our webpage and can help incorporate data. 
-
-
- **CSS is the Aesthetic** component. It dictates how our website appears to the user. 
-
-
-Having a strong understanding how of how CSS works allows us to make our website appear however 
-we please. This guide will go through the fundamentals of CSS coding. 
-
-----------------------------------------------------------------------------------------------------------------------------
-
+---
 
 ## Fundamentals
 
+### Ways to Use CSS
 
-### Using CSS Internally and Externally
+CSS can be applied to HTML in three main ways:
 
+#### 1. Inline CSS (within an element)
 
-Because CSS is connected to the structure of our website. We can only truly use 
-CSS once this structure is made. 
+Used for quick, one-off styling:
 
-
-Once we use HTML to make our websites structure, we are able to connect our CSS 
-code either **Within** the html file or **Externally** connected to the html file 
-
-
-There are two ways that we can use CSS code, either  **Within the HTML** file through an **Inline** series, or through a **Code Block** through an extern .css file. 
-of code 
-
-
-using **Inline** CSS is quicker if we want to make individualized changes to an elements appearnce. 
-
-If we wanted to add our code into the html line of code itself we could do that like so.
-
-```css
-
-<h1 style ="font: bold; text-align: center;" This will be bold and centered </h1> 
-
+```html id="r7k2pl"
+<h1 style="font-weight: bold; text-align: center;">
+  This heading is bold and centered
+</h1>
 ```
 
-For broader changes and a further automated process, we can use a **Style Block**. 
+#### 2. Internal CSS (style block)
 
-This block is built upon using a ```<Style>``` command. 
+Defined inside a `<style>` tag in the HTML `<head>`:
 
-```css
-
+```html id="xk8l2s"
 <style>
-
-h1 { this is where we can add our commands
-}
-
-p {commands here}
-
-</style>
-
-```
-
-Using a CSS Style block style requires **Connecting** our **CSS File**, and our **HTML File**.
-
-```css
-
-<!--- this is our html file head --->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-
-    <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="CSS_FILE.css"> <! -- this is the line of code that will connect our css file --->
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linking CSS Example</title>
-</head>
-</html>
-
-```
-
-CSS codes largest difference is the use of the {} brackets. These are used 
-to speciify which element of our **HTML file** we want to **Style**
-
-
-```css
-
-<style>
-
-h1 {We put our code here for the dominant heading}
-
-h2 {We can put different code here for our first subheading}
-
-</style>
-
-<!-- Notice we don't need to add our <> brackets around our elements in the style block -->
-
-```
-
-
-### Common Aesthetic Commands
-
-There are a series of common commands that we can use to determine the style of our page. 
-
-
-|Command Name|Function|
-|--------------|------|
-| Color | sets the text color |
-| font | Determines the Font Size and type | 
-| text-align | aligns text | 
-| background-color | sets the background color | 
-| display | changes how elements are structured | 
-| line-break | changes how line breaks are organizaed | 
-| column | can organize your text into columns |
-
-
-### Example
-
-Lets create a line of code thats **bold** our header, makes a **blue background**
-color, and sets our paragracph **font size to 20** 
-
-```css
-
-<style>
-
 h1 {
-
-font-weight: bold; 
-
-
-/* we can also provide a value like 500 that would determine the weight */
-
-font-weight: 500;
+  font-weight: bold;
 }
 
 p {
-
-font-size : 20px;
-
-
-
+  font-size: 16px;
 }
-
-body {
-  
-background-color: blue;
-
-}
-
+</style>
 ```
 
-### Classes
+#### 3. External CSS (recommended)
 
-The biggest benefit that CSS offers is the ability to see **Classes**. These allow us to essentially create aesthetic scripts that can apply to various types of elements. This Process involves connecting our HTML element to a specific section of our CSS file like so. 
+Stored in a separate `.css` file and linked to your HTML:
 
-```css
+```html id="3p9q1v"
+<link rel="stylesheet" href="styles.css">
+```
 
-<!-- This is our CSS file -->
+This is the most scalable approach for larger projects.
 
-.Example {
+---
+
+### CSS Syntax
+
+CSS uses **selectors** and **declarations**:
+
+```css id="2k0mza"
+selector {
+  property: value;
+}
+```
+
+Example:
+
+```css id="y9c3dq"
+h1 {
   color: blue;
   text-align: center;
-  font-weight: bold; 
 }
-
-<!-- lets add this to our HTML file -->
-
-<h1, class = "Example"> This is our awesome blue, bolded header! </h1>
-
 ```
 
-Having this allows us to apply large segements of CSS code to an unliminted amount of elements 
+* The **selector** (`h1`) targets HTML elements
+* The **properties** (`color`, `text-align`) define styles
+* The `{}` brackets group styling rules
 
-If we want to have CSS code that is applied to a whole html script. We can do so using the ```*``` key. 
+---
 
-```css
+## Common Styling Properties
 
+| Property             | Description              |
+| -------------------- | ------------------------ |
+| `color`              | Sets text color          |
+| `font-size`          | Controls text size       |
+| `font-family`        | Changes font type        |
+| `text-align`         | Aligns text              |
+| `background-color`   | Sets background color    |
+| `display`            | Controls layout behavior |
+| `margin` / `padding` | Controls spacing         |
+
+---
+
+## Example
+
+```css id="8w2pks"
+body {
+  background-color: blue;
+}
+
+h1 {
+  font-weight: 500;
+}
+
+p {
+  font-size: 20px;
+}
+```
+
+This example:
+
+* Sets a blue background
+* Styles headings with a specific weight
+* Adjusts paragraph text size
+
+---
+
+## Classes
+
+CSS **classes** allow you to reuse styles across multiple elements.
+
+### CSS File
+
+```css id="k2m8vx"
+.highlight {
+  color: blue;
+  text-align: center;
+  font-weight: bold;
+}
+```
+
+### HTML Usage
+
+```html id="p0z2nl"
+<h1 class="highlight">This is a styled heading</h1>
+```
+
+Classes make it easy to apply consistent styling across your site.
+
+---
+
+### Universal Selector
+
+The universal selector (`*`) applies styles to all elements:
+
+```css id="4v9kqe"
 * {
-  <!-- everything in this will be applied to our entire HTML file -->
+  margin: 0;
+  padding: 0;
 }
-
 ```
 
-## Next Steps 
+---
 
+## Best Practices
 
--------------------------------------------------------------------------------
+* Use **external CSS** for larger projects
+* Keep styles organized and consistent
+* Avoid excessive inline styling
+* Test your design across different screen sizes
+* Use meaningful class names
 
+---
 
-There are a **Broad** array of stylistic options for your website. We encourage you to look into our
-resources for learning more about the different commands and things you can do to bolster your websites appearance! 
+## Next Steps
 
+CSS offers a wide range of styling capabilities. To continue learning, explore:
 
+* Layout systems like **Flexbox** and **Grid**
+* Responsive design for mobile devices
+* Advanced styling and animations
+
+Building strong CSS skills will help you create polished, professional, and accessible web experiences.
 
 
 
