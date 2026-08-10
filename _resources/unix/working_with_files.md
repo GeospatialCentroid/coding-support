@@ -11,7 +11,7 @@ toc_sticky: true
 
 Accessing file contents is one of the most beneficial features of unix. 
 
-Accessing file contents allows us to do significant work.
+Accessing file contents allows us to work with real world applications. 
 
 ### Opening & Working With Files
 
@@ -209,13 +209,11 @@ Grep -v "keyword"
 ## Summary
 
 The  shell can be used for a variety of applications related to file management and working with 
-data. Understanding the file directory is  extremely importannt in having strong data organization skills
-and clean workflows and efficiency when working on large scale projects. 
+data. Understanding the file directory is  extremely important in having strong data organization skills, clean workflows, and working efficiency on projects of all shapes and sizes 
 
 ## Next Steps
 
-Learning to apply UNIX to script writing import code, and work on other computers are all key when using terminals. Soon, we will be releasing Our BASH fundamentals
-guide which will go over basic script writing in the terminal!
+Learning to apply UNIX to coding, scripting, and working on other computers are all key when using terminals. Soon, we will be releasing Our **BASH** fundamentals guide which will go over basic script writing in the terminal!
 
 
 

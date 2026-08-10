@@ -13,20 +13,19 @@ Unix is a popular operating system that is accessed via the command line.
 
 - **It Allows for Efficient Navigation** without the need for a file explorer. 
 
-- **You can and Access, Maniuplate, and Share** files with simple lines of code 
+- **You can Access, Maniuplate, and Share** files with simple lines of code. 
 
-- **You can Work** with multiple operating systems, unlocking the potential to run any script. 
+- **You can Work** with remote operating systems. Maximizing your script running capabilities. 
 
 ## Unix versus Other Operating Systems 
 
 - Unix and Linux are very similar. The key difference is that linux is an **Open Source
 Software**, while Unix is commonly payed for and used in **Institutions and Organizations**.
 
+**Note**: The information provided in this guide will primarily focus on using your computers terminal, and can thus be broadly applied to many operating systems. 
 
-**Note**: The information provided in this guide is largely applicable when utilizing any terminal for file navigation. 
-
-### Resources for Learning Unix
-In addition to these guides, there are many CSU courses and free resources available for learning Unix. 
+## Resources for Learning Unix
+In addition to these guides, there are many CSU courses and free resources available for learning Unix and how to work with your terminal. 
 
 {% include course_tree.html topic="Unix" %}
 

@@ -7,13 +7,19 @@ toc: true
 toc_sticky: true
 ---
 
+-------------------------------------------------------
+
+This section will focus on fundamental information for navigating your computers file system through the terminal. 
+
+--------------------------------------------------------
+
 ## What is a Shell?
 
 A Shell is a computer program that allows you to **Connect** with your computers operating system. This is where you can write code that will directly interact with you computers **File System**. 
 
 ### Accessing a Shell
 
-In order to code in UNIX or any other Operating Systme (OS), it's important we know where to access our shell as well as download a shell. 
+In order to code in UNIX or any other operating system (OS), it's important we know where to access our shell as well as download a shell. 
 
 We will look at some shells you can utilize to code in a similar fashion to coding in a UNIX operating system.
 
@@ -34,15 +40,14 @@ computers shell.
 - Installing the **BASH** Shell
 
 For most computers, it may be easier to use the Bourne Again Shell(BASH).
-You can access a tutorial to download this shell [Here].
-(https://carpentries.github.io/workshop-template/install_instructions/).
+You can access a tutorial to download this shell [Here](https://carpentries.github.io/workshop-template/install_instructions/)
 
 --------------------------------------------------------------------------------
 
 ## Directory Structure 
 
-It's important to understand all the terminology used when referring to our file 
-system to understand where you are and where commands will take you. 
+It's important to familiarize yourself with the terminology used when referring to our file 
+system so you can better understand where you are and what commands will do.  
 
 
 ### Types of Files 
@@ -54,6 +59,7 @@ Unix has a wide assortment of files that we will use in our file system.
 |Ordinary Files| Holds basic file types (csv,txt)| 
 |Special Files| Files associated with devices such as your printer|
 |Directories| Holds Ordinary Files and Special Files in branches beyond the root| 
+|Root Directory| Beginning Directory of your file tree, contains all other directories and files in your system|
 |Links|Shortcuts to a file or directory|
 
 ### Unix Directory Terminology
@@ -71,14 +77,18 @@ Unix has a wide assortment of files that we will use in our file system.
   
 - **Sub Directories** 
 
-  As we move into our file system, we will encounter **Subdirectories**, which can hold files, and other subdirectores.
+  As we move into our file system, we will encounter **Subdirectories**, which can hold files, and other directories.
 
   Our File System is similar to a plants root system; our **Root Directory** is our beginning point that connects to our "plant".
   As we move through our subdirectories, it's like were tracing a root down it's root system. 
+
+  You can also think of it as a **River System**. As we move downstream, our river breaks off into more and more branches. 
  
-  With a plant, we would see points where a root breaks off, these points are represented with the ```/``` character. They help
+  With a plant or river, we would see points where separations occur, these points are represented with the ```/``` character. They help
   symbolize **What Subdirectory** we are in and **How Deep** we are into our file system. 
-  
+
+  Let's look at a simple example file system. 
+
 ```bash
 
            -----> Subdirectory ----> file.csv
@@ -91,16 +101,13 @@ Unix has a wide assortment of files that we will use in our file system.
 When we want to access a file, we will move through our subdirectories until we reach 
 the directory our file is located in. This path we take is known as the file path. 
 
-**Example File Path**
+Let's create a file path for our tree shown above. 
 
 ```bash
 C:/Subdirectory/file.csv
 ```
 
-- **Working Directory**
-
-  A working directory is the current field that commands are being ran. Files that are maniuplated or created
-  while your coding will be created in the directory you have set to be your working directory.  
+  The directory that we want to navigate to is also usually our **Working Directory**. Our working directory is the current directory that have our files of interest and that future commands will be run in; such as files that are maniuplated or created. 
   
 ### Other Types of Directories 
 
@@ -123,7 +130,7 @@ UNIX and CPU functioning
 
 We will not look a these extensively in this guide. However, it's beneficial to know what they are and how to use them. 
 
---------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
 
 ## Syntax
 
@@ -143,11 +150,11 @@ There are four parts to a UNIX command.
 
 - **Command**
 
-  This is where you will write your commands to work with your file system 
+  This is where you will write your commands to interact with your file system
   
 - **Option**
 
-  Allows you to modify the behavior of a command, tbey are extra parameters that you can add
+  Allows you to make adjustmenets to your command, tbey are extra parameters that you can add
   
 
 - **Argument**
@@ -161,7 +168,7 @@ console you may be operating on.
 ### File Navigation Commands
 
 Moving through directories requires a strong foundational knowledge of how to do so 
-effectively
+effectively to help save time and increase the complexity of code you can run. 
 
 - **PWD**
 
@@ -189,7 +196,11 @@ effectively
   
   cd <enter file path>
   
-  'This will take you down your subdirectory to the next subdirectory or file 
+  'This will take you down your subdirectory to the next subdirectory or file'
+
+  cd ~
+
+  'This will take you to your working directory' 
   
   ```
   
@@ -249,7 +260,7 @@ You can also make **Multiple Directories** at once.
   
 ```
 
-We just made three subdirectories of Subidrectory_2. 
+We just made three subdirectories in Subidrectory_2. 
 
 
 We can also remove subirectories with the **rmdir** command. 
@@ -312,7 +323,7 @@ mv file.csv /C/Subdirectory_1
 here, we effectively moved file.csv from Subdirectory_1 to Subdirectory_2. 
 
 
-If we don't want to move a file but want to make a new file, we can do so using hte **Touch** command. 
+If we don't want to move a file but want to make a new file, we can do so using the **Touch** command. 
   
 ```bash
 
@@ -369,7 +380,7 @@ want to copy it to.'
 
 Similar to our directory removing command, we can remove files uising a **rm** command.
 
-Once again, be careful not to remove the wrong files and you **Cannot** undo this. 
+Once again, be careful not to remove the wrong files. You **Cannot** undo this...
 
 ```bash
 
