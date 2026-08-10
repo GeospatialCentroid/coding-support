@@ -6,173 +6,144 @@ title: "Working With Data"
 toc: true
 toc_sticky: true
 ---
+---
 
 ## Introduction
 
-two of matlabs greatest strengths are **Analyzing Datasets** and **Visualizing Datasets**.
+Two of **MATLAB’s** greatest strengths are **analyzing datasets** and **visualizing data**.
 
-This guide will briefly look into how to **Read in Data**, some **Basic Statistical Methods of Analysis**, and how to make some basic **Visual Graphics.**
+In this guide, you’ll learn how to:
 
--------------------------------------------------------------------------------
+* Import data into MATLAB
+* Perform basic statistical analysis
+* Create simple visualizations
 
-## Reading in Data 
+These are foundational skills for working with real-world data in engineering and research contexts.
 
-### Data Types 
+---
 
-There are several different data types that we can work with in matlab. 
+## Reading in Data
 
-- **Images**
+### Common Data Types
 
-- **Text** 
+MATLAB can work with a wide variety of data formats, including:
 
-- **Text Files** 
+* Images
+* Text and text files
+* Spreadsheets (e.g., CSV, Excel)
+* Scientific data formats
+* Audio files
+* JSON and structured data
 
-- **Spreadsheet**
+In this section, we’ll focus on **Comma-Separated Values (CSV)** files, one of the most commonly used formats.
 
-- **Scientific** 
+### Reading a CSV File
 
-- **Audio**
+You can import CSV data using the `readtable` function:
 
-- **JSON**
-
-While there are methods to read in all of these data types. We will focus specifically on **Comma Seperated Values (CSV's)**. These are one of the most common types of data you will use in your future. 
-
-
-### Examples 
-
-Lets look at how to **Read in Spreadsheet Data** from a CSV. 
-
-Reading a csv file into matlab is fairly simple and can be done with the 
-**readtable** command. 
-
-```m
-
-T = readtable('enter/filepath.here.csv');
-
+```matlab
+T = readtable('path/to/your/file.csv');
 ```
 
-Ensure that you know where your csv is stored and that you are calling the filepath correctly.
+* `T` is stored as a **table**, which is ideal for working with structured data
+* Make sure the file path is correct relative to your working directory
 
-To learn more about file paths, check out [This](https://geospatialcentroid.github.io/coding-support/unix/) resource. We go over how file paths work and provide some learning resources! 
+If you’re unsure how file paths work, refer to your Coding Support Hub resources for guidance.
 
-Lets look at another example. Lets read in an image file to matlab. 
+### Reading Other Data Types
 
-```m
+For example, to read an image file:
 
-image = readImageSafely('put/filepath/here.jpg')
-
-```
-For incredibly large datasets in forms such as a csv. We can use the **Datastore** command. 
-
-
---------------------------------------------------------------------------------------
-
-
-## Analyzing data
-
-
-Matlab offers a broad suite of data analysis techniques. We will briefly go over 
-how to use **Statistical** and **Regression** Descriptive commands 
-
-
-### Statistical Commands
-
-Statistical Commands are those that allow us to generate **Descriptive Information** about our dataset.
-
-| Command | Function| 
-|---|---------------|
-| Mean | Calculates the average of a data set | 
-| Median | Splits the data into a higher and lower section | 
-| Mode | Calculates the most frequently occuring value | 
-| range | Calculates the range of a dataset
-| min/max | Calculates the maximum and minimum values in a dataset| 
-| STD | Calculates how much the data deviates from the mean | 
-
-The majority of these functions can be run with simple commands in Matlab
-
-Lets look at an example where we calculate a few descriptives 
-
-```m
-
-dataset = [10,15,20,25,27,30] % This is how we can create an array in matlab 
-
-% if we wanted to calculate the mean we could use this function
-
-mean_dataset = mean(dataset)
-
+```matlab
+img = imread('path/to/your/image.jpg');
 ```
 
-This would provide us with the mean value for this dataset 
+For very large datasets, MATLAB provides tools such as **datastores** (`datastore`) that allow you to process data in chunks instead of loading everything into memory at once.
 
-### Regression Commands
+---
 
-**Regression Statistics** involve determing the relationship between two variables
-and creating a curve that best describes the relationship
+## Analyzing Data
 
-We can use regression statistics through 
+MATLAB includes many built-in functions for **statistical analysis** and **exploring relationships between variables**.
 
-```m
+### Descriptive Statistics
 
-% lets create a 2 column dataset in matlab 
+These functions summarize key characteristics of your data:
 
-dataset = [2,4,5,6;1,3,5,6]
+| Function  | Description                    |
+| --------- | ------------------------------ |
+| `mean`    | Average value                  |
+| `median`  | Middle value                   |
+| `mode`    | Most frequent value            |
+| `range`   | Difference between max and min |
+| `min/max` | Minimum and maximum values     |
+| `std`     | Standard deviation             |
 
-% we can use the corr command to determine if a relationship between these variables exists
+Example:
 
-corr(x)
+```matlab
+dataset = [10, 15, 20, 25, 27, 30];
 
+mean_dataset = mean(dataset);
 ```
 
-by using the **corr function** we will create a correlation coefficient value for every value 
-in the dataset. Values that are closer to 1 or -1 signifiy a strong correlation. Those that
-are closer to 0 signifiy a weaker correlation 
+---
 
---------------------------------------------------------------------------------
+### Correlation and Relationships
 
-## Visualizing Data 
+To measure the relationship between variables, you can use correlation:
 
-Finally, lets look at how we can make some simple plots in matlab 
+```matlab
+x = [2, 4, 5, 6];
+y = [1, 3, 5, 6];
 
-the **gscatter** command offers us a way to create our most basic visualiation; a relationship between 2 variables.
-
-Lets take our dataset from earlier 
-
-```m
-
-% lets imagine that our x column is our first column, and our y column is our second. 
-% We can use gs scatter to plot the relationship betwween these variables 
-
-gscatter(x,y)
-
+corr_value = corr(x', y');
 ```
- This would give us a graph where the values 2,4,5,6 are along the x axix, with 1,3,5,6 on the y axis 
 
+* Values close to **1** or **-1** indicate a strong relationship
+* Values near **0** indicate a weak relationship
 
+---
 
-Lets pretend our data was seperated by the years **1998** and **2002**
+## Visualizing Data
 
-We can group our data by those 2 years with gscatter
+Visualization helps you explore patterns and communicate results effectively.
 
-```ma
+### Scatter Plots
 
-% We can do so by using the following program 
+A simple way to visualize relationships between two variables is with a scatter plot:
 
-gscatter(x,y,year)
+```matlab
+x = [2, 4, 5, 6];
+y = [1, 3, 5, 6];
 
-% this would color those points in the year 1998 one color, and those in 2002 another color
+scatter(x, y);
+```
 
- ```
- 
--------------------------------------------------------------------------------
+### Grouped Scatter Plots
 
+If your data includes categories (e.g., different years), you can group points using `gscatter`:
 
-## Next Steps 
+```matlab
+year = [1998, 1998, 2002, 2002];
 
-This guide only scratches the surface of what matlab can do. We highly recommend looking into
-our learning resources and CSU provided courses for matlab provided on the coding resources web page. 
+gscatter(x, y, year);
+```
 
+* Each group is displayed in a different color
+* Useful for comparing categories within the same dataset
 
+---
 
+## Next Steps
+
+This guide introduces only a small portion of what MATLAB can do. To continue learning, consider exploring:
+
+* Advanced plotting and data visualization
+* Working with large datasets and datastores
+* Applying statistical models and machine learning techniques
+
+If you are a student at Colorado State University, be sure to explore [MATLAB resources](/matlab) and training opportunities available through the university.
 
 
 

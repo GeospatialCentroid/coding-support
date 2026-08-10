@@ -7,422 +7,154 @@ toc: true
 toc_sticky: true
 ---
 
--------------------------------------------------------
 
-This section will focus on fundamental information for navigating your computers file system through the terminal. 
-
---------------------------------------------------------
 
 ## What is a Shell?
 
-A Shell is a computer program that allows you to **Connect** with your computers operating system. This is where you can write code that will directly interact with you computers **File System**. 
+A **shell** is a program that allows you to interact directly with your computer’s operating system. Through the shell, you can run commands, navigate your file system, and automate tasks using a command-line interface (CLI).
 
-### Accessing a Shell
+---
 
-In order to code in UNIX or any other operating system (OS), it's important we know where to access our shell as well as download a shell. 
+## Accessing a Shell
 
-We will look at some shells you can utilize to code in a similar fashion to coding in a UNIX operating system.
+Most operating systems include a built-in terminal or console that provides access to a shell.
 
-- Accessing Through **Your Computer**
+### Common Ways to Access a Shell
 
-Most operating systems offer a  terminal or console that contains a pre-installed 
-shell. You can search up keywords such as **Terminal** or **Shell** to access this.
+* **Search your system** for “Terminal,” “Command Prompt,” or “Shell”
+* **Open from a folder** (e.g., right-click a directory and select “Open in Terminal”)
 
-- Accessing through **File Explorer**
+### Installing a Shell
 
-You can also use the **File Explorer** for some operating systems. Right click on a directory
-such as your documents directory and click **Open in Terminal**. This will take you into your 
-computers shell. 
+Many systems use the **Bash (Bourne Again Shell)**, a widely adopted shell for UNIX-like environments.
 
-### Installing a Shell 
+* You can install Bash or similar tools using online tutorials and system-specific instructions
+* These tools provide a consistent interface for working with files and running commands
 
+### For Windows Users
 
-- Installing the **BASH** Shell
+If you are using Windows, you can install Git (which includes Git Bash) here:
 
-For most computers, it may be easier to use the Bourne Again Shell(BASH).
-You can access a tutorial to download this shell [Here](https://carpentries.github.io/workshop-template/install_instructions/)
+👉 https://git-scm.com/install/windows
 
---------------------------------------------------------------------------------
+Git Bash provides a UNIX-like environment where you can practice shell commands and workflows.
 
-## Directory Structure 
+---
 
-It's important to familiarize yourself with the terminology used when referring to our file 
-system so you can better understand where you are and what commands will do.  
+## Understanding the File System
 
+Before using shell commands, it’s important to understand how files and directories are organized.
 
-### Types of Files 
+### Key Concepts
 
-Unix has a wide assortment of files that we will use in our file system. 
+* **Root Directory (`/`)**: The top-level directory of your system
+* **Subdirectories**: Folders within other directories
+* **File Path**: The route you take to reach a file or folder
 
-|File Name|File Description|
-|---------------|----------|
-|Ordinary Files| Holds basic file types (csv,txt)| 
-|Special Files| Files associated with devices such as your printer|
-|Directories| Holds Ordinary Files and Special Files in branches beyond the root| 
-|Root Directory| Beginning Directory of your file tree, contains all other directories and files in your system|
-|Links|Shortcuts to a file or directory|
+Example:
 
-### Unix Directory Terminology
-
-- **Root** 
-  
-  The root directory is the highest level directory in any Unix System. It is commonly
-  represented by the first ```/``` in your file path. 
-  
-  ```bash
-  
-  root --> /
-  
-  ```
-  
-- **Sub Directories** 
-
-  As we move into our file system, we will encounter **Subdirectories**, which can hold files, and other directories.
-
-  Our File System is similar to a plants root system; our **Root Directory** is our beginning point that connects to our "plant".
-  As we move through our subdirectories, it's like were tracing a root down it's root system. 
-
-  You can also think of it as a **River System**. As we move downstream, our river breaks off into more and more branches. 
- 
-  With a plant or river, we would see points where separations occur, these points are represented with the ```/``` character. They help
-  symbolize **What Subdirectory** we are in and **How Deep** we are into our file system. 
-
-  Let's look at a simple example file system. 
-
-```bash
-
-           -----> Subdirectory ----> file.csv
-  root ----|
-           |
-           -----> Subdirectory
-
-```          
-
-When we want to access a file, we will move through our subdirectories until we reach 
-the directory our file is located in. This path we take is known as the file path. 
-
-Let's create a file path for our tree shown above. 
-
-```bash
+```bash id="7c3d1x"
 C:/Subdirectory/file.csv
 ```
 
-  The directory that we want to navigate to is also usually our **Working Directory**. Our working directory is the current directory that have our files of interest and that future commands will be run in; such as files that are maniuplated or created. 
-  
-### Other Types of Directories 
+This path shows how to navigate from the root to a specific file.
 
-There are a wide array of other directories that hold information that is essential for 
-UNIX and CPU functioning
+---
 
-|Directories|Directory Function| 
-|----------------------|-------|
-|/bin| Holds essential system commands| 
-|/dev| Represents devices attached to the local system|
-|/etc| Stores various files for configuration|
-|/home| Default locations for file storage| 
-|/lib| Stores Essential Libraries for bin to run| 
-|/media| Stores mount for media like flash drives, and USB's| 
-|/mnt| Serves as a location for external files and system structures| 
-|/proc| Allows access to processes and system parameters| 
-|/tmp| directory for files that are temporary|
-|/usr| Stores read only data across the system| 
-|/Var| Stores variable data that changes as the system is running| 
+## Command Structure
 
-We will not look a these extensively in this guide. However, it's beneficial to know what they are and how to use them. 
+Most shell commands follow this structure:
 
---------------------------------------------------------------------------------------------------------------------------------------
-
-## Syntax
-
-### Command Structure 
-
-There are four parts to a UNIX command.
-
-- **Prompt**
-
-  This is the beginning of your command.  it contains information surrounding your **System** and **Current Working Directory**.
-  
-  ```bash 
-  
-  username@ServerCurrentWorkingDirectory$ 'This is the area you will write your commands'
-  
-  ```
-
-- **Command**
-
-  This is where you will write your commands to interact with your file system
-  
-- **Option**
-
-  Allows you to make adjustmenets to your command, tbey are extra parameters that you can add
-  
-
-- **Argument**
-
-  The argument is where you will be adding the target of your command. 
-  
-  
-These commands are commonly used in most terminal systems and widely applicable to any 
-console you may be operating on. 
-
-### File Navigation Commands
-
-Moving through directories requires a strong foundational knowledge of how to do so 
-effectively to help save time and increase the complexity of code you can run. 
-
-- **PWD**
-
-  Tells you which directory you are currently working in 
-  
-- **ls**
-  
-  Lists all **Files** and **Subdirectories** from your **Current** working directory. 
-  
-- **cd**
-
-  This command has a wide range of uses to help navigate through your file tree. 
-
-  Here are some examples. 
-  
-  ```bash
-
-  cd / 
-
-  'This takes you back to your root directory' 
-  
-  cd.. 
-  
-  'Takes you back to the parent directory you are in (This is the top of the subdirectory)'
-  
-  cd <enter file path>
-  
-  'This will take you down your subdirectory to the next subdirectory or file'
-
-  cd ~
-
-  'This will take you to your working directory' 
-  
-  ```
-  
-
---------------------------------------------------------------------------------------------------------------------------------------
-
-## File and Directory Manipulation 
-
-In the terminal, you are able to move **Manipulate Files and Directories** to meet your goals. 
-
-
-### Directory Manipulation
-
-- **Mkdir**
-
-  This command allows you to create a new directory, be careful that your working directory is set to where you want this 
-  new branch to be located 
-  
-  ```bash
- 
-  cd C:/Subdirectory_2
-  
-           -----> Subdirectory_1 ----> file.csv
-           | 
-  root ----|
-           |
-           -----> Subdirectory_2
-  ```
-
-  ```bash
-
-  mkdir directory_name 
-  
-           -----> Subdirectory_1 ----> file.csv
-           | 
-  root ----|
-           |
-           -----> Subdirectory_2 ----> directory_name
+```bash id="1o2w9m"
+command [options] [arguments]
 ```
 
+* **Command** → The action you want to perform
+* **Options** → Modifiers that change behavior
+* **Arguments** → The target of the command
 
-here, we created a new directory in Subdirectory_2
+---
 
-You can also make **Multiple Directories** at once. 
+## Navigating the File System
 
-```bash
-           
-  
-  mkdir dir_1 dir_2 dir_3 
-  
-           -----> Subdirectory_1 ----> file.csv
-           | 
-  root ----|    
-           |                     |---> dir_1
-           -----> Subdirectory_2 |---> dir_2
-                                 |---> dir_3
-  
+### Common Navigation Commands
+
+| Command | Description                            |
+| ------- | -------------------------------------- |
+| `pwd`   | Shows your current directory           |
+| `ls`    | Lists files and folders in a directory |
+| `cd`    | Changes your current directory         |
+
+### Examples
+
+```bash id="0p4r8n"
+pwd            # Show current directory
+ls             # List contents
+cd /           # Go to root directory
+cd ..          # Move up one directory
+cd folder_name # Move into a directory
+cd ~           # Go to home directory
 ```
 
-We just made three subdirectories in Subidrectory_2. 
+---
 
+## File and Directory Management
 
-We can also remove subirectories with the **rmdir** command. 
+Shell commands allow you to create, move, copy, and delete files and folders.
 
-```bash
+### Directory Commands
 
-cd C:/Subdirectory_2
+| Command | Description               |
+| ------- | ------------------------- |
+| `mkdir` | Create a new directory    |
+| `rmdir` | Remove an empty directory |
 
-           -----> Subdirectory_1 ----> file.csv
-           | 
-  root ----|    
-           |                     |---> dir_1
-           -----> Subdirectory_2 |---> dir_2
-                                 |---> dir_3
+Example:
 
-rmdir dir_2
-
-           -----> Subdirectory_1 ----> file.csv
-           | 
-  root ----|    
-           |                     |---> dir_1
-           -----> Subdirectory_2 |
-                                 |---> dir_3
-
+```bash id="k9w3lz"
+mkdir new_folder
 ```
 
-Be careful not to remove a subdirectory that has files or other subdirectories that you need!
+---
 
+### File Commands
 
+| Command | Description          |
+| ------- | -------------------- |
+| `touch` | Create a new file    |
+| `mv`    | Move or rename files |
+| `cp`    | Copy files           |
+| `rm`    | Delete files         |
 
-### File Manipulation 
+Examples:
 
-The **mv** command allows you to move files from place to place. 
-
-
-```bash
-
-'make sure your cd is in the directory you want to move your file from'
-
-cd C:/Subdirectory_2
-
-           -----> Subdirectory_1 ----> file.csv
-           | 
-  root ----|    
-           |                     |---> dir_1
-           -----> Subdirectory_2 |
-                                 |---> dir_3
-                                 
-mv file.csv /C/Subdirectory_1
-
-                                 
-           -----> Subdirectory_1 
-           |                     
-  root ----|    
-           |                     |---> dir_1---> file.csv
-           -----> Subdirectory_2 |
-                                 |---> dir_3
+```bash id="d7m2ql"
+touch file.txt          # Create a file
+mv file.txt folder/     # Move file
+cp file.txt copy.txt    # Copy file
+rm file.txt             # Delete file (use with caution)
 ```
 
-here, we effectively moved file.csv from Subdirectory_1 to Subdirectory_2. 
+> ⚠️ Be careful with `rm` and `rmdir`—these actions cannot be undone.
 
+---
 
-If we don't want to move a file but want to make a new file, we can do so using the **Touch** command. 
-  
-```bash
+## Best Practices
 
-cd C:/Subdirectory_1
+* Always check your current directory using `pwd` before running commands
+* Use `ls` to confirm file locations before modifying them
+* Be cautious when deleting files or directories
+* Practice commands in a safe environment (like a test folder or Git Bash)
 
-                                 
-           -----> Subdirectory_1 
-           |                     
-  root ----|    
-           |                     |---> dir_1---> file.csv
-           -----> Subdirectory_2 |
-                                 |---> dir_3
-                                 
-touch file_2.csv
+---
 
-           -----> Subdirectory_1 --> file_2.csv
-           |                     
-  root ----|    
-           |                     |---> dir_1---> file.csv
-           -----> Subdirectory_2 |
-                                 |---> dir_3
+## Next Steps
 
-```
+Now that you understand the basics of the shell, you can begin to:
 
-This created file_2.csv in Subdirectory_1. 
+* Automate repetitive tasks
+* Work more efficiently with files and directories
+* Use version control tools like Git
+* Explore scripting with Bash
 
-
-If we want a a file in multiple directories, we can copy it using the **cp** command. 
-
-
-```bash
-cd C:/Subdirectory_2
-
-           -----> Subdirectory_1 --> file_2.csv
-           |                     
-  root ----|    
-           |                     |---> dir_1---> file.csv
-           -----> Subdirectory_2 |
-                                 |---> dir_3
-                                 
-cp C:/Subdirectory2/dir_1/file.csv C:/Subdirectory1
-
-'we first put in the line of code for the file we want to copy, then where we 
-want to copy it to.' 
-                                 |--> file_2.csv
-           -----> Subdirectory_1 |
-           |                     |---> file.csv
-  root ----|    
-           |                     |---> dir_1---> file.csv
-           -----> Subdirectory_2 |
-                                 |---> dir_3
-```
-
-
-Similar to our directory removing command, we can remove files uising a **rm** command.
-
-Once again, be careful not to remove the wrong files. You **Cannot** undo this...
-
-```bash
-
-cd C:/Subdirectory_2
-
-
-                                 |--> file_2.csv
-           -----> Subdirectory_1 |
-           |                     |---> file.csv
-  root ----|    
-           |                     |---> dir_1---> file.csv
-           -----> Subdirectory_2 |
-                                 |---> dir_3
-                                 
-rm file.csv
-
-
-                                 |--> file_2.csv
-           -----> Subdirectory_1 |
-           |                     |---> file.csv
-  root ----|    
-           |                     |---> dir_1
-           -----> Subdirectory_2 |
-                                 |---> dir_3
-   
-```
-
-## Summary 
-
-UNIX provides a series of functions that allow you to navigate your file directory 
-Understanding how to effectively use these will allow you to access directories and files with ease! 
-
-## Next Steps 
-
-This guide will now focus on how to access and manipulate the contents of files. 
-
-
-                                 
--------------------------------------------------------------------------------
-
-
-
-
-
-
+Learning shell commands is a foundational skill that will support many areas of programming, data science, and research workflows.

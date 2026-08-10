@@ -6,178 +6,182 @@ title: "SQL Fundamentals"
 toc: true
 toc_sticky: true
 ---
+## Accessing SQL
 
-## Accessing SQL 
+There are several ways to access and work with databases using SQL, depending on your system and preferences.
 
-One of the more common ways to access a select database through SQL is through te 
-**SQL Server Management Studio (SSMS)**.  A link for using SSMS is 
-provided [Here](https://learn.microsoft.com/en-us/ssms/install/install)
+### Graphical Tools (GUI)
 
-**SQLCM** is a command line alternative that will allow you to access databases. 
-A link to installl and set up SQLCM is provided [Here](https://www.techpluto.com/how-to-access-sql-server-database-without-management-studio/)
+One common option for working with SQL databases is **SQL Server Management Studio (SSMS)**, a tool developed by Microsoft.
 
-One thing to note is that both of these softwares are used with **Microsoft**. 
-We will go over how to download softwares without access to microsoft.
+* Install SSMS here: https://learn.microsoft.com/en-us/ssms/install/install
+* Provides a user-friendly interface for querying and managing databases
 
-for **Non-Microsoft Softwares**, we can use **Datagrip**. Datagrip is a 
-service that is supported for MacOS, and Linux. 
+Another popular GUI option is DataGrip, which supports multiple database systems and works on macOS, Windows, and Linux:
 
-You can access Datagrip [Here](https://www.jetbrains.com/datagrip/features/sqlserver/).
+* https://www.jetbrains.com/datagrip/features/sqlserver/
 
-### Accessing servers within SQL 
+For open-source workflows, you can also use:
 
-Once we have downloaded a virtual SQL accessing tool. We need to have the **Proper Credentials** by the database administrator.
-
-upon opening the software or terminal we are using. We need to enter 2 things to log into the database
-
-` **The Server Name**
-
-` **SQL login credentials**
-
-This will consist of a **Username** and **Password**. To get the username and password you should communicate with the 
-database provider get this information from them. 
-
-Upon logging into the server, we need to access the database we are interested in. 
-We can do this with the **Transact-SQL** or the **T-SQL** commands. 
-
-```sql
-
-Transact-SQL [Database Name]   <!--- we put this in brackets because it will 
-                                     <---allow us to enter numbers, spaces, and special 
-                                     <---characters if needed.
-                                     
-```
-NOTE: We put this information in brackets because when we are targetting something (what we want our command to execute on), we specifiy it with brackets in SQL. 
-
-If you have made it this far, you are officially able to access your database and the data within. 
-If you are not able to access a database, dont worry! This guide will provde substantial data management 
-and analysis information that will prove to beneficial across coding softwares. 
-
---------------------------------------------------------------------------------
-
-## Syntax 
-
-SQL databases all have different syntax. Upon the basics of this guide, it is beneficial to 
-consult a help guide within your database to learn more about the functions that are possible. 
-
-For example, one difference is that some databases will require a semicolon after every line in a command while some wont.
-
-When writing functions in SQL. They commonly work on a line basis. This is where every line has a
-single command. We will see examples of this later 
-
-In databases, there can be a series of different **Tables** that exist. It is important to **Update** the 
-table you want to work in before you begin to do any computations or run any commands. 
-
-Doing so will allow you to be working in the **Proper Table** and not another on accident. 
-
-```sql
-
-UPDATE <Table Name> 
-
-```
-
-**Field Types** 
-
-There are 4 large data types in SQL 
-
-- **Numeric Types** 
-  
-  Numeric types consist of integers, decimals, precision numbers, and Floating Points 
-    
-- **Text Fields** 
-
-  In our Text Fields, there are fixed length character strings, variable length character strings, and clobs; which are large bodies of text. 
-  
-- **Date and Time Fields**
-
-  These fields contain information days within the year and times. 
-  
-- **Boolean Types**
-  
-  Boolean fields will have 1 of 2 field contents. Either TRUE or FALSE. 
-  These fields serve as an effective method of dividing data into certain subcategories 
-
-### Commands and Operators 
-SQL is a command and operator based system, meaning that programs and all data analysis relies on using combined sets of operators and commands.  
-
-SQL **Command Structure** is based off a three part system. 
-
-The **Select** Command comes first. In this section, we will choose the columns from a table that we are working in 
-
-We then use the **From** command. This command will tell our system which table we want to select from.
-
-Finally, we use the **WHERE** command to establish which operators we want to use on our selected columns. This is where the 
-majority of our coding work is going to be. 
-
-
-As mentioned earlier, we will use operators to work with our WHERE command 
-The types of operators that SQL runs off of are **Logical and Boolean Operators**. 
-
-|Operator Symbol | Function |
-|-----------------------|---|
-|= | Equal to|
-| > | Greater than|
-| < | Less Than|
-|>= | Greater than or equal to|
-|<=| Less than or equal to|
-|<>| Not equal to| 
-
-SQL also relies on **Boolean Operators**
-
-|Boolean Symbol | Function| 
-|----------------------|--|
-|AND| A column meets two conditions|
-|OR| A column meets one of multiple conditions|
-|NOT| A column does not meet a condition|
-|BETWEEN| Find values with a range|
-|LIKE| Selecting numeric and character patterns|
-
-One thing that can interfere with using commands in datasets **Null** or **N/A** values. These can be problematic as they 
-can skew data, interfere with commands, and misrepresent data. Because of this, it's important to beaware 
-of if your dataset has NULL values and where they are. THis can be done through 1 of 2 commands.
-
-You can either use a **is null** command 
-
-```sql
-
-SELECT Column_Name 
-FROM Table_Name
-Where Columm_Name IS NULL
-
-```
+* **pgAdmin** — commonly used with PostgreSQL
+* **SQLite** — a file-based database that can be accessed with simple tools or command line interfaces
 
 ---
 
-Or, you can use the **is not null** command 
+### Command Line Tools
+
+SQL can also be accessed through command-line interfaces (CLI), which allow you to run queries directly in a terminal.
+
+* Tools like `sqlcmd` (for SQL Server) or SQLite’s built-in CLI are commonly used
+* These environments are lightweight and useful for scripting and automation
+
+---
+
+## Connecting to a Database
+
+To access a database, you typically need credentials provided by a database administrator.
+
+### Required Information
+
+* **Server name** (or database file, in the case of SQLite)
+* **Username and password**
+
+Once connected, you can select and interact with a specific database.
+
+> Note: Exact connection steps vary depending on the tool and database system you are using.
+
+---
+
+## SQL Syntax Basics
+
+SQL syntax can vary slightly between database systems, but the core structure is consistent.
+
+### Basic Query Structure
+
+Most SQL queries follow this pattern:
 
 ```sql
-
-Select column_Name
-FROM Table_Name
-Where column_Name IS NOT NULL
-
+SELECT column_name
+FROM table_name
+WHERE condition;
 ```
 
-These commands are similar but provide different purposes. One will only identify NULL values for 
-you to manipulate, while the other will find all values that are not NULL. They can serve entirely different purposes. 
+* `SELECT` → Choose which columns to retrieve
+* `FROM` → Specify the table
+* `WHERE` → Filter results based on conditions
 
+---
 
+### Working with Tables
 
---------------------------------------------------------------------------------
+Before running queries, ensure you are working with the correct table or database.
+
+```sql
+SELECT * 
+FROM table_name;
+```
+
+This retrieves all columns and rows from a table.
+
+---
+
+## Data Types
+
+SQL databases typically include the following categories of data types:
+
+### Numeric Types
+
+* Integers, decimals, and floating-point numbers
+
+### Text Types
+
+* Fixed-length (`CHAR`) and variable-length (`VARCHAR`) strings
+* Large text fields (e.g., `TEXT`, `CLOB`)
+
+### Date and Time Types
+
+* Store dates, times, and timestamps
+
+### Boolean Types
+
+* Store logical values (`TRUE` or `FALSE`)
+
+---
+
+## Operators and Conditions
+
+SQL relies on comparison and logical operators to filter data.
+
+### Comparison Operators
+
+| Operator | Description              |
+| -------- | ------------------------ |
+| `=`      | Equal to                 |
+| `>`      | Greater than             |
+| `<`      | Less than                |
+| `>=`     | Greater than or equal to |
+| `<=`     | Less than or equal to    |
+| `<>`     | Not equal to             |
+
+### Logical (Boolean) Operators
+
+| Operator  | Description                         |
+| --------- | ----------------------------------- |
+| `AND`     | Both conditions must be true        |
+| `OR`      | At least one condition must be true |
+| `NOT`     | Excludes a condition                |
+| `BETWEEN` | Filters within a range              |
+| `LIKE`    | Matches patterns in text            |
+
+---
+
+## Working with NULL Values
+
+Missing data in SQL is represented as `NULL`. These values require special handling.
+
+### Find NULL Values
+
+```sql
+SELECT column_name
+FROM table_name
+WHERE column_name IS NULL;
+```
+
+### Find Non-NULL Values
+
+```sql
+SELECT column_name
+FROM table_name
+WHERE column_name IS NOT NULL;
+```
+
+Handling `NULL` values is important because they can affect query results and data analysis.
+
+---
+
+## Best Practices
+
+* Always confirm your database and table before running queries
+* Use `WHERE` clauses to limit results and improve performance
+* Be aware of `NULL` values in your dataset
+* Test queries on small datasets before scaling up
+
+---
 
 ## Summary
 
-Overall, SQL is widely accessible to anybody who has the necessary information from the organization
-or institution that operates the database of interest. Even if you can't access a database.
-Understanding how SQL works will be largely applicable to use in GIS, data analysis, and complex programs in
-all introductory coding languages. 
+SQL is widely accessible through both graphical tools and command-line interfaces. Whether you are using enterprise tools like SSMS or lightweight options like SQLite, the core principles of SQL remain consistent.
 
---------------------------------------------------------------------------------
+Understanding how to connect to databases, structure queries, and filter data is essential for working effectively with structured data.
 
-## Next Steps 
+---
 
-Upon understanding the basics of how SQL works with operators and it's commands, 
-the next step is to understand how we can work with data and tables in SQL.
+## Next Steps
 
-Our next section will provide a broad overview of some of the basic commands in SQL With provided examples showing proper syntax
+Now that you understand how to access SQL and write basic queries, the next step is to:
 
+* Learn more advanced queries (`JOIN`, `GROUP BY`, `ORDER BY`)
+* Practice working with real datasets
+* Integrate SQL with tools like Python, R, or GIS platforms
+
+These skills will help you move from basic database interaction to more advanced data analysis and application development.
