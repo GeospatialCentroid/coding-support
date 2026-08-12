@@ -38,11 +38,11 @@ To provide the most effective support, we collaborate with campus partners who s
 
 | Topic                            | Supporting Group                         |
 | -------------------------------- | ---------------------------------------- |
-| High Performance Computing (HPC) | Research Computing & Cyberinfrastructure |
-| Excel (Data Visualization)       | IRISS                                    |
-| R (Statistics)                   | Stat Lab                                 |
-| Power BI                         | Libraries                                |
-| Geospatial                       | Geospatial Centroid                                |
+| High Performance Computing (HPC) | [Research Computing & Cyberinfrastructure](https://www.research.colostate.edu/rit/research-computing-cyberinfrastructure/) |
+| Excel (Data Visualization)       | [IRISS](https://iriss.colostate.edu/)    |
+| R (Statistics)                   | [Stat Lab](https://statlab.colostate.edu/)   |
+| Power BI                         | [Libraries](https://lib.colostate.edu/)    |
+| Geospatial                       | [Geospatial Centroid](https://gis.colostate.edu/)  |
 
 
 Requests that fall outside the areas listed above will be referred to the appropriate campus resource through our general support mailbox.
