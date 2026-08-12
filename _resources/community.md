@@ -27,3 +27,6 @@ Join us for the **Centroid of the Week** to discuss spatial data, web mapping, G
 #### [Computer Science Department Activities & Organizations](https://compsci.colostate.edu/get-involved/)
 The CS department hosts a wide variety of tech-focused student organizations, hackathons, and professional development groups. 
 * **Details:** Visit their involvement portal to explore current active chapters and upcoming departmental events.
+
+#### [Data Viz Support Pop-Up]
+This informal group meets periodically to share strategies, tools, and design ideas for creating beautiful and effective data visualizations. The best way to stay informed about future events is to subscribe to the data-viz listserv.  
