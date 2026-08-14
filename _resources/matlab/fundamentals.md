@@ -7,281 +7,182 @@ toc: true
 toc_sticky: true
 ---
 
-## Access Matlab
+## Access MATLAB
 
-Due to matlabs paywall, it can only be accessed by those who have an institution or 
-organization key. 
+**MATLAB** is a licensed software developed by MathWorks, which means access typically requires a paid license.
 
-If you don't you will need to pay for it's services
+### For CSU Students
 
-For those who have access to Matlab, you can follow the downloading procedures 
-[here](https://www.mathworks.com/help/install/
-ug/install-products-with-internet-connection.html)
+If you are a student at Colorado State University, you likely already have access through the university.
 
+Follow the official CSU installation and access instructions here:
+👉 [https://www.engr.colostate.edu/ets/matlab/](https://www.engr.colostate.edu/ets/matlab/)
 
-----------------------------------------------
+### General Access
 
-## Syntax 
+If you are not affiliated with an institution that provides MATLAB, you will need to purchase a license or use a trial through [MathWorks](https://www.mathworks.com/help/install/ug/install-products-with-internet-connection.html).
 
-Matlab uses a ```;``` line syntax. This means that if you are working with programs that
-use multiple lines of code. Then after each line you will enter the symbol. 
+---
 
-We can also use comments in our code with  the ```%``` key.
+## Syntax
 
-```m
+MATLAB syntax is designed to be simple and readable.
 
-% this line of code wont run 
+* A semicolon `;` at the end of a line **suppresses output** in the Command Window
+* Comments are written using the `%` symbol
+
+```matlab
+% This line is a comment and will not run
 
 disp("This line of code will run")
-
-
 ```
 
-as shown earlier, if we want to run a line of code that displays something from our 
-terminal, we can use the **disp** command. 
+The `disp` function displays text or variable values in the Command Window.
 
+### Common Commands
 
-Lets look at some of the introductory Matlab commmands.
+| Command   | Description                                 |
+| --------- | ------------------------------------------- |
+| `disp`    | Displays text or variables                  |
+| `fprintf` | Prints formatted text with variables        |
+| `diary`   | Saves Command Window input/output to a file |
 
-|Command Name | Function |
-|---------|--------------|
-| disp | Displays text or variables within parenthesis | 
-| diary | allows you to create a file with lines of code within |
-|fprintf| prints strings with variables inside of them|
+Example using `fprintf`:
 
-Lets print a string that has a integer variable inside of it.
-
-```m
-
-first, lets assign our variable 
-
-x = 10 
-
-now, lets use the fprintf command 
-
-fprintf('the number ten in nuemric format is %d', x)
-
-% The symbol %d is where our x variable will move to once it is returned. %d symbolizes integer. 
-
-```
--------------------------------------------------------------------------------
-
-## Data Types & Assigning Variables  
-
-There are several different types of data that we can assign to a **Variable** in Matlab
-
-
-|Data Type| Supported Values | 
-|----|-----------------------|
-|Char| Supports individual characters | 
-|string| Supports series of characters and words |
-|Integers | Supports Signed and Unsigned non decimal numbers |
-|Single Floating Point | Supports numbers with decimals up to seven points | 
-|Double Floating Point | Supports numbers with decimals greater then 8 points | 
-|Date | Supports calendar date values | 
-|Time| Suppots numeric time values | 
-|Arrays | Series of 1 dimensional numbers in a comma seperated series | 
-
-
-Numeric data types are able to support **Signed** and **Unsigned** numbers
-
-- **Signed** numbers are those that are all positive or negative
-- **Unsigned** numbers are those that cannot be negative
-
-Matlabs different text and numeric data types allow us to **Manage the Memory** of our programs. 
-
-When we run code, the code we run **Takes up Memory** in our computer space.
-
-Having options for our text and numbers that take up less memory help us lower the **Required  Bytes of Data** will help conserve memory on our computer when we run complex series of code.
-
-We can also **Change the Data Type** of a variable through this process. 
-
-```m
-
-% First, lets assign a variable a value 
-
-charac = 'a' % make sure your variable assignments consist of letters and do not have numbers or commands in them 
-
-% Now, lets change our variable type to a string from the inferred character type 
-
-strin = cast(charac, 'string'). We now have a string with 1 letter. 
-
+```matlab
+x = 10;
+fprintf('The number ten in numeric format is %d\n', x);
 ```
 
-One benefit of using matlab is that it automatically assigns variables a data type. Where with most other languages this must be specified.
+* `%d` is a placeholder for integers
+* `\n` creates a new line
 
-We can also leave variables unassigned. This is because of the  **ans** variable, which acts as a **Placeholder** for unassigned values. 
+---
 
-Here is an example of using the ans command. 
+## Data Types & Assigning Variables
 
+MATLAB automatically assigns a data type when you create a variable.
 
-```m
+### Common Data Types
 
-5 + 8 
+| Data Type  | Description                             |
+| ---------- | --------------------------------------- |
+| `char`     | Single characters (e.g., `'a'`)         |
+| `string`   | Text strings (e.g., `"hello"`)          |
+| `double`   | Default numeric type (floating-point)   |
+| `single`   | Single-precision floating-point numbers |
+| `int`      | Integer types (e.g., `int8`, `uint32`)  |
+| `datetime` | Date and time values                    |
+| `array`    | Ordered collections of values           |
 
-% Because we did not assign a variable name to this command, ans is now equal to the sum of 
+### Example
 
-5 and 8 
-
-ans + 9 
-
+```matlab
+charac = 'a';           % character
+strVal = string(charac); % convert to string
+x = 42;                 % numeric (double by default)
 ```
 
-Because ans is the sum of 5 and 8, this will return 22. 
+### The `ans` Variable
 
+If you don’t assign a result to a variable, MATLAB stores it in a default variable called `ans`.
 
---------------------------------------------------------------------------------
+```matlab
+5 + 8       % ans = 13
+ans + 9     % returns 22
+```
 
-## Operators and Statements
+---
 
+## Operators and Expressions
 
-In matlab and other coding languages, we can use a combination of **Arithmetic** and **Comparative**
-operators to control program flow and program quality with the help of **Logical** and **Conditional** Statements. 
+MATLAB supports arithmetic and comparison operators for calculations and logical evaluation.
 
+### Arithmetic Operators
 
+| Operator   | Description        |
+| ---------- | ------------------ |
+| `+`        | Addition           |
+| `-`        | Subtraction        |
+| `*`        | Multiplication     |
+| `/`        | Division           |
+| `mod(a,b)` | Remainder (modulo) |
 
-### Operators 
+> Note: MATLAB uses the `mod()` function for remainders (not `%`).
 
-The two types of operators that we will be focusing on are our **Arithmetic** and **Comparative** Operators 
-
-|Arithmetic|            
-|----|-----|            
-| + | Addition |      
-| - | Subtraction | 
-| * | Multiplication | 
-| / | Division | 
-| % | Modulo |
-
-
-|Comparative|
-|-----|-----|
-| < | Less Than | 
-| > | Greater Than |
-| == | Equal to | 
-| <= | Less Than or Equal to |
-| >= | Greater Than or Equal to | 
-| ~= | Not Equal to
-
-
-Lets look at some examples of how we can use these. 
-
-
-Here is an example of us using the modulo operator 
-
-
-```m
-
-modu = (17 % 3) 
-
-% when we run this operator. It will return the remainder of 17/3 which is 2
-
+```matlab
+modu = mod(17, 3);  % returns 2
 disp(modu)
- 
-
 ```
 
-We can do the same for our multiplication operator 
+### Comparison Operators
 
+| Operator | Description              |
+| -------- | ------------------------ |
+| `<`      | Less than                |
+| `>`      | Greater than             |
+| `==`     | Equal to                 |
+| `<=`     | Less than or equal to    |
+| `>=`     | Greater than or equal to |
+| `~=`     | Not equal to             |
 
-```m
-
-8*8
-
-% by not assigning a variale, we will assign the product to ans 
-
-disp(ans)
-
-this will return 64
-
-```
-
-Lets look at how we can use comparative operators in accordance with our arithmetic operators
-
-```m
-
-% Lets assign a variable the sum of 2 other variables
-
-A = 8
-B = 7
-
-combined = A + B 
-
-```
-
-Now lets us our comparative operators to make a yes or no condition. 
-
-```m
-
-bool = combined > 20 
-
-```
-
-If we were to display bool our function would return **false**, as our summed value is less then 20. It would return **true** if we had a value greater than 20. 
-
-
-
--------------------------------------------------------
-
-## Conditional Statments
-
-We will be looking at **If statements** and **Switch statments** here. 
-
-If Statements and Switch statements allow us to control our programs flow depending on if certain predefined conditions are met. 
-
-
-Here is a simple example of a if statement in action 
+Example:
 
 ```matlab
+A = 8;
+B = 7;
+combined = A + B;
 
-condition = 10 
+bool = combined > 20;  % returns false
+```
 
-if condition < 0 
-  fprintf ("This is a negative number");
+---
+
+## Conditional Statements
+
+Conditional statements allow you to control program flow based on logical conditions.
+
+### If Statements
+
+```matlab
+condition = 10;
+
+if condition < 0
+    fprintf("This is a negative number\n");
+elseif condition < 10
+    fprintf("This is a positive number less than 10\n");
 else
-  fprintf ("This is a positive number");
+    fprintf("This is a positive number greater than or equal to 10\n");
 end
-
 ```
 
-If this alone is not specific enough. We can use the **elseif** statement to add conditionals to narrow our responses scope. 
+### Switch Statements
 
-```m
-if condition < 0 
-  fprintf("this is a negative number");
-elseif condition < 10 
-  fprintf("This is a positive number less then 10");
-else
-  fprintf("This is a positive number greater then 10")
-```
-
-This gives us more specific responses. However, it can be tedious to write. We 
-can simplify this code using our **Swtich command** 
-
-Switch commands offer us a **Quicker Syntax** for writing conditionals wilth  multiple statements. 
+`switch` is useful when comparing a variable against multiple specific values.
 
 ```matlab
+num = 2;
 
-num = 2 
-
-switch num    %  This is where we specificy what variable we are looking at 
-  Case 1
-    fprintf("num is equal to 1");
-  Case 2
-    fprintf("num is equal to 2");
-  Case 3
-    fprintf("num is equal to 3");
-  Otherwise
-    fprintf("This nubmer is greater than 3")
-end 
-
+switch num
+    case 1
+        fprintf("num is equal to 1\n");
+    case 2
+        fprintf("num is equal to 2\n");
+    case 3
+        fprintf("num is equal to 3\n");
+    otherwise
+        fprintf("This number is greater than 3\n");
+end
 ```
 
------------------------------------------------------
+---
 
-## Next Steps 
+## Next Steps
 
-Now that we have established some basic fundamentals of matlab. We will now briefly  go over 
-how to read in data, and how to visualize data in matlab. 
+Now that you’ve learned the basics of MATLAB syntax, variables, and control flow, the next step is to explore:
 
+* Importing and working with datasets
+* Creating visualizations and plots
+* Applying MATLAB to real-world engineering and research problems
 
-
+These skills will help you move from basic scripting to practical data analysis and modeling.

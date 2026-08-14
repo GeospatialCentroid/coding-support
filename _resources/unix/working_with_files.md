@@ -9,214 +9,163 @@ toc_sticky: true
 
 ## Accessing File Contents in UNIX
 
-Accessing file contents is one of the most beneficial features of unix. 
+Accessing file contents is one of the most powerful features of UNIX-based systems. It allows you to quickly inspect, modify, and analyze data directly from the terminal, which is essential for many real-world workflows.
 
-Accessing file contents allows us to work with real world applications. 
+---
 
-### Opening & Working With Files
+## Opening & Working With Files
 
-To display and work with files in the terminal, the common commands we will 
-be used are the **Cat** and **Tac** commands.
+### Viewing File Contents with `cat`
 
-The **Cat** command is a standard command you can use on files such as text 
-files and CSV's that will allow you to display the contents of the file. 
+The `cat` command is a standard tool used to display the contents of files such as `.txt` and `.csv`.
 
 ```bash
-
-'we will use a simple command prompt to open a file'
-
-cat <file_name.csv>
-
-'we can also read multiple files with the cat command' 
-
-cat file_name1 file_name2 
-
+cat file_name.csv
 ```
 
-The cat command goes beyond reading files, we can also **Create** new files, **Modify** existing
-files, and **Combine** files.
+You can also display multiple files at once:
 
-
-Let's pick up where we left off in a file system, and make a new file using the **cat** command.
-
+```bash
+cat file1.txt file2.txt
 ```
-cd C:/Subdirectory_2/dir_1
 
+---
 
-                                 |--> file_2.csv
-           -----> Subdirectory_1 |
-           |                     |---> file.csv
-  root ----|    
-           |                     
-           -----> Subdirectory_2 ---> dir_1
-           
+### Creating and Combining Files with `cat`
+
+The `cat` command can also be used to create and combine files.
+
+#### Create a New File
+
+```bash
 cat > file_3.txt
-
-
-
-                                 |--> file_2.csv
-           -----> Subdirectory_1 |
-           |                     |---> file.csv
-  root ----|    
-           |                     
-           -----> Subdirectory_2 ---> dir_1 ---> file_3.txt
-
 ```
 
-Doing this allows us to add contents to a new text file which we can place in 
-our subdirectory ```dir_1```.
+After running this command, you can type content directly into the terminal and save it to the file.
 
-
-We can also **Merge Files** 
-
+#### Combine Files
 
 ```bash
-
-cd /Subdirectory_1
-
-cat file file_2 > combined_file
-
-                                
-           -----> Subdirectory_1 ---> combined_file 
-           |                    
-  root ----|    
-           |                     
-           -----> Subdirectory_2 ---> dir_1 ---> file_3.txt
-
+cat file1.txt file2.txt > combined_file.txt
 ```
 
-There are a series of specific modifications we can make to the cat command to change its function. 
+This merges the contents of multiple files into a new file.
 
-|Option|Purpose|
-|-------|------|
-|-n|show line numbers|
-|-b|number non blank lines|
-|file.txt|show full file content|
-|-A|show tabs/chars/ and non printing lines|
-|-s|squeeze repeated blank lines|
-| > combine| join several text files|
-|*.log| Merge matching files| 
-|head - n <value>| Select a number of lines to read starting from the top|
-|tail - n <value>| Select a number of lines to read starting from the bottom|
-|> script.sh <<'EOF| write a script|
+---
 
-the **tac** command is another useful tool that builds off of the cat command
+### Useful `cat` Options
 
-While these commands are similar, some functions of the tac command work in **Reverse**, such as reading files from bottom to top instead of 
-from top to bottom. 
+| Option | Description                  |
+| ------ | ---------------------------- |
+| `-n`   | Show line numbers            |
+| `-b`   | Number non-empty lines       |
+| `-s`   | Remove repeated blank lines  |
+| `-A`   | Show non-printing characters |
+
+---
+
+## Reading Files in Reverse with `tac`
+
+The `tac` command works similarly to `cat`, but displays file contents in reverse order (bottom to top).
 
 ```bash
-
-we can use the tac command to create files that have reversed contents
-
- cd /Subdirectory_1
- 
-                                
-           -----> Subdirectory_1 ---> combined_file 
-           |                    
-  root ----|    
-           |                     
-           -----> Subdirectory_2 ---> dir_1 ---> file_3.txt
-           
-           
-tac combined_file > reversed_file
-
-                                 
-                                 |---> reversed_file
-           -----> Subdirectory_1 |
-           |                     |---> combined_file 
-  root ----|                     
-           |                     
-           -----> Subdirectory_2 ---> dir_1 ---> file_3.txt
-
-           
+tac combined_file.txt > reversed_file.txt
 ```
 
-**Head** and **Tail** commands are other tools in Unix that allow you to view 
-sections of a file with ease
+---
 
+## Viewing Sections of Files
 
+### `head` (Top of File)
 
-the **Head** command allows you to view the first **10 Rows** of a file. However this 
-can be modified by adding options to our command using the **n** feature. 
+Displays the first 10 lines by default:
 
 ```bash
-
-head file_3.txt 
-
-'this would automatically read the first 10 lines
-
-head -n 15 file_3.txt'
-
-'this would read the first 15 lines instead'
-
-head -n 5 reversed_file combined_file 
-
-'this would read the first five lines of two files'
-
+head file.txt
 ```
 
-**Tail**
-
-Similar to the tac command, the tail command provides a similar function as the 
-head command except starting at the bottom of the file instead 
+Specify a number of lines:
 
 ```bash
-
-tail file_3.txt
-
-'this would read the bottom 10 lines of a file.'
-
+head -n 15 file.txt
 ```
 
-With knowledge of both the head and tail commands. We can read sections of a files in the **Middle** 
+---
+
+### `tail` (Bottom of File)
+
+Displays the last 10 lines:
 
 ```bash
-
-head -n 10 file_3.txt | tail -n 20 file_3.txt
-
+tail file.txt
 ```
 
-The **open** command is another useful tool that allows you to open non text files 
-such as PDF's. 
+---
 
-Finally, we can use commands such as **Grep** to search for keywords and values in files 
+### Combining `head` and `tail`
+
+You can combine commands to view specific sections of a file:
 
 ```bash
-
-Grep -in "keyword" 
-
+head -n 20 file.txt | tail -n 10
 ```
 
-We can also tell grep to ignore certain words in files.
+This displays lines 11–20 of the file.
+
+---
+
+## Searching File Contents with `grep`
+
+The `grep` command allows you to search for specific text within files.
 
 ```bash
-
-Grep -i "keyword"
-
+grep "keyword" file.txt
 ```
 
-If we want any words except for some, we can tell grep to find files that do not match to a word.
+### Common Options
+
+| Option | Description                  |
+| ------ | ---------------------------- |
+| `-i`   | Ignore case                  |
+| `-n`   | Show line numbers            |
+| `-v`   | Show lines that do NOT match |
+
+Examples:
 
 ```bash
-
-Grep -v "keyword"
-
+grep -in "keyword" file.txt
+grep -v "keyword" file.txt
 ```
 
---------------------------------------------------------------------------------
+---
+
+## Opening Files
+
+Some systems allow you to open files (like PDFs or images) directly from the terminal using commands such as `open` (macOS) or system-specific equivalents.
+
+---
+
+## Best Practices
+
+* Use `cat`, `head`, and `tail` to quickly inspect files before editing
+* Combine commands with pipes (`|`) to refine output
+* Be mindful when overwriting files using `>`
+* Practice commands in a safe directory before applying them to important data
+
+---
 
 ## Summary
 
-The  shell can be used for a variety of applications related to file management and working with 
-data. Understanding the file directory is  extremely important in having strong data organization skills, clean workflows, and working efficiency on projects of all shapes and sizes 
+Working with file contents in the shell is essential for efficient data handling and analysis. These tools allow you to quickly explore files, extract information, and build streamlined workflows directly from the command line.
+
+---
 
 ## Next Steps
 
-Learning to apply UNIX to coding, scripting, and working on other computers are all key when using terminals. Soon, we will be releasing Our **BASH** fundamentals guide which will go over basic script writing in the terminal!
+To continue building your skills, consider learning:
 
+* Bash scripting for automation
+* Advanced text processing tools (e.g., `awk`, `sed`)
+* Integrating shell workflows with programming languages
 
-
-
-
-
+These skills will help you work more effectively with data and scale your projects across different systems.
