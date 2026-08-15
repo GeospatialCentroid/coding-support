@@ -188,7 +188,7 @@ svg.selectAll("circle")
   .on("mouseover", function (event, d){
     const tableHTML = `
     <table>
-      <tr><th>Course Code</th><td>${d.data.name}</td></tr>
+      <tr><th>Course Code</th><td>${d.data.courseCode || "N/A"}</td></tr>
       <tr><th>Course Name</th><td>${d.data.courseName || "N/A"}</td></tr>
       <tr><th>Instructor</th><td>${d.data.instructor || "N/A"}</td></tr>
       <tr><th>Prerequisite</th><td>${d.data.prerequisite || "N/A"}</td></tr>
@@ -199,7 +199,7 @@ svg.selectAll("circle")
   })
 
   .on("mousemove", function (event) {
-      popup.style("left", (event.pageX + 10) + "px")
+      popup.style("right", (event.pageX + 10) + "px")
             .style("top", (event.pageY + 10) + "px")
 
   })
