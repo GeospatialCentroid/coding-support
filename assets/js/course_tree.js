@@ -81,7 +81,7 @@ function renderTree(rootNode) {
   
   let height = Math.max(400, totalNodes * 28); 
   
-  const margin = { top: 40, right: 180, bottom: 40, left: 220 };
+  const margin = { top: 40, right: 300, bottom: 40, left: 100 };
   const treeWidth = width - margin.left - margin.right;
   const treeHeight = height - margin.top - margin.bottom;
 
@@ -148,7 +148,7 @@ function renderTree(rootNode) {
   // Truncate text if it exceeds a character limit to protect layout boundaries
   textElement.text(d => {
     const name = d.data.name;
-    const maxLength = 35;
+    const maxLength = 50; //
     return name.length > maxLength ? name.substring(0, maxLength) + "..." : name;
   });
 
@@ -174,10 +174,9 @@ function initCourseTree(data, topic) {
 
 // Creating Interactive Popup for Course codes
 
-function buildPopup(data, courseCode){
+function buildPopup(data){
 
 const popup = d3.select("#popup");
-
 svg.selectAll("circle")
   .data(data)
   .enter()
