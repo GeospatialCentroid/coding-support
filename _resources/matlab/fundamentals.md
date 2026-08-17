@@ -28,7 +28,7 @@ If you are not affiliated with an institution that provides MATLAB, you will nee
 
 MATLAB syntax is designed to be simple and readable.
 
-* A semicolon `;` at the end of a line **suppresses output** in the Command Window
+* A semicolon `;` at the end of a line **Suppresses Output** in the Command Window
 * Comments are written using the `%` symbol
 
 ```matlab
@@ -83,7 +83,7 @@ strVal = string(charac); % convert to string
 x = 42;                 % numeric (double by default)
 ```
 
-### The `ans` Variable
+### The ans Variable
 
 If you don’t assign a result to a variable, MATLAB stores it in a default variable called `ans`.
 

@@ -14,12 +14,12 @@ There are several ways to access and work with databases using SQL, depending on
 
 One common option for working with SQL databases is **SQL Server Management Studio (SSMS)**, a tool developed by Microsoft.
 
-* Install SSMS here: https://learn.microsoft.com/en-us/ssms/install/install
+* Install SSMS [here](https://learn.microsoft.com/en-us/ssms/install/install)
 * Provides a user-friendly interface for querying and managing databases
 
 Another popular GUI option is DataGrip, which supports multiple database systems and works on macOS, Windows, and Linux:
 
-* https://www.jetbrains.com/datagrip/features/sqlserver/
+* You can install these by clicking [here](https://www.jetbrains.com/datagrip/features/sqlserver/)
 
 For open-source workflows, you can also use:
 

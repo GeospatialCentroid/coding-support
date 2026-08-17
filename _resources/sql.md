@@ -8,11 +8,11 @@ toc_sticky: true
 ---
 ## What is SQL?
 
-**SQL** (*Structured Query Language*) is a language used to **interact with databases**. It allows you to store, retrieve, modify, and manage structured data efficiently.
+**SQL** (*Structured Query Language*) is a language used to **Interact With Databases**. It allows you to store, retrieve, modify, and manage structured data efficiently.
 
 SQL is commonly used with relational database systems such as MySQL, PostgreSQL, and SQLite.
 
----
+-----------
 
 ## What Can SQL Do?
 
@@ -23,9 +23,11 @@ With SQL, you can:
 * **Create and modify database structures** (tables, schemas)
 * **Filter and organize data** using conditions and sorting
 
----
+-------------
 
 ## Why Learn SQL?
+
+------------------
 
 ### Work with Real-World Data
 
@@ -49,12 +51,13 @@ SQL strengthens your understanding of:
 
 ### Career-Relevant Skill
 
-Database skills are essential in many roles, including:
+Database & SQL skills are essential in many roles, including:
 
 * Data analysis
 * Research computing
 * Software development
 * Business intelligence
+* Anywhere you will need to be extremely organized
 
 ---
 

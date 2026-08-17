@@ -11,7 +11,7 @@ sidebar:
 
 ## Introduction
 
-Because SQL is made to work with tabular data, there is an extensive supply of table modifications and options to accomdate any data.
+Because SQL is made to work with tabular data, there is an extensive supply of table modifications and options to accomodate any data.
 
 This guide will go over some of the introductory material for SQL table manipulation. 
 
@@ -22,14 +22,14 @@ This guide will go over some of the introductory material for SQL table manipula
 ### Table Arrangement & Analysis
 
 We can alter the arrangment of the contents in our table through a set of commands
-that will allow us to group the values, and sort it based on increasing and decreasing values 
+that will allow us to group the values, and sort it based on increasing and decreasing values.
 
 The **ASC** and **DESC** Command
 
 This command will allow us to organize our table by a column based on the values starting from the lowest
 and increasing to the highest value. This and the DESC command will use the **ORDER BY** feature. 
 
-NOTE: if we want to select all columns from a table, we can use the ```*``` key. 
+> NOTE: if we want to select all columns from a table, we can use the ```*``` key. 
 
 ```sql
 
@@ -55,7 +55,7 @@ ORDER BY Column_name DESC
 
 ```
 
- We can go one step further, and organize our table by multiple **different** columns 
+ We can go one step further, and organize our table by multiple **Different** columns 
 
 ```sql
 
@@ -67,7 +67,7 @@ ORDER BY Column_one ASC, Column_two DESC
 
 ```
 
-If we want to organize our table by something more specific, such as values within a column. The  **GROUP BY** comman will allow us to do so.
+If we want to organize our table by something more specific, such as values within a column. The  **GROUP BY** command will allow us to do so.
 
 ```sql
 
@@ -78,9 +78,9 @@ FROM Table_Name
 GROUP BY row Value 
 
 ```
-NOTE: When working with variables in SQL and any coding language, best practice is to leave no blank space between characters. 
+> NOTE: When working with variables in SQL and any coding language, the best practice is to leave no blank space between characters. 
 
-A revised variable from the **row Value** variable above would be **row_value**. This will allow you to reduce your risk of **Syntax Errors** when coding. 
+A revised variable from the **Row Value** variable above would be **row_value**. This will allow you to reduce your risk of **Syntax Errors** when coding. 
 
 The group by command itself does not serve many purposes. However, combing it with SQL's
 **Aggregate Functions** Makes it a powerful tool for analysis. 
@@ -102,7 +102,8 @@ our data. Here is an example
 
 SELECT Country SUM(population) as (country_population) 
 
-<!---This command tells us that we want to select the Country columnn and compute calculations on the population Column and create a new column in our table entitled Country Population
+<!---This command tells us that we want to select the Country columnn and
+<!---compute calculations on the population Column and create a new column in our table entitled Country Population
 
 FROM World_Population 
 
@@ -110,7 +111,8 @@ FROM World_Population
 
 GROUP BY Country SUM(Population)
 
-<!---This allows us to not only compute the sum population, but ensure that our calculation is computing per country instead of for our whole table. 
+<!---This allows us to not only compute the sum population, but ensure 
+<!---that our calculation is computing per country instead of for our whole table. 
 
 ```
 
@@ -132,7 +134,7 @@ Column_name1 data_type [Optional Constraint],
 Column_name2 dtaa_type2[Optional Constraint],
 );
 ```
-Let's look at how we can use a pre existing table to create a new table with select data
+Let's look at how we can use a pre-existing table to create a new table with select data
 
 ```sql
 
@@ -152,7 +154,11 @@ WHERE Column_name_2 = value_of_interest
 
 While it's fairly simple to create a new table. **Deleting** a table is far simpler, and far more permanent. 
 
+-----
+
 So be careful...
+
+------
 
 To delete a table, we will use the DROP command
 
@@ -169,13 +175,13 @@ If we want to combine multiple tables into one. We can totally do that!
 
 **Joining Tables** is a process in SQL where you can take two tables, and join them by a similar, matching column. 
 
-One example would be joining two tables by a lat,long column, where matching values will mean they are the same location; and by that logic it means the data avaliable in both tables will be for the same place.
+One example would be joining two tables by a ```lat,long``` column, where matching values will mean they are the same location; and by that logic it means the data avaliable in both tables will be for the same place.
 
 Another example would be names of students in a class, or student ID numbers. if we have two tables with a Student ID column in two different tables for the same school during the same time period. This means joining the tables would allow us to access two **Different Tables** worth of information for the **Same Students**. 
 
 One thing to note is that the data provided to you from a join depends on the **Type of Join**. 
 
-There are **Four** tyeps of table joins 
+There are **Four** types of table joins.
 
 - **Full Join**
   
@@ -184,7 +190,7 @@ There are **Four** tyeps of table joins
 - **Inner Join**
 
   This join operates similar to a Full Join with the largest difference being that it will only take in values 
-  that match beteween both tables. This is good for reducing NA Values, but it can risk losing a lot of valauble data between tables. 
+  that match beteween both tables. This is good for reducing ```NA``` Values, but it can risk losing a lot of valauble data between tables. 
   
 - **Left and Right Joins**
   
@@ -227,7 +233,7 @@ WHERE data_we_want_to_delete
 ```
 
 Table, Column, and Element Modification are primarily ran through the **Update** and the 
-**Alter**Commands
+**Alter** Commands
 
 For Table and Column alterations, we can use the **Alter** command.
 
@@ -277,7 +283,7 @@ RENAME TO New_table_name
 
 Finally, we can alter elements within a table using the **Update** Command.
 
-Updating a table called **Table_Name**
+Updating a table called ```Table_Name```
 
 ```sql
 
@@ -301,7 +307,7 @@ WHERE Numeric_column = null
 
 ## Summary
 
-Overall, SQL provides any opportunities for complex data analysis For learning more about 
+Overall, SQL provides many opportunities for complex data analysis. For learning more about 
 SQL and it's broad applications, we recommend that you consult our resource guide which has
 resources tailored for everybody no matter their level of understanding. 
 

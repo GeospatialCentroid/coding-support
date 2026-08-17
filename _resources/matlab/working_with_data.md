@@ -10,7 +10,7 @@ toc_sticky: true
 
 ## Introduction
 
-Two of **MATLAB’s** greatest strengths are **analyzing datasets** and **visualizing data**.
+Two of **MATLAB’s** greatest strengths are **Analyzing Datasets** and **Visualizing Data**.
 
 In this guide, you’ll learn how to:
 
@@ -29,13 +29,13 @@ These are foundational skills for working with real-world data in engineering an
 MATLAB can work with a wide variety of data formats, including:
 
 * Images
-* Text and text files
+* Text files
 * Spreadsheets (e.g., CSV, Excel)
 * Scientific data formats
 * Audio files
 * JSON and structured data
 
-In this section, we’ll focus on **Comma-Separated Values (CSV)** files, one of the most commonly used formats.
+In this section, we’ll focus on **Comma-Separated Values (CSV)** files, one of the most commonly used file types.
 
 ### Reading a CSV File
 
@@ -48,9 +48,11 @@ T = readtable('path/to/your/file.csv');
 * `T` is stored as a **table**, which is ideal for working with structured data
 * Make sure the file path is correct relative to your working directory
 
-If you’re unsure how file paths work, refer to your Coding Support Hub resources for guidance.
+If you’re unsure how file paths work, feel free to check out our [UNIX](https://codingsupport.colostate.edu/unix/)
 
 ### Reading Other Data Types
+
+We can use similar logic for reading other types of files 
 
 For example, to read an image file:
 
@@ -58,13 +60,13 @@ For example, to read an image file:
 img = imread('path/to/your/image.jpg');
 ```
 
-For very large datasets, MATLAB provides tools such as **datastores** (`datastore`) that allow you to process data in chunks instead of loading everything into memory at once.
+For very large datasets, MATLAB provides tools such as **Datastores** that allow you to process data in chunks instead of loading everything into memory at once.
 
 ---
 
 ## Analyzing Data
 
-MATLAB includes many built-in functions for **statistical analysis** and **exploring relationships between variables**.
+MATLAB includes many built-in functions for **Statistical Analysis** and **Exploring Relationships** between variables.
 
 ### Descriptive Statistics
 

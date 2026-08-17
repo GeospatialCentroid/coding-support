@@ -37,7 +37,8 @@ Sub ShowMessage()
 Debug.Print "Enter your text here"
 End Sub
 
-'this is a comment, if we ran this command it would return: Enter your text here, and nothing else' 
+'this is a comment, if we ran this command it would return:'
+'Enter your text here, and nothing else' 
 
 ```
 
@@ -261,7 +262,8 @@ End Case
 
 End Sub
 
-'in a real situation, we would want our case to sort out values that would not make sense. Which would mean we would usually put our Else statement at the top and have it skip these values' 
+'in a real situation, we would want our case to sort out values. That would not make sense.'
+'Which would mean we would usually put our Else statement at the top and have it skip these values' 
 
 
 ```
@@ -292,7 +294,9 @@ While age <  24
   End If
 End Sub
 
-' for the first 8 iterations, the program will print our first command, then. Because we add 1 year of age after every loop. At the 9th our age will equal 23 and our else condition will be fulfilled. 
+'For the first 8 iterations, the program will print our first command'
+'Because we add 1 year of age after every loop.'
+'At the 9th our age will equal 23 and our else condition will be fulfilled.' 
 ```
 When using While loops, be careful to set an incrementing condition for your variable which can be done with the ```+=``` or the ```++``` symbols.
 
