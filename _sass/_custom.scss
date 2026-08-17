@@ -281,7 +281,7 @@ input:focus, textarea:focus {
 }
 /* Desktop Size */
 .site-logo img {
-  max-height: 5rem;
+  max-height: 3rem;
 }
 
 .masthead__inner-wrap {
@@ -298,17 +298,10 @@ input:focus, textarea:focus {
   padding-right: 8px;  /* Was 20px */
   /* This controls the gap between the line and the "CODING SUPPORT HUB" text */
   margin-right: 12px; 
+  padding: 10px;
 }
 
-.site-logo::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 25%;
-  height: 50%;
-  width: 2px;
-  background-color: #fff;
-}
+
 
 .site-title {
   display: inline-block;
@@ -336,8 +329,7 @@ input:focus, textarea:focus {
   font-size: smaller;
 }
   .site-logo img {
-    max-height: 5rem; 
-    min-width: 220px;
+    max-height: 2.5rem; 
   }
   .masthead__inner-logo {
     display: flex;

@@ -83,13 +83,14 @@ This makes information more accessible to a wider audience.
 ---
 
 # Popular Data Visualization Resources
-[Gapminder Materials](https://www.gapminder.org/teaching/materials/)
+- [Data Visualization Toolkit](https://www.gcinassessment.org/data-visualization-toolkit)
+- [Gapminder Materials](https://www.gapminder.org/teaching/materials/)
 
 ## 📚 Learning & Theory
 
 ### Recommended Books
-- *Storytelling with Data* — Cole Nussbaumer Knaflic  
-- *The Visual Display of Quantitative Information* — Edward Tufte  
+- [*Storytelling with Data*](https://colostate.primo.exlibrisgroup.com/permalink/01COLSU_INST/191jjg1/alma991020359529703361) — Cole Nussbaumer Knaflic, [books resources](https://www.storytellingwithdata.com/book/downloads)
+- [*The Visual Display of Quantitative Information*](https://colostate.primo.exlibrisgroup.com/permalink/01COLSU_INST/191jjg1/alma991019152779703361) — Edward Tufte  
 
 ---
 

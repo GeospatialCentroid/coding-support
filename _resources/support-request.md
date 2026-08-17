@@ -38,11 +38,11 @@ To provide the most effective support, we collaborate with campus partners who s
 
 | Topic                            | Supporting Group                         |
 | -------------------------------- | ---------------------------------------- |
-| High Performance Computing (HPC) | Research Computing & Cyberinfrastructure |
-| Excel (Data Visualization)       | IRISS                                    |
-| R (Statistics)                   | Stat Lab                                 |
-| Power BI                         | Libraries                                |
-| Geospatial                       | Geospatial Centroid                                |
+| High Performance Computing (HPC) | [Research Computing & Cyberinfrastructure](https://www.research.colostate.edu/rit/research-computing-cyberinfrastructure/) |
+| Excel (Data Visualization)       | [IRISS](https://iriss.colostate.edu/contact/)                                   |
+| Statistics and Data Science (including R)              | [Stat Lab](https://statlab.colostate.edu/schedule-a-consulting-appointment/)                                |
+| Power BI                         | [Libraries](https://libguides.colostate.edu/research-help)                                |
+| Geospatial                       | [Geospatial Centroid](https://gis.colostate.edu/)                                |
 
 
 Requests that fall outside the areas listed above will be referred to the appropriate campus resource through our general support mailbox.
@@ -54,12 +54,10 @@ Requests that fall outside the areas listed above will be referred to the approp
 
 
 <p>
-  To get started with submitting a support request, please complete the linked form below. Once submitted, your inquiry will be routed to the appropriate campus group based on subject-matter expertise.
+  To get started with submitting a support request, please complete the form below. Once submitted, your inquiry will be routed to the appropriate campus group based on subject-matter expertise.
 </p>
-
-<a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=Aoi1r3r_sUurITZ_8uz8i_DPynnqpahNoGJizV-T1lFURFpETEk2OUdJRUNSQk5ESTUwVUxCMERFMy4u" target="form" rel="noopener noreferrer" class="btn">
-  Fill out the Coding Support Request Form
-</a>
+<script src="https://libanswers.colostate.edu/1.0/widgets/22433" async></script>
+<div id="s-la-widget-22433"></div>
 
 
  <strong>Notice:</strong> This support request form is available exclusively to <strong>Colorado State University (CSU)</strong> researchers, faculty, staff, and students.
