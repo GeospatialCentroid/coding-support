@@ -61,6 +61,8 @@ git_sidebar:
     url: git/getting-started/
   - title: "Merge Conflicts, Rebasing, and Workflows"
     url: git/workflows/
+  - title: "Pull Requests"
+    url: git/pull-requests/
 
 data-viz_sidebar:
 - title: "Data Visualization"
