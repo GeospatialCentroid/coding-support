@@ -152,3 +152,6 @@ Then open [http://localhost:4000/coding-support/](http://localhost:4000/coding-s
 - [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) — Jekyll theme
 - [GitHub Pages](https://pages.github.com/) — hosting
 - [GitHub Actions](https://github.com/features/actions) — automated build and deploy
+
+## Credits and Acknowledgments
+Content and feature development supported by OpenAI (2026). ChatGPT [Large language model]. https://chat.openai.com/chat
