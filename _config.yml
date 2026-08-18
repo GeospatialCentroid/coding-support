@@ -23,7 +23,7 @@ subtitle                 : # site tagline that appears below site title in masth
 name                     : "Your Name"
 description              : "Empowering Rams to harness technology and code to advance research and knowledge. <span style='font-size: 0.95rem; font-weight: 400; color: #555; display: block; margin-top: 0.5rem;'>A community-driven hub, coordinated by CSU Libraries, offering curated tutorials, debugging tools, and support for every skill level.</span>"
 url                      : https://geospatialcentroid.github.io
-baseurl                  : "/coding-support"
+baseurl                  : ""
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/CSU_Logo.png"
