@@ -38,6 +38,8 @@ python_sidebar:
       url: python/virtual-environment/
     - title: "Working with Data"
       url: python/working-with-data/
+    - title: "Data Visualization"
+      url: python/data-viz/
     - title: "Working with APIs"
       url: python/working-with-apis/
     - title: "Data Cleaning"
@@ -61,6 +63,8 @@ git_sidebar:
     url: git/getting-started/
   - title: "Merge Conflicts, Rebasing, and Workflows"
     url: git/workflows/
+  - title: "Pull Requests"
+    url: git/pull-requests/
 
 data-viz_sidebar:
 - title: "Data Visualization"

@@ -75,7 +75,12 @@ p, li, label {
   padding-bottom: 0.4rem;
 }
 
-
+@media (min-width: 80em) {
+    .archive {
+        width: calc(100% - 50px) !important;
+        padding-inline-end: 50px !important;
+    }
+}
 
 
  .fas {
@@ -100,7 +105,7 @@ p, li, label {
 
 .site-title, .site-title:visited {
   color: var(--csu-white) !important;
-  font-weight: 200;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: 10px;
@@ -733,9 +738,10 @@ table tr:nth-child(even) {
 }
 
 .page__lead {
-  font-size: 1.05rem; /* Default is roughly 1.25rem–1.35rem */
-  font-weight: 400;   /* Optional: makes the text regular weight instead of bold */
+  font-size: 1.25rem; 
+  font-weight: 600;  
   line-height: 1.5;
+  color:var(--csu-green);
 }
 .nav__items {
   font-weight: 700; /* or 'bold' */

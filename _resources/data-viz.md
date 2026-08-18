@@ -109,9 +109,9 @@ This makes information more accessible to a wider audience.
 ## Online Learning Platforms
 
 ### Recommended
-- Observable — interactive notebooks for visualization  
-- Kaggle — datasets and real-world examples  
-- Datawrapper — easy, no-code charts  
+- [Observable](https://observablehq.com/) — interactive notebooks for visualization  
+- [Kaggle](https://www.kaggle.com/) — datasets and real-world examples  
+- [Datawrapper](https://www.datawrapper.de/) — easy, no-code charts  
 
 ---
 
