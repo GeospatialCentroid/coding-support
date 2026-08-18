@@ -38,6 +38,8 @@ python_sidebar:
       url: python/virtual-environment/
     - title: "Working with Data"
       url: python/working-with-data/
+    - title: "Data Visualization"
+      url: python/data-viz/
     - title: "Working with APIs"
       url: python/working-with-apis/
     - title: "Data Cleaning"
