@@ -10,7 +10,7 @@ toc_sticky: true
 
 --------------------- 
 
-Data visualization is the practice of representing data through visual elements like **Charts, Graphs, and Maps##. It helps transform raw data into meaningful insights that are easier to understand and communicate.
+Data visualization is the practice of representing data through visual elements like **Charts, Graphs, and Maps**. It helps transform raw data into meaningful insights that are easier to understand and communicate.
 
 There are many benefits to visualizing data, including:
 
