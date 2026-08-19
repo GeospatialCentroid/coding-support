@@ -364,7 +364,7 @@ h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
 
 #coding_cards .feature__wrapper {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 0.5rem;
   text-align: center;
 }

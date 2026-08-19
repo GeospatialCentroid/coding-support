@@ -1,0 +1,123 @@
+<style> 
+.how-it-works-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 .5rem;
+}
+
+.feature-column {
+  flex: 1 1 300px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out;
+  position: relative;
+}
+
+.feature-column:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #1e4d2b;
+  margin-bottom: 1rem;
+}
+
+.feature-description {
+  font-size: .8rem;
+  color: #4a4a4a;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Mouse-tracking Glow Border */
+.glow-card {
+  --x: 0px;
+  --y: 0px;
+}
+
+/* 1. The gradient background layer sitting right behind the card */
+.glow-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px; /* Controls border thickness */
+  border-radius: 14px; /* Slightly larger to fit outside */
+  background: radial-gradient(
+    250px circle at var(--x) var(--y),
+    #dd7bbb 0%,
+    #d79f1e 30%,
+    #5a922c 60%,
+    transparent 80%
+  );
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* 2. An inner masking layer that covers the center, leaving only the border exposed */
+.glow-card::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* Matches the exact dimensions of the card */
+  background-color: #ffffff;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.glow-card:hover::before {
+  opacity: 1;
+}
+</style>
+
+<section class="how-it-works-section">
+  <div class="feature-column glow-card">
+    <div class="feature-icon">📖</div>
+    <h3 class="feature-title">Curated Learning</h3>
+    <p class="feature-description">
+      Step-by-step tutorials and guides on programming, data analysis, GIS, and more.
+    </p>
+  </div>
+
+  <div class="feature-column glow-card">
+    <div class="feature-icon">💬</div>
+    <h3 class="feature-title">AI-Powered Assistant</h3>
+    <p class="feature-description">
+      Get instant answers, explain concepts, and debug code with our smart assistant.
+    </p>
+  </div>
+
+  <div class="feature-column glow-card">
+    <div class="feature-icon">👥</div>
+    <h3 class="feature-title">Campus Connections</h3>
+    <p class="feature-description">
+      Find campus resources, workshops, and support services in one place.
+    </p>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.glow-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      card.style.setProperty('--x', `${x}px`);
+      card.style.setProperty('--y', `${y}px`);
+    });
+  });
+</script>
