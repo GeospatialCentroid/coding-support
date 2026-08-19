@@ -72,7 +72,7 @@ If we want to look at continous data that changes over very small distances we w
 
 ### Buffers
 
-### In and not in Logic
+### In and not in
 
 ## Next Steps
 
