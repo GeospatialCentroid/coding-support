@@ -47,13 +47,31 @@ function buildTreeData(rows, selectedTopic) {
       
       // Add the course as a child of this grouped prerequisite node only once
       if (!prereqNode.children.find(c => c.name === courseCode)) {
-        prereqNode.children.push({ name: title, url: urlLink, children: [] });
+        prereqNode.children.push({
+          name: title,
+          url: urlLink,
+          children: [],
+          courseCode: courseCode,
+          courseName: courseName,
+          instructor: instructor,
+          prerequisite: prereqString
+        });
       }
       
     } else {
       // If there are no prerequisites, attach the course directly to the Topic root
       if (!rootNode.children.find(c => c.name === courseCode)) {
-        rootNode.children.push({ name: title, url: urlLink, children: [] });
+        rootNode.children.push({
+          name: title,
+          url: urlLink,
+          children: [],
+          courseCode: courseCode,
+          courseName: courseName,
+          instructor: instructor,
+          prerequisite: prereqString
+  
+
+        });
       }
     }
   });
@@ -152,7 +170,73 @@ function renderTree(rootNode) {
     return name.length > maxLength ? name.substring(0, maxLength) + "..." : name;
   });
 
+  // Ensure a popup container exists inside the chart area (interactive)
+  const chartContainer = d3.select("#chart");
+  let popup = d3.select("#popup");
+  if (popup.empty()) {
+    chartContainer.style("position", "relative");
+    popup = chartContainer.append("div")
+      .attr("id", "popup")
+      .style("position", "absolute")
+      .style("pointer-events", "auto")
+      .style("background", "#fff")
+      .style("border", "1px solid #ccc")
+      .style("padding", "8px")
+      .style("border-radius", "4px")
+      .style("box-shadow", "0 2px 6px rgba(0,0,0,0.15)")
+      .style("font-size", "13px")
+      .style("color", "#222")
+      .style("opacity", 0)
+      .style("z-index", 1000);
+  }
+
+  // Show popup on hover near the mouse cursor inside the chart; coordinates are relative to chart
+  function hidePopup() {
+    popup.style("opacity", 0);
+  }
+
+  d3.select(document).on("click.popup", function(event) {
+    const target = event.target;
+    if (popup.node() && popup.node().contains(target)) return;
+    hidePopup();
+  });
+  d3.select(window).on("keydown.popup", function(event) {
+    if (event.key === "Escape") hidePopup();
+  });
+
+  // Show popup on click inside the chart; clicking outside or Esc closes it
+  nodes.on("click", function(event, d) {
+    if (!d || !d.data || !d.data.courseCode) return;
+    event.stopPropagation();
+    const tableHTML = `
+      <table>
+        <tr><th style="text-align:left;padding-right:8px">Course Code</th><td>${d.data.courseCode || "N/A"}</td></tr>
+        <tr><th style="text-align:left;padding-right:8px">Course Name</th><td>${d.data.courseName || "N/A"}</td></tr>
+        <tr><th style="text-align:left;padding-right:8px">Instructor</th><td>${d.data.instructor || "N/A"}</td></tr>
+        <tr><th style="text-align:left;padding-right:8px">Prerequisite</th><td>${d.data.prerequisite || "N/A"}</td></tr>
+      </table>
+    `;
+
+    popup.html(tableHTML).style("opacity", 1);
+
+    // position popup relative to click inside chart
+    const offsetX = 12;
+    const offsetY = 10;
+    const chartRect = chartContainer.node().getBoundingClientRect();
+    const rect = popup.node().getBoundingClientRect();
+    let left = event.clientX - chartRect.left + offsetX;
+    let top = event.clientY - chartRect.top + offsetY;
+    const chartWidth = chartContainer.node().clientWidth;
+    const chartHeight = chartContainer.node().clientHeight;
+    if (left + rect.width > chartWidth - 8) left = event.clientX - chartRect.left - rect.width - offsetX;
+    if (left < 8) left = 8;
+    if (top + rect.height > chartHeight - 8) top = event.clientY - chartRect.top - rect.height - offsetY;
+    if (top < 8) top = 8;
+
+    popup.style("left", left + "px").style("top", top + "px");
+  });
 }
+
 
 function initCourseTree(data, topic) {
   // Ensure data exists before trying to render
@@ -172,37 +256,3 @@ function initCourseTree(data, topic) {
 }
 
 
-// Creating Interactive Popup for Course codes
-
-function buildPopup(data){
-
-const popup = d3.select("#popup");
-svg.selectAll("circle")
-  .data(data)
-  .enter()
-  .append("circle")
-  .attr("cx", d => d.x)
-  .attr("cy", d => d.y)
-  .attr("r", 6)
-  .on("mouseover", function (event, d){
-    const tableHTML = `
-    <table>
-      <tr><th>Course Code</th><td>${d.data.courseCode || "N/A"}</td></tr>
-      <tr><th>Course Name</th><td>${d.data.courseName || "N/A"}</td></tr>
-      <tr><th>Instructor</th><td>${d.data.instructor || "N/A"}</td></tr>
-      <tr><th>Prerequisite</th><td>${d.data.prerequisite || "N/A"}</td></tr>
-    </table>
-    `;
-    popup.html(tableHTML)
-      .style("opacity", 0)
-  })
-
-  .on("mousemove", function (event) {
-      popup.style("right", (event.pageX + 10) + "px")
-            .style("top", (event.pageY + 10) + "px")
-
-  })
-  .on("mouseout", function() {
-      popup.style("opacity", 0)
-  })
-}
