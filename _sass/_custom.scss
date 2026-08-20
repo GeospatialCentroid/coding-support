@@ -264,11 +264,14 @@ input:focus, textarea:focus {
 .page__footer {
   background-color: #2c2c2c;
   color: #ccc !important;
-  padding: 3rem 0;
+  padding: 0 0;
 }
-
+.page__footer footer {
+    margin-top: 2em !important;
+    padding: 0 1em 0em;
+}
 .page__footer a, .page__footer{
-  color: var(--csu-white) !important;
+  
   font-weight: 600  !important;
 }
 
@@ -750,4 +753,19 @@ table tr:nth-child(even) {
 
 .toc__menu{
  font-size: 1.3rem !important; 
+}
+
+th {
+    padding: .7em;
+}
+
+.footer_link{
+  margin-right: 15px; 
+  text-decoration: underline;
+  
+}
+
+.modal_link{
+  text-decoration: underline;
+  color:#333 !important;
 }

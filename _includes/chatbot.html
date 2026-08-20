@@ -123,20 +123,48 @@
     const toggleBtn = document.getElementById('chat-toggle-btn');
     const closeBtn = document.getElementById('chat-close-btn');
     const resizeBtn = document.getElementById('chat-resize-btn');
+    const iframe = document.getElementById('chat-iframe');
 
-    // Open chat window
+    // Restore open state
+    if (localStorage.getItem('chat_open') === 'true') {
+      widget.classList.add('is-open');
+    }
+    if (localStorage.getItem('chat_large') === 'true') {
+      windowEl.classList.add('large-mode');
+    }
+
+    // Restore last visited chat URL if saved
+    const savedChatUrl = localStorage.getItem('chat_current_url');
+    if (savedChatUrl && iframe) {
+      iframe.src = savedChatUrl;
+    }
+
+    // Optional: If same-origin, save URL changes so user returns to the exact sub-page
+    // (Wraps in a try/catch to gracefully handle cross-origin security errors)
+    setInterval(() => {
+      try {
+        if (iframe && iframe.contentWindow) {
+          const currentUrl = iframe.contentWindow.location.href;
+          localStorage.setItem('chat_current_url', currentUrl);
+        }
+      } catch (e) {
+        // Cross-origin restriction blocks this, which is normal for external chat apps
+      }
+    }, 1000);
+
     toggleBtn.addEventListener('click', () => {
       widget.classList.add('is-open');
+      localStorage.setItem('chat_open', 'true');
     });
 
-    // Minimize chat window
     closeBtn.addEventListener('click', () => {
       widget.classList.remove('is-open');
+      localStorage.setItem('chat_open', 'false');
     });
 
-    // Toggle between large and small modes
     resizeBtn.addEventListener('click', () => {
       windowEl.classList.toggle('large-mode');
+      localStorage.setItem('chat_large', windowEl.classList.contains('large-mode'));
     });
   });
 </script>

@@ -23,8 +23,8 @@ function buildTreeData(rows, selectedTopic) {
   filtered.forEach(row => {
     const courseCode = (row["Course Code"] || "").trim();
     const urlLink = (row["URL Link"] || "").trim();
+    const onlineLink = (row["Online Link"] || "").trim();
 
-    
     if (!courseCode) return;
     
     const parsed = parseCourseCode(courseCode);
@@ -35,21 +35,18 @@ function buildTreeData(rows, selectedTopic) {
     const instructor = (row["Instructor"] || "").trim();
     const title = (courseCode + ": " + courseName);
 
-    // Check if prerequisites exist and are not "None"
     if (prereqString && prereqString.toLowerCase() !== "none" || prereqString === "") {
-      
-      // Use the entire prerequisite string as a single grouped parent node name
       let prereqNode = rootNode.children.find(c => c.name === prereqString);
       if (!prereqNode) {
-        prereqNode = { name: prereqString, children: [] };
+        prereqNode = { name: prereqString, children: [], isGroup: true };
         rootNode.children.push(prereqNode);
       }
       
-      // Add the course as a child of this grouped prerequisite node only once
-      if (!prereqNode.children.find(c => c.name === courseCode)) {
+      if (!prereqNode.children.find(c => c.courseCode === courseCode)) {
         prereqNode.children.push({
           name: title,
           url: urlLink,
+          onlineLink: onlineLink,
           children: [],
           courseCode: courseCode,
           courseName: courseName,
@@ -57,36 +54,52 @@ function buildTreeData(rows, selectedTopic) {
           prerequisite: prereqString
         });
       }
-      
     } else {
-      // If there are no prerequisites, attach the course directly to the Topic root
-      if (!rootNode.children.find(c => c.name === courseCode)) {
+      if (!rootNode.children.find(c => c.courseCode === courseCode)) {
         rootNode.children.push({
           name: title,
           url: urlLink,
+          onlineLink: onlineLink,
           children: [],
           courseCode: courseCode,
           courseName: courseName,
           instructor: instructor,
           prerequisite: prereqString
-  
-
         });
       }
     }
   });
 
-  // Sort Parent Group nodes alphabetically
-  rootNode.children.sort((a, b) => a.name.localeCompare(b.name));
+  // Sort top-level children: prerequisite groups by group name, direct course nodes by courseCode
+  rootNode.children.sort((a, b) => {
+    const keyA = a.courseCode || a.name;
+    const keyB = b.courseCode || b.name;
+    return keyA.localeCompare(keyB, undefined, { numeric: true, sensitivity: 'base' });
+  });
   
-  // Sort Child Course nodes alphabetically
+  // Sort child course nodes inside prerequisite groups by courseCode
   rootNode.children.forEach(node => {
-    if (node.children.length > 0) {
-      node.children.sort((a, b) => a.name.localeCompare(b.name));
+    if (node.children && node.children.length > 0) {
+      node.children.sort((a, b) => {
+        return (a.courseCode || a.name).localeCompare(b.courseCode || b.name, undefined, { numeric: true, sensitivity: 'base' });
+      });
     }
   });
 
   return rootNode;
+}
+
+// Helper function to turn course codes inside text into CSU catalog search links
+function linkifyPrereqs(prereqString) {
+  if (!prereqString || prereqString.toLowerCase() === "none") return "None";
+  
+  // Regex to match CSU course codes (2-4 letters followed by space and numbers/letters)
+  const courseRegex = /([A-Za-z]{2,4})\s+([0-9]{3}[A-Za-z]*)/g;
+  
+  return prereqString.replace(courseRegex, (match, dept, num) => {
+    const searchUrl = `https://catalog.colostate.edu/search/?search=${dept}+${num}`;
+    return `<a href="${searchUrl}" target="_blank" style="color:#0056b3;text-decoration:underline;font-weight:500;">${match}</a>`;
+  });
 }
 
 function renderTree(rootNode) {
@@ -99,7 +112,7 @@ function renderTree(rootNode) {
   
   let height = Math.max(400, totalNodes * 28); 
   
-  const margin = { top: 40, right: 250, bottom: 40, left: 75 };
+  const margin = { top: 40, right: 220, bottom: 40, left: 90 };
   const treeWidth = width - margin.left - margin.right;
   const treeHeight = height - margin.top - margin.bottom;
 
@@ -137,122 +150,181 @@ function renderTree(rootNode) {
     .attr("class", "node")
     .attr("transform", d => `translate(${d.y}, ${d.x})`);
 
-  // FIXED: Attach the native tooltip to the entire node group so hovering anywhere works
   nodes.append("title")
     .text(d => d.data.name);
+
+  const getNodeColor = (d) => {
+    if (d.depth === 0) return "#1f77b4";
+    return d.children && d.children.length > 0 ? "#ff7f0e" : "#d62728";
+  };
 
   nodes.append("circle")
     .attr("r", d => d.depth === 0 ? 6 : 5)
     .attr("fill", "#ffffff")
-    .attr("stroke", d => {
-        if (d.depth === 0) return "#1f77b4";
-        return d.children && d.children.length > 0 ? "#ff7f0e" : "#d62728";
-    })
+    .attr("stroke", d => getNodeColor(d))
     .attr("stroke-width", 2);
 
-  const textLinks = nodes.append("a")
-    .attr("href", d => d.data.url ? d.data.url : null)
-    .attr("target", d => d.data.url ? "_blank" : null);
 
-  const textElement = textLinks.append("text")
+  const textElement = nodes.append("text")
     .attr("dy", "0.35em")
     .attr("x", d => d.children && d.children.length > 0 ? -12 : 12)
     .attr("text-anchor", d => d.children && d.children.length > 0 ? "end" : "start")
     .attr("font-size", d => d.depth === 0 ? 14 : 12)
     .attr("fill", d => d.data.url ? "#0056b3" : "#333333") 
-    .style("text-decoration", d => d.data.url ? "underline" : "none")
+    // .style("text-decoration", d => d.data.url ? "underline" : "none")
     .style("cursor", d => d.data.url ? "pointer" : "default");
 
-  // Truncate text if it exceeds a character limit to protect layout boundaries
   textElement.text(d => {
     const name = d.data.name;
-    const maxLength = 35;
+    const maxLength = 25;
     return name.length > maxLength ? name.substring(0, maxLength) + "..." : name;
   });
 
-  // Ensure a popup container exists inside the chart area (interactive)
-  const chartContainer = d3.select("#chart");
-  let popup = d3.select("#popup");
+  let popup = d3.select("body").select("#course-tree-popup");
+  let popupTimeout; 
+
   if (popup.empty()) {
-    chartContainer.style("position", "relative");
-    popup = chartContainer.append("div")
-      .attr("id", "popup")
+    // Inject CSS for the popup arrow triangle
+    d3.select("head").append("style").text(`
+      #course-tree-popup .popup-arrow {
+        position: absolute;
+        bottom: -10px; 
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #ccc; /* Matches popup border */
+      }
+      #course-tree-popup .popup-arrow::after {
+        content: '';
+        position: absolute;
+        bottom: 2px; /* Overlays white center inside grey border */
+        left: -9px;
+        width: 0;
+        height: 0;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 9px solid #fff; 
+      }
+      /* If popup is forced below the cursor, flip the arrow upward */
+      #course-tree-popup.flipped .popup-arrow {
+        bottom: auto;
+        top: -10px;
+        border-top: none;
+        border-bottom: 10px solid #ccc;
+      }
+      #course-tree-popup.flipped .popup-arrow::after {
+        bottom: auto;
+        top: 2px;
+        border-top: none;
+        border-bottom: 9px solid #fff;
+      }
+    `);
+
+    popup = d3.select("body").append("div")
+      .attr("id", "course-tree-popup")
       .style("position", "absolute")
-      .style("pointer-events", "auto")
       .style("background", "#fff")
-      .style("border", "1px solid #ccc")
-      .style("padding", "8px")
-      .style("border-radius", "4px")
-      .style("box-shadow", "0 2px 6px rgba(0,0,0,0.15)")
-      .style("font-size", "13px")
-      .style("color", "#222")
+      .style("border", "1px solid #ccc") // Set to standard grey
+      .style("padding", "12px")
+      .style("border-radius", "6px") 
+      .style("box-shadow", "0 4px 12px rgba(0,0,0,0.15)")
+      .style("font-size", ".8em")
+      .style("color", "#333")
       .style("opacity", 0)
-      .style("z-index", 1000);
+      .style("z-index", "99999")
+      .style("pointer-events", "none");
   }
 
-  // Show popup on hover near the mouse cursor inside the chart; coordinates are relative to chart
-  function hidePopup() {
-    popup.style("opacity", 0);
-  }
-
-  d3.select(document).on("click.popup", function(event) {
-    const target = event.target;
-    if (popup.node() && popup.node().contains(target)) return;
-    hidePopup();
+  popup.on("mouseenter", function() {
+    clearTimeout(popupTimeout);
+  }).on("mouseleave", function() {
+    popupTimeout = setTimeout(hidePopup, 300);
   });
+
+  function hidePopup() {
+    popup.style("opacity", 0).style("pointer-events", "none");
+  }
+
   d3.select(window).on("keydown.popup", function(event) {
     if (event.key === "Escape") hidePopup();
   });
 
-  // Show popup on click inside the chart; clicking outside or Esc closes it
-  nodes.on("click", function(event, d) {
+  nodes.on("mouseenter click", function(event, d) {
     if (!d || !d.data || !d.data.courseCode) return;
-    event.stopPropagation();
+    
+    clearTimeout(popupTimeout); 
+    
+    // Conditionally rendered bottom links
+    let linksHtml = "";
+    const activeLinks = [];
+    
+    if (d.data.url) {
+      activeLinks.push(`<a href="${d.data.url}" target="_blank" style="color:#0056b3;text-decoration:underline; font-weight: 500;">Catalog Link</a>`);
+    }
+    if (d.data.onlineLink) {
+      activeLinks.push(`<a href="${d.data.onlineLink}" target="_blank" style="color:#0056b3;text-decoration:underline; font-weight: 500;">Online Course Link</a>`);
+    }
+    
+    if (activeLinks.length > 0) {
+      linksHtml = `<div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid #eee; display: flex; gap: 15px;">
+                     ${activeLinks.join("")}
+                   </div>`;
+    }
+
+    // Convert prerequisites to dynamic CSU catalog hyperlinks
+    const prereqHtml = linkifyPrereqs(d.data.prerequisite);
+
     const tableHTML = `
-      <table>
-        <tr><th style="text-align:left;padding-right:8px">Course Code</th><td>${d.data.courseCode || "N/A"}</td></tr>
-        <tr><th style="text-align:left;padding-right:8px">Course Name</th><td>${d.data.courseName || "N/A"}</td></tr>
-        <tr><th style="text-align:left;padding-right:8px">Instructor</th><td>${d.data.instructor || "N/A"}</td></tr>
-        <tr><th style="text-align:left;padding-right:8px">Prerequisite</th><td>${d.data.prerequisite || "N/A"}</td></tr>
+      <table style="text-align: left; border-collapse: separate; border-spacing: 0 6px;">
+        <tr><th style="padding-right:12px; white-space:nowrap;">Course Code</th><td>${d.data.courseCode || "N/A"}</td></tr>
+        <tr><th style="padding-right:12px; white-space:nowrap;">Course Name</th><td>${d.data.courseName || "N/A"}</td></tr>
+        <tr><th style="padding-right:12px; white-space:nowrap;">Prerequisite</th><td>${prereqHtml}</td></tr>
       </table>
+      ${linksHtml}
+      <div class="popup-arrow"></div> <!-- HTML hook for the CSS triangle -->
     `;
 
-    popup.html(tableHTML).style("opacity", 1);
+    popup.html(tableHTML)
+         .style("opacity", 1)
+         .style("pointer-events", "auto"); 
 
-    // position popup relative to click inside chart
-    const offsetX = 12;
-    const offsetY = 10;
-    const chartRect = chartContainer.node().getBoundingClientRect();
     const rect = popup.node().getBoundingClientRect();
-    let left = event.clientX - chartRect.left + offsetX;
-    let top = event.clientY - chartRect.top + offsetY;
-    const chartWidth = chartContainer.node().clientWidth;
-    const chartHeight = chartContainer.node().clientHeight;
-    if (left + rect.width > chartWidth - 8) left = event.clientX - chartRect.left - rect.width - offsetX;
-    if (left < 8) left = 8;
-    if (top + rect.height > chartHeight - 8) top = event.clientY - chartRect.top - rect.height - offsetY;
-    if (top < 8) top = 8;
+    
+    // Center popup horizontally over the cursor
+    let left = event.pageX - (rect.width / 2);
+    let top = event.pageY - rect.height - 18; // Places it above cursor, making room for arrow
+    let isFlipped = false;
+    
+    // Keep horizontally inside the window bounds
+    if (left < 10) left = 10;
+    if (left + rect.width > window.innerWidth + window.scrollX - 10) {
+      left = window.innerWidth + window.scrollX - rect.width - 10;
+    }
+    
+    // Flip popup below if pushed off the top of the screen
+    if (top < window.scrollY + 10) {
+      top = event.pageY + 18;
+      isFlipped = true;
+    }
 
     popup.style("left", left + "px").style("top", top + "px");
+    popup.classed("flipped", isFlipped); // Updates CSS to flip arrow if needed
+  });
+
+  nodes.on("mouseleave", function() {
+    popupTimeout = setTimeout(hidePopup, 300);
   });
 }
 
-
 function initCourseTree(data, topic) {
-  // Ensure data exists before trying to render
   if (!data || data.length === 0) {
     console.error("Course data is empty or failed to load.");
     return;
   }
 
-  // Build the tree data using the topic passed from Jekyll
   const rootNode = buildTreeData(data, topic);
-
-
-
-
-  // Render the SVG chart
   renderTree(rootNode);
 }
-
-

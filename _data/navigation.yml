@@ -170,10 +170,11 @@ geospatial_sidebar:
 - title: "Geospatial Science" 
   url: geospatial
   children: 
-  - title: "GIS Fundamentals"
-    url: geospatial/GIS_Fundamentals/
   - title: "Applications of GIS"
     url: geospatial/Applications_of_GIS/
+  - title: "GIS Fundamentals"
+    url: geospatial/GIS_Fundamentals/
+ 
 
     
 

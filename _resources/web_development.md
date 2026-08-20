@@ -20,7 +20,7 @@ Together, these technologies allow developers to create websites that work acros
 
 ---
 
-# How Websites Work
+## How Websites Work
 
 When you visit a website, your web browser requests files from a web server and uses those files to construct the webpage you see.
 
@@ -35,7 +35,7 @@ Website
 
 Each file has a different role.
 
-## HTML: Structure and Content
+### HTML: Structure and Content
 
 **HTML (HyperText Markup Language)** provides the structure of a webpage.
 
@@ -53,7 +53,7 @@ Think of HTML as the **skeleton or framework** of a webpage. It determines what 
 
 ---
 
-## CSS: Appearance and Layout
+### CSS: Appearance and Layout
 
 **CSS (Cascading Style Sheets)** controls how a webpage looks and how its content is arranged.
 
@@ -74,7 +74,7 @@ Think of CSS as the **design and presentation layer** of a webpage.
 
 ---
 
-## JavaScript: Functionality and Interactivity
+### JavaScript: Functionality and Interactivity
 
 **JavaScript** adds functionality and interactivity to a webpage.
 
@@ -92,7 +92,7 @@ Think of JavaScript as the **behavior layer** of a webpage. It allows the page t
 
 ---
 
-# Putting the Pieces Together
+## Putting the Pieces Together
 
 A simple website might contain an `index.html`, `style.css`, and `script.js` file.
 
@@ -155,7 +155,7 @@ Functionality and interactivity
 
 ---
 
-# Building for Different Devices
+## Building for Different Devices
 
 Websites can be viewed on many different devices and screen sizes. A website designed for web development should therefore consider how its content will appear on both **desktop and mobile devices**.
 
@@ -167,7 +167,7 @@ The goal is to create websites that are **usable, accessible, and functional reg
 
 ---
 
-# Launching a Website Project
+## Launching a Website Project
 
 To get started with a basic website, create a project folder containing the following files:
 

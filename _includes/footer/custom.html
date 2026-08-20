@@ -1,29 +1,145 @@
-<!-- start custom footer snippets -->
-<!-- {% unless site.atom_feed.hide %}
-  {% assign show_atom = true %}
-{% endunless %}
-{% if site.footer.links or show_atom %}
-<div class="page__footer-follow">
-  <ul class="social-icons">
-    {% if site.data.ui-text[site.locale].follow_label %}
-      <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
-    {% endif %}
-
-    {% if site.footer.links %}
-      {% for link in site.footer.links %}
-        {% if link.label and link.url %}
-          <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label | escape_once | strip }}</a></li>
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-
-    {% unless site.atom_feed.hide %}
-      <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
-    {% endunless %}
-  </ul>
+<!-- Modal Overlay Container -->
+<div id="site-modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000; align-items: center; justify-content: center;">
+  <div id="site-modal-box" style="background: #fff; padding: 25px; border-radius: 8px; width: 90%; max-width: 500px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); position: relative; font-family: inherit; color: #333;">
+    <button id="site-modal-close" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 20px; cursor: pointer; color: #666;">×</button>
+    <h3 id="site-modal-title" style="margin-top: 0; margin-bottom: 15px;"></h3>
+    <div id="site-modal-content" style="line-height: 1.5; font-size: 0.95em; max-height: 60vh; overflow-y: auto;"></div>
+  </div>
 </div>
-{% endif %} -->
 
-<div class="page__footer-copyright">&copy; {% assign site_time = site.time | date: '%Y' %}{% if site.footer.since and site_time != site.footer.since %}{{ site.footer.since }} - {% endif %}{{ site_time }} <a href="{{ site.copyright_url | default: site.url }}">{{ site.copyright | default: site.title | escape_once | strip }}</a>.</div>
+<div id="footer" class="page__footer">
+  <footer>
+    <!-- Flex container to align copyright/policies on the left and GitHub actions on the right -->
+    <div class="footer-bottom-wrapper" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; font-size: 0.9em;">
+      
+      <!-- Left Column: Copyright, Policies, and subtle Analytics Status -->
+      <div class="footer-copyright-section" style="flex: 1; min-width: 280px; line-height: 1.6;">
+          <span style="opacity: 0.85;font-size: 0.7em;">
+          <a href="#" class="footer_link" id="open-privacy-modal">Privacy Policy</a>
+          <a href="#" class="footer_link" id="open-disclaimer-modal">Disclaimer</a>
+        </span>
+        <br>
+        <span id="ga-status-text" style="font-size: 0.7em; opacity: 0.7; display: inline-block; margin-top: 4px;">Analytics tracking is currently ACTIVE</span>
+        <button id="ga-toggle-btn" style="font-size: 0.7em;">Opt-Out of Analytics</button>
+            <div class="page__footer-copyright">&copy;{% assign site_time = site.time | date: '%Y' %}{% if site.footer.since and site_time != site.footer.since %}{{ site.footer.since }} - {% endif %}{{ site_time }} <a href="{{ site.copyright_url | default: site.url }}">{{ site.copyright | default: site.title | escape_once | strip }}</a>.</div>        <br>
+  
+      </div>
+      
+      <!-- Right Column: GitHub Edit Links -->
+      <!-- The dynamic GitHub edit link -->
+      {% if site.github_repo %}
+      <div class="github-edit-link">
+        <a href="{{ site.github_repo }}/edit/{{ site.github_branch | default: 'master' }}/{{ page.path }}" target="_blank" rel="noopener noreferrer" >
+          <i class="fas fa-pencil-alt"></i> Edit this page on GitHub
+        </a>
+        <br/>
+        <a href="/git/pull-requests" >
+          <i class="fas"></i> New to GitHub Pull Request? See our guide
+        </a>
+      </div>
+      {% endif %}
+      
+    </div>
+  </footer>
+</div>
 
-<!-- end custom footer snippets -->
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+   
+    
+    // Modal Elements
+    const overlay = document.getElementById('site-modal-overlay');
+    const modalTitle = document.getElementById('site-modal-title');
+    const modalContent = document.getElementById('site-modal-content');
+    const closeBtn = document.getElementById('site-modal-close');
+    const privacyLink = document.getElementById('open-privacy-modal');
+    const disclaimerLink = document.getElementById('open-disclaimer-modal');
+
+
+
+    // --- Modal Content Definitions ---
+    const privacyText = `
+      <p>This website uses Google Analytics to understand how visitors interact with our content. Google Analytics collects information anonymously and reports website trends without identifying individual visitors.</p>
+      <p>You can choose to opt-out of tracking at any time using browser extensions, or download the official <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" style="color: #0056b3;">Google Analytics Opt-out Browser Add-on</a>.</p>
+    `;
+
+    const disclaimerText = `
+      <p>The information provided on this website is for general informational and educational purposes only. All information on the site is provided in good faith, however we make no representation or warranty of any kind regarding the accuracy, adequacy, validity, reliability, or completeness of any information.</p>
+      <p>This site may contain links to other websites or content belonging to third parties. Such external links are not investigated, monitored, or checked for accuracy by us.</p>
+      <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+      <p style="font-size: 0.9em; color: #555;"><strong>AI Attribution:</strong> Content and feature development supported by OpenAI (2026). ChatGPT [Large language model]. <a href="https://chat.openai.com/chat" target="_blank"  >https://chat.openai.com/chat</a> and Google (2026). Gemini [Large language model]. <a href="https://gemini.google.com" target="_blank" class="modal_link">https://gemini.google.com</a>.</p>
+    `;
+
+    function openModal(title, htmlContent) {
+      modalTitle.textContent = title;
+      modalContent.innerHTML = htmlContent;
+      overlay.style.display = 'flex';
+    }
+
+    function closeModal() {
+      overlay.style.display = 'none';
+    }
+
+    // Event Listeners for Modals
+    if (privacyLink) {
+      privacyLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal("Privacy Policy", privacyText);
+      });
+    }
+
+    if (disclaimerLink) {
+      disclaimerLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal("Disclaimer", disclaimerText);
+      });
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeModal);
+    }
+
+    // Close when clicking outside the white box
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) {
+        closeModal();
+      }
+    });
+
+    // Close on pressing Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") {
+        closeModal();
+      }
+    });
+
+    // --- Analytics Opt-Out Logic ---
+    const statusText = document.getElementById('ga-status-text');
+    const toggleBtn = document.getElementById('ga-toggle-btn');
+    let isOptedOut = localStorage.getItem('ga_opt_out') === 'true';
+
+    function updateUI() {
+      if (isOptedOut) {
+        statusText.textContent = "Analytics tracking is currently DISABLED.";
+        toggleBtn.textContent = "Opt-In to Analytics";
+      } else {
+        statusText.textContent = "Analytics tracking is currently ACTIVE.";
+        toggleBtn.textContent = "Opt-Out of Analytics";
+      }
+    }
+
+    updateUI();
+
+    toggleBtn.addEventListener('click', function() {
+      isOptedOut = !isOptedOut;
+      localStorage.setItem('ga_opt_out', isOptedOut);
+      updateUI();
+      
+      alert(isOptedOut ? "You have opted out. Tracking will stop." : "You have opted in.");
+      location.reload();
+    });
+
+  });
+</script>

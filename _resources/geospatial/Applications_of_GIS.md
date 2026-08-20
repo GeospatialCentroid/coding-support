@@ -10,7 +10,7 @@ toc_sticky: true
 
 ------------------
 
-GIS is a unique field because of it's connection to location. This has allowed it to expand across diverse disciplinaries. This guide will look at how GIS is used in various disciplines and what you can do with GIS.
+GIS is a unique field because of it's connection to location. This has allowed it to expand across disciplines. This guide will look at how GIS is used in various disciplines and what you can do with GIS.
 
 -----------------------------------------------------------------------------
 
@@ -171,4 +171,4 @@ For students and researchers, learning geospatial methods can therefore provide 
 
 ## Next Steps
 
-Upon finishing this section, we encourage you to check out our **Learning Resources** on our Geospatial Science homepage. We hope these resources will connect you to exciting classes, and opportunities to strengthen your GIS skills. 
+Upon finishing this section, we encourage you to check out GIS Fundamentals, or checkout our **Learning Resources** on the [Geospatial Science](/geospatial) homepage.
