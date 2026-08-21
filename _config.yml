@@ -76,9 +76,9 @@ lunr:
 algolia:
   application_id         : DTC6BXXR43
   index_name: coding_support
-  url                    : https://codingsupport.colostate.edu
+  url                    : https://codingsupport.colostate.edu/
   search_only_api_key    : 4177df0cc4b2523ee42d6992389ecaf4
-  powered_by             : false # true (default), false
+  powered_by             : false 
   nodes_to_index: 'p, h1, h2, h3, h4'
 google:
   search_engine_id       : # YOUR_SEARCH_ENGINE_ID
