@@ -12,7 +12,7 @@ Review the directory below to find the right support model and specialty for you
 | Organization / Resource | Specialty | Support Model |
 | :--- | :--- | :--- |
 | **[Graybill Statistics & Data Science Lab](https://statlab.colostate.edu/)** | Statistical Consulting | Free consultation, Paid projects |
-| **[Geospatial Centroid Services](https://gis.colostate.edu/about/services/)** | GIS & Spatial Analysis | Free helpdesk, Paid projects |
+| **[Geospatial Centroid](https://gis.colostate.edu/about/services/)** | GIS & Spatial Analysis | Free helpdesk, Paid projects |
 | **[Center for Exascale Spatial Data Analytics (CESDAC)](https://spatial.colostate.edu/)** | Spatial Data Analytics & Computing | Paid |
 | **[Research Software Facility (RSF)](https://agsci.colostate.edu/rsf/)** | Research Software | Paid |
 | **[Liberal Arts IT Web Services](https://it.libarts.colostate.edu/web/)** | Web Development & Hosting | Paid |
