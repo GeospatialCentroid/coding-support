@@ -1,7 +1,44 @@
-{% assign resources = site.data.coding_resources | where: "Topic", include.topic | where: "Use in Website Y/M", "Y" %}
-{% assign categories = resources | map: "Category" | uniq %}
+{% assign active_resources = site.data.coding_resources | where: "Use in Website Y/M", "Y" %}
 
-{% for category in categories %}
+{% comment %} 1. Filter resources matching include.topic (supports comma-separated topics) {% endcomment %}
+{% assign resources = "" | split: "" %}
+{% for item in active_resources %}
+  {% if item.Topic %}
+    {% assign item_topics = item.Topic | split: "," %}
+    {% for t in item_topics %}
+      {% assign cleaned_topic = t | strip %}
+      {% if cleaned_topic == include.topic %}
+        {% assign resources = resources | push: item %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} 2. Define your preferred Category order (customize these exact category names) {% endcomment %}
+{% assign preferred_categories = "Books / eBooks, Applied / Domain-Specific Resources, Online Courses / Structured Learning Paths, Video Courses / Structured Learning Paths, Documentation / Reference / Practice" | split: ", " %}
+
+{% comment %} 3. Build ordered categories list and append remaining unlisted categories {% endcomment %}
+{% assign actual_categories = resources | map: "Category" | uniq %}
+
+{% assign ordered_categories = "" | split: "" %}
+{% for cat in preferred_categories %}
+  {% if actual_categories contains cat %}
+    {% assign ordered_categories = ordered_categories | push: cat %}
+  {% endif %}
+{% endfor %}
+
+{% assign remaining_categories = "" | split: "" %}
+{% for cat in actual_categories %}
+  {% unless preferred_categories contains cat %}
+    {% assign remaining_categories = remaining_categories | push: cat %}
+  {% endunless %}
+{% endfor %}
+
+{% assign final_categories = ordered_categories | concat: remaining_categories %}
+
+{% comment %} 4. Render category tables {% endcomment %}
+{% for category in final_categories %}
 <h3>{{ category }}</h3>
 <table>
   <thead>
@@ -14,7 +51,19 @@
   </thead>
   <tbody>
     {% assign cat_resources = resources | where: "Category", category %}
-    {% for resource in cat_resources %}
+    
+    <!-- Filter into strict level buckets -->
+    {% assign beginner = cat_resources | where: "Level", "Beginner" %}
+    {% assign intermediate = cat_resources | where: "Level", "Intermediate" %}
+    {% assign advanced = cat_resources | where: "Level", "Advanced" %}
+    
+    <!-- Catch-all bucket for any other/mixed levels -->
+    {% assign others = cat_resources | where_exp: "item", "item.Level != 'Beginner' and item.Level != 'Intermediate' and item.Level != 'Advanced'" %}
+    
+    <!-- Concatenate all level groups -->
+    {% assign sorted_resources = beginner | concat: intermediate | concat: advanced | concat: others %}
+    
+    {% for resource in sorted_resources %}
     <tr>
       <td>{% if resource["URL Link"] and resource["URL Link"] != "" %}<a href="{{ resource["URL Link"] }}" target="_blank">{{ resource.Resource }}</a>{% else %}{{ resource.Resource }}{% endif %}</td>
       <td>{{ resource["Author / Provider"] }}</td>

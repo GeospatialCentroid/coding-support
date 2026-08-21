@@ -1,28 +1,44 @@
 # CSU Coding Support Hub
 
-A Jekyll-based resource hub for sharing coding learning materials at Colorado State University.
+## Overview
 
-**Live site:** [geospatialcentroid.github.io/coding-support](https://geospatialcentroid.github.io/coding-support/)
+This repository contains a Jekyll-based hub for sharing technology and coding-related resources at Colorado State University. The site is designed to provide a centralized, easy-to-navigate collection of materials that support learning, research, and skill development across the CSU community.
+
+## Design Principles
+
+Ease of maintenance has been a primary consideration in the development of this site. The structure emphasizes simplicity, consistency, and minimal technical overhead, allowing contributors to update content quickly and efficiently.
+
+Key design choices include:
+
+- Single content directory: All resource pages are stored in the `_resources` folder, reducing complexity and making content easy to locate.
+- Markdown-based pages: Content is written in Markdown, enabling straightforward editing with minimal formatting requirements.
+- Data-driven content: Two supporting CSV files—`coding_resources.csv` and `csu_coding_courses.csv`—are used to dynamically populate sections of the site. These datasets are filtered by topic to ensure that only relevant information appears on each page.
+
+**Live site:** [https://codingsupport.colostate.edu/](https://codingsupport.colostate.edu/)
 
 ---
 
 ## File Structure
 
+Here are the pertinent files which power this resource hub:
+
 ```
 coding-support/
 │
 ├── _data/
-│   ├── coding_resources.csv   
-|   |-- csu_coding_courses.csv
-│   ├── navigation.yml        
-│   └── ui-text.yml            
+│   ├── coding_resources.csv (learning resources tables)  
+|   ├── csu_coding_courses.csv (CSU course table) 
+│   ├── navigation.yml  (site navigation)    
+│   └── ...           
 │
 ├── _includes/
-│   ├── resource-table.html   
-|   |-- course_tree.html 
-│   └── ...                   
+│   ├── resource-table.html (table widget - used with {% include resource-table.html topic="AI" %})  
+|   ├── course_tree.html (tree widget - used with {% include course_tree.html topic="Python" %})  
+│   ├── footer/custom.html (custom footer)
+│   ├── chatbot.html (chatbot widget)
+|   └── ...                   
 │
-├── _resources/                
+├── _resources/ (all web pages live here, folders used to group child pages)               
 │   ├── python.md            
 │   ├── python/               
 │   ├── r.md                 
@@ -30,44 +46,30 @@ coding-support/
 │   ├── data-viz.md           
 │   ├── data-viz/           
 │   ├── git.md                
-│   ├── git/                  
+│   ├── git/   
+    ├── ...          
 │   ├── support-policy.md      
 │   ├── support-request.md   
 │   └── support-15-min.md  
 │
 ├── _sass/
-│   └── _custom.scss           
+│   └── _custom.scss  (style sheet adjustments)          
 │
 ├── assets/
-│   └── images/
-|   |__ font
-|   |__ images
-|   |__ js
-|      |
-|      |__ main.js
-|      |__ course_tree.js               
+│   └── images/ (graphics used in website)  
+|   └── ...
+|   └── js
+|      │
+|      ├── main.js
+|      └── course_tree.js (JavaScript for tree widget)              
 │
 ├── .github/workflows/
-│   └── jekyll.yml            
+│   └── jekyll.yml   (GitHub action to compile static website when main branch is pushed)          
 │
-├── _config.yml          
-├── index.html                
-└── Gemfile                  
+├── _config.yml  (global settings)         
+├── index.html   (splash page)              
+└── ...                  
 ```
-
-
-### File Contents 
-
-|File Name| Purpose| 
-|-------|-----------|
-| coding_courses.csv | non CSU course based learning resources for tables |
-| csu_coding_courses.csv | CSU course information for course trees | 
-| navigation.yml | allows you to add markdowns to coding resource page |
-| index.html | Used for creating new coding cards & connecting to css code | 
-| resource-table.html | html file for targetting coding resource script | 
-| course_tree.html | contains code for targetting course_tree script and course information popup features | 
-| custom.scss | contains all css code for webpage | 
-| resources/ | holds all resource markdown documents and intro markdown documents |
 
 
 ---
@@ -76,18 +78,18 @@ coding-support/
 
 Resource tables on each topic page are driven automatically by `_data/coding_resources.csv`. You do not need to edit any page files to add or update resources just update the CSV.
 
-### CSV Column Reference
+### Resource Tables CSV Column Reference
 
 | Column | Description |
 |--------|-------------|
-| `Topic` | The page the resource belongs to (e.g. `Python`, `R`, `Bash`) |
-| `Category` | The section/table heading (e.g. `Video Courses / Structured Learning Paths`) |
+| `Topic` | The page the resource belongs to (e.g. `Python`, `R`, `Bash`). Use commas to separate multiple topics |
+| `Category` | The section/table heading (e.g. `Video Courses / Structured Learning Paths`). Use existing categories for consistency |
 | `Level` | Skill level (e.g. `Beginner`, `Intermediate`, `Advanced`) |
 | `Resource` | Display name of the resource |
 | `Author / Provider` | Who made it |
 | `Best for (goal)` | One-line description of what it's useful for |
 | `URL Link` | The clickable URL |
-| `Use in Website Y/M` | Set to `Y` to show on the site, `M` to hide |
+| `Use in Website Y/M` | Set to `Y` to show on the site, `M` (for maybe) to hide |
 
 **To add a new resource:** add a row with the correct `Topic`, set `Use in Website Y/M` to `Y`.
 
@@ -103,11 +105,11 @@ If a new topic needs its own page (e.g. Bash, SQL, AI), follow these steps:
 
 ### 1. Make sure the CSV has entries for that topic
 
-Check that `_data/coding_resources.csv` has rows with the correct `Topic` value and `Use in Website Y/M` set to `Y`. The `Topic` value is case-sensitive and must match exactly what you use in step 2.
+Check that `_data/coding_resources.csv` has rows with the correct `Topic` value and `Use in Website Y/M` set to `Y`. The `Topic` value is case-sensitive and must match exactly what you use in Step 2.
 
 ### 2. Create the page file
 
-Create a new file in `_resources/`, e.g. `_resources/bash.md`:
+Create a new file in `_resources/` (e.g. `_resources/bash.md`) with front matter:
 
 ```markdown
 ---
@@ -119,15 +121,17 @@ toc: true
 toc_sticky: true
 ---
 
-Welcome to **Bash**... (add your intro content here)
+Welcome to ... (add your intro content here)
+```
 
 
 ### Formatting Headers 
 
 There are some tools that you can use when creating markdown documents. 
 
-when we want to create headings we will use the ```#``` character. Commonly, the markdowns will either have **2** or **3** poundsigns to signifiy 
-the level of subheading. 
+when we want to create headings we will use the ```#``` character. Commonly, the markdowns will either have **2** or **3** poundsigns to signifiy the level of subheading. 
+
+Note: The front matter 'title' will be injected into the page with heading 1, so all page headers should use 2 or more pound signs (e.g ##).
 
 To add emphasis to works in bold, use ``` ** ``` before and after the worlds of choice. For italics you can use a single asterisks. 
 
@@ -141,18 +145,19 @@ Here is an example of how to create a code block
 ' and specify the coding language that we want to use'
 
 ```
->Note: Be sure to avoid overfilling your code blocks horizontallly as this will lead to your md page not rendering properly on the website. 
+>Note: Be sure to avoid overfilling your code blocks horizontallly as this will lead to your markdown page not rendering properly on the website. 
+
 ---
 
-## Resources for Learning Bash
+### Course Tree and Resources table widget injections
 
-for adding a **Resource Table** you will add this code below 
+For creating a **Course Tree**, use: 
 
-{% include resource-table.html topic="Bash" %}
+```{% inlude course_tree.html topic="Bash" %}```
 
-for creating a **Course Tree**, use this code 
+For adding a **Resource Table** use 
 
-{& inlude course_tree.html topic="Bash" %}
+```{% include resource-table.html topic="Bash" %}```
 
 
 ```
@@ -161,13 +166,13 @@ for creating a **Course Tree**, use this code
 
 ### 3. Add sidebar navigation
 
-Open `_data/navigation.yml` and add a sidebar entry for the new topic following the same pattern as the existing ones (e.g. `python_sidebar`, `r_sidebar`).
-
-to ensure that the sidebar path works. Make sure you are adding sidebar md documents into a properly named file in the resources column. 
+Open `_data/navigation.yml` and add a sidebar entry for the new topic following the same pattern as the existing ones (e.g. `python_sidebar`, `r_sidebar`), and add an approatiate title and url.
 
 ### 4. Add a homepage card (optional)
 
 If the topic should appear as a card on the homepage, edit `index.html` following the same pattern as the existing topic cards. Add a matching card image to `assets/images/`.
+
+An example homepage card entry looks like:
 
 ```bash
   - image_path: /assets/images/python-card.png
@@ -178,17 +183,6 @@ If the topic should appear as a card on the homepage, edit `index.html` followin
     btn_label: "Python"
 ```
 
----
-
-## Site Pages
-
-| Page | URL |
-|------|-----|
-| Home | https://geospatialcentroid.github.io/coding-support/ |
-| Python | https://geospatialcentroid.github.io/coding-support/python/ |
-| R | https://geospatialcentroid.github.io/coding-support/r/ |
-| Data Visualization | https://geospatialcentroid.github.io/coding-support/data-viz/ |
-| Git & GitHub | https://geospatialcentroid.github.io/coding-support/git/ |
 
 ---
 
@@ -209,9 +203,9 @@ Then open [http://localhost:4000/coding-support/](http://localhost:4000/coding-s
 > **Note:** Requires Ruby. On Windows, use RubyInstaller with DevKit (Ruby 3.x recommended). See [Jekyll on Windows](https://jekyllrb.com/docs/installation/windows/) for setup instructions.
 
 
-## Pushing changes to the website
+## Pushing Changes to the Website
 
-We do NOT want to be pushing changes we are making to the website directly. Instead, we should be using the **dev** branch. Here is the proper workflow for making changes that will not impact the website immediately 
+We do **NOT** want to be pushing changes we are making to the website directly. Instead, we should be using the **dev** branch. Here is the proper workflow for making changes that will not impact the website immediately 
 
 ```bash
 
@@ -239,4 +233,17 @@ git push
 - [GitHub Actions](https://github.com/features/actions) — automated build and deploy
 
 ## Credits and Acknowledgments
-Content and feature development supported by OpenAI (2026). ChatGPT [Large language model]. https://chat.openai.com/chat
+
+**Special thanks to:**
+
+* **Andrew Zimbelman (Centroid Intern)** — Content development and feature implementation
+* **Riley Nelson (Centroid Intern)** — Development of the resource table
+
+**AI-assisted support:**
+
+Portions of content development and feature design were supported by large language models, including:
+
+* OpenAI (2026). *ChatGPT* [Large language model]. https://chat.openai.com
+* Google (2026). *Gemini* [Large language model]. https://gemini.google.com
+
+These tools were used to assist with drafting, structuring, and refining content.

@@ -28,5 +28,5 @@ Join us for the **Centroid of the Week** to discuss spatial data, web mapping, G
 The CS department hosts a wide variety of tech-focused student organizations, hackathons, and professional development groups. 
 * **Details:** Visit their involvement portal to explore current active chapters and upcoming departmental events.
 
-#### [Data Viz Support Pop-Up](https://lists.colostate.edu/data-viz/subscribe/)
+#### [Data Viz Support Pop-Up](https://gis.colostate.edu/data-viz/)
 The Data Viz Support Pop-Up was initiated in Spring 2026 to provide a forum for learning about data visualization. Loosely managed by staff from CSU Libraries, the Data Viz group hosts occasional meet ups, hands-on lessons, and access to resources for whomever is interested. [Subscribe to data-viz listserv](https://lists.colostate.edu/data-viz/subscribe/) to be kept up to date. 
