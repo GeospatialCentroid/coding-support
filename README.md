@@ -145,6 +145,7 @@ Here is an example of how to create a code block
 ' and specify the coding language that we want to use'
 
 ```
+
 >Note: Be sure to avoid overfilling your code blocks horizontallly as this will lead to your markdown page not rendering properly on the website. 
 
 ---
@@ -160,7 +161,7 @@ For adding a **Resource Table** use
 ```{% include resource-table.html topic="Bash" %}```
 
 
-```
+
 
 > ⚠️ The `topic=` value must exactly match the `Topic` column in the CSV — including capitalization.
 
@@ -182,8 +183,20 @@ An example homepage card entry looks like:
     url: "/python/"
     btn_label: "Python"
 ```
+---
+## 🔍 Search Functionality
 
+The website uses Algolia to power its search feature. This third-party service indexes all site content to deliver fast and relevant search results.
 
+Content is pushed to Algolia via the command line, where it is indexed and made searchable.
+
+### 🔄 Updating the Search Index
+
+Whenever new content is added or existing content is updated, you’ll need to re-index the site. Run the following command:
+```bash
+ALGOLIA_INDEX_NAME='coding-support' ALGOLIA_API_KEY={API_KEY} bundle exec jekyll algolia
+```
+>Note: Replace {API_KEY} with your actual Algolia API key.
 ---
 
 ## Local Development
@@ -222,6 +235,7 @@ git commit -am "put your commit message here saying what you did"
 git push 
 
 ```
+
 
 ---
 
