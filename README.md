@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains a Jekyll-based hub for sharing technology and coding-related resources at Colorado State University. The site is designed to provide a centralized, easy-to-navigate collection of materials that support learning, research, and skill development across the CSU community.
+This repository contains a Jekyll-based website for sharing technology and coding-related resources at Colorado State University. The site is designed to provide a centralized, easy-to-navigate collection of materials that support learning, research, and skill development across the CSU community.
 
 ## Design Principles
 
