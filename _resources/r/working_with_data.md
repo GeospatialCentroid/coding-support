@@ -10,7 +10,7 @@ toc_sticky: true
 ## Working With Data using R 
 
 R is commonly used for it's ability to work with data, ranging from cleaning
-all the way through analysis. This is possible through R's has a diversity of libraries and tools
+all the way through analysis. This is possible through R's diversity of libraries and tools
 to efficiently work with datasets. 
 
  This guide will focus on 
@@ -39,7 +39,7 @@ a command that allows R to read the file contents and store them in our **Enviro
 
 ### Base R Data Reading
 
-R provides simeple commands that revolve around ```read.``` These are useful for simple file types such as **CSV's**.
+R provides simple commands that revolve around ```read.``` These are useful for simple file types such as **CSV's**.
 that are much more robust through our **Library** 
 
 
@@ -57,7 +57,7 @@ Reading a CSV from a URL
 read.csv(url(enter your url link here.csv))
 
 ```
-If we want to broaden our file reading scope, we can do so b **Installing Packages** 
+If we want to broaden our file reading scope, we can do so by **Installing Packages** 
 
 --------------------------------------
 
@@ -123,7 +123,7 @@ This will allow us to use **Commands** in the **Tidyverse Package**
 For Tidyverse, we can read in a multitude of files like so 
 
 ```r
-read_filetpe(This/is/the/path/to/your/file/file_name.filtype)
+read_file(This/is/the/path/to/your/file/file_name.filtype)
 ```
 
 you will know the file has been successfully downloaded when it **Appears in Your 
@@ -152,7 +152,7 @@ We can also assign a column of a dataframe to a variable.
 
 ```r
 
-desired_column_dS <- dataframe["column"]
+desired_column <- dataframe["column"]
 
 ```
 
@@ -202,7 +202,7 @@ pulled_value <- vector[1]
 
 # we can do the same to access multiple values 
 
-multilpe_values <- vector[c(1,5)]
+multiple_values <- vector[c(1,5)]
 
 10 , 1000
 
@@ -252,7 +252,7 @@ We can access **Multiple Values** as well.
 
 ```r
 
-Specific_Rows_and_Columns <- example_matrix[c(1,2),C(4,5)]
+Specific_Rows_and_Columns <- example_matrix[c(1,2), c(4,5)]
 
 ```
 
@@ -343,7 +343,7 @@ dataset_row <- dataset_example[2,]
 ### Applications of Navigating Datasets
 
 Being able to navigate through your data quickly
-will allow you to efficiently**Clean Your Data**, creating a strong foundation for your future work. 
+will allow you to efficiently **Clean Your Data**, creating a strong foundation for your future work. 
 
 --------------------------------------------------------------------------------
 
