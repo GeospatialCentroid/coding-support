@@ -1,16 +1,30 @@
 <style> 
 .how-it-works-section {
-  display: flex;
-  flex-wrap: wrap;
+  display: flex;         /* Use Flexbox instead of Grid */
+  flex-wrap: wrap;       /* Allow items to wrap to the next line */
   justify-content: center;
-  gap: 2rem;
+  gap: 16px;
   max-width: 1200px;
   margin: 3rem auto;
   padding: 0 .5rem;
+  align-items: stretch;
+}
+
+a.no_underline {
+  text-decoration: none;
+  display: flex; 
+  flex-direction: column;
+  /* 
+    flex-grow: 1 (stretches to fill empty space)
+    flex-shrink: 1 (shrinks if needed)
+    flex-basis: calc(25% - 16px) (targets 4 columns, accounting for the gap)
+  */
+  flex: 1 1 calc(25% - 16px); 
+  min-width: 230px; /* If screen shrinks, forces cards to wrap instead of squishing */
 }
 
 .feature-column {
-  flex: 1 1 300px;
+  flex: 1 1 230px;
   background-color: #ffffff;
   border-radius: 12px;
   padding: 2rem 1.5rem;
@@ -33,7 +47,7 @@
   font-size: 1rem;
   font-weight: bold;
   color: #1e4d2b;
-  margin-bottom: 1rem;
+  margin: 8px 0;
 }
 
 .feature-description {
@@ -84,6 +98,7 @@
 </style>
 
 <section class="how-it-works-section">
+  <a href="#explore-resources" class="no_underline">
   <div class="feature-column glow-card">
     <div class="feature-icon">📖</div>
     <h3 class="feature-title">Curated Learning</h3>
@@ -91,22 +106,34 @@
       Step-by-step tutorials and guides on programming, data analysis, GIS, and more.
     </p>
   </div>
-
-  <div class="feature-column glow-card">
-    <div class="feature-icon">💬</div>
-    <h3 class="feature-title">AI-Powered Assistant</h3>
+  </a>
+<a href="support-request" class="no_underline">
+<div class="feature-column glow-card">
+    <div class="feature-icon">🛠️</div>
+    <h3 class="feature-title">Need Help with Code?</h3>
     <p class="feature-description">
-      Get instant answers, explain concepts, and debug code with our smart assistant.
+      Connect with experts for guidance on code, data, and research projects.
     </p>
   </div>
-
-  <div class="feature-column glow-card">
+</a>
+<a href="campus-resources" class="no_underline">
+    <div class="feature-column glow-card">
     <div class="feature-icon">👥</div>
     <h3 class="feature-title">Campus Connections</h3>
     <p class="feature-description">
       Find campus resources, workshops, and support services in one place.
     </p>
   </div>
+  </a>
+<a onclick="event.preventDefault();document.getElementById('chat-toggle-btn').click();" href="#" class="no_underline">
+    <div class="feature-column glow-card">
+    <div class="feature-icon">💬</div>
+    <h3 class="feature-title">AI-Powered Assistant</h3>
+    <p class="feature-description">
+      Get instant answers, explain concepts, and debug code with our smart assistant.
+    </p>
+  </div>
+  </a>
 </section>
 
 <script>
