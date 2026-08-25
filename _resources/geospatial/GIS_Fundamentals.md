@@ -62,19 +62,10 @@ Vector data is not as suited for looking at continous data.
 
 If we want to look at continous data that changes over very small distances we want to use **Raster** data. Raster data is a form of data that comes in connected squares. These squares can all hold different values, allowing us to visualize trends and compare one location to another. 
 
-## File Types 
-
-## Location Comparison & Workflows 
-
-### Union
-
-### Intersect 
-
-### Buffers
-
-### In and not in
 
 ## Next Steps
 
-Now that we have looked at some of the basic GIS concepts, lets take a look at some of the broad applications of GIS. 
+After looking at some of the basic GIS concepts, checkout 
+the [Geospatial Centroid's Resource page](https://gis.colostate.edu/resources/) to continue learning GIS.
+
 
