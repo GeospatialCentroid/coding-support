@@ -9,43 +9,19 @@ We offer coding and data support across a range of tools and workflows to suppor
 
 ## 🛠️ Services We Support 
 
-- Python and R (scripting, automation, data and statistical analysis, visualization, geospatial)
-- Git (version control, GitHub workflows)
-- Web Development (HTML, CSS, and JavaScript)
-- Excel (formulas, charts, data cleaning, visualization)
-- Power BI (dashboards, reporting)
-- ArcGIS Pro & GIS (mapping, spatial analysis)
-- HPC (custom environments, software requests, containerization, job script reviews)
+* Python and R (scripting, automation, data and statistical analysis, visualization, geospatial)
+* Git (version control, GitHub workflows)
+* Web Development (HTML, CSS, and JavaScript)
+* Excel (formulas, charts, data cleaning, visualization)
+* Power BI (dashboards, reporting)
+* ArcGIS Pro & GIS (mapping, spatial analysis)
+* HPC (custom environments, software requests, containerization, job script reviews)
 
 
 Before submitting a request, please review our [Coding Support Policy]({{ site.baseurl }}/support-policy/) to understand expectations and how we can best assist you.
 
-We also encourage you to explore a few self-service options first:
-
-- Visit the corresponding Coding Support Hub section and review the listed resources
-- Use the Search 🔍︎ feature to locate a specific guide
-- Try the AI coding assistant (bottom right) to help explain concepts or debug your code
-
-Taking these steps can often lead to quicker solutions and help you get more out of your support session if additional help is needed.
-
 To get started with submitting a support request, please complete the form below with details about your request. Once submitted, your inquiry will be routed to the appropriate campus group based on subject-matter expertise. A group member will then follow up to schedule a 15-minute consultation via Microsoft Teams. Please ensure your calendar is up to date, and include your availability so a convenient meeting time can be scheduled.
 
----
-
-## 🧭 How Requests Are Routed
-
-To provide the most effective support, we collaborate with campus partners who specialize in specific tools and methods. The table below identifies the group with the most relevant expertise for each topic.
-
-| Topic                            | Supporting Group                         |
-| -------------------------------- | ---------------------------------------- |
-| High Performance Computing (HPC) | [Research Computing & Cyberinfrastructure](https://www.research.colostate.edu/rit/research-computing-cyberinfrastructure/) |
-| Excel (Data Visualization)       | [IRISS](https://iriss.colostate.edu/contact/)                                   |
-| Statistics and Data Science (including R)              | [Stat Lab](https://statlab.colostate.edu/schedule-a-consulting-appointment/)                                |
-| Power BI                         | [Libraries](https://libguides.colostate.edu/research-help)                                |
-| Geospatial                       | [Geospatial Centroid](https://gis.colostate.edu/)                                |
-
-
-Requests that fall outside the areas listed above will be referred to the appropriate campus resource through our general support mailbox.
 
 ---
 
@@ -65,3 +41,19 @@ Requests that fall outside the areas listed above will be referred to the approp
 
  <strong>Notice:</strong> This support request form is available exclusively to <strong>Colorado State University (CSU)</strong> researchers, faculty, staff, and students.
 
+---
+
+## 🧭 How Requests Are Routed
+
+To provide the most effective support, we collaborate with campus partners who specialize in specific tools and methods. The table below identifies the group with the most relevant expertise for each topic.
+
+| Topic                            | Supporting Group                         |
+| -------------------------------- | ---------------------------------------- |
+| High Performance Computing (HPC) | [Research Computing & Cyberinfrastructure](https://www.research.colostate.edu/rit/research-computing-cyberinfrastructure/) |
+| Excel (Data Visualization)       | [IRISS](https://iriss.colostate.edu/contact/)                                   |
+| Statistics and Data Science (including R)              | [Stat Lab](https://statlab.colostate.edu/schedule-a-consulting-appointment/)                                |
+| Power BI                         | [Libraries](https://libguides.colostate.edu/research-help)                                |
+| Geospatial                       | [Geospatial Centroid](https://gis.colostate.edu/)                                |
+
+
+Requests that fall outside the areas listed above will be referred to the appropriate campus resource through our general support mailbox.
