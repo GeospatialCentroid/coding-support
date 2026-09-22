@@ -125,7 +125,15 @@ This tool is also used to **Automate Tedious Processes** with functions.
 This is done when you provide at least 2 data points in adjacent cells as a reference. Excel is able
 to determine a pattern and fill in blanks. 
 
-An example would be if you entered **January**, and **February** into two cells. Excel could recognize this pattern and fill in the remaining months in the year. 
+An example would be if you entered **January**, and **February** into two cells. Excel could recognize this pattern and fill in the remaining months in the year. Another example would be numbers 
+
+##### Before Translating
+
+![Before Green Box Translate](https://github.com/GeospatialCentroid/coding-support/blob/dev/_resources/excel/images/Before_Green_Box_Translate.png?raw=true)
+
+##### After Translating
+
+![After Green Box Translate](https://github.com/GeospatialCentroid/coding-support/blob/dev/_resources/excel/images/After_Green_Box_Translate.png?raw=true)
 
 ### Add and Remove content
 

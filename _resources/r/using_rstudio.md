@@ -88,7 +88,8 @@ cd ("path/to/your/desired/folder")
 ### The Environment 
 
 
-!["image title"](https://github.com/GeospatialCentroid/coding-support/blob/dev/_resources/r/environment.png?raw=true)
+!["image title"](https://github.com/GeospatialCentroid/coding-support/blob/dev/_resources/r/images/environment.png?raw=true)
+
 
 **The Environment**, located at the top right is where all of our **objects** will be stored.
 
