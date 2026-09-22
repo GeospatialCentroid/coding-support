@@ -451,5 +451,12 @@ if (nchar(name) > 0) {
 Run from command line, or press CTRL + Enter to run your script:
 
 ``` bash
-Rscript hello.R
+source(hello.r)
 ```
+This will allow you to run functions that you have written into your script. 
+
+
+
+## Next Steps
+
+In the next section, we will go more indepth on what packages are, how to use them, and how to create your own! 

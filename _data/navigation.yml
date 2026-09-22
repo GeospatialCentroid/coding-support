@@ -17,12 +17,15 @@ r_sidebar:
   - children:
     - title: "Installing R"
       url: r/installing/
-    - title: "Fundamentals"
-      url: r/fundamentals/
     - title: "Using RStudio"
       url: r/using_rstudio/
+    - title: "Fundamentals"
+      url: r/fundamentals/
+    - title: "Packages"
+      url: r/packages/ 
     - title: "Working With Data"
       url: r/working_with_data/
+
 
 python_sidebar:
   - title: "Python"
