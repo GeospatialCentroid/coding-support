@@ -88,7 +88,7 @@ cd ("path/to/your/desired/folder")
 ### The Environment 
 
 
-
+![image test](/resources/r/images/environment.png)
 
 **The Environment**, located at the top right is where all of our **objects** will be stored.
 
