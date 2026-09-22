@@ -14,16 +14,254 @@ toc_sticky: true
 Knowing the fundamentals of how to work with data in RStudio is essential for making anything meaningful with it or doing any research. 
 In this guide, we will go over the base level R methods for working with data. Than. We will look at how to use the **dplyr** package. 
 
+------------------------------------------------------------
+
 ## Navigating your Data set
 
-Let's begin by looking at how to access **Columns**, **Rows**, and **Elements** in your data.
+-------------------------------------------------------------
 
-### Accessing Columns 
+Let's begin by looking at how to access **Columns**, **Rows**, and **Elements** in your data. This can either be done through **Indexing** commands, or through **Filtering by Name**
 
-We can access columns in a data set by using the ```$``` command as well as our ```[]``` syntax.
+## Accessing Columns via Indexing
 
-This code will allow us to create a **Vector** of a specific column within our **DataFrame**  
+-----------------------------------------------------------
 
+We can index data from our dataset using the ```[]``` character. 
+
+This code will allow us to create a **Vectors's** and **Matrices** that are subsets of our full dataset.  
+
+### Accessing elements in rows 
+
+Using indexing allows us to pick out specific values within vectors and matrices using **Numbers**. Let's start out with our most simple data type, the vector. 
+
+**Vectors**
+
+Let's use a simple example vector to show what is returned from differnet commands. 
+
+```r
+vector <- c(10,20,25,200,1000)
+```
+
+Using our ```[]``` character, we can pull 1, multiple, or series of values from our vector. 
+
+-----------------------------------------
+
+Pulling 1 value 
+
+```r
+
+pulled_value <- vector[1]
+
+print(pulled_value)
+```
+
+```r
+[10]
+```
+If we want to pull multiple values, we can use the **Concatenate** function. This allows us to select multiple value from a vector / matrix and is represented with ```c()```. 
+
+```r
+multiple_values <- vector[c(1,5)]
+
+#here, we are telling our computer we want our variable multiple_values to return the first and fifth elements
+```
+```r
+
+[10][1000]
+
+```
+Finally, if we want to pull a series of values, we can use the ```:``` character, essnetially telling our computer we want every value in a certain range 
+
+```r
+series_values <- vector[1:3]
+
+print(series_values)
+```
+```r
+
+[10][20][25]
+
+```
+
+>NOTE: If working with other coding languages. When pulling elements, the order may start with 0 instead of 1. An example is Javascript. To pull the first element from a JavaScript Vector, you would enter ```vector[0]```.
+
+**Matrices**
+
+Because Matrices operate similar to a **Two Dimensional Vector**, we can access components through similar commands. The only difference is now we will have to index both the **Row** and the **Column**. 
+
+Let's create an example matrix 
+
+```r
+ 
+example_matrix <- matrix(1:25, nrow = 5, ncol = 5) # this is a 5 by 5 matrix 
+
+```
+
+```r
+[1] [2] [3] [4] [5]
+[6] [7] [8] [9] [10]
+[11][12][13][14][15]
+[16][17][18][19][20]
+[21][22][23][24][25]
+
+```
+
+As mentioned earlier, to access specific elements we will simply incorporate our **Column** value and **Row** value that we wish to isolate
+
+```r
+print(example_matrix[1,2])
+```
+
+Here, we called row 1, column 2. 
+
+
+```r
+[2]
+```
+
+If we want an entire row or column of values, we can do so by leaving either the column or row value **blank** 
+
+Lets get every value from row 1 
+
+```r
+print(example_matrix[1, ])
+
+```r
+[1][2][3][4][5]
+```
+
+Now let's do every column 
+
+```r
+print(example_matrix[,1 ])
+```
+```r
+[1][6][11]16[21]
+```
+
+We can even use our ```:``` command to print a series of values from one row or column to get some interesting outputs.
+
+```r
+print(example_matrix(1:3,4))
+```
+```r
+[4][9][14]
+```
+Finally, we can use our concatenate function to print out multiple values in differnt rows and columns. 
+
+Let's have our computer print out the values that are located in the **3rd** and **5th** rows, and the **2nd** and **4th** columns. 
+
+```r
+print(example_matrix[c(3,5),c(2,4)])
+```
+
+```r
+[12][14]
+[22][24]
+```
+
+---------------------------------------------------------------------------
+
+### Lists
+
+
+Let's look at how we can modify the elements within a list. Lists are very similar to vectors. The main difference is that they can hold any values in them. They can also operate similar to a matrix as well. Let's take a look! 
+
+```r
+example_list <- list(1,2,TRUE,"Hello")
+```
+Let's look at one example of pulling our boolean value from our list
+
+```r
+print(example_list[3])
+```
+
+```r
+TRUE
+```
+
+One of the more interesting functions of our lists is our matrix esque lists we mentioned earlier. 
+
+```r
+nested_list <- list(
+age <- c(1,5,13,18)
+name <- c("Julie","Richard","Will","Grant")
+Status <- c("Baby","Toddler","Teenager"."Adult")
+)
+``` 
+If we want to only know the age column we can do an operation such as this 
+
+
+```r
+example_list[[1]]
+````
+
+```r
+[1][5][13][18]
+```
+
+
+If we want to know the age and their status we can expand on our operation 
+
+```r
+example_list[c(1,3)]
+```
+```r
+[1][5][13][18]
+["Baby"]["Toddler"]["Teenager"]["Adult"]
+```
+
+**Datasets** 
+
+Datasets are similar to lists, only they commonly will contain far more information and can be organized in several different file formats.
+
+Let's create a dataset example
+
+```r
+
+
+data_set_example <- data.frame(
+age <- c(1,5,13,18)
+name <- c("Julie","Richard","Will","Grant")
+Status <- c("Baby","Toddler","Teenager"."Adult")
+)
+
+```
+>Note: This method of creating a dataset will give you werid header values, we can fix this using a rename command that we will look at later
+
+let's pull the name Julie from our dataset
+
+```r
+dataset_element <- dataset_example[1,2]
+```
+```r
+["Julie"]
+````
+
+This is one reason why we prefer to use datasets, they operate like a mix of a nested list and a matrix! 
+
+We can run similar commands to access entire rows and columns 
+
+```r
+dataset_row <- dataset_example[,2]
+```
+```r
+["Julie"]["Richard"]["Will"]["Grant"]
+```
+
+### Applications of Navigating Datasets
+
+Being able to navigate through your data quickly
+will allow you to efficiently **Clean Your Data**, creating a strong foundation for your future work. 
+
+--------------------------------------------------------------------------
+
+## Filtering Data With Names  
+
+In some cases, we will want to filter our data based on the **Names** of columns and rows within our dataframe. 
+This is mostly applicable when we have large datasets where it may be difficult or impossible to know what number specifc rows and columns are within. Data with repeat values is also a great example of when we would want to use names for filtering. 
+
+The two most common ways that we will filter data in base r with names is with the ```$``` character and the ```[]``` character. 
 ```r
 
 desired_column <- dataframe$column
@@ -53,10 +291,6 @@ Selected_Columns <- dataframe[c("colname1","colname2")]
 
 ```
 
-### Accessing Rows 
-
-We can access rows through **Filtering** for certain **Values** rows have in a column
-
 Filtering rows
 
 ```r
@@ -65,175 +299,7 @@ Filtered <- Dataframe(Dataframe$column = "Certain word Within Columns Rows")
 
 ```
 
-### Accessing elements in rows 
 
-let's take this one step further and access **Specific Elements**!
-
-**Vectors**
-
-we will use an example vector 
-
-```r
-vector <- c(10,20,25,200,1000)
-```
-
-First, we can pull one specific value 
-
-```r
-
-pulled_value <- vector[1]
-```
-
-```r
-[10]
-```
-we can do the same to access multiple values 
-
-```bash
-multiple_values <- vector[c(1,5)]
-```
-```r
-
-[10],[1000]
-
-```
-
-Note: If working with other coding languages. When pulling elements, the order may start with 0 instead of 1. An example is Javascript. To pull the first 
-element from a JavaScript Vector, you would enter ```vector[0]```.
-
-**Matrices**
-
-Because Matrices operate similar to a **Two Dimensional Vector**, we can access components through simple commands
-
-```r
-
-# we will create an example matrix
- 
-example_matrix <- matrix(1:25, nrow = 5, ncol = 5) # this is a 5 by 5 matrix 
-
-# This is how we want to pull a specific row from the matrix 
-
-row_matrix <- example_matrix(2, ) 
-
-``` 
-
-This will print all the values of row 2
-
-``` r
-[6,7,8,9,10]
-
-```
-
-We can also pull specific row and column values
-
-```r 
-
-Specific_matrix <- example_matrix(2,4) # 2nd row, 4th column
-
-```
-
-```r
-
-[9]
-
-```
-
-We can access **Multiple Values** as well. 
-
-```r
-
-Specific_Rows_and_Columns <- example_matrix[c(1,2), c(4,5)]
-
-```
-
-```r
-[2][20]
-```
-
-We can also modify values 
-
-```r
-example_matrix[1,1] <- 100
-
-# Let's pull the top row now
-
-New_Row <- example_matrix[1][1]
-
-print(New_Row)
-
-```
-
-```r
-
-[100,2,3,4,5]
-
-```
-
-### Lists
-
-
-Let's look at how we can modify the elements within a list 
-
-```
-example_list <- list(
-age <- c(1,5,13,18)
-name <- c("Julie","Richard","Will","Grant")
-Status <- c("Baby","Toddler","Teenager"."Adult")
-)
-``` 
-If we want to only know the age column we can do an operation such as this 
-
-
-```r
-example_list[[1]]
-````
-
-If we want to know the age and their status we can expand on our operation 
-
-```r
-example_list[[1]][3]
-```
-
-Finally, we can access specific elements within our list
-
-```r
-example_list$name[2] 
-```
-
-**Datasets** 
-
-Datasets are similar to lists, only they commonly will contain far more information and can be organized in several different file formats.
-
-Let's create a dataset example
-
-```r
-
-
-data_set_example <- df(
-age <- c(1,5,13,18)
-name <- c("Julie","Richard","Will","Grant")
-Status <- c("Baby","Toddler","Teenager"."Adult")
-)
-
-```
-
-let's pull the name Julie from our dataset
-
-```r
-dataset_element <- dataset_example[2,1]
-```
-
-
-We can run similar commands to access entire rows and columns 
-
-```r
-dataset_row <- dataset_example[2,]
-```
-
-### Applications of Navigating Datasets
-
-Being able to navigate through your data quickly
-will allow you to efficiently **Clean Your Data**, creating a strong foundation for your future work. 
 
 --------------------------------------------------------------------------------
 

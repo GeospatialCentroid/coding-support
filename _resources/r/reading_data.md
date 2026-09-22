@@ -37,45 +37,9 @@ a command that allows R to read the file contents and store them in our **Enviro
 |FWF|Fixed-Width File|
 |JSON|Java Script Object Notation|
 
-### Base R Data Reading
+## File reading Procedures 
 
-R provides simple commands that revolve around ```read.``` These are useful for simple file types such as **CSV's**.
-that are much more robust through our **Library** 
-
-
-Reading a CSV file from the file tree
-
-```r
-
-read.csv("enter/your/file/path/here.csv")
-
-```
-Reading a CSV from a URL 
-
-```r
-
-read.csv(url(enter your url link here.csv))
-
-```
-If we want to broaden our file reading scope, we can do so by **Installing Packages** 
-
---------------------------------------
-
-### Installing Packages
-
-Installing packages can Widen the Scope of Your Data Reading Capabilities. 
-
-|Package|Readable File Types|
-|--------------------|-------|
-|tidyVerse     |CSV's, TSV's, Text, XLSX, Google Sheets,Fixed Width Files| 
-|readr         |CSV'S, TSV'S, Text, XLSX, Google Sheets, FWF|
-|readxl        |XLX,XLSX| 
-
-Installing the **Tidyverse Package** will be suitable for most file reading needs.
-
---------------------------------------------------------------------------------
-
-## File Reading Procedures 
+Before we can read a file into our environment, we will need to have a decent understanding of our file directories setup. 
 
 ### Setting up your file directory
 
@@ -94,40 +58,59 @@ Doing so will make sure the file is added to this directory / folder.
 #This will take you to a specific working directory. 
 ```
 
-Download the **Desired Files** to Your Computer. 
+### Finding Your Files of Choice. 
 
-Make sure that you know where
-your storing them in your computer so you can pull them later with ease. 
+When reading files in, you can either use files in your **Local Computer**, or you can take files from **the Internet**. 
 
-### Installing your package of choice 
+The most important thing is to have the correct path whether you are using an online source, or if yoou are using information from the internet. You wil also need to have the right file installation command at your disposal. To do so, it is benefical to have an understanding of what packages you will need to install different files from different locations. 
 
-Let's use **Tidyverse** as an example. We first need to install Tidyverse. 
+### Base R Data Reading
 
-```r
-install.packages("tidyverse")
-```
+Your first option is to use **Base R** commands to read files. Reading files with base R will most likely consist of using some variation of the ```read``` command.
 
-We know tidyverse has been installed when we run this command and are given a **Long Series of Code**; 
-this is our computer downloading all the packages and programs that tidyverse uses.
+The read command is good for simple file types such as **CSV's**. Another good thing is that the read command can read files from **Our Computer** as well as from **the Internet**. 
 
-Next, we will pull this package from our **Library**.  
+
+Reading a CSV file from the file tree
 
 ```r
-library(tidyverse)
+
+read.csv("enter/your/file/path/here.csv")
+
 ```
-
-This will allow us to use **Commands** in the **Tidyverse Package**
-
-### Reading in a file
-
-For Tidyverse, we can read in a multitude of files like so 
+Reading a CSV from a URL 
 
 ```r
-read_file(This/is/the/path/to/your/file/file_name.filetype)
-```
 
-you will know the file has been successfully downloaded when it **Appears in Your 
-Environment** in the top right panel, or no error signs are given. 
+read.csv(url("enter your url link here.csv"))
+
+```
+While this will work fine for most common instances, you may find yourself needing more options when dealing with complex data and special cases. 
+
+This is when our packages we looked at earlier can come in handy!
+
+--------------------------------------
+
+### Installing Packages
+
+Installing packages can widen the scope of your data reading capabilities. 
+
+|Package|Readable File Types|
+|--------------------|-------|
+|tidyVerse     |CSV's, TSV's, Text, XLSX, Google Sheets,Fixed Width Files| 
+|readr         |CSV'S, TSV'S, Text, XLSX, Google Sheets, FWF|
+|readxl        |XLX,XLSX| 
+
+Installing the **Tidyverse Package** will be suitable for most file reading needs.
+
+### Reading Files With Packages 
+
+--------------------------------------------------
+
+The core concepts of file reading are the same with package commands such as ```read_csv```. However, they typically will have different syntax needs and may have more parameters you can enter. The best way to learn how to read a certain file type using a package is to use the ```?``` and ```help()``` commands. 
+
+--------------------------------------------------------------------------------
+
 
 ## Next Steps
 
