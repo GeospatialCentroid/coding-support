@@ -48,6 +48,7 @@ There are **Four Sections** of the RStudio IDE that we will cover in this guide
 
 ### The Console 
 
+!["image title"](https://github.com/GeospatialCentroid/coding-support/blob/dev/_resources/r/images/Console.png?raw=true)
 
 **The Console** is where 1 line code is written to run **single commands**.
 
@@ -114,6 +115,8 @@ If we want to view and access previously ran code, we can do so with the **Histo
 
 ### The Code Editor 
 
+!["image title"](https://github.com/GeospatialCentroid/coding-support/blob/dev/_resources/r/images/Code_Editor.png?raw=true)
+
 The top left window of our IDE is where our **Code Editing Platform** is Located. For some operating 
 systems such as Windows and Linux. you may need to press ```CTRL+Shift+N``` to open this 
 window. 
@@ -131,6 +134,8 @@ The code editor provides multiple benefits:
  - You can create **Foldable Code Chunks** with some file types, allowing you to run specific blocks of code and keep your script clean and organized.
   
 ### Outputs 
+
+!["image title"](https://github.com/GeospatialCentroid/coding-support/blob/dev/_resources/r/images/Output.png?raw=true)
 
 The **Output Window** is located at the bottom right of our IDE, it
 contains tools to navigate your **Systems Directory** and manage your coding outputs:

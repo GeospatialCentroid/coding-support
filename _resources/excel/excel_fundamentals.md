@@ -118,12 +118,23 @@ of it. **Base Level Analysis** can also be done in the data section.
 **CTRL+V / CMD+V** in your target cell. You can copy and paste information from your current workbook, 
 other workbooks, spreadsheets, and online sources. 
 
+
+![Green Box Image](https://github.com/GeospatialCentroid/coding-support/blob/dev/_resources/excel/images/Green_Box.png?raw=true)
+
 The **Small Green box** in the bottom right corner of the cell you're working in allows you to quickly copy 
 a value from one cell and paste it to any amount of cells within the same row or column. 
 
+##### Before Copying 
+
+![Before Copying Image](https://github.com/GeospatialCentroid/coding-support/blob/dev/_resources/excel/images/Before_Green_Box_Copy.png?raw=true)
+
+##### After Copying
+
+![After Copying Image](https://github.com/GeospatialCentroid/coding-support/blob/dev/_resources/excel/images/After_Green_Box_Copy.png?raw=true)
+
 This tool is also used to **Automate Tedious Processes** with functions. 
 This is done when you provide at least 2 data points in adjacent cells as a reference. Excel is able
-to determine a pattern and fill in blanks. 
+to find a pattern and fill in blanks. 
 
 An example would be if you entered **January**, and **February** into two cells. Excel could recognize this pattern and fill in the remaining months in the year. Another example would be numbers 
 
