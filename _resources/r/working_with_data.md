@@ -211,7 +211,7 @@ example_list[c(1,3)]
 ["Baby"]["Toddler"]["Teenager"]["Adult"]
 ```
 
-**Datasets** 
+### Datasets
 
 Datasets are similar to lists, only they commonly will contain far more information and can be organized in several different file formats.
 
@@ -232,7 +232,7 @@ Status <- c("Baby","Toddler","Teenager"."Adult")
 let's pull the name Julie from our dataset
 
 ```r
-dataset_element <- dataset_example[1,2]
+print(dataset_example[1,2])
 ```
 ```r
 ["Julie"]
@@ -262,6 +262,9 @@ In some cases, we will want to filter our data based on the **Names** of columns
 This is mostly applicable when we have large datasets where it may be difficult or impossible to know what number specifc rows and columns are within. Data with repeat values is also a great example of when we would want to use names for filtering. 
 
 The two most common ways that we will filter data in base r with names is with the ```$``` character and the ```[]``` character. 
+The Base r function for this is to select your dataframe and then specify the column name your interested in. 
+
+
 ```r
 
 desired_column <- dataframe$column
@@ -275,23 +278,26 @@ Similarily
 desired_column <- dataframe["column"]
 
 ```
+this method can be beneficial if you want to select **Multiple** columns from a dataframe 
 
-We can **Manipulate** Column headers. One example is changing the name of a column. This is done by using the **names** command, which returns our column name as a character vector which allows us to rename it.   
+```r
+desired_columns <- dataframe[c("column_1","column_2","column_3")]
+```
+
+Another benefit is that 
+we can **Manipulate** Column headers. One example is changing the name of a column. This is done by using the **names** command, which returns our column name as a character vector which allows us to rename it.   
 
 ```r
 
 names(dataframe)[names(dataframe) == "past column name"] <- "new column name"
 
 ```
-We can also select **Multiple Columns**
 
-```r
+This is beneficial for situations like earlier, where the data we create may have weird names. If we are working
+with data from online, the names may not be suitable for r as well which justifies a name chanee too. 
 
-Selected_Columns <- dataframe[c("colname1","colname2")]
-
-```
-
-Filtering rows
+Finally, we can access specific elements within a column to filter by column and row. This is particularly effective when cleaning large
+datasets. 
 
 ```r
 
@@ -299,7 +305,8 @@ Filtered <- Dataframe(Dataframe$column = "Certain word Within Columns Rows")
 
 ```
 
-
+Now that we have shown you the base r methodology for working with data. We will look at how these processes can be simplified and made
+easier using **dplyr**.
 
 --------------------------------------------------------------------------------
 
@@ -332,8 +339,7 @@ value
 
 ```r
 
-Example_dataframe %>% 
-filter(column name == "certain value")
+filter(data = example_data, column_name == "certain value")
 
 ```
 
@@ -342,6 +348,16 @@ This filter will provide only certain values from one column
 other comparative operators can be used with this command such as ```>```, ```<```, ```==```, ```>=```, and ```<=``` to 
 select for values that are exceeding, equal, or are less then a certain  value.  
 
+We can also use the ```*``` symbol to indicate wildcards. This essentially means that in a string you have, if you replace a specific character with a wildcard r with filter data for strings that have the non wildcard letters. Here is an example. 
+
+```r
+
+filter(data = example_data, column_name == "a*y")
+
+```
+
+This command would return words like **any**, **army**, and **ally**. This is because these words start with a and end with y. 
+
 
 **Select**
 
@@ -349,23 +365,34 @@ Select is a streamlined command that allows you to select columns from your data
 
 ```r
 
-Selected_DF <- Dataframe |>
-select("This Column", "This other column", "Ooh maybe this one!")
+
+select(data = DataFrame, "This Column", "This other column", "Ooh maybe this one!")
 
 ```
+---------
+
+**Group_by and Summarise** 
+
+The ```group_by``` and ```summarise``` functions are used in tandem frequently. 
+
+The group_by function allows you to **Group Your Data** by a certain column. An example would be if you have a dataset containing information for every state, using the group_by function would allow you to organize your data by state.
+
+group_by serves as a precursor for using the **Summaarise** function, and the **Mutate** function which we will talk about later 
+
+using the summarise function allows you to compute descriptive data from your dataset. An example with the group_by function would be grouping by state, and then computing the population with the summarise function giving you population per state. Without using the group_by function, we would be left with the total population for the dataset. 
 
 **Mutate**
 
-This is a similar command to the one we did earlier, where we were able to change the value of a column.
-The difference is that we are able to apply a function or changes to a column, which will create a new column with
-those changes applied 
+Using the mutate command allows you to isolate specific columns within your dataset and apply functions to them. This will result in a new column being created with the results of the function you applied. 
 
 ```r
 
 Mutated_DF <- Dataframe %>%
 mutate(
-new_column <- existing_column * 2 )
+new_column = existing_column * 2 )
 ```
+As you can see, this data would be especially benefiical for converting data between different unit types. 
+
 
  we can also mutate a column without creating a new one 
 
@@ -377,7 +404,7 @@ existing_column <- existing_column * 2
 
 **Rename**
 
-This command allows us to rename a column to something cleaner and maybe more concise
+Th
 
 ```r
 

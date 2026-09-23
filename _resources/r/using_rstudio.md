@@ -48,7 +48,7 @@ There are **Four Sections** of the RStudio IDE that we will cover in this guide
 
 ### The Console 
 
-!["image title"](https://github.com/GeospatialCentroid/coding-support/blob/dev/_resources/r/images/Console.png?raw=true)
+  !["image title"]({{site.baseur}}/r/images/Console.png?raw=true)
 
 **The Console** is where 1 line code is written to run **single commands**.
 
@@ -70,7 +70,7 @@ The **Up** & **Down** arrows will allow you to move through previously ran comma
 The console is also home to our **Terminal**. The terminal operates as a **Shell** that allows
 us to interact with our computers **File System** and **git**. 
 
-We focus more on how to use the terminal in our [Unix](https://geospatialcentroid.github.io/coding-support/unix/), and [Git](https://geospatialcentroid.github.io/coding-support/git/) guides. Check them out! 
+We focus more on how to use the terminal in our [Unix]({{site.baseur}}/coding-support/unix/), and [Git]({{site.baseur}}/coding-support/git/) guides. Check them out! 
 
 The terminal is especially useful when executing commands to **Make new Folders**, **Change Working Directories** and 
 **Connect With Github Services**. 
