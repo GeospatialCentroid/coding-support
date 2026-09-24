@@ -58,6 +58,7 @@ Example:
 ```html
 <p>This is a paragraph.</p>
 ```
+<h1> Example Header </h1>
 
 ---
 

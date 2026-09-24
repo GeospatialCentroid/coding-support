@@ -28,7 +28,7 @@ Let's begin by looking at how to access **Columns**, **Rows**, and **Elements** 
 
 We can index data from our dataset using the ```[]``` character. 
 
-This code will allow us to create a **Vectors's** and **Matrices** that are subsets of our full dataset.  
+This code will allow us to create **Vectors's** and **Matrices** that are subsets of our full dataset.  
 
 ### Accessing elements in rows 
 
@@ -36,7 +36,7 @@ Using indexing allows us to pick out specific values within vectors and matrices
 
 **Vectors**
 
-Let's use a simple example vector to show what is returned from differnet commands. 
+Let's use a simple example vector to show what is returned from different commands. 
 
 ```r
 vector <- c(10,20,25,200,1000)
@@ -70,7 +70,7 @@ multiple_values <- vector[c(1,5)]
 [10][1000]
 
 ```
-Finally, if we want to pull a series of values, we can use the ```:``` character, essnetially telling our computer we want every value in a certain range 
+Finally, if we want to pull a series of values, we can use the ```:``` character, essentially telling our computer we want every value in a certain numeric range 
 
 ```r
 series_values <- vector[1:3]
@@ -147,7 +147,7 @@ print(example_matrix(1:3,4))
 ```r
 [4][9][14]
 ```
-Finally, we can use our concatenate function to print out multiple values in differnt rows and columns. 
+Finally, we can use our concatenate function to print out multiple values in different rows and columns. 
 
 Let's have our computer print out the values that are located in the **3rd** and **5th** rows, and the **2nd** and **4th** columns. 
 
@@ -165,7 +165,7 @@ print(example_matrix[c(3,5),c(2,4)])
 ### Lists
 
 
-Let's look at how we can modify the elements within a list. Lists are very similar to vectors. The main difference is that they can hold any values in them. They can also operate similar to a matrix as well. Let's take a look! 
+Let's look at how we can modify the elements within a list. Lists are very similar to vectors. The main difference is that they can hold a mix of data types. They can also operate similar to a matrix as well. Let's take a look! 
 
 ```r
 example_list <- list(1,2,TRUE,"Hello")
@@ -180,7 +180,7 @@ print(example_list[3])
 TRUE
 ```
 
-One of the more interesting functions of our lists is our matrix esque lists we mentioned earlier. 
+One of the more interesting properties  of our lists is our matrix esque property we mentioned earlier. 
 
 ```r
 nested_list <- list(
@@ -227,7 +227,7 @@ Status <- c("Baby","Toddler","Teenager"."Adult")
 )
 
 ```
->Note: This method of creating a dataset will give you werid header values, we can fix this using a rename command that we will look at later
+>Note: This method of creating a dataset will give you weird header values, we can fix this using a rename command that we will look at later
 
 let's pull the name Julie from our dataset
 
@@ -312,7 +312,7 @@ easier using **dplyr**.
 
 ## Using Dplyr
 
-We will briefly touch on Dplyr and it's use in R. Dplyr is a package that provides
+ Dplyr is a package that provides
 a multitude of functions that will make tedious cleaning procedures in base R 
 **Simpler and Quicker** 
 
@@ -348,7 +348,7 @@ This filter will provide only certain values from one column
 other comparative operators can be used with this command such as ```>```, ```<```, ```==```, ```>=```, and ```<=``` to 
 select for values that are exceeding, equal, or are less then a certain  value.  
 
-We can also use the ```*``` symbol to indicate wildcards. This essentially means that in a string you have, if you replace a specific character with a wildcard r with filter data for strings that have the non wildcard letters. Here is an example. 
+We can also use the ```*``` symbol to indicate **Wildcards**. This essentially means that in a string you have, if you replace a specific character with a wildcard r with filter data for strings that have the non wildcard letters. Here is an example. 
 
 ```r
 
@@ -398,13 +398,13 @@ As you can see, this data would be especially benefiical for converting data bet
 
 ```r
 mutate(
-existing_column <- existing_column * 2 
+existing_column = existing_column * 2 
 )
 ```
 
 **Rename**
 
-Th
+The rename command acts similar to the mutate command without modifying our data, this allows us to turn uncleaned names into clean and easily usable names. 
 
 ```r
 
