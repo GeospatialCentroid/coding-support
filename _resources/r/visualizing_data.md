@@ -120,12 +120,12 @@ Look at that! With just this small change, we can now add information to our gra
 
 ```r
 ggplot(data = mtcars) +
-  geom_point(mapping = aes(x = mpg, y = disp,  color = cyl, size = 3)
+  geom_point(mapping = aes(x = mpg, y = disp,  color = cyl, size = 3))
 
 
 ```
 
-!["basic plot"]({{site.baseur}}/r/images/ggplot_size_color.png?raw=true)
+!["basic plot"]({{site.baseur}}/r/images/gg_color.png?raw=true)
 
 With this command, we have effectively made all of our data easily readable while highlighting our relationship of interest. Finally, let's make a line of best fit for our data using the **geom_smooth** command. We can do by adding a **Second** geom command. 
 
@@ -136,7 +136,7 @@ ggplot(data = mtcars) +
   geom_smooth(method = "lm", aes(x = mpg, y = disp))
 ```
 
-!["basic plot"]({{site.baseur}}/r/images/gg_size_color_lm.png?raw=true)
+!["basic plot"]({{site.baseur}}/r/images/gg_size_lm.png?raw=true)
 
 >Note: There are many options for changing the aesthetics of your ggplot for every type of geom type. For specific modifications, we recommend that you check out our coding resources as wel as ggplot documentation for more information 
 
@@ -161,5 +161,83 @@ ggplot(data = mtcars) +
   labs(x = "Fuel Efficiency",
        y = "Displacement",
        Title = "Fuel Efficiency of Cars based on Speed" ,
-       subtitle = "The relationship between fuel efficiency and displacement depends on the cylinder engine")
+       subtitle = "The relationship between fuel efficiency and displacement depends on the cylinder engine",
+       color = "Engine cylinders")
+       #for our legend, renaming will require us to call the name of the variable which is color
 ```
+!["labeled ggplot image"]({{site.baseur}}/r/images/gg_labeled_plot.png?raw=true)
+
+Our graph is already looking better! However, it is still missing that profesional appearance that we look for in plots. Some of the reasons this is the case is due to our spacing, font size, and the lack of a unique appearance. Thankfully, we can fix all of these issues with a **Theme**.
+
+ggplot provides **Theme** packages which provide you with preset apperances for your graph. On top of this, you are able to modify your visualizations in ggplot on a fine scale using the ```theme``` command with no preset. Let's first look at a way we can add our preset, and then add specific changes beneath. 
+
+The common syntax for adding a theme preset is as follows 
+
+```r
+theme_type()
+```
+
+Let's add a unique theme to our graph. 
+
+```r
+ggplot(data = mtcars) +
+  geom_point(mapping = aes(x = mpg, y = disp, size = -cyl, color = cyl)) +
+  geom_smooth(method = "lm", aes(x = mpg, y = disp)) + 
+  labs(x = "Fuel Efficiency",
+       y = "Displacement",
+       Title = "Fuel Efficiency of Cars based on Speed" ,
+       subtitle = "The relationship between fuel efficiency and displacement depends on the cylinder engine",
+       color = "Engine cylinders") +
+       #for our legend, renaming will require us to call the name of the variable which is color
+  theme_bw()
+
+  ```
+  !["labeled ggplot image"]({{site.baseur}}/r/images/gg_theme_bw.png?raw=true)
+
+
+
+This looks a lot better. For my graph, I want to change 3 more things about it that I will use the ```theme()``` command without a preset for. 
+
+- I want to make my title, and axis labels bigger and my subtitle smaller
+- I want to move my legend to the bottom right corner 
+- I want to increase the amount of tick marks on the x and y axis. And add space between my axis labels and titles.
+
+Let's make these changes to our plot 
+
+```r
+ggplot(data = mtcars) +
+  geom_point(mapping = aes(x = mpg, y = disp, size = -cyl, color = cyl)) +
+  geom_smooth(method = "lm", aes(x = mpg, y = disp)) + 
+  labs(x = "Fuel Efficiency",
+       y = "Displacement",
+       Title = "Fuel Efficiency of Cars based on Speed" ,
+       subtitle = "The relationship between fuel efficiency and displacement depends on the cylinder engine",
+       color = "Engine cylinders") +
+       #for our legend, renaming will require us to call the name of the variable which is color
+  theme_bw() +
+    scale_y_continuous(breaks = c(0,50,100,150,200,250,300,350,400,450),
+                    labels = c(0,50,100,150,200,250,300,350,400,450))+
+  theme(
+       plot.title = element_text(size = 17),
+    plot.subtitle = element_text(size = 9),
+    axis.title.x = element_text(size = 12, margin = margin(t = 20)),
+    axis.title.y = element_text(size = 12, margin = margin(r = 20)),
+    legend.justification = "bottom",
+  )
+```
+
+In our case above, I used a new command called ```scale_x/y_continuous```. This is an aesthetic feature that allows us to change the number of ticks in our graph. With these changes, let's look at our finalized graph. 
+
+ !["labeled ggplot image"]({{site.baseur}}/r/images/ggplot_final.png?raw=true)
+
+
+
+
+ And with that, we have created a visually appealing graph that accurately informs our viewers of what we are looking at. When working for companies and other groups, they may request specific features in the visualizations you make. Because of this, it is important that we have a strong understanding of ggplot to meet their needs. 
+
+
+## Next Steps 
+
+
+
+ Now that we have looked at how we can use ggplot to **Visualize** our data, let's look at the packages that RStudio offers to **Analyze** data.
