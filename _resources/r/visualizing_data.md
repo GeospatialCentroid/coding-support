@@ -116,11 +116,11 @@ ggplot(data = mtcars) +
 
 !["basic plot"]({{site.baseur}}/r/images/ggplot_cyl.png?raw=true)
 
-Look at that! With just this small change, we can now add information to our graph that highlights a relationship. We can see that as our cylinders per vehicle increases, our disp goes up, but our mpg goes down. There are some other simple commands that we can use in our data, lets look at an example with size. 
+Look at that! With just this small change, we can now add information to our graph that highlights a relationship. We can see that as our cylinders per vehicle increases, our disp goes up, but our mpg goes down. There are some other simple commands that we can use in our data, lets look at an example with size outside of our parenthesis
 
 ```r
 ggplot(data = mtcars) +
-  geom_point(mapping = aes(x = mpg, y = disp, size = -cyl, color = cyl))
+  geom_point(mapping = aes(x = mpg, y = disp,  color = cyl, size = 3)
 
 
 ```
@@ -132,12 +132,13 @@ With this command, we have effectively made all of our data easily readable whil
 ```r
 
 ggplot(data = mtcars) +
-  geom_point(mapping = aes(x = mpg, y = disp, size = -cyl, color = cyl)) +
+  geom_point(mapping = aes(x = mpg, y = disp,color = cyl), size = 3) +
   geom_smooth(method = "lm", aes(x = mpg, y = disp))
 ```
 
 !["basic plot"]({{site.baseur}}/r/images/gg_size_color_lm.png?raw=true)
 
+>Note: There are many options for changing the aesthetics of your ggplot for every type of geom type. For specific modifications, we recommend that you check out our coding resources as wel as ggplot documentation for more information 
 
 Now we have effectively displayed a lot of information! However, its a little messy and for some audiences it can be hard to interpret... 
 
@@ -147,4 +148,18 @@ let's look at how we can use our **Labels** and our **Themes** to do so!
 
 ### Using Labels and Themes 
 
+Labels and themes are how we communicate what we are visualizing to mass audiences. In RStudio, we can create labels for all factors, and we can use themes to change the appearance of all elements in our plot. 
 
+**Labels** are used in ggplot with the ```labs``` command. Common features that we will aim to modify labels for our the **X and Y axis**, **Titles**, and our **Legend**. 
+
+Let's use our graph from earlier and create some labels. 
+
+```r
+ggplot(data = mtcars) +
+  geom_point(mapping = aes(x = mpg, y = disp, size = -cyl, color = cyl)) +
+  geom_smooth(method = "lm", aes(x = mpg, y = disp)) + 
+  labs(x = "Fuel Efficiency",
+       y = "Displacement",
+       Title = "Fuel Efficiency of Cars based on Speed" ,
+       subtitle = "The relationship between fuel efficiency and displacement depends on the cylinder engine")
+```
