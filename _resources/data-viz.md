@@ -123,3 +123,10 @@ To practice visualization:
 - Environmental and geospatial datasets  
 
 ---
+
+## Resources
+
+{% include resource-table.html topic="Data_Viz" %}
+
+
+---

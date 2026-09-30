@@ -2,290 +2,188 @@
 layout: single
 sidebar:
   nav: r_sidebar
-title: "Working With Data"
+title: "Working With Data" 
 toc: true
 toc_sticky: true
 ---
 
-## Working With Data using R 
-
-R is commonly used for it's ability to work with data, ranging from cleaning
-all the way through analysis. This is possible through R's diversity of libraries and tools
-to efficiently work with datasets. 
-
- This guide will focus on 
-how to move data into R and the basics on accessing data in a data set 
-
--------------------------------------------------------------------------------
-
-## Reading Data into R 
-
-In order to work with data in R, we need to first **Read** our data into R. 
-
-This is the process of taking a file that we have in our **File System** or from an **Online URL**, and entering 
-a command that allows R to read the file contents and store them in our **Environment**. 
-
-### Commonly Installed Files 
-
-|File Abbreviation| File Name| 
-|-----------------------|-----------------|
-|CSV|Comma-Separated Values|
-|TSV| Tab-Separated Values|
-|XLS|Excel Spreadsheet (old)|
-|XLSX|Excel Spreadsheet (New)|
-|gsheet|Google Sheet File|
-|FWF|Fixed-Width File|
-|JSON|Java Script Object Notation|
-
-### Base R Data Reading
-
-R provides simple commands that revolve around ```read.``` These are useful for simple file types such as **CSV's**.
-that are much more robust through our **Library** 
 
 
-Reading a CSV file from the file tree
+## Working With Data
 
-```r
+Knowing the fundamentals of how to work with data in RStudio is essential for making anything meaningful with it or doing any research. 
+In this guide, we will go over the base level R methods for working with data. Than. We will look at how to use the **dplyr** package. 
 
-read.csv("enter/your/file/path/here.csv")
-
-```
-Reading a CSV from a URL 
-
-```r
-
-read.csv(url(enter your url link here.csv))
-
-```
-If we want to broaden our file reading scope, we can do so by **Installing Packages** 
-
---------------------------------------
-
-### Installing Packages
-
-Installing packages can Widen the Scope of Your Data Reading Capabilities. 
-
-|Package|Readable File Types|
-|--------------------|-------|
-|tidyVerse     |CSV's, TSV's, Text, XLSX, Google Sheets,Fixed Width Files| 
-|readr         |CSV'S, TSV'S, Text, XLSX, Google Sheets, FWF|
-|readxl        |XLX,XLSX| 
-
-Installing the **Tidyverse Package** will be suitable for most file reading needs.
-
---------------------------------------------------------------------------------
-
-## File Reading Procedures 
-
-### Setting up your file directory
-
-To succefully read files in, you will need to make sure that your current working directory is set to your home directory, or the directory you want to work in. 
-
-Doing so will make sure the file is added to this directory / folder. 
-
-```r
-
-> cd ~
-
-#This will take you to the home directory in the console.
-
-> cd "/Enter/Directory/Path/Here"
-
-#This will take you to a specific working directory. 
-```
-
-Download the **Desired Files** to Your Computer. 
-
-Make sure that you know where
-your storing them in your computer so you can pull them later with ease. 
-
-### Installing your package of choice 
-
-Let's use **Tidyverse** as an example. We first need to install Tidyverse. 
-
-```r
-install.packages("tidyverse")
-```
-
-We know tidyverse has been installed when we run this command and are given a **Long Series of Code**; 
-this is our computer downloading all the packages and programs that tidyverse uses.
-
-Next, we will pull this package from our **Library**.  
-
-```r
-library(tidyverse)
-```
-
-This will allow us to use **Commands** in the **Tidyverse Package**
-
-### Reading in a file
-
-For Tidyverse, we can read in a multitude of files like so 
-
-```r
-read_file(This/is/the/path/to/your/file/file_name.filtype)
-```
-
-you will know the file has been successfully downloaded when it **Appears in Your 
-Environment** in the top right panel, or no error signs are given. 
-
--------------------------------------------------------------------------------
+------------------------------------------------------------
 
 ## Navigating your Data set
 
-This guide will provide you the baseline tools for accessing **Columns, Rows, and
-Elements** in your data set.
+-------------------------------------------------------------
 
-### Accessing Columns 
+Let's begin by looking at how to access **Columns**, **Rows**, and **Elements** in your data. This can either be done through **Indexing** commands, or through **Filtering by Name**
 
-We can access columns in a data set by using the ```$``` command as well as our ```[]``` syntax.
+## Accessing Columns via Indexing
 
-This code will allow us to create a **Vector** of a specific column within our **DataFrame**  
+-----------------------------------------------------------
 
-```r
+We can index data from our dataset using the ```[]``` character. 
 
-desired_column <- dataframe$column
-
-```
-
-We can also assign a column of a dataframe to a variable. 
-
-```r
-
-desired_column <- dataframe["column"]
-
-```
-
-We can **Manipulate** Column's, such as changing their names.  
-
-```r
-
-names(dataframe)[names(dataframe) == "column"] <- "new column name"
-
-```
-We can also select **Multiple Columns**
-
-```r
-
-Selected_Columns <- dataframe[c("colname1","colname2")]
-
-```
-
-### Accessing Rows 
-
-We can access rows through **Filtering** for certain **Values** rows have in a column
-
-Filtering rows
-
-```r
-
-Filtered <- Dataframe(Dataframe$column = "Certain word Within Columns Rows")
-
-```
+This code will allow us to create **Vectors's** and **Matrices** that are subsets of our full dataset.  
 
 ### Accessing elements in rows 
 
-let's take this one step further and access **Specific Elements**!
+Using indexing allows us to pick out specific values within vectors and matrices using **Numbers**. Let's start out with our most simple data type, the vector. 
 
 **Vectors**
 
+Let's use a simple example vector to show what is returned from different commands. 
+
 ```r
-# we will use an example vector
-
 vector <- c(10,20,25,200,1000)
+```
 
-#pulling the value 10
+Using our ```[]``` character, we can pull 1, multiple, or series of values from our vector. 
+
+-----------------------------------------
+
+Pulling 1 value 
+
+```r
 
 pulled_value <- vector[1]
 
-10
+print(pulled_value)
+```
 
-# we can do the same to access multiple values 
+```r
+[10]
+```
+If we want to pull multiple values, we can use the **Concatenate** function. This allows us to select multiple value from a vector / matrix and is represented with ```c()```. 
 
+```r
 multiple_values <- vector[c(1,5)]
 
-10 , 1000
+#here, we are telling our computer we want our variable multiple_values to return the first and fifth elements
+```
+```r
+
+[10][1000]
+
+```
+Finally, if we want to pull a series of values, we can use the ```:``` character, essentially telling our computer we want every value in a certain numeric range 
+
+```r
+series_values <- vector[1:3]
+
+print(series_values)
+```
+```r
+
+[10][20][25]
 
 ```
 
-Note: If working with other coding languages. When pulling elements, the order may start with 0 instead of 1. An example is Javascript. To pull the first 
-element from a JavaScript Vector, you would enter ```vector[0]```.
+>NOTE: If working with other coding languages. When pulling elements, the order may start with 0 instead of 1. An example is Javascript. To pull the first element from a JavaScript Vector, you would enter ```vector[0]```.
 
 **Matrices**
 
-Because Matrices operate similar to a **Two Dimensional Vector**, we can access components through simple commands
+Because Matrices operate similar to a **Two Dimensional Vector**, we can access components through similar commands. The only difference is now we will have to index both the **Row** and the **Column**. 
+
+Let's create an example matrix 
 
 ```r
-
-# we will create an example matrix
  
 example_matrix <- matrix(1:25, nrow = 5, ncol = 5) # this is a 5 by 5 matrix 
 
-# This is how we want to pull a specific row from the matrix 
-
-row_matrix <- example_matrix(2, ) 
-
-``` 
-
-This will print all the values of row 2
-
-``` r
-[6,7,8,9,10]
-
-```
-
-We can also pull specific row and column values
-
-```r 
-
-Specific_matrix <- example_matrix(2,4) # 2nd row, 4th column
-
 ```
 
 ```r
-
-[9]
+[1] [2] [3] [4] [5]
+[6] [7] [8] [9] [10]
+[11][12][13][14][15]
+[16][17][18][19][20]
+[21][22][23][24][25]
 
 ```
 
-We can access **Multiple Values** as well. 
+As mentioned earlier, to access specific elements we will simply incorporate our **Column** value and **Row** value that we wish to isolate
 
 ```r
+print(example_matrix[1,2])
+```
 
-Specific_Rows_and_Columns <- example_matrix[c(1,2), c(4,5)]
+Here, we called row 1, column 2. 
 
+
+```r
+[2]
+```
+
+If we want an entire row or column of values, we can do so by leaving either the column or row value **blank** 
+
+Lets get every value from row 1 
+
+```r
+print(example_matrix[1, ])
+
+```r
+[1][2][3][4][5]
+```
+
+Now let's do every column 
+
+```r
+print(example_matrix[,1 ])
+```
+```r
+[1][6][11]16[21]
+```
+
+We can even use our ```:``` command to print a series of values from one row or column to get some interesting outputs.
+
+```r
+print(example_matrix(1:3,4))
+```
+```r
+[4][9][14]
+```
+Finally, we can use our concatenate function to print out multiple values in different rows and columns. 
+
+Let's have our computer print out the values that are located in the **3rd** and **5th** rows, and the **2nd** and **4th** columns. 
+
+```r
+print(example_matrix[c(3,5),c(2,4)])
 ```
 
 ```r
-[2][20]
+[12][14]
+[22][24]
 ```
 
-We can also modify values 
-
-```r
-example_matrix[1,1] <- 100
-
-# Let's pull the top row now
-
-New_Row <- example_matrix[1][1]
-
-print(New_Row)
-
-```
-
-```r
-
-[100,2,3,4,5]
-
-```
+---------------------------------------------------------------------------
 
 ### Lists
 
 
-Let's look at how we can modify the elements within a list 
+Let's look at how we can modify the elements within a list. Lists are very similar to vectors. The main difference is that they can hold a mix of data types. They can also operate similar to a matrix as well. Let's take a look! 
 
+```r
+example_list <- list(1,2,TRUE,"Hello")
 ```
-example_list <- list(
+Let's look at one example of pulling our boolean value from our list
+
+```r
+print(example_list[3])
+```
+
+```r
+TRUE
+```
+
+One of the more interesting properties  of our lists is our matrix esque property we mentioned earlier. 
+
+```r
+nested_list <- list(
 age <- c(1,5,13,18)
 name <- c("Julie","Richard","Will","Grant")
 Status <- c("Baby","Toddler","Teenager"."Adult")
@@ -298,19 +196,22 @@ If we want to only know the age column we can do an operation such as this
 example_list[[1]]
 ````
 
+```r
+[1][5][13][18]
+```
+
+
 If we want to know the age and their status we can expand on our operation 
 
 ```r
-example_list[[1]][3]
+example_list[c(1,3)]
 ```
-
-Finally, we can access specific elements within our list
-
 ```r
-example_list$name[2] 
+[1][5][13][18]
+["Baby"]["Toddler"]["Teenager"]["Adult"]
 ```
 
-**Datasets** 
+### Datasets
 
 Datasets are similar to lists, only they commonly will contain far more information and can be organized in several different file formats.
 
@@ -319,25 +220,33 @@ Let's create a dataset example
 ```r
 
 
-data_set_example <- df(
+data_set_example <- data.frame(
 age <- c(1,5,13,18)
 name <- c("Julie","Richard","Will","Grant")
 Status <- c("Baby","Toddler","Teenager"."Adult")
 )
 
 ```
+>Note: This method of creating a dataset will give you weird header values, we can fix this using a rename command that we will look at later
 
 let's pull the name Julie from our dataset
 
 ```r
-dataset_element <- dataset_example[2,1]
+print(dataset_example[1,2])
 ```
+```r
+["Julie"]
+````
 
+This is one reason why we prefer to use datasets, they operate like a mix of a nested list and a matrix! 
 
 We can run similar commands to access entire rows and columns 
 
 ```r
-dataset_row <- dataset_example[2,]
+dataset_row <- dataset_example[,2]
+```
+```r
+["Julie"]["Richard"]["Will"]["Grant"]
 ```
 
 ### Applications of Navigating Datasets
@@ -345,11 +254,65 @@ dataset_row <- dataset_example[2,]
 Being able to navigate through your data quickly
 will allow you to efficiently **Clean Your Data**, creating a strong foundation for your future work. 
 
+--------------------------------------------------------------------------
+
+## Filtering Data With Names  
+
+In some cases, we will want to filter our data based on the **Names** of columns and rows within our dataframe. 
+This is mostly applicable when we have large datasets where it may be difficult or impossible to know what number specifc rows and columns are within. Data with repeat values is also a great example of when we would want to use names for filtering. 
+
+The two most common ways that we will filter data in base r with names is with the ```$``` character and the ```[]``` character. 
+The Base r function for this is to select your dataframe and then specify the column name your interested in. 
+
+
+```r
+
+desired_column <- dataframe$column
+
+```
+
+Similarily 
+
+```r
+
+desired_column <- dataframe["column"]
+
+```
+this method can be beneficial if you want to select **Multiple** columns from a dataframe 
+
+```r
+desired_columns <- dataframe[c("column_1","column_2","column_3")]
+```
+
+Another benefit is that 
+we can **Manipulate** Column headers. One example is changing the name of a column. This is done by using the **names** command, which returns our column name as a character vector which allows us to rename it.   
+
+```r
+
+names(dataframe)[names(dataframe) == "past column name"] <- "new column name"
+
+```
+
+This is beneficial for situations like earlier, where the data we create may have weird names. If we are working
+with data from online, the names may not be suitable for r as well which justifies a name chanee too. 
+
+Finally, we can access specific elements within a column to filter by column and row. This is particularly effective when cleaning large
+datasets. 
+
+```r
+
+Filtered <- Dataframe(Dataframe$column = "Certain word Within Columns Rows")
+
+```
+
+Now that we have shown you the base r methodology for working with data. We will look at how these processes can be simplified and made
+easier using **dplyr**.
+
 --------------------------------------------------------------------------------
 
 ## Using Dplyr
 
-We will briefly touch on Dplyr and it's use in R. Dplyr is a package that provides
+ Dplyr is a package that provides
 a multitude of functions that will make tedious cleaning procedures in base R 
 **Simpler and Quicker** 
 
@@ -376,8 +339,7 @@ value
 
 ```r
 
-Example_dataframe %>% 
-filter(column name == "certain value")
+filter(data = example_data, column_name == "certain value")
 
 ```
 
@@ -386,6 +348,16 @@ This filter will provide only certain values from one column
 other comparative operators can be used with this command such as ```>```, ```<```, ```==```, ```>=```, and ```<=``` to 
 select for values that are exceeding, equal, or are less then a certain  value.  
 
+We can also use the ```*``` symbol to indicate **Wildcards**. This essentially means that in a string you have, if you replace a specific character with a wildcard r with filter data for strings that have the non wildcard letters. Here is an example. 
+
+```r
+
+filter(data = example_data, column_name == "a*y")
+
+```
+
+This command would return words like **any**, **army**, and **ally**. This is because these words start with a and end with y. 
+
 
 **Select**
 
@@ -393,35 +365,46 @@ Select is a streamlined command that allows you to select columns from your data
 
 ```r
 
-Selected_DF <- Dataframe |>
-select("This Column", "This other column", "Ooh maybe this one!")
+
+select(data = DataFrame, "This Column", "This other column", "Ooh maybe this one!")
 
 ```
+---------
+
+**Group_by and Summarise** 
+
+The ```group_by``` and ```summarise``` functions are used in tandem frequently. 
+
+The group_by function allows you to **Group Your Data** by a certain column. An example would be if you have a dataset containing information for every state, using the group_by function would allow you to organize your data by state.
+
+group_by serves as a precursor for using the **Summaarise** function, and the **Mutate** function which we will talk about later 
+
+using the summarise function allows you to compute descriptive data from your dataset. An example with the group_by function would be grouping by state, and then computing the population with the summarise function giving you population per state. Without using the group_by function, we would be left with the total population for the dataset. 
 
 **Mutate**
 
-This is a similar command to the one we did earlier, where we were able to change the value of a column.
-The difference is that we are able to apply a function or changes to a column, which will create a new column with
-those changes applied 
+Using the mutate command allows you to isolate specific columns within your dataset and apply functions to them. This will result in a new column being created with the results of the function you applied. 
 
 ```r
 
 Mutated_DF <- Dataframe %>%
 mutate(
-new_column <- existing_column * 2 )
+new_column = existing_column * 2 )
 ```
+As you can see, this data would be especially benefiical for converting data between different unit types. 
+
 
  we can also mutate a column without creating a new one 
 
 ```r
 mutate(
-existing_column <- existing_column * 2 
+existing_column = existing_column * 2 
 )
 ```
 
 **Rename**
 
-This command allows us to rename a column to something cleaner and maybe more concise
+The rename command acts similar to the mutate command without modifying our data, this allows us to turn uncleaned names into clean and easily usable names. 
 
 ```r
 

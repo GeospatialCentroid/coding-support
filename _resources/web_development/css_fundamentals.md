@@ -31,17 +31,22 @@ CSS can be applied to HTML in three main ways:
 
 Used for quick, one-off styling:
 
-```html id="r7k2pl"
+```html 
 <h1 style="font-weight: bold; text-align: center;">
   This heading is bold and centered
 </h1>
 ```
 
+<h1 style="font-weight: bold; text-align: center;">
+  This heading is bold and centered
+</h1>
+
+
 #### 2. Internal CSS (style block)
 
 Defined inside a `<style>` tag in the HTML `<head>`:
 
-```html id="xk8l2s"
+```html
 <style>
 h1 {
   font-weight: bold;
@@ -57,7 +62,7 @@ p {
 
 Stored in a separate `.css` file and linked to your HTML:
 
-```html id="3p9q1v"
+```html
 <link rel="stylesheet" href="styles.css">
 ```
 
@@ -69,7 +74,7 @@ This is the most scalable approach for larger projects.
 
 CSS uses **selectors** and **declarations**:
 
-```css id="2k0mza"
+```css
 selector {
   property: value;
 }
@@ -77,7 +82,7 @@ selector {
 
 Example:
 
-```css id="y9c3dq"
+```css
 h1 {
   color: blue;
   text-align: center;
@@ -106,7 +111,7 @@ h1 {
 
 ## Example
 
-```css id="8w2pks"
+```css
 body {
   background-color: blue;
 }
@@ -130,11 +135,11 @@ This example:
 
 ## Classes
 
-CSS **classes** allow you to reuse styles across multiple elements.
+If you don't want all of your headers looking the exact same, or would like to create specific stylings for parts of your website, you can use **Classes** which allow you to create custom style choices. 
 
 ### CSS File
 
-```css id="k2m8vx"
+```css
 .highlight {
   color: blue;
   text-align: center;
@@ -144,19 +149,20 @@ CSS **classes** allow you to reuse styles across multiple elements.
 
 ### HTML Usage
 
-```html id="p0z2nl"
+``` html
 <h1 class="highlight">This is a styled heading</h1>
 ```
+This wuld give us a blue heading that is bolded, located in the center. 
 
-Classes make it easy to apply consistent styling across your site.
 
 ---
 
 ### Universal Selector
 
+For some general features of our website, such as setting our font class, background colors, and default size of our webpage. 
 The universal selector (`*`) applies styles to all elements:
 
-```css id="4v9kqe"
+```css
 * {
   margin: 0;
   padding: 0;
