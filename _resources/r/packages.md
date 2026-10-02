@@ -10,11 +10,11 @@ toc_sticky: true
 
 ## Introduction 
 
-In this section, we will go over **Packages**. Every coding language has their own libraries that consist of various scripts and functions that can make complex and somtimes impossible coding tasks possible and easier. For the r language, these are in the form of packages. 
+In this section, we will go over **Packages**. Every coding language has it's own libraries that consist of various scripts and functions that can make complex and somtimes impossible coding tasks possible and easier. For the r language, these are in the form of packages. 
 
 ## What are Packages 
 
-Packages are a suite of scripts and functions that are all bundled into one folder. Packages allow you to run **Commands** that are not avaliabe to you in base r. An example is using the **dplyr** function to filter data for a column versus using base r 
+Packages are a suite of scripts and functions that are all bundled into one folder. Packages allow you to run **Commands** that are not available to you in base r. An example is using the **dplyr** function to filter data for a column versus using base r 
 
 **Base R** 
 
@@ -112,11 +112,11 @@ In the fundamentals section, we briefly went over writing **Scripts**. Scripts a
 
 
 ### Software Requirements 
-There is a short list of requirmenets you will need to build packages in RStudio
+There is a short list of requirments you will need to build packages in RStudio
 
 - GNU software development tools such as a C/C++ Compiler 
 - LaTeX for building R manuals and vignettes 
-- Four R packages (devtools, roxygen2, tsetthat, knitr)
+- Four R packages (devtools, roxygen2, testthat, knitr)
 
 >NOTE: to download multiple packages at once. you can use c("package","package_2","package_3") within your install.packages() command. 
 
@@ -129,7 +129,7 @@ There are two methods for creating a package in RStudio. One is a **Terminal / C
 
 Creating a package in the R GUI will require you to first use the **Create Project** command that is avaliable on the **Projects** menu. After doing this, you can either create a new subdirectory, or create your package in an existing subdirectory. You should only create a package in an existing subdirectory if you want to modify an existing package. If you are creating a package from scratch you should create a new directory. 
 
-Finally, you will specicy your project type to be **Package** and give it a name. And just like that, you have your first R Package! 
+Finally, you will specify your project type to be **Package** and give it a name. And just like that, you have your first R Package! 
 
 #### Using the Command Line 
 
@@ -170,7 +170,7 @@ In the Environment window, there will be a Build option. Here, you can use multi
 |----|-----|
 |Command|Purpose| 
 |Clean and Install|Makes sure that your package is in a clean environment and is properly loaded | 
-|Test|runs tets for current package|
+|Test|runs tests for current package|
 |Check|tests package code and checks for documentation problems| 
 |Build Source Package| Builds a source package|
 |Build Binary Package| Builds a binary package| 

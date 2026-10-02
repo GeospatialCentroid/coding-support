@@ -12,7 +12,7 @@ toc_sticky: true
 ## Working With Data
 
 Knowing the fundamentals of how to work with data in RStudio is essential for making anything meaningful with it or doing any research. 
-In this guide, we will go over the base level R methods for working with data. Than. We will look at how to use the **dplyr** package. 
+In this guide, we will go over the base level R methods for working with data. Then, we will look at how to use the **dplyr** package. 
 
 ------------------------------------------------------------
 
@@ -28,7 +28,7 @@ Let's begin by looking at how to access **Columns**, **Rows**, and **Elements** 
 
 We can index data from our dataset using the ```[]``` character. 
 
-This code will allow us to create **Vectors's** and **Matrices** that are subsets of our full dataset.  
+This code will allow us to create **Vectors** and **Matrices** that are subsets of our full dataset.  
 
 ### Accessing elements in rows 
 
@@ -142,7 +142,7 @@ print(example_matrix[,1 ])
 We can even use our ```:``` command to print a series of values from one row or column to get some interesting outputs.
 
 ```r
-print(example_matrix(1:3,4))
+print(example_matrix[1:3,4])
 ```
 ```r
 [4][9][14]
@@ -186,7 +186,7 @@ One of the more interesting properties  of our lists is our matrix esque propert
 nested_list <- list(
 age <- c(1,5,13,18)
 name <- c("Julie","Richard","Will","Grant")
-Status <- c("Baby","Toddler","Teenager"."Adult")
+Status <- c("Baby","Toddler","Teenager","Adult")
 )
 ``` 
 If we want to only know the age column we can do an operation such as this 
@@ -259,7 +259,7 @@ will allow you to efficiently **Clean Your Data**, creating a strong foundation 
 ## Filtering Data With Names  
 
 In some cases, we will want to filter our data based on the **Names** of columns and rows within our dataframe. 
-This is mostly applicable when we have large datasets where it may be difficult or impossible to know what number specifc rows and columns are within. Data with repeat values is also a great example of when we would want to use names for filtering. 
+This is mostly applicable when we have large datasets where it may be difficult or impossible to know what number specific rows and columns are within. Data with repeat values is also a great example of when we would want to use names for filtering. 
 
 The two most common ways that we will filter data in base r with names is with the ```$``` character and the ```[]``` character. 
 The Base r function for this is to select your dataframe and then specify the column name your interested in. 
@@ -294,14 +294,14 @@ names(dataframe)[names(dataframe) == "past column name"] <- "new column name"
 ```
 
 This is beneficial for situations like earlier, where the data we create may have weird names. If we are working
-with data from online, the names may not be suitable for r as well which justifies a name chanee too. 
+with data from online, the names may not be suitable for r as well which justifies a name change too. 
 
 Finally, we can access specific elements within a column to filter by column and row. This is particularly effective when cleaning large
 datasets. 
 
 ```r
 
-Filtered <- Dataframe(Dataframe$column = "Certain word Within Columns Rows")
+Filtered <- Dataframe[Dataframe$column == "Certain word Within Columns Rows",]
 
 ```
 
@@ -377,7 +377,7 @@ The ```group_by``` and ```summarise``` functions are used in tandem frequently.
 
 The group_by function allows you to **Group Your Data** by a certain column. An example would be if you have a dataset containing information for every state, using the group_by function would allow you to organize your data by state.
 
-group_by serves as a precursor for using the **Summaarise** function, and the **Mutate** function which we will talk about later 
+group_by serves as a precursor for using the **Summarise** function, and the **Mutate** function which we will talk about later 
 
 using the summarise function allows you to compute descriptive data from your dataset. An example with the group_by function would be grouping by state, and then computing the population with the summarise function giving you population per state. Without using the group_by function, we would be left with the total population for the dataset. 
 
@@ -391,7 +391,7 @@ Mutated_DF <- Dataframe %>%
 mutate(
 new_column = existing_column * 2 )
 ```
-As you can see, this data would be especially benefiical for converting data between different unit types. 
+As you can see, this data would be especially beneficial for converting data between different unit types. 
 
 
  we can also mutate a column without creating a new one 
@@ -434,7 +434,7 @@ We want to only include rows that have an age greater then 20
 
 ```r
 
-raw_data <- df(
+raw_data <- data.frame(
 name_column <- c("Darnold","Matilda","Juan","Louise","Aaron","Elena")
 age_column <- c(10,20,17,14,32,21)
 school <- c("elementary","college","highschool","junior","postgrad","college")
@@ -442,8 +442,8 @@ grade <- c(4,N/A,11,8,N/A,N/A)
 )
 
 #First we will declare our first dataset
-Dataset_1 <- raw_data(1:2, 1:2) |> 
-Dataset_2 <- raw_data(raw_data$age_column > 20)
+Dataset_1 <- raw_data[1:2, 1:2] 
+Dataset_2 <- raw_data[raw_data$age_column > 20,]
              
 ```
 

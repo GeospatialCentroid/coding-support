@@ -37,18 +37,38 @@ You can Download RStudio for **Windows**, **MacOS**, and **Other Softwares** usi
 
 There are **Four Sections** of the RStudio IDE that we will cover in this guide 
 
-1. Console
+1. [Source Pane](#the-source-pane)
+1. [Console](#the-console)
+1. [Environment](#the-environment)
+1. [Output](#outputs)
 
-2. Source 
+## The Source Pane
 
-3. Environment 
+!["RStudio Source Pane"]({{site.baseurl}}/r/images/Code_Editor.png?raw=true)
 
-4. Output
+The **Source Pane** (top left) is where you write and edit scripts. This is where most of your work will happen when developing reproducible code.
 
+Key features of the Source Pane:
+
+- **Write and save scripts** instead of running one-off commands  
+- **Run code line-by-line or in chunks** using `Ctrl + Enter` (Windows) or `Cmd + Enter` (Mac)  
+- **Syntax highlighting** helps identify errors before running code  
+- **Code completion and suggestions** speed up development  
+- **Multiple tabs** allow you to work across several files at once  
+- **Foldable code sections** help organize longer scripts  
+
+Example:
+
+```r
+# This code is written in the Source Pane
+x <- 10
+y <- 5
+x + y
+```
 
 ### The Console 
 
-  !["image title"]({{site.baseur}}/r/images/Console.png?raw=true)
+!["RStudio Console"]({{site.baseur}}/r/images/Console.png?raw=true)
 
 **The Console** is where 1 line code is written to run **single commands**.
 
@@ -89,7 +109,7 @@ cd ("path/to/your/desired/folder")
 ### The Environment 
 
 
-!["image title"](https://github.com/GeospatialCentroid/coding-support/blob/dev/_resources/r/images/environment.png?raw=true)
+!["RStudio Environment"]({{site.baseur}}/r/images/environment.png?raw=true)
 
 
 **The Environment**, located at the top right is where all of our **objects** will be stored.
@@ -113,29 +133,9 @@ If we want to view and access previously ran code, we can do so with the **Histo
 
 --------------------------------------------------------------------------------
 
-### The Code Editor 
-
-!["image title"](https://github.com/GeospatialCentroid/coding-support/blob/dev/_resources/r/images/Code_Editor.png?raw=true)
-
-The top left window of our IDE is where our **Code Editing Platform** is Located. For some operating 
-systems such as Windows and Linux, you may need to press ```CTRL+Shift+N``` to open this 
-window. 
-
-The code editor window is where you will be writing the majority of your code.
-
-The code editor provides multiple benefits:
-  
- - Code editor will **Highlight Incorrect and Incomplete** command syntax and provide comments on what is incorrect
-  before you run your code.
-  
- - You can have **Multiple Files Open at a time**, allowing you to move between them and interact with your
-  global environment.
-
- - You can create **Foldable Code Chunks** with some file types, allowing you to run specific blocks of code and keep your script clean and organized.
-  
 ### Outputs 
+!["RStudio Output"]({{site.baseur}}/r/images/Output.png?raw=true)
 
-!["image title"](https://github.com/GeospatialCentroid/coding-support/blob/dev/_resources/r/images/Output.png?raw=true)
 
 The **Output Window** is located at the bottom right of our IDE, it
 contains tools to navigate your **Systems Directory** and manage your coding outputs:
@@ -143,19 +143,17 @@ contains tools to navigate your **Systems Directory** and manage your coding out
  - **The Files Folder Houses Your System Directory**  You can create and manage new files,
    and navigate through your file tree.
   
- - **View Graphs and Other Plots** That you have ryn in your script. You can export these as
-   as images. 
+ - **View Graphs and Other Plots** That you have run in your script. You can export these as images. 
 
  - **Access a List of Installed r Packages** that you can add to your code, giving you access to new 
    commands that will help you meet your goals. 
   
- - **Search up Commands and Functions**, where it will provide you with examples of how to use
-   them and what every part of the command is. 
+ - **Search Commands and Functions**, where it will provide you with examples and explainations on how to usethem. 
   
 
 ## Next Steps 
 
-RStudio offers an interactive environment that allows you to view the products of your code while your making scripts. Next, we will look at how we can use R/RStudio to read in 
+RStudio offers an interactive environment that allows you to view the products of your code while you're making scripts. Next, we will look at how we can use R/RStudio to read in 
 and work with data. 
 
   

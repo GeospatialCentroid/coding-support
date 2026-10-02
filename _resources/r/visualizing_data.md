@@ -20,7 +20,7 @@ R provides the ability to make quick and simple plots to display your data.
 
 Plotting in r is based around the ```plot``` command and vectors or data frames 
 
-for plotting vectors, we need to use the **plot** command, and provie x and y values 
+for plotting vectors, we need to use the **plot** command, and provide x and y values 
 
 ```r
 
@@ -85,7 +85,7 @@ Every geom that RStudio has types of data they are good at visualizing and some 
 
 |-------|-----|------|
 |Geom Name| Best Purpose | Required Fields| 
-|geom_point| Highlighting Relationships with continous and variable data | x , y |
+|geom_point| Highlighting Relationships between two continuous variables | x , y |
 |geom_line| Creating lines of best fit | x , y | 
 |geom_bar| Visualizing counts of different categorical variables | x | 
 |geom_col| Visualizing categorical relationships | x , y |
@@ -142,7 +142,7 @@ ggplot(data = mtcars) +
 
 Now we have effectively displayed a lot of information! However, its a little messy and for some audiences it can be hard to interpret... 
 
-We wan't our visualizations to be easily understood, our audience of interest should be able to tell exactly what relationships we want to highlight and should be able to easily see it. 
+We want our visualizations to be easily understood, our audience of interest should be able to tell exactly what relationships we want to highlight and should be able to easily see it. 
 
 let's look at how we can use our **Labels** and our **Themes** to do so! 
 
@@ -167,7 +167,7 @@ ggplot(data = mtcars) +
 ```
 !["labeled ggplot image"]({{site.baseur}}/r/images/gg_labeled_plot.png?raw=true)
 
-Our graph is already looking better! However, it is still missing that profesional appearance that we look for in plots. Some of the reasons this is the case is due to our spacing, font size, and the lack of a unique appearance. Thankfully, we can fix all of these issues with a **Theme**.
+Our graph is already looking better! However, it is still missing that professional appearance that we look for in plots. Some of the reasons this is the case is due to our spacing, font size, and the lack of a unique appearance. Thankfully, we can fix all of these issues with a **Theme**.
 
 ggplot provides **Theme** packages which provide you with preset apperances for your graph. On top of this, you are able to modify your visualizations in ggplot on a fine scale using the ```theme``` command with no preset. Let's first look at a way we can add our preset, and then add specific changes beneath. 
 
