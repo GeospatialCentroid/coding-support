@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true 
 ---
 
-While base r provides the tools necessary to analyze complex datasets and perform
+While base R provides the tools necessary to analyze complex datasets and perform
 most necessary functions. Utilizing R can be far easier through the use of **RStudio.**
 
 This guide goes through the basics of the RStudio software. 
@@ -19,7 +19,7 @@ This guide goes through the basics of the RStudio software.
 - **RStudio is an Integrated Development Environment (IDE)**. It allows for individuals 
 to run various coding languages; predominantly R. 
 
-- **RStudio Provides More Resources Then Base R**. Syntax Highlighting, Debugging Assistance, and Script Visualization are all offered in an IDE.
+- **RStudio Provides More Resources Than Base R**. Syntax Highlighting, Debugging Assistance, and Script Visualization are all offered in an IDE.
 
 
 
@@ -48,6 +48,7 @@ There are **Four Sections** of the RStudio IDE that we will cover in this guide
 
 ### The Console 
 
+  !["RStudio Console"]({{site.baseur}}/r/images/Console.png?raw=true)
 
 **The Console** is where 1 line code is written to run **single commands**.
 
@@ -69,7 +70,7 @@ The **Up** & **Down** arrows will allow you to move through previously ran comma
 The console is also home to our **Terminal**. The terminal operates as a **Shell** that allows
 us to interact with our computers **File System** and **git**. 
 
-We focus more on how to use the terminal in our [Unix](https://geospatialcentroid.github.io/coding-support/unix/), and [Git](https://geospatialcentroid.github.io/coding-support/git/) guides. Check them out! 
+We focus more on how to use the terminal in our [Unix]({{site.baseur}}/coding-support/unix/), and [Git]({{site.baseur}}/coding-support/git/) guides. Check them out! 
 
 The terminal is especially useful when executing commands to **Make new Folders**, **Change Working Directories** and 
 **Connect With Github Services**. 
@@ -88,6 +89,7 @@ cd ("path/to/your/desired/folder")
 ### The Environment 
 
 
+!["RStudio Environment"]({{site.baseur}}/r/images/environment.png?raw=true)
 
 
 **The Environment**, located at the top right is where all of our **objects** will be stored.
@@ -113,9 +115,9 @@ If we want to view and access previously ran code, we can do so with the **Histo
 
 ### The Code Editor 
 
-The top left window of our IDE is where our **Code Editing Platform** is Located. For some operating 
-systems such as Windows and Linux. you may need to press ```CTRL+Shift+N``` to open this 
-window. 
+!["RStudio Code_Editor"]({{site.baseur}}/r/images/Code_Editor.png?raw=true)
+
+The top left window of our IDE is where our **Code Editing Platform** is Located.
 
 The code editor window is where you will be writing the majority of your code.
 
@@ -131,25 +133,25 @@ The code editor provides multiple benefits:
   
 ### Outputs 
 
+!["RStudio Output"]({{site.baseur}}/r/images/Output.png?raw=true)
+
 The **Output Window** is located at the bottom right of our IDE, it
 contains tools to navigate your **Systems Directory** and manage your coding outputs:
 
  - **The Files Folder Houses Your System Directory**  You can create and manage new files,
    and navigate through your file tree.
   
- - **View Graphs and Other Plots** That you have ran in Your script. You can export these as
-   as images. 
+ - **View Graphs and Other Plots** That you have run in your script. You can export these as images. 
 
  - **Access a List of Installed r Packages** that you can add to your code, giving you access to new 
    commands that will help you meet your goals. 
   
- - **Search up Commands and Functions**, where it will provide you with examples of how to use
-   them and what every part of the command is. 
+ - **Search Commands and Functions**, where it will provide you with examples and explainations on how to usethem. 
   
 
 ## Next Steps 
 
-RStudio offers an interactive environment that allows you to view the products of your code while your making scripts. Next, we will look at how we can use R/RStudio to read in 
+RStudio offers an interactive environment that allows you to view the products of your code while you're making scripts. Next, we will look at how we can use R/RStudio to read in 
 and work with data. 
 
   
