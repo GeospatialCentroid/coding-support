@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true 
 ---
 
-While base r provides the tools necessary to analyze complex datasets and perform
+While base R provides the tools necessary to analyze complex datasets and perform
 most necessary functions. Utilizing R can be far easier through the use of **RStudio.**
 
 This guide goes through the basics of the RStudio software. 
@@ -19,7 +19,7 @@ This guide goes through the basics of the RStudio software.
 - **RStudio is an Integrated Development Environment (IDE)**. It allows for individuals 
 to run various coding languages; predominantly R. 
 
-- **RStudio Provides More Resources Then Base R**. Syntax Highlighting, Debugging Assistance, and Script Visualization are all offered in an IDE.
+- **RStudio Provides More Resources Than Base R**. Syntax Highlighting, Debugging Assistance, and Script Visualization are all offered in an IDE.
 
 
 
@@ -118,7 +118,7 @@ If we want to view and access previously ran code, we can do so with the **Histo
 !["image title"](https://github.com/GeospatialCentroid/coding-support/blob/dev/_resources/r/images/Code_Editor.png?raw=true)
 
 The top left window of our IDE is where our **Code Editing Platform** is Located. For some operating 
-systems such as Windows and Linux. you may need to press ```CTRL+Shift+N``` to open this 
+systems such as Windows and Linux, you may need to press ```CTRL+Shift+N``` to open this 
 window. 
 
 The code editor window is where you will be writing the majority of your code.
@@ -143,7 +143,7 @@ contains tools to navigate your **Systems Directory** and manage your coding out
  - **The Files Folder Houses Your System Directory**  You can create and manage new files,
    and navigate through your file tree.
   
- - **View Graphs and Other Plots** That you have ran in Your script. You can export these as
+ - **View Graphs and Other Plots** That you have ryn in your script. You can export these as
    as images. 
 
  - **Access a List of Installed r Packages** that you can add to your code, giving you access to new 
