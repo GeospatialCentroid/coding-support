@@ -47,13 +47,35 @@ This information will be important when we begin looking at **Correlation** betw
 
 ### P-Values
 
+P values are how we determine if we can reject our null hypothesis or can't reject it. As a quick review, our null hypothesis in this context essentially means that there is no relationship between two variables. if we rejct our null hypothesis, it usually means that there is some relationship between our variables unless **Confounds** are present. 
+
+When looking at p values, if the value is less then 0.05, this means that we have enough confidence in our data to reject our null hypothesis and imples statisitcal significance. If the values is greater then 0.05. Then this means that we do not have enough confidence or don't have data that shows a statistically significant relationship. Therefore, we fail to reject our null hypothesis. 
+
 ### R Squared Values 
 
-### Regressions and Residuals
+Our R Squared values are an indicator of the **Strength** of the relationship between our two variables. In some cases, while we may have a low p value that allows us to reject our null hypothesis. We might still have a very weak relationship between our two variables. 
+
+R Squared values will always between 1 and -1. 
+
+|R Squared Value | Meaning |
+|----------------|---------|
+|1 | There is a perfect positive relationship between our variables | 
+|0 | There is no relationship between our variables | 
+| -1 | There is a perfect negative relationship between our variables | 
+
+Typically, values that are anywhere from **0.7 to 1**, and **-0.7 to -1.**
+
+### Linear Regression
+
+We will briefly look at linear regressions. Linear regression are essentially a way to create a graph out of data and determine if there is a relationship between two variables. In our [Visualizing Data](https://codingsupport.colostate.edu/r/visualizing_data/)
+
+### Residuals
 
 ### Power
 
 ## Common Statistical Tests 
+
+### Categorical vs Continuous 
 
 ### Correlation Test 
 
