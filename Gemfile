@@ -14,3 +14,5 @@ end
 
 gem "kramdown-parser-gfm", "~> 1.1"
 gem "ostruct", "~> 0.6.3"
+
+gem "faraday-retry", "~> 2.4"

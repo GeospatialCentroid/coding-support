@@ -31,6 +31,8 @@ r_sidebar:
       url: r/visualizing_data/
     - title: "Analyzing Data" 
       url: r/analyzing_data/
+    - title: "Command Line Running"
+      url: r/command_line_running/
 
 
 python_sidebar:
