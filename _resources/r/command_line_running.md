@@ -1,7 +1,7 @@
 ---
 layout: single
 sidebar:
-nav: r_sidebar
+  nav: r_sidebar
 title: "Command Line Running"
 toc: true
 toc_sticky: true
