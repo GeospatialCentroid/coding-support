@@ -2,251 +2,274 @@
 layout: single
 sidebar:
   nav: r_sidebar
-title: "Analyzing Data"
+title: "Analyzing Data" 
 toc: true
 toc_sticky: true
 ---
 
 ## Introduction
 
-While visualizations allow us to identify trends in data, we cannot make conclusive statements about these relationships without proper **data analysis**. RStudio offers a suite of commands through popular packages that allow us to access quick statistical summaries of our data. In this guide, we will look at introductory methods for working with analysis-ready data.
+While Visualizations allow us to identify trends in data, we can't make any conclusive statements about these relationships without proper **Data Analysis**. RStudio offers a suite of commands through one of their more popular packages which allow us to access  quick statistical descriptions for our data. In this guide, we will look at some introductory methods for working with analysis ready data. 
 
-## Analysis Package
+## Analysis Package 
 
-While R provides some built-in resources for data analysis, the **rstatix** package offers user-friendly functions for common statistical tests. The process for installing and loading this package is the same as for other R packages.
+While r provides some base level resources for data analysis. The **rstatix** package is the most user friendly method of analzying data in r. The process for using this package is the same for all other packages that we have used before. 
 
 ```r
 install.packages("rstatix")
 library(rstatix)
 ```
 
-## Statistical Concepts for R
+## Statistical Concepts for R 
 
-Before we begin computing statistics and examining relationships, let's review some important statistical concepts.
+Before we begin computing functions and looking at statistical relationships. Let's briefly go over some important statistical concepts 
 
 ### Data Distribution
 
-Data distribution describes how values are spread across a dataset. Three common distribution shapes are **approximately symmetric**, **left-skewed**, and **right-skewed**.
+Data Distribution focuses on the amount of data that is in each range of a dataset. There are three main types of distribution for data. 
+These types of distribution are **Equal**, **Left Skewed**, and **Right Skewed**
 
-An approximately symmetric distribution is often shaped like a bell: most values cluster around the center, with fewer values toward either end. A normal distribution is one example of a symmetric distribution. Many statistical methods make assumptions about the distribution of the data, so it is important to examine it before choosing a test.
+**Equal Distribution** is data that is almost shaped like a bell. This essentially means that the majority of the data is within the middle of the range, with data that is significantly less then or greater then our **mean** beeing in lower quantities. Equally distributed data is the most fit for analysis because of concepts related to conifdence intervals and probability that we do not cover in this guide. 
 
-![Approximately symmetric distribution]({{ site.baseurl }}/r/images/Equal_Distribution.png?raw=true)
+ !["equal distribution image"]({{site.baseur}}/r/images/Equal_Distribution.png?raw=true)
 
-**Skewed data** has a longer tail on one side of the distribution.
+ **Skewed Data** is data where the majority is located near the maximum or minimum of our total range. This type of data results in a large clump of data located on the left or the right side of the graph, with a tail off as the values increase or decrease. 
 
-![Left-skewed distribution]({{ site.baseurl }}/r/images/Left_Skew.png?raw=true)
+ !["equal distribution image"]({{site.baseur}}/r/images/Left__Skew.png?raw=true)
 
-In a **left-skewed** distribution, the tail extends toward the lower values, and most observations are concentrated toward the higher values.
+ our **Left Skewed** data is data where the majority of values are in the higher range values. 
 
-![Right-skewed distribution]({{ site.baseurl }}/r/images/Right_Skew.png?raw=true)
+ !["equal distribution image"]({{site.baseur}}/r/images/Right_Skew.png?raw=true)
 
-Conversely, in a **right-skewed** distribution, the tail extends toward the higher values, and most observations are concentrated toward the lower values.
+ Conversely, our **Right Skewed** data is data where the majority of values are in the lower range values 
 
-This information will be important when we examine **correlation** between variables and try to determine whether relationships are present. We will learn more about how to work with skewed data in later sections.
+This information will be important when we begin looking at **Correlation** between our variables and try to determine if relationships are present. We will learn more about how to deal with skewed data in later sections. 
 
-### P-values
+### P-Values
 
-P-values help us evaluate evidence against a null hypothesis. In this context, the null hypothesis might state that there is no relationship between two variables. If the p-value is sufficiently small, we may reject the null hypothesis. This does not automatically establish that the relationship is important or causal, and confounding variables may affect the results.
+P values are how we determine if we can reject our null hypothesis or can't reject it. As a quick review, our null hypothesis in this context essentially means that there is no relationship between two variables. if we reject our null hypothesis, it usually means that there is some relationship between our variables unless **Confounds** are present. 
 
-A commonly used significance threshold is 0.05. The p-value helps us decide whether the data provide enough evidence to reject the null hypothesis.
+When looking at p values, if the value is less then 0.05, this means that we have enough confidence in our data to reject our null hypothesis which implies statisitcal significance. If the values is greater then 0.05. Then this means that we do not have enough confidence or don't have data that shows a statistically significant relationship. Therefore, we fail to reject our null hypothesis. 
 
-- **If the p-value is less than 0.05:** We usually call the result statistically significant and **reject the null hypothesis**. In plain language, the data provide evidence of an effect, difference, or relationship.
-- **If the p-value is 0.05 or greater:** We **fail to reject the null hypothesis**. In plain language, the data do not provide sufficient evidence of a statistically significant effect, difference, or relationship at the chosen threshold.
+### R Squared Values 
 
-It is important to understand what these statements do and do not mean. **Failing to reject the null hypothesis does not prove that there is no relationship.** The effect might be small, the sample might be too small, or the data might be too variable to provide clear evidence. Similarly, rejecting the null hypothesis does not prove that a relationship is important or that one variable causes another.
+Our R Squared values are an indicator of the **Strength** of the relationship between our variables. In some cases, while we may have a low p value that allows us to reject our null hypothesis. We might still have a very weak relationship between our two variables. 
 
-| Formal statistical wording | Clearer explanation |
-|----------------------------|---------------------|
-| Reject the null hypothesis | The data provide evidence of a statistically significant effect, difference, or relationship. |
-| Fail to reject the null hypothesis | The data do not provide sufficient evidence of a statistically significant effect, difference, or relationship at the chosen threshold. |
-| The null hypothesis cannot be rejected | The evidence is insufficient to rule out the possibility described by the null hypothesis. |
-| There is no statistically significant relationship | The analysis did not find sufficient evidence of a relationship at the chosen significance threshold. |
+R Squared values will always between -1 and 1. 
 
-Use the formal wording when reporting the statistical decision, and follow it with a plain-language explanation of what the result means in the context of your data.
+|R Squared Value | Meaning |
+|----------------|---------|
+|1 | There is a perfect positive relationship between our variables | 
+|0 | There is no relationship between our variables | 
+| -1 | There is a perfect negative relationship between our variables | 
 
-### R-squared Values
-
-R-squared (\(R^2\)) describes the proportion of variation in a response variable that is explained by a regression model. It is not generally a measure of the strength or direction of a relationship in every statistical context.
-
-For a simple linear regression with an intercept, \(R^2\) ranges from 0 to 1:
-
-| R-squared value | Meaning |
-|-----------------|---------|
-| 1 | The model explains all observed variation in the response variable. |
-| 0 | The model explains none of the observed variation in the response variable. |
-
-For correlation coefficients, by contrast, values range from -1 to 1. Values closer to -1 or 1 indicate a stronger linear association, while values near 0 indicate a weaker linear association. The interpretation depends on the measure being used and the context of the analysis.
+Typically, values that are anywhere from **0.7 to 1**, and **-0.7 to -1.** are those which we can say have a strong relationship. anything inbetween usualy has a weak relationship 
 
 ### Linear Regression
 
- Linear regression models the relationship between a response variable and one or more predictor variables. In our [Visualizing Data](https://codingsupport.colostate.edu/r/visualizing_data/) section, you can see a graph with a fitted line passing through a series of plotted points. This line is a visualization of a simple linear regression model.
+We will briefly look at linear regressions later. However, linear regressions are essentially a way to create a graph out of data and determine if there is a relationship between two variables. In our [Visualizing Data](https://codingsupport.colostate.edu/r/visualizing_data/) section, you can see a graph that has a linear line moving through a series of plotted points. This type of graph is the visualizaiton of our linear regression. When we run a linear regression, we are creating a **Slope** that tells us the significance of our relationship and determines if there is a relationship. 
 
-**Residuals** are the differences between observed values and the values predicted by the model. Examining residuals helps us assess how well a model fits the data and whether its assumptions are reasonable.
+**Residuals** are essential to creating a linear regression. They calculate the average distance of points from the line of best fit to determine varaibility in the data. 
 
-### Power and Sample Size
+### Power
 
-When analyzing data, sample size can have a significant impact. Smaller samples often produce less precise estimates, while larger samples can provide more precise estimates when other factors are comparable. A larger sample is not necessarily more representative if the sampling method is biased.
-
-**Statistical power** is the probability that a statistical test will detect an effect of a specified size when that effect is present. Power depends on factors including sample size, effect size, significance threshold, and variability. In R, the `slice_sample()` function can be used to draw random samples from a dataset and explore how sample size affects results. This is a simulation exercise, not a way to change the power of an existing study after data has been collected.
+When we do analysis of data. The sample size  can have a significant impact. Smaller sample sizes will tend to have **more** variability within them. While large sample sizes tend to have **less**. A larger sample size will most likely be more representive of our true population as well. In RStudio, **Power** is a way to alter our sample size to measure changes in our p value and results with changes in population. To create sample sizes, we can use the ```slice_sample``` comamand.
 
 ## Categorical and Continuous Tests
 
-Just as we use different visualizations for continuous and categorical data, we also use different statistical tests depending on the types of variables and the research question. We will now review a basic analysis workflow for categorical and continuous variables.
+Similar to how we can't create the same graphs with continuous and catogorical data. We also can't compute all of the same statistical tests with categorical and continous data. Each type of data has different methods of determining a relationship. We will now over our most basic analysis workflow for both categorical and continuous data.
 
-## Categorical Variables
+## Categorical Variables 
 
-### Association Tests
+### Correlation Tests 
 
-Before running statistical tests, we first want to identify variables for which a relationship may be present. We can explore relationships using visualizations and statistical tests. For example, box plots can help compare a continuous variable across categories, while a chi-square test can assess the association between two categorical variables.
+Before we begin throwing statistical tests for random variables at our computer. We first want to identify variables where they may be a relationship present. We can do this with various different correlation tests, some that can be used for categorical variables, and some that will be used for continuous variables. 
 
-For categorical datasets, we often compare groups defined by variables such as state, forest type, or gender. A **chi-square test of independence** evaluates whether two categorical variables are associated. Its null hypothesis is that the variables are independent.
+Our correlation tests can consist of **visualizations** commonly in the form of a box plot where we have our medians and quartile ranges. Or, we can use a chi square test.
 
-The test compares observed counts with the counts expected if the variables were independent. A p-value below the chosen significance threshold, often 0.05, provides evidence against independence. Let's look at an example.
+for our **Categorical** datasets, we are commonly looking at changes in variables based on a certain group of paramters, some examples might be states, forest types, or gender. This type of data will typically rely on the **chi square**
+ test. This test determines if two variables are independent from one another, with the null hypothesis stating that they are. It does so by comparing different values within a categorical variable and sseing if there is a statistically signficant difference. 
+
+When we have p values that are less then 0.05 we are able to reject our null hypothesis, telling us that variables may be dependent on eachother and therefore they may also have a relationship. Let's look at an example of this. 
 
 ```r
-library(rstatix)
+data(analysis_data)
+
+chisq_test(analysis_data$variable_one, analysis_data$variable_two) |>
+summary()
+```
+the **Summary** command provides us with statistics about our command results. Here, we can see if our p value allows to reject our null hypothesis, or if we fail to reject our null hypothesis. 
+
+
+For Categorical data, if we have determined that a relationship may be present between our variables. We will either want to use a **t-test**, or an **Anova** test. This is completely dependent on the circumstances. 
+
+
+### Univariate Data
+
+**T-Tests** are best suited for looking at the relationship between 2 variables and no more. 
+
+>NOTE: When we are using commands that examine a relationship. We will find ourselves using the ```~``` command frequently. The common format will be ```dependent variable ~ independent variable``` 
+
+```r
 
 analysis_data |>
-  chisq_test(variable_one, variable_two)
+t_test(variable_1 ~ variable_2. var.equal = TRUE)
+
+```
+something that we haven't talked about is our ```var.equal``` command. This command essentially just tells our computer if our data is equally distributed or not so that this can be accounted for to get the most accurate results. Commonly, to test this variance we will use another test called the **levene_test** for 2 variable data. The levene test takes our data and  tests it with the null hypothesis being that the distribution is normal . 
+
+```r
+
+analysis_data |>
+  levene_test(variable_1) 
+  summary()
 ```
 
-The test output includes statistics and a p-value that help us decide whether to reject the null hypothesis. If the p-value is below your chosen significance threshold, the data provide evidence that the two categorical variables are associated. If the p-value is at or above that threshold, the analysis did not find sufficient evidence of an association. This does not prove that the variables are independent. The exact syntax can depend on the structure of the data and the version of the package; consult the `rstatix` documentation if your data are arranged differently.
+Simlar to before, upon conducting this test we can use our ```summary``` function to deermine if we will reject our null hypothesis or not. 
 
-If we want to compare a continuous response variable across categories, we may use a **t-test** or an **ANOVA**, depending on the number of groups and the assumptions of the test.
+> Note: Typically, data with 5000 elements will not be able to run by the levene test. This is because we can assume this data has equal variance due to it's size. 
 
-### Two-Group Comparisons
+If we have data with equal variance (distribution) we will say ```var.equal = TRUE```. We will say false when the case is the opposite. 
 
-**T-tests** are commonly used to compare the means of a continuous variable between two groups. In a formula, the common format is `dependent_variable ~ independent_variable`.
+Upon completing this process, we will know if there is a relationship between two variables of interest in our data. We can follow a similar process when we want to explore relationships between more then 2 variables as well. 
 
-```r
-analysis_data |>
-  t_test(variable_1 ~ variable_2)
-```
 
-A t-test does not determine whether data are “equally distributed.” Instead, the choice of test depends on the research design and assumptions, including independence of observations and, for the pooled Student's t-test, equal group variances. Welch's t-test is often a good default when equal variances cannot be assumed.
+### Multivariate Data 
 
-To assess whether group variances are similar, you can use Levene's test. It tests the null hypothesis that the group variances are equal.
+for **Multivariate** categorical analysis. We will use an **Anova Test**, this allows us to test the relationships between a dependent variable, and multiple independent variables. This comes in handy when we have a categorical variable with multiple different values and we want to know which values specifically have significant relationships
 
-```r
-analysis_data |>
-  levene_test(variable_1 ~ variable_2)
-```
+We will want to follow the same workflow. First, we identify if correlation is present with our chisq test. After this, we will want to determine if our data is equally distributed or not. the only difference here is the command we will use, which in this case is the **Shapiro Test** 
 
-A small p-value suggests evidence that the group variances differ. Do not assume equal variance solely because a dataset has 5,000 or more observations; sample size alone does not establish equal variance. Use the test assumptions and the context of your data to choose an appropriate method.
-
-After completing these steps, you can interpret the test results to evaluate whether the group means differ. Similar approaches can be used to examine more than two groups.
-
-### Multiple-Group Comparisons
-
-For comparisons across multiple groups, we can use an **ANOVA** when its assumptions are appropriate. If the assumptions are not met, a nonparametric alternative such as the Kruskal-Wallis test may be suitable.
-
-A common workflow is to inspect the data, check assumptions, run an overall test, and then use a post hoc test if the overall result indicates differences among groups. For example, Shapiro-Wilk tests can be used to assess normality, though visual inspection and model diagnostics are also important.
+Something to note here is that because we have multiple variables were looking at, we will want to conduct our test grouping by the same variables were interested in. 
 
 ```r
-analysis_data |>
-  group_by(variable_2) |>
+
+analysis_data |> 
+  group_by(variable_2) |> 
   shapiro_test(variable_1)
 ```
 
-The next steps depend on the research question and whether the assumptions are reasonably satisfied.
+Now, our next steps depend on if our data is equally distributed or not. 
 
-| Function | Typical use |
-|----------|-------------|
-| `kruskal_test()` | Compare groups when a nonparametric approach is appropriate |
-| `anova_test()` | Compare group means using ANOVA |
-| `dunn_test()` | Post hoc pairwise comparisons following a Kruskal-Wallis test |
-| `tukey_hsd()` | Post hoc pairwise comparisons following ANOVA |
+|Command Name | Data Distribution | Function| 
+|------------|----------------------|
+|kruskal_test| uneven distribution | testing for a relationship | 
+|anova_test | even distribution | testing for a relationship | 
+|dunn_test | uneven distribution | identifying specific variables with a relationship | 
+|turkey_hsd | even distriubtion | identifing specific variables with a relationship | 
 
-The commands follow a similar formula structure. Here, we will assume that an ANOVA is appropriate.
-
-```r
-analysis_data |>
-  anova_test(variable_1 ~ variable_2)
-```
-
-The output summarizes the ANOVA results and indicates whether there is evidence of a difference among group means. If appropriate, use Tukey's HSD post hoc test to examine which pairs of groups differ.
+The commands structure are the same for both types of distribution. Here, we will assume that our data falls under an evenly distributd dataset. 
 
 ```r
+
+analysis_data |> 
+  anova_test(variable_1 ~ varaible_2)
+
+```
+Here, we will be provided with a tibble that outlines if there is a relationship in our data. In the case that there is, we can now use the ```turkey_hsd``` command to find this relationship. 
+
+```r
+
 analysis_data |>
-  tukey_hsd(variable_1 ~ variable_2)
+  turkey_hsd(variable_1 ~ variable_2)
+
 ```
 
-The output lists pairwise comparisons between categories of `variable_2`, helping you identify which groups differ in the response variable. Interpret these results alongside effect sizes, confidence intervals, and the study context.
+At this point, you will be encountered with a tibble of all the different categories in your variable 2, allowing for you to find those that have a strong relationship with your dependent variable. 
 
-This is a brief introduction to analyzing categorical grouping variables. Next, we will look at similar processes for continuous variables.
+This is a brief introduction into categorical variables, we will now take a look at how similar processes  can be done with **Continuous Variables** 
 
-## Continuous Variables
 
-We will use a similar workflow for continuous variables:
+## Continuous Variables 
 
-- Explore relationships between variables.
-- Examine distributions and model assumptions.
-- Run an appropriate statistical test.
-- Interpret the results in context.
+We will want to use a similar workflow as with our categorical variables. 
 
-The main difference is the way we measure and test relationships.
+- Identify correlation in our Data 
+- Determine our data distribution 
+- Run our statistical tests
+- Interpret our results 
+
+The only difference in our workflow is the way we will go about it. 
 
 ### Identify Correlation
 
-One way to explore relationships between continuous variables is to **visualize the data**. A scatter plot can show whether variables tend to increase or decrease together, and whether the relationship appears linear. Visualization is useful before running tests because it can reveal outliers, nonlinearity, and other features that may affect the analysis.
+One way that we will identify correlation in continuous data is by **Visualizing our Data**. Upon doing this, we can usually see if variables trend upwards or downwards together. We want to do this before we run any tests because we will also need to determine our datas distribution before we run any tests as well. Doing this allows us to see if the majority of data is centralized around any specific area which could inform us if our data is unequally distributed. 
 
-You can also assess distributional assumptions. The Shapiro-Wilk test is one option for testing normality, but it should not be the only method used to assess distributions or decide which test to run.
+Of course, we will want to run a test to determine this no matter what. In this case, we can use the same **Shapiro Test** that we ran earlier, following the same logic with our results. 
 
-The `cor_test()` function from the `rstatix` package can estimate the strength and direction of an association between two continuous variables.
+Upon determining our data distribution we can use our ```cor_test``` from the rstatix package. This test will tell us the strength of the relationship between our variables. As a reminder, any strength that ranges from 1 to 0.7 either positive or negative has strong correlation. 
 
 ```r
-analysis_data |>
-  cor_test(variable_1, variable_2, method = "pearson")
+
+cor_test(analysis_data
+         vars = c(variable_1, variable-2),
+         method = "pearson" #this informs our distribution
+         )
+  
 ```
 
-Two common correlation methods are:
+We have two types of methods we can use regarding our datas distribution. 
 
-- **Pearson** measures the strength and direction of a linear relationship. It is sensitive to outliers, and inference relies on assumptions that should be checked for the analysis.
-- **Spearman** measures the strength and direction of a monotonic relationship using ranks. It can be useful when the relationship is not linear or when a rank-based method is more appropriate.
+- **Pearson** is best for data that is parametric (normally distributed)
+- **Spearman** is best for non equal distribution (non-parametric)
 
-The correlation coefficient, often reported as `cor`, ranges from -1 to 1. Values closer to -1 or 1 indicate a stronger association; values near 0 indicate a weaker linear association for Pearson correlation. Correlation alone does not establish causation. If a relationship appears meaningful, you may choose to investigate it further with regression.
+Upon running our ```cor_test```. We will be given a value for **cor**. This value is our indicator of if our relationship is strong. If it is, we should go into conducting a **Linear Regression** to determine if there is a relationship between our variables. 
 
-### Continuous Variable Analysis
 
-To run a linear regression, we can use the `lm()` function.
+### Continuous Variable Analysis 
+
+
+to run our linear regression, we will use a similar styled equation as with our statistical tests from earlier 
 
 ```r
-analysis_model <- lm(variable_1 ~ variable_2, data = analysis_data)
+
+
+analysis_model <-  lm(variable_1 ~ variable_2, data = analysis_data)
 
 summary(analysis_model)
 ```
 
-The `summary()` command provides information about the fitted model.
 
-![Example linear regression results]({{ site.baseurl }}/r/images/Regression_Results.png?raw=true)
+When we use the summary command on our newly created model. We will be provided a set of information that looks like this. 
 
-To assess evidence for a relationship between the predictor and response, look at the coefficient's p-value in the `Pr(>|t|)` column. A small p-value provides evidence that the coefficient differs from zero under the model's assumptions. In plain language, the data provide evidence of a linear association between the predictor and response. A large p-value means the analysis did not find sufficient evidence that the coefficient differs from zero; it does not prove that the relationship is absent.
+!["equal distribution image"]({{site.baseur}}/r/images/Regression_Results.png?raw=true)
 
-The strength of the model can be summarized in part by its R-squared value, which describes the proportion of variation in the response explained by the model. A low R-squared value indicates that the model explains a relatively small proportion of the variation, even if a coefficient is statistically significant.
+-------------------------------------------------------
 
-This process can be extended to multiple continuous predictors. It is also important to consider potential **confounding variables**. A confounder is related to both a predictor and the response and can distort the apparent relationship between them.
 
-You can inspect correlations among selected variables with `cor()`:
 
-```r
-analysis_data |>
-  select(variable_1, variable_2, variable_3) |>
-  cor(use = "complete.obs")
-```
 
-This produces a correlation matrix showing the pairwise correlations among the selected variables. Strong correlations between predictors may indicate potential multicollinearity, but a correlation matrix alone cannot determine whether confounding is present. Consider the study design and relevant subject-matter knowledge as well.
 
-Here is a simple example of multiple linear regression:
+
+
+
+To determine if a relationship is present in this data, we will look at either the **Pr** column, or the **p-value** below. If we are able to reject our null hypothesis, this is a sign that there is a relationship between our variables. 
+
+The strength of our relationship is determined by our **R-squared** value. The same strength rule applies as with our correlation values. As you can see, we have a low R-Squared value, implying the strength is also low.
+
+This process is similar for any multivariate continuous variables that we want to analyze. The main thing to account for is that we will also want to determine if there are any **Confounds** which are indepenent variables that have a relationship with eachother that make it appear like our dependent varaible is dependent upon our independents. 
 
 ```r
-analysis_model <- lm(
-  variable_1 ~ variable_2 + variable_3,
-  data = analysis_data
-)
 
-summary(analysis_model)
+analysis_data |> 
+select(variable_1, variable_2, variable_3) |>
+  cor()
+
 ```
 
-## Next Steps
+By doing this, we will be left with a table that shows the strength of correlation between every single variable. That way, we can identify if two of our predictor / independent variables also have a strong relationship and determine that a confound may be present. 
 
-One benefit of analyzing data in R is the potential to make predictions that inform future decisions. In a future section, we will look at how machine learning techniques can be used to create predictive models.
+Here is a quick example of running multivariate linear regression. 
+
+```r
+
+lm(variable_1 ~ variable_2 + variable_3, data = analysis_data)
+
+```
+
+
+## Next Steps 
+
+One of the benefits of being able to analyze data in RStudio is the potential to make **Predictions** with your data that can inform future decisions. In the next section. We will look at how you can use machine learning technology to create your own predictive model.
+
+

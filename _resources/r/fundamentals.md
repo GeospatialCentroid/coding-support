@@ -429,34 +429,7 @@ help(print)
 
 ------------------------------------------------------------------------
 
-## Writing Your First Script
-
-Lets look at an example of creating a script that returns someones name. Try
-it out on your r console!
-
-if we have a file named hello.R, we can make the following script in it. 
-
-``` r
-greetings <- function(name) {
-
-name = readline("Enter your name here")
-if (nchar(name) > 0) {
-  print(paste("Hello", name))
-} else {
-  print("Hello stranger")
-}
-}
-```
-
-Run from command line, or press CTRL + Enter to run your script:
-
-``` bash
-source(hello.r)
-```
-This will allow you to run functions that you have written into your script. 
-
-
 
 ## Next Steps
 
-In the next section, we will go more indepth on what packages are, how to use them, and how to create your own! 
+In the next section, we will go more indepth on using the command line
