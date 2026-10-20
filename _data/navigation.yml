@@ -21,6 +21,8 @@ r_sidebar:
       url: r/using_rstudio/
     - title: "Fundamentals"
       url: r/fundamentals/
+    - title: "Command Line Running"
+      url: r/command_line_running/
     - title: "Packages"
       url: r/packages/ 
     - title: "Reading Data"
@@ -31,8 +33,7 @@ r_sidebar:
       url: r/visualizing_data/
     - title: "Analyzing Data" 
       url: r/analyzing_data/
-    - title: "Command Line Running"
-      url: r/command_line_running/
+  
 
 
 python_sidebar:
@@ -185,6 +186,8 @@ geospatial_sidebar:
     url: geospatial/Applications_of_GIS/
   - title: "GIS Fundamentals"
     url: geospatial/GIS_Fundamentals/
+  - title: "Working with Geospatial Data"
+    url: geospatial/Working_With_Data/
  
 
     

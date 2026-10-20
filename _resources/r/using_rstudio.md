@@ -150,6 +150,18 @@ contains tools to navigate your **Systems Directory** and manage your coding out
   
  - **Search Commands and Functions**, where it will provide you with examples and explainations on how to usethem. 
   
+## Creating Projects
+
+One of the benefits of RStudio is the ability to create **Projects**. Projects are essentially a temporary working directory that allow you to organize and manage files for something that you are working on. Creating projects in RStudio is easy but is also heavily beneficial for data organization. 
+
+Projects are also useful when using **Github**. With projects, you can copy a url from a github repository and use it to read all files within that repository to your own RStudio session, allowing you to easily collaborate on projects. 
+
+- **Step One**: Click File in the top left corner, then new project. 
+- **Step Two**: If you want to create a project from scratch, click New Directory. If you are using a project from github, click Version Control 
+- **Independent Projects**: Click on New Project, then assign your New Project a Directory Name and select where you want your project to be located within your file tree. Press **create project** and then you will be all set! 
+- **Version Control**: Click on git, paste your repository URL from github, then assign a name and select where you would like your new proejct to be located within your file system. 
+
+> NOTE: Do not create projects within projects. This will only lead to future problems. 
 
 ## Next Steps 
 
