@@ -769,3 +769,28 @@ th {
   text-decoration: underline;
   color:#333 !important;
 }
+
+/* --- Make entire coding card clickable --- */
+#coding_cards .feature__item--grid {
+  position: relative;
+  cursor: pointer;
+}
+
+#coding_cards .feature__item--grid h2 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+#coding_cards .cards_row,
+#coding_cards .archive__item-body,
+#coding_cards h2 a.btn {
+  position: static;
+}
+
+/* Keyboard focus outlines the whole card */
+#coding_cards .feature__item--grid:focus-within {
+  outline: 3px solid var(--csu-green);
+  outline-offset: 2px;
+}
