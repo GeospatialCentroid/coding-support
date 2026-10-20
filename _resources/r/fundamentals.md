@@ -396,7 +396,7 @@ greet <- function(name) {
 
 greet("Alice")
 ```
-
+> Hello Alice
 ------------------------------------------------------------------------
 
 ## Installing and Loading Packages
@@ -424,12 +424,11 @@ will allow you to view **all Information** about a specific R commmand.
 help(print)
 
 #This command will return a full resource page of how to use the print command as well as examples
-
 ```
 
-------------------------------------------------------------------------
+
 
 
 ## Next Steps
 
-In the next section, we will go more indepth on using the command line
+In the next section, we will go more indepth on what packages are, how to use them, and how to create your own! 

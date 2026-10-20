@@ -20,6 +20,11 @@ A large part of working with data in GIS is having a strong familarity with how 
 
 ## Adding Files to a Project 
 
+Any project that we work with using a GIS software will usually have a project tab in the top header that allows you to open a **Project**. This is where you will have different maps, layers, and processes stored that you can have saved into your project at anytime. 
+
+To add files to your project. There will typically be an option that allows you to open a folder or file within the projects tab or within an insert tab such as the case for ArcGIS. From here, knowing where your files are located is essential, as you will want to select the files that you want to add to your project here. 
+
+Some softwares such as ArcGIS Pro will allow you to connect a folder from your computer to their system in your projects pane, allowing you to pull any layer files that you have in that folder into your project. 
 ## Geoprocessing
 
 ### Clip
