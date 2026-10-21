@@ -49,7 +49,7 @@ One of the benefits of geospatial data is that there is no one software or one w
 
 ## Ways to use GIS 
 
-Primary GIS software are **Open Source** and **Privatized**. 
+Primary GIS software are **Open Source** and **Proprietary**. 
 
 **Open Source** software are free tools for processing geospatial data. They are available to download online and don't have paywalls like others. 
 
@@ -78,7 +78,7 @@ When working with geospatial data, knowing what type of data you are working wit
 
 Vector data is data that is always in the form of a **Point**, **Line**, or **Polygon**. Polygons in the case of vector data just symbolize any multi-dimensional shape, such as a circle or square. 
 
-Vector data commonly is used for **Discrete** data because a point, line, or polygon can only have one specific value. It is especially good for **Comparison**, **Navigation**, and **Computations**. It also is useful for establishing **Regions of Interest (ROIs)** for research projects.
+Vector data is commonly used for **Discrete** features, representing objects with distinct spatial boundaries. Individual vector features can hold multiple attribute values in an attached data table. It is especially good for **Comparison**, **Navigation**, and **Computations**, and is useful for establishing **Regions of Interest (ROIs)** for research projects.
 
 Vector data is not as suited for looking at continuous data alone. However, using it with raster data is. 
 
@@ -107,61 +107,7 @@ The applications of GIS layers are endless; we will go more in depth in a later 
 
 If you try to take an orange peel and completely flatten it into a circle, what happens? Most likely, you aren't able to. You will have to cut the orange in some way and rearrange the shape of it to do so. 
 
-Similarly, if you tried to flatten the earth into a two-dimensional circle, would you be successful? Probably not. Because it is essentially impossible to do so, we have to find a way to represent map data on a two-dimensional plane. This is where **Coordinate Systems** and **Projections** come in handy! 
-
-Coordinate systems and projections essentially flatten one small area on the global map, allowing for our latitude and longitude values to be as accurate as possible in that area. We essentially take the orange problem from earlier and simplify it; we take one small part of our orange peel and flatten it completely. Doing so effectively gives us a two-dimensional map for what was once a three-dimensional shape! 
-
-However, coordinate systems are far from perfect. Because we completely flatten one specific area, as we get farther from that area, our map will become more and more **Distorted**. Distortions are where the size of objects on our map are not accurate to their true size. Usually, as we get farther from the origin of our coordinate system, our distortion will become stronger. This makes our data look larger, longer, or more curved than it actually is, and values farther from our origin are less accurate. Because of this, coordinate systems usually have a defined region that they serve best. 
-
-| Coordinate System | Best Purpose | 
-|-------------------|-----------|
-| WGS84 | World Geodetic System | 
-| NAD83 | North American Datum | 
-
-
-| Projected Coordinate System | Best Purpose | 
-|----------------------------|-------------|
-| Web Mercator | Simple Math Calculations | 
-| State Plane | Specific US States and Regions | 
-| UTM | Specific Areas of the Earth | 
-
-
-Some **Projections** are also made for maintaining certain properties of maps: 
-
-| Projection Category | Function | Examples | 
-|----------------|-------|-------------------|
-| Conformal | Preserves angles and local shapes | Mercator, Lambert Conformal Conic, Transverse Mercator | 
-| Equal-Area | Preserves area relationships | Albers Equal Area, Lambert Azimuthal Equal Area | 
-| Equidistant | Preserves distances from specific points | Azimuthal Equidistant, Equidistant Conic | 
-
-Overall, when working with geospatial data, you will want to be mindful of where the data you are working with is located and make sure that your coordinate system is best suited for that area. If not, you will want to **reproject** your coordinate system to best fit that region. 
-
-## Types of Files 
-
-Vector files and raster files can have various different file types that serve different purposes. Understanding the most common types will allow you to better understand how to work with the data that you have at your disposal. 
-
-
-**Vector Files**
-
-| File Name | Format | Purpose | 
-|-----------|-----|---------|
-| Shapefile | .SHP | Describes the shape, positioning, and data associated with a vector layer |
-| GeoJSON | JSON | Encoding geographic vector data structures. Best for online mapping applications | 
-| Geography Markup Language | GML | Storing geographic features as text for use in text editors | 
-| Keyhole Markup Language | KML | Storing vector data in Google Earth format | 
-| OpenStreetMap | OSM | Using data from community science-based projects | 
-
-The most common file types that you will work with in mapping software for vectors are shapefiles, JSONs, and KML files. 
-
-**Raster Files** 
-
-| File Name | Format | Purpose | 
-|-----------|-----|---------|
-| ERDAS Imagine | IMG | Storing single and multi-band satellite data | 
-| GeoTIFF | tif | Storing remote sensing data | 
-| IDRISI Raster | RST | Storing numeric grid cell values as integers, real numbers, and bytes | 
-| ENVI RAW Raster | BIL | Storing single and multi-band satellite data | 
-
+Similarly, if you tried to flatten the earth into a two-dimensional
 
 ## Next Steps
 
