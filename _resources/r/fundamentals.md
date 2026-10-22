@@ -70,9 +70,9 @@ to write **Multi-line Programs** we can use the ```%>%``` symbol between command
 
 ``` r 
 
-Example <- Print("Here is line 1") %>%
+Example <- print("Here is line 1") %>%
            var <- ("Here is line 2") %>%
-           Print(var)
+           print(var)
 
 print(Example)
 
@@ -82,7 +82,7 @@ This would return:
 
 ```r
 
-here is line 1
+Here is line 1
 Here is line 2
 
 ``` 
@@ -212,7 +212,7 @@ R supports a wide range of operators.
 
 ### Arithmetic Operators
 
-R supports standard **Mathematical Operations**. These allow you to compute mathmatic operations on your data. 
+R supports standard **Mathematical Operations**. These allow you to compute mathematical operations on your data. 
 
 ``` r
 a + b 
@@ -270,7 +270,7 @@ age <- 18
    print("you are not an adult")
  }
 ```
-### else if statments 
+### else if statements 
 
 These statements will allow for **Multiple Different** conditional statements to be 
 evaluated. 
@@ -279,7 +279,7 @@ evaluated.
 age <- 18
  if (age >= 18) {
    print("You are an adult")
-} else if (13 < age < 18) {
+} else if (age > 13 & age < 18) {
   print("You are a teenager")
 }
 else {
@@ -383,10 +383,10 @@ df <- data.frame(
 ## Functions
 
 Functions allow us to **Take in User Input** and provide an outcome based on that 
-input. These are largely applicable among all coding languages and are benfical 
+input. These are largely applicable among all coding languages and are benefical 
 to familiarize yourself with.
 
-The main benefit of functions is that we are able to make what would be long and tedious scripts; into much shorter and concise lines of code. 
+The main benefit of functions is that we are able to make what would be long and tedious scripts, into much shorter and concise lines of code. 
 
 
 ``` r

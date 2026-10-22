@@ -9,11 +9,7 @@ toc_sticky: true
 
 
 
-## Fundamentals
-
--------------------
-
-It's important to understand the most basic of GIS concepts before you dive into complex GIS software and begin using it for your career. We will focus on providing basic GIS concepts in this section 
+It's important to understand basic GIS concepts before you dive into using complex GIS software and begin using it for your research.
 
 -------------------
 
@@ -43,15 +39,15 @@ Adding geographic information allows us to ask additional questions, such as:
 
 This ability to connect data to location is one of the fundamental strengths of geospatial analysis. It allows us to draw relationships to other variables to recognize patterns and make decisions. 
 
-Geospatial visualizations are also one of the most effective ways at sharing scientific topics to the general public and highlighting important relationships. Look at any political affiliation map! 
+Geospatial visualizations are also one of the most effective ways of sharing scientific topics to the general public and highlighting important relationships.
 
 One of the benefits of geospatial data is that there is no one software or one way to use it. There are a multitude of methods for accessing it. 
 
 ## Ways to use GIS 
 
-Primary GIS software are **Open Source** and **Proprietary**. 
+There are two main types of GIS software, **Open Source** and **Proprietary**. 
 
-**Open Source** software are free tools for processing geospatial data. They are available to download online and don't have paywalls like others. 
+**Open Source** software are free tools for processing geospatial data. They are available to download online and don't have paywalls. 
 
 **Examples**
 
@@ -62,14 +58,14 @@ Primary GIS software are **Open Source** and **Proprietary**.
 - GeoServer
 - SAGA GIS 
 
-Open Source software allows you to conduct basic GIS work. The only downside is that open source software may not always offer the same level of detailed analysis that a privatized version can. However, it's best to learn how to use open source software if you are planning on working on independent research / projects, working with non-profits, or don't use GIS enough to justify purchasing a service. 
+While Open Source software can be used freely, one downside is that it may not always offer the same level of detailed analysis that a proprietary product can offer. However, it's best to learn how to use Open Source software if you are planning on working on independent research projects, working with non-profits, or don't use GIS enough to justify the cost of the alternative. 
 
-**Privatized Software** are GIS applications that offer in-depth analysis capabilities, easily interactable GUIs, and are leaders in the GIS field. They are best for if you want to work with a company on GIS work, are conducting research with a university, or are pursuing GIS as a career. The only downside is that these services are often expensive if an organization is not paying on your behalf. The two most popular GIS software are **ArcGIS** and **ENVI**. 
+**Proprietary Software** are GIS applications that offer in-depth analysis capabilities, interactive GUIs, and are leaders in the GIS field. They are best for if you want to work with a company on GIS work, are conducting research with a university, or are pursuing GIS as a career. The only downside is that these services are often expensive, especially if you have to pay for them yourself. The two most popular proprietary GIS software products are **ArcGIS** and **MapInfo Pro (Envitia)**. 
 
 
 ## Vector vs. Raster 
 
-When working with geospatial data, knowing what type of data you are working with is imperative. Therefore, a clear distinction must be made when working with geospatial data between **Vector** data and **Raster** data. These are the two ways that data is represented in GIS. Both are beneficial for fulfilling different purposes. 
+When working with geospatial data, knowing what type of data you are working with is imperative. The two main types of geospatial data are **Vector** and **Raster**. Both are beneficial though serve very different purposes. 
 
 
 !["vector raster comparison"]({{site.baseurl}}/geospatial/images/vector_vs_raster.png?raw=true)
@@ -85,13 +81,13 @@ Vector data is not as suited for looking at continuous data alone. However, usin
 
 ### Raster Data
 
-If we want to look at continuous data that changes over very small distances, we want to use **Raster** data. Raster data is a form of data that comes in a grid of squares that each represent a certain value based on a real-life surface area. Raster data is best for displaying real-world variables such as **Elevation** and **Surface Reflectance**. 
+**Raster** data is great for continuous data that changes over very small distances. Raster data is a form of data that comes in a grid of squares that each represent a certain value based on a real-life surface area. Raster data is best for displaying real-world variables such as **Elevation** and **Surface Reflectance**. 
 
 We will go more in-depth on the uses and applications of vector and raster data later. 
 
 ## Layers 
 
-Layers make up the whole of any geospatial visualization. Layers are each a different group of features that appear in a map that you are making. Here is an example in a mountainous map. 
+Layers make up the whole of any geospatial visualization. Layers are each a different group of features that appear in a map that you are making. Here is an example of a mountainous map and its potential layers: 
 
 - **Layer 1**: Different types of vegetation. 
 - **Layer 2**: Watershed layer that is able to map out the entire flow of rivers within your region of interest. 
@@ -105,9 +101,9 @@ The applications of GIS layers are endless; we will go more in depth in a later 
 
 ## Coordinate Systems & Projections 
 
-If you try to take an orange peel and completely flatten it into a circle, what happens? Most likely, you aren't able to. You will have to cut the orange in some way and rearrange the shape of it to do so. 
+If you try to take an orange peel and completely flatten it into a circle so that all the skin can been seen at once, what happens? You aren't able to without cutting the orange in some way and rearrange the shape of it to do so. 
 
-Similarly, if you tried to flatten the earth into a two-dimensional
+Similarly, if you tried to flatten the earth into a two-dimensional plane, you would have to distort its shapes, areas, distances, or directions. This fundamental challenge is why map projections exist. Map projections provide mathematical ways to transform the three-dimensional surface of the Earth onto a flat map while minimizing specific types of distortion.
 
 ## Next Steps
 
