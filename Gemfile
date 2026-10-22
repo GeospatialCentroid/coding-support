@@ -14,3 +14,6 @@ end
 
 gem "kramdown-parser-gfm", "~> 1.1"
 gem "ostruct", "~> 0.6.3"
+
+
+gem "jekyll-last-modified-at", "~> 1.3", group: :jekyll_plugins
