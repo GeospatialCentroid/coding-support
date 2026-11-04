@@ -1,7 +1,10 @@
 <!-- Modal Overlay Container -->
-<div id="site-modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000; align-items: center; justify-content: center;">
-  <div id="site-modal-box" style="background: #fff; padding: 25px; border-radius: 8px; width: 90%; max-width: 500px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); position: relative; font-family: inherit; color: #333;">
-    <button id="site-modal-close" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 20px; cursor: pointer; color: #666;">×</button>
+<div id="site-modal-overlay"
+  style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000; align-items: center; justify-content: center;">
+  <div id="site-modal-box"
+    style="background: #fff; padding: 25px; border-radius: 8px; width: 90%; max-width: 500px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); position: relative; font-family: inherit; color: #333;">
+    <button id="site-modal-close"
+      style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 20px; cursor: pointer; color: #666;">×</button>
     <h3 id="site-modal-title" style="margin-top: 0; margin-bottom: 15px;"></h3>
     <div id="site-modal-content" style="line-height: 1.5; font-size: 0.85em; max-height: 60vh; overflow-y: auto;"></div>
   </div>
@@ -10,35 +13,53 @@
 <div id="footer" class="page__footer">
   <footer>
     <!-- Flex container to align copyright/policies on the left and GitHub actions on the right -->
-    <div class="footer-bottom-wrapper" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; font-size: 0.9em;">
-      
+    <div class="footer-bottom-wrapper"
+      style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; font-size: 0.9em; padding-top: 1em; padding-bottom: 2em;">
+
       <!-- Left Column: Copyright, Policies, and subtle Analytics Status -->
       <div class="footer-copyright-section" style="flex: 1; min-width: 280px; line-height: 1.6;">
-          <span style="opacity: 0.85;font-size: 0.7em;">
+        <span style="opacity: 0.85;font-size: 0.7em;">
           <a href="#" class="footer_link" id="open-privacy-modal">Privacy Policy</a>
           <a href="#" class="footer_link" id="open-disclaimer-modal">Disclaimer</a>
         </span>
         <br>
-        <span id="ga-status-text" style="font-size: 0.7em; opacity: 0.7; display: inline-block; margin-top: 4px;">Analytics tracking is currently ACTIVE</span>
+        <span id="ga-status-text"
+          style="font-size: 0.7em; opacity: 0.7; display: inline-block; margin-top: 4px;">Analytics tracking is
+          currently ACTIVE</span>
         <button id="ga-toggle-btn" style="font-size: 0.7em;">Opt-Out of Analytics</button>
-            <div class="page__footer-copyright">&copy;{% assign site_time = site.time | date: '%Y' %}{% if site.footer.since and site_time != site.footer.since %}{{ site.footer.since }} - {% endif %}{{ site_time }} <a href="{{ site.copyright_url | default: site.url }}">{{ site.copyright | default: site.title | escape_once | strip }}</a>.</div>        <br>
-  
+        <div class="page__footer-copyright">&copy;{% assign site_time = site.time | date: '%Y' %}{% if site.footer.since
+          and site_time != site.footer.since %}{{ site.footer.since }} - {% endif %}{{ site_time }} <a
+            href="{{ site.copyright_url | default: site.url }}">{{ site.copyright | default: site.title | escape_once |
+            strip }}</a>.</div>
+
+
       </div>
-      
+
       <!-- Right Column: GitHub Edit Links -->
       <!-- The dynamic GitHub edit link -->
-      {% if site.github_repo %}
-      <div class="github-edit-link">
-        <a href="{{ site.github_repo }}/edit/{{ site.github_branch | default: 'master' }}/{{ page.path }}" target="_blank" rel="noopener noreferrer" >
-          <i class="fas fa-pencil-alt"></i> Edit this page on GitHub
-        </a>
-        <br/>
-        <a href="/git/pull-requests" >
-          <i class="fas"></i> New to GitHub Pull Requests? See our guide
-        </a>
+      <div class="footer-right-section" style="text-align: right;">
+        {% if site.github_repo %}
+        <div class="github-edit-link">
+          <a href="{{ site.github_repo }}/edit/{{ site.github_branch | default: 'master' }}/{{ page.path }}"
+            target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-pencil-alt"></i> Edit this page on GitHub
+          </a>
+          <br />
+          <a href="/git/pull-requests">
+            <i class="fas"></i> New to GitHub Pull Requests? See our guide
+          </a>
+        </div>
+        {% endif %}
+
+        {% if page.last_modified_at %}
+        <div class="page__footer-copyright">
+          Last updated:
+          <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: "%B %-d, %Y"
+            }}</time>
+        </div>
+        {% endif %}
       </div>
-      {% endif %}
-      
+
     </div>
   </footer>
 </div>
@@ -46,9 +67,9 @@
 
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-   
-    
+  document.addEventListener("DOMContentLoaded", function () {
+
+
     // Modal Elements
     const overlay = document.getElementById('site-modal-overlay');
     const modalTitle = document.getElementById('site-modal-title');
@@ -85,14 +106,14 @@
 
     // Event Listeners for Modals
     if (privacyLink) {
-      privacyLink.addEventListener('click', function(e) {
+      privacyLink.addEventListener('click', function (e) {
         e.preventDefault();
         openModal("Privacy Policy", privacyText);
       });
     }
 
     if (disclaimerLink) {
-      disclaimerLink.addEventListener('click', function(e) {
+      disclaimerLink.addEventListener('click', function (e) {
         e.preventDefault();
         openModal("Disclaimer", disclaimerText);
       });
@@ -103,14 +124,14 @@
     }
 
     // Close when clicking outside the white box
-    overlay.addEventListener('click', function(e) {
+    overlay.addEventListener('click', function (e) {
       if (e.target === overlay) {
         closeModal();
       }
     });
 
     // Close on pressing Escape
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       if (e.key === "Escape") {
         closeModal();
       }
@@ -133,11 +154,11 @@
 
     updateUI();
 
-    toggleBtn.addEventListener('click', function() {
+    toggleBtn.addEventListener('click', function () {
       isOptedOut = !isOptedOut;
       localStorage.setItem('ga_opt_out', isOptedOut);
       updateUI();
-      
+
       alert(isOptedOut ? "You have opted out. Tracking will stop." : "You have opted in.");
       location.reload();
     });
