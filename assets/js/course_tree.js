@@ -282,7 +282,8 @@ function renderTree(rootNode) {
         <tr><th style="padding-right:12px; white-space:nowrap;">Course Code</th><td>${d.data.courseCode || "N/A"}</td></tr>
         <tr><th style="padding-right:12px; white-space:nowrap;">Course Name</th><td>${d.data.courseName || "N/A"}</td></tr>
         <tr><th style="padding-right:12px; white-space:nowrap;">Prerequisite</th><td>${prereqHtml}</td></tr>
-      </table>
+        <tr><th style="padding-right:12px; white-space:nowrap;">Semester Offered</th><td>${d.data.semesterOffered}</td></tr>
+        </table>
       ${linksHtml}
       <div class="popup-arrow"></div> <!-- HTML hook for the CSS triangle -->
     `;
