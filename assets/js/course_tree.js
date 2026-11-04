@@ -33,7 +33,7 @@ function buildTreeData(rows, selectedTopic) {
     const prereqString = (row["Prerequisite"] || "").trim();
     const courseName = (row["Course name"] || "").trim();
     const instructor = (row["Instructor"] || "").trim();
-    const semestersOffered = (row["semesterOffered"] || "").trim();
+    const semestersOffered = (row["Semesters Offered"] || "").trim();
     const title = (courseCode + ": " + courseName);
 
     if (prereqString && prereqString.toLowerCase() !== "none" || prereqString === "") {
@@ -284,9 +284,8 @@ function renderTree(rootNode) {
       <table style="text-align: left; border-collapse: separate; border-spacing: 0 6px;">
         <tr><th style="padding-right:12px; white-space:nowrap;">Course Code</th><td>${d.data.courseCode || "N/A"}</td></tr>
         <tr><th style="padding-right:12px; white-space:nowrap;">Course Name</th><td>${d.data.courseName || "N/A"}</td></tr>
-        <tr><th style="padding-right:12px; white-space:nowrap;">Semesters Offered</th><td>${d.data.semestersOffered || "N/A"}</td></tr>
         <tr><th style="padding-right:12px; white-space:nowrap;">Prerequisite</th><td>${prereqHtml}</td></tr>
-        <tr><th style="padding-right:12px; white-space:nowrap;">Semester Offered</th><td>${d.data.semesterOffered}</td></tr>
+        <tr><th style="padding-right:12px; white-space:nowrap;">Semester Offered</th><td>${d.data.semestersOffered || "N/A"}</td></tr>
         </table>
       ${linksHtml}
       <div class="popup-arrow"></div> <!-- HTML hook for the CSS triangle -->
