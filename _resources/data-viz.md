@@ -126,6 +126,8 @@ To practice visualization:
 
 ## Resources
 
+{% include course_tree.html topic="Data Visualization" %}
+
 {% include resource-table.html topic="Data_Viz" %}
 
 
