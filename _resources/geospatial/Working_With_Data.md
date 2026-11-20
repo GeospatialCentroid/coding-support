@@ -218,13 +218,13 @@ ModelBuilder allows you to create models that are simple for quick processes.
 
 !["simple_model"]({{site.baseurl}}/geospatial/images/small_modelbuilder.png?raw=true)
 
-[link](https://gisgeography.com/wp-content/uploads/2018/02/ModelBuilder-Feature-678x363.png)
+[Reference Link](https://gisgeography.com/wp-content/uploads/2018/02/ModelBuilder-Feature-678x363.png)
 
 You can also make very complex models.
 
 !["complex model"]({{site.baseurl}}/geospatial/images/large_modelbuilder.png?raw=true)
 
-[link](https://2.bp.blogspot.com/-CdqHY3Mzq_s/V2m6LnrlvdI/AAAAAAAAAFU/aVVj9rUEpggom6WLpdv4ph6Yoh5HAJTTQCLcB/s1600/ccm_pgdb.png)
+[Reference Link](https://2.bp.blogspot.com/-CdqHY3Mzq_s/V2m6LnrlvdI/AAAAAAAAAFU/aVVj9rUEpggom6WLpdv4ph6Yoh5HAJTTQCLcB/s1600/ccm_pgdb.png)
 
 ## Next Steps
 
