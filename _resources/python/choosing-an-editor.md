@@ -95,7 +95,7 @@ Here’s a breakdown:
 ---------------------------------
 
 - **[VS Code](https://code.visualstudio.com/)** Lightweight editor, customizable, great Python extensions.
-- **[Kiro](https://kiro.dev/)** Build on VS Code, but designed for [Vibe Coding](https://arxiv.org/abs/2506.23253). This IDE [offers CSU students a free year of extra credits](https://kiro.dev/blog/41-more-universities/).
+- **[Kiro](https://kiro.dev/)** Build on VS Code, but designe for [Vibe Coding](https://arxiv.org/abs/2506.23253). This IDE [offers CSU students a free year of extra credits](https://kiro.dev/blog/41-more-universities/).
 - **[PyCharm](https://www.jetbrains.com/help/pycharm/installation-guide.html)** Community edition Full-featured IDE, excellent for beginners & professionals.
 - **[Sublime Text](https://www.sublimetext.com/)** Fast editor, many plugins for Python.
 - **[Jupyter Notebook](https://jupyter.org/install)** Interactive Python for data science, teaching, prototyping.
